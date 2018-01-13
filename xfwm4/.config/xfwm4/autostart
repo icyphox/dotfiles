@@ -1,0 +1,7 @@
+xrdb -load .Xresources &
+xfsettingsd &
+sxhkd &
+/home/icyphox/scripts/bar.sh &
+xfdesktop &
+xset b off
+urxvtd &

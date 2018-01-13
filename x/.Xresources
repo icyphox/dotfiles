@@ -1,0 +1,90 @@
+!     _  __                                               
+!    | |/ /________  _________  __  _______________  _____
+!    |   // ___/ _ \/ ___/ __ \/ / / / ___/ ___/ _ \/ ___/
+! _ /   |/ /  /  __(__  ) /_/ / /_/ / /  / /__/  __(__  ) 
+!(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/  
+!                                                         
+
+#define base00 #2e3440
+#define base01 #3b4252
+#define base02 #434c5e
+#define base03 #4c566a
+#define base04 #d8dee9
+#define base05 #e5e9f0
+#define base06 #eceff4
+#define base07 #8fbcbb
+#define base08 #88c0d0
+#define base09 #81a1c1
+#define base0A #5e81ac
+#define base0B #bf616a
+#define base0C #d08770
+#define base0D #ebcb8b
+#define base0E #a3be8c
+#define base0F #b48ead
+
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07
+
+
+! Urxvt config
+!---------------------
+URxvt.font: xft:scientifica:size=8
+URxvt.boldFont:
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.internalBorder: 30
+URxvt.perl-ext: default,matcher
+URxvt.matcher.button: 1
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.visualBell: false
+URxvt.depth: 32
+URxvt.lineSpace: 1
+URxvt.intensityStyles: false
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End:  \033[4~
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window:  base00, base00, base00
+rofi.color-normal:  base00, base05, base00, base01, base0B
+rofi.color-active:  base01, base0B, base02, base0B, base01
+rofi.color-urgent:  #e12a36, #dd2a4b, #1b2b34
+rofi.font:scientifica 8
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.location:0
+rofi.lines: 4
+rofi.width: 300
+rofi.yoffset: 26
+rofi.padding: 32
+
+

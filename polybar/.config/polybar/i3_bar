@@ -1,0 +1,202 @@
+;                 __      __              
+;    ____  ____  / /_  __/ /_  ____ ______
+;   / __ \/ __ \/ / / / / __ \/ __ `/ ___/
+;  / /_/ / /_/ / / /_/ / /_/ / /_/ / /    
+; / .___/\____/_/\__, /_.___/\__,_/_/     
+;/_/            /____/                    
+;
+;
+
+[global/wm]
+;margin-top = 
+;margin-bottom = 2
+
+[colors]
+fg = ${xrdb:color7}
+bg = ${xrdb:color0}
+
+[bar/top]
+width = 100%
+height = 24
+offset-x = 0%
+offset-y= 0%
+;fixed-center = 
+override-redirect = false 
+
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+font-0 = bitbuntufull:size=8:;0
+font-1 = FontAwesome:size=10:;2
+;font-2 = MaterialIcons-Regular:size=11:;2
+font-2 = Wuncon Siji:pixelsize=8:;1
+
+modules-left =  date time ssid volume battery 
+modules-center = xwindow
+modules-right = spotipy i3
+
+tray-position = right
+tray-padding = 2
+tray-background = ${colors.bg}
+tray-transparent = false
+tray-detached = false
+
+underline-size = 3
+
+spacing = 1 
+padding-left = 0
+padding-right = 0
+module-margin-left = 2
+module-margin-right = 2
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume><label-volume>
+module-margin-right = 1
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+format-volume-foreground = ${colors.fg}
+format-volume-background = ${colors.bg}
+
+label-muted = muted 
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+module-margin-left = 2
+format-padding = 2
+format-background = ${colors.bg}
+
+[module/i3]
+type = internal/i3
+strip-wsnumbers = true
+enable-click = false
+index-sort = true
+format = <label-state>
+
+label-focused =  
+label-focused-foreground = ${colors.fg}
+label-focused-background = ${colors.bg}
+label-focused-padding = 1
+
+label-unfocused = 
+label-unfocused-foreground = ${colors.fg}
+label-unfocused-background = ${colors.bg}
+label-unfocused-padding = 1
+
+label-urgent = 
+label-urgent-foreground = #EC5f67
+label-urgent-background = ${colors.bg}
+label-urgent-padding = 1
+
+
+[module/date]
+type = internal/date
+interval = 1
+date = " %A, %d %B 
+
+[module/time]
+type = internal/date
+interval = 1
+date = " %I:%M"
+;format = %date% 
+;format-padding = 1
+;format-background = #73ecec
+;format-foreground = #075859
+
+[module/battery]
+type = internal/battery
+full-at = 100
+battery = BAT1
+adapter = ACAD
+poll-interval = 5
+
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+label-charging = %percentage%%
+label-charging-foreground = ${colors.fg}
+label-discharging = %percentage%%
+label-discharging-foreground = ${colors.fg}
+label-full =  full!
+ramp-capacity-foreground = ${colors.fg}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+bar-capacity-width = 10
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.fg}
+animation-charging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+label-open =  power 
+label-open-foreground = #900000
+label-open-background = ${colors.bg}
+label-close = 
+label-close-foreground = ${colors.fg}
+label-close-background = ${colors.bg}
+label-separator = 
+label-separator-foreground = #666666
+label-separator-background = ${colors.bg}
+
+menu-0-0 =
+menu-0-0-exec = menu-open-1
+menu-0-1 =
+menu-0-1-exec = menu-open-2
+menu-0-2 =
+menu-0-2-exec = menu-open-3
+
+menu-1-0 =
+menu-1-0-exec = menu-open-0
+menu-1-1 =
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 =
+menu-2-0-exec = systemctl poweroff
+menu-2-1 =
+menu-2-1-exec = menu-open-0
+
+menu-3-0 =
+menu-3-0-exec = i3-msg exit
+menu-3-1 =
+menu-3-1-exec = menu-open-0
+
+[module/pkg]
+type = custom/script
+interval = 1200
+format = <label>
+;format-underline = #dc322f
+label = "%output:0:30%"
+exec = ~/scripts/spoti.py
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/spotipy]
+type = custom/script
+exec =  ~/scripts/spoti.py
+exec-if = pgrep spotify > /dev/null
+interval = 0.01
+click-left = playerctl -p spotify play-pause 
+
+[module/ssid]
+type = custom/script
+label =  
+format = <label><exec>
+exec = echo  && iwgetid -r
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+interval = 0.01
+click-left = nm-applet
+click-right = nm-connection-editor
+
+; vim:ft=dosini
