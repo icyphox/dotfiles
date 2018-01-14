@@ -44,6 +44,7 @@ color-echo 'distro' 'Arch Linux'
 echo "/\ /\ "
 echo "\^ ^/  i c y p h o x "
 echo " \_/   "
+echo ""
 # colors
 
 echo -e "$red▓▓$rst $grn▓▓$rst $blu▓▓$rst $ylw▓▓$rst $cyn▓▓$rst $prp▓▓$rst $bprp▓▓$rst"
