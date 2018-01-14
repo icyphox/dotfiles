@@ -34,20 +34,20 @@ color-echo "uptime" $days'd '$hours'h '$mins'm'
 color-echo 'shell' 'zsh'
 
 # wm
-color-echo 'wm' 'i3'
+color-echo 'wm' 'GNOME Shell'
 
 # distro
 color-echo 'distro' 'Arch Linux'
 
 # ascii art
 echo ""
-echo "/\ /\ "
-echo "\^ ^/  i c y p h o x "
-echo " \_/   "
+echo "		/\ /\ "
+echo "		\^ ^/  i c y p h o x "
+echo "		 \_/   "
 echo ""
 
 # colors
-echo -e "$red▓▓$rst $grn▓▓$rst $blu▓▓$rst $ylw▓▓$rst $cyn▓▓$rst $prp▓▓$rst $bprp▓▓$rst"
+echo -e "		$red▓▓$rst  $grn▓▓$rst  $blu▓▓$rst  $ylw▓▓$rst  $cyn▓▓$rst  $prp▓▓$rst  $bprp▓▓$rst"
 
 echo 
 echo
