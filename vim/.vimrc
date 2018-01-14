@@ -30,6 +30,7 @@ set ignorecase
 set scrolloff=12
 set rtp+=~/.fzf
 set timeout timeoutlen=3000 ttimeoutlen=100
+set undodir=~/.vim/undodir
 
 colorscheme agila
 
