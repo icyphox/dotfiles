@@ -29,25 +29,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias icysite="cd ~/leet/icysite"
 alias scrot="~/scripts/scrot.sh"
 alias icyinfo="~/scripts/icyinfo.sh"
-#alias rm="trash"
-#alias git="hub"
 alias rmrf="rm -rf"
 alias gah='sudo $(fc -ln -1)'
 alias lol="base64 </dev/urandom | lolcat"
-#alias pacman="sudo pacman"
-
-# Codi
-codi() {
-  local syntax="${1:-python}"
-  shift
-  vim -c \
-    "let g:startify_disable_at_vimenter = 1 |\
-    set bt=nofile ls=0 noru nonu nornu |\
-    hi ColorColumn ctermbg=NONE |\
-    hi VertSplit ctermbg=NONE |\
-    hi NonText ctermfg=0 |\
-    Codi $syntax" "$@"
-}
+alias pacman="sudo pacman"
 
 # end and home keys
 bindkey "^[[1~" beginning-of-line
