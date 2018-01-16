@@ -15,9 +15,7 @@ export PATH=$PATH:$GOROOT/bin
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 
-
 ZSH_THEME="simple"
-
 
 # plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
@@ -29,10 +27,8 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias icysite="cd ~/leet/icysite"
 alias scrot="~/scripts/scrot.sh"
 alias icyinfo="~/scripts/icyinfo.sh"
-alias rmrf="rm -rf"
 alias gah='sudo $(fc -ln -1)'
 alias lol="base64 </dev/urandom | lolcat"
-alias pacman="sudo pacman"
 
 # end and home keys
 bindkey "^[[1~" beginning-of-line
