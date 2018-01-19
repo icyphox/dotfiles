@@ -17,7 +17,7 @@ bg = ${xrdb:color0}
 
 [bar/top]
 width = 100%
-height = 24
+height = 32
 offset-x = 0%
 offset-y= 0%
 fixed-center = true
@@ -27,8 +27,8 @@ override-redirect = false
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = scientifica:pixelsize=8:;0
-font-1 = Wuncon Siji:size=8:;0
+font-0 = Dina:size=9:;0
+font-1 = Wuncon Siji:size=9:;0
 
 modules-left =  date time volume battery 
 modules-center = xwindow 
@@ -43,8 +43,8 @@ tray-detached = false2
 underline-size = 3
 
 spacing = 1 
-padding-left = 0
-padding-right = 0
+padding-left = 1
+padding-right = 1
 module-margin-left = 2
 module-margin-right = 2
 
@@ -112,7 +112,7 @@ format-prefix-foreground = ${xrdb:color6}
 [module/battery]
 type = internal/battery
 full-at = 100
-battery = BAT1
+battery = BAT0
 adapter = ACAD
 poll-interval = 5
 

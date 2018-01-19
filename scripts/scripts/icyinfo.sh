@@ -34,7 +34,7 @@ color-echo "uptime" $days'd '$hours'h '$mins'm'
 color-echo 'shell' 'zsh'
 
 # wm
-color-echo 'wm' 'GNOME Shell'
+color-echo 'wm' 'xfwm4'
 
 # distro
 color-echo 'distro' 'Arch Linux'

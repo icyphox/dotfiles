@@ -21,7 +21,7 @@ ZSH_THEME="simple"
 #plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # aliases
 alias icysite="cd ~/leet/icysite"

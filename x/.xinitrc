@@ -8,6 +8,6 @@
 #
 
 # daemons
-xfce4-power-manager &
-exec xfwm4-session.sh
+#xfce4-power-manager &
+#exec xfwm4-session.sh
 
