@@ -16,8 +16,6 @@ inv=$'\e[7m'
 user=$(whoami)
 host=$(hostname)
 kernel=$(uname -r)
-kernel=${kernel%-*}
-kernel=${kernel%_*}
 shell=$(basename $SHELL)
 os() {
 	os=$(source /etc/os-release && echo $ID)
