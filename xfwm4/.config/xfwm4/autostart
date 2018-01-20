@@ -1,5 +1,6 @@
 xrdb -load .Xresources &
 xfsettingsd &
+xfce4-power-manager &
 sxhkd &
 /home/icyphox/scripts/bar.sh &
 xfdesktop &
