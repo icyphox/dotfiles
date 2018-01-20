@@ -35,3 +35,9 @@ bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# gnome-keyring thing
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
