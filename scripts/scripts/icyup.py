@@ -1,3 +1,5 @@
+#!/usr/env/python
+
 import string
 import sys
 import os
