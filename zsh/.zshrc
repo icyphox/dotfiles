@@ -29,7 +29,7 @@ alias scrot="~/scripts/scrot.sh"
 alias icyinfo="~/scripts/icyinfo.sh"
 alias gah='sudo $(fc -ln -1)'
 alias lol="base64 </dev/urandom | lolcat"
-alias up = "~/scripts/icyup.py"
+alias up="~/scripts/icyup.py"
 
 # end and home keys
 bindkey "^[[1~" beginning-of-line
