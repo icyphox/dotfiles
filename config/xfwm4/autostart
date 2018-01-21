@@ -2,6 +2,7 @@ xrdb -load .Xresources &
 xfsettingsd &
 xfce4-power-manager &
 sxhkd &
+redshift &
 /home/icyphox/scripts/bar.sh &
 xfdesktop &
 xset b off
