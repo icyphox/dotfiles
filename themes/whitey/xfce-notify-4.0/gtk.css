@@ -1,0 +1,48 @@
+/* This file is part of adapta-gtk-theme Copyright (C) 2016-2017 Tista <tista.gma500@gmail.com> This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. */
+@keyframes ripple_effect { 0% { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.1) 0%, transparent 0%), image(alpha(currentColor, 0)); }
+  66% { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.1) 100%, transparent 0%), image(alpha(currentColor, 0.1)); }
+  100% { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0) 100%, transparent 0%), image(alpha(currentColor, 0)); } }
+
+@keyframes flat_ripple_effect { 0% { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.1) 0%, transparent 0%), image(alpha(currentColor, 0.1)); }
+  66% { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.1) 100%, transparent 0%), image(alpha(currentColor, 0.1)); }
+  100% { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0) 100%, transparent 0%), image(alpha(currentColor, 0.1)); } }
+
+@keyframes list_ripple_effect { 0% { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.05) 0%, transparent 0%), image(alpha(currentColor, 0.05)); }
+  50% { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.05) 50%, transparent 0%), image(alpha(currentColor, 0.05)); } }
+
+#XfceNotifyWindow buttonbox button { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0) 100%, transparent 0%), image(alpha(currentColor, 0)); box-shadow: none; transition-timing-function: cubic-bezier(0, 0, 0.2, 1); transition-duration: 0.2s; }
+
+#XfceNotifyWindow buttonbox button:hover { background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0) 100%, transparent 0%), image(alpha(currentColor, 0.1)); box-shadow: none; }
+
+#XfceNotifyWindow buttonbox button:active { box-shadow: none; transition: all 0.2s cubic-bezier(0, 0, 0.2, 1), background-image 0; animation: flat_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1) forwards; }
+
+#XfceNotifyWindow buttonbox button:checked { box-shadow: none; }
+
+#XfceNotifyWindow buttonbox button:disabled { box-shadow: none; }
+
+#XfceNotifyWindow buttonbox button:disabled > label { color: inherit; }
+
+/******************* Xfce-Notify-4.0 * */
+#XfceNotifyWindow, #XfceNotifyWindow:hover { border-radius: 2px; border: 1px solid #ffffff; color: #F6F6F6; background-color: rgba(255, 255, 255, 0.9); box-shadow: none; }
+
+#XfceNotifyWindow box.vertical > label#summary { color: #F6F6F6; font-weight: 700; }
+
+#XfceNotifyWindow box.vertical > label#body { color: rgba(187, 187, 187, 0.75); }
+
+#XfceNotifyWindow buttonbox button { background-color: transparent; }
+
+#XfceNotifyWindow buttonbox button:not(:active):not(:disabled):not(hover) { background-color: transparent; color: rgba(142, 209, 218, 0.9); }
+
+#XfceNotifyWindow buttonbox button:hover { background-color: transparent; color: #F2A4A2; }
+
+#XfceNotifyWindow buttonbox button:active { border-image: none; background-color: transparent; color: #ACDA95; box-shadow: none; }
+
+#XfceNotifyWindow buttonbox button:checked { border-image: none; background-color: transparent; color: #ACDA95; box-shadow: none; }
+
+#XfceNotifyWindow buttonbox button:disabled { background-color: transparent; color: rgba(142, 209, 218, 0.4); }
+
+#XfceNotifyWindow progressbar { min-width: 4px; min-height: 4px; }
+
+#XfceNotifyWindow progressbar trough { border-style: none; background-color: rgba(187, 187, 187, 0.2); box-shadow: none; }
+
+#XfceNotifyWindow progressbar progress { border-style: none; border-radius: 0; background-image: none; background-color: #48B9C7; }

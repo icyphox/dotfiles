@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=whitey
+Comment=GTK based on xfcolorize, xfwm based on puro osx by kartoni
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=whitey
+ButtonLayout=:minimize,maximize,close
