@@ -1,0 +1,103 @@
+2018-01-19 22:17:58	 ⇄ 	irc: connecting to server 139.59.95.34/6666...
+2018-01-19 22:17:58	 ⇄ 	irc: connected to 139.59.95.34/6666 (139.59.95.34)
+2018-01-19 22:17:58	 ⇄ 	Welcome to the Rizon Internet Relay Chat Network icyphox
+2018-01-19 22:17:58	 ⇄ 	Your host is irc.losslessone.com, running version plexus-4(hybrid-8.1.20)
+2018-01-19 22:17:58	 ⇄ 	This server was created Sep 14 2017 at 19:49:00
+2018-01-19 22:17:58	 ⇄ 	irc.losslessone.com plexus-4(hybrid-8.1.20) CDGNRSUWagilopqrswxyz BCIMNORSabcehiklmnopqstvz Iabehkloqv
+2018-01-19 22:17:58	 ⇄ 	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=180 MODES=4 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ EXCEPTS=e INVEX=I NICKLEN=30 NETWORK=Rizon MAXLIST=beI:250 MAXTARGETS=4 :are supported by this server
+2018-01-19 22:17:58	 ⇄ 	CHANTYPES=# CHANLIMIT=#:250 CHANNELLEN=50 TOPICLEN=390 CHANMODES=beI,k,l,BCMNORScimnpstz NAMESX UHNAMES KNOCK WATCH=60 AWAYLEN=180 ELIST=CMNTU SAFELIST :are supported by this server
+2018-01-19 22:17:58	 ⇄ 	There are 32 users and 15182 invisible on 16 servers
+2018-01-19 22:17:58	 ⇄ 	55 :IRC Operators online
+2018-01-19 22:17:58	 ⇄ 	14906 :channels formed
+2018-01-19 22:17:58	 ⇄ 	I have 15214 clients and 16 servers
+2018-01-19 22:17:58	 ⇄ 	Current local users: 15214  Max: 19744
+2018-01-19 22:17:58	 ⇄ 	Current global users: 15214  Max: 19744
+2018-01-19 22:17:58	 ⇄ 	- irc.losslessone.com Message of the Day -
+2018-01-19 22:17:58	 ⇄ 	-          oo                            
+2018-01-19 22:17:58	 ⇄ 	-
+2018-01-19 22:17:58	 ⇄ 	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2018-01-19 22:17:58	 ⇄ 	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2018-01-19 22:17:58	 ⇄ 	- 88       88  .Y8P    88.  .88 88    88 
+2018-01-19 22:17:58	 ⇄ 	- dP       dP d888888P `88888P' dP    dP
+2018-01-19 22:17:58	 ⇄ 	-
+2018-01-19 22:17:58	 ⇄ 	- Rizon Chat Network -- http://rizon.net
+2018-01-19 22:17:58	 ⇄ 	-
+2018-01-19 22:17:58	 ⇄ 	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2018-01-19 22:17:58	 ⇄ 	-
+2018-01-19 22:17:58	 ⇄ 	- Rules:
+2018-01-19 22:17:58	 ⇄ 	- o No spamming or flooding
+2018-01-19 22:17:58	 ⇄ 	- o No clones or malicious bots
+2018-01-19 22:17:58	 ⇄ 	- o No takeovers
+2018-01-19 22:17:58	 ⇄ 	- o No distribution of child pornography
+2018-01-19 22:17:58	 ⇄ 	- o Clients must respond to VERSION requests
+2018-01-19 22:17:58	 ⇄ 	- o Rizon staff may disconnect clients for any or no reason
+2018-01-19 22:17:58	 ⇄ 	-
+2018-01-19 22:17:58	 ⇄ 	- First steps:
+2018-01-19 22:17:58	 ⇄ 	- o To register your nick: /msg NickServ HELP
+2018-01-19 22:17:58	 ⇄ 	- o To register your channel: /msg ChanServ HELP
+2018-01-19 22:17:58	 ⇄ 	- o To get a vHost: /msg HostServ HELP REQUEST
+2018-01-19 22:17:58	 ⇄ 	- o For other help with Rizon: /join #help
+2018-01-19 22:17:58	 ⇄ 	-
+2018-01-19 22:17:58	 ⇄ 	- Usage of this network is a privilege, not a right. Rizon is a
+2018-01-19 22:17:58	 ⇄ 	- transit provider, therefore no person or entity involved with
+2018-01-19 22:17:58	 ⇄ 	- *.rizon.net or irc.losslessone.com takes any responsibility for
+2018-01-19 22:17:58	 ⇄ 	- users' actions. Absolutely no warranty is expressed or implied.
+2018-01-19 22:17:58	 ⇄ 	End of /MOTD command.
+2018-01-19 22:17:58	 ⇄ 	User mode [+Sirx] by icyphox
+2018-01-19 22:17:58	 ⇄ 	You have been marked as being away
+2018-01-19 22:17:59	 ⇄ 	You are no longer marked as being away
+2018-01-19 23:26:06	+	irc: reading data on socket: error 101 Network is unreachable
+2018-01-19 23:26:06	 ⇄ 	irc: disconnecting from server...
+2018-01-19 23:26:06	 ⇄ 	irc: disconnected from server
+2018-01-19 23:26:06	 ⇄ 	irc: reconnecting to server in 10 seconds
+2018-01-19 23:26:16	 ⇄ 	irc: reconnecting to server...
+2018-01-19 23:26:16	 ⇄ 	irc: connecting to server 139.59.95.34/6666...
+2018-01-19 23:26:17	 ⇄ 	irc: connected to 139.59.95.34/6666 (139.59.95.34)
+2018-01-19 23:26:21	 ⇄ 	Welcome to the Rizon Internet Relay Chat Network icyphox
+2018-01-19 23:26:21	 ⇄ 	Your host is irc.losslessone.com, running version plexus-4(hybrid-8.1.20)
+2018-01-19 23:26:21	 ⇄ 	This server was created Sep 14 2017 at 19:49:00
+2018-01-19 23:26:21	 ⇄ 	irc.losslessone.com plexus-4(hybrid-8.1.20) CDGNRSUWagilopqrswxyz BCIMNORSabcehiklmnopqstvz Iabehkloqv
+2018-01-19 23:26:21	 ⇄ 	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=180 MODES=4 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ EXCEPTS=e INVEX=I NICKLEN=30 NETWORK=Rizon MAXLIST=beI:250 MAXTARGETS=4 :are supported by this server
+2018-01-19 23:26:21	 ⇄ 	CHANTYPES=# CHANLIMIT=#:250 CHANNELLEN=50 TOPICLEN=390 CHANMODES=beI,k,l,BCMNORScimnpstz NAMESX UHNAMES KNOCK WATCH=60 AWAYLEN=180 ELIST=CMNTU SAFELIST :are supported by this server
+2018-01-19 23:26:21	 ⇄ 	There are 32 users and 15182 invisible on 16 servers
+2018-01-19 23:26:21	 ⇄ 	55 :IRC Operators online
+2018-01-19 23:26:21	 ⇄ 	14906 :channels formed
+2018-01-19 23:26:21	 ⇄ 	I have 15214 clients and 16 servers
+2018-01-19 23:26:21	 ⇄ 	Current local users: 15214  Max: 19744
+2018-01-19 23:26:21	 ⇄ 	Current global users: 15214  Max: 19744
+2018-01-19 23:26:21	 ⇄ 	- irc.losslessone.com Message of the Day -
+2018-01-19 23:26:21	 ⇄ 	-          oo                            
+2018-01-19 23:26:21	 ⇄ 	-
+2018-01-19 23:26:21	 ⇄ 	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2018-01-19 23:26:21	 ⇄ 	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2018-01-19 23:26:21	 ⇄ 	- 88       88  .Y8P    88.  .88 88    88 
+2018-01-19 23:26:21	 ⇄ 	- dP       dP d888888P `88888P' dP    dP
+2018-01-19 23:26:21	 ⇄ 	-
+2018-01-19 23:26:21	 ⇄ 	- Rizon Chat Network -- http://rizon.net
+2018-01-19 23:26:21	 ⇄ 	-
+2018-01-19 23:26:21	 ⇄ 	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2018-01-19 23:26:21	 ⇄ 	-
+2018-01-19 23:26:21	 ⇄ 	- Rules:
+2018-01-19 23:26:21	 ⇄ 	- o No spamming or flooding
+2018-01-19 23:26:21	 ⇄ 	- o No clones or malicious bots
+2018-01-19 23:26:21	 ⇄ 	- o No takeovers
+2018-01-19 23:26:21	 ⇄ 	- o No distribution of child pornography
+2018-01-19 23:26:21	 ⇄ 	- o Clients must respond to VERSION requests
+2018-01-19 23:26:21	 ⇄ 	- o Rizon staff may disconnect clients for any or no reason
+2018-01-19 23:26:21	 ⇄ 	-
+2018-01-19 23:26:21	 ⇄ 	- First steps:
+2018-01-19 23:26:21	 ⇄ 	- o To register your nick: /msg NickServ HELP
+2018-01-19 23:26:21	 ⇄ 	- o To register your channel: /msg ChanServ HELP
+2018-01-19 23:26:21	 ⇄ 	- o To get a vHost: /msg HostServ HELP REQUEST
+2018-01-19 23:26:21	 ⇄ 	- o For other help with Rizon: /join #help
+2018-01-19 23:26:21	 ⇄ 	-
+2018-01-19 23:26:21	 ⇄ 	- Usage of this network is a privilege, not a right. Rizon is a
+2018-01-19 23:26:21	 ⇄ 	- transit provider, therefore no person or entity involved with
+2018-01-19 23:26:21	 ⇄ 	- *.rizon.net or irc.losslessone.com takes any responsibility for
+2018-01-19 23:26:21	 ⇄ 	- users' actions. Absolutely no warranty is expressed or implied.
+2018-01-19 23:26:21	 ⇄ 	End of /MOTD command.
+2018-01-19 23:26:21	 ⇄ 	User mode [+Sirx] by icyphox
+2018-01-19 23:26:21	 ⇄ 	You have been marked as being away
+2018-01-19 23:26:22	 ⇄ 	You are no longer marked as being away
+2018-01-20 00:14:54	 ⇄ 	irc: connecting to server 139.59.95.34/6666...
+2018-01-21 20:05:52	 ⇄ 	irc: connecting to server 139.59.95.34/6666...
