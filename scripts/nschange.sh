@@ -4,3 +4,4 @@
 
 echo nameserver 8.8.8.8 > /etc/resolv.conf
 chattr +i /etc/resolv.conf
+systemctl stop dhcpcd.sevice
