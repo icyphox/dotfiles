@@ -6,7 +6,7 @@
  chattr +i /etc/resolv.conf
 
 # kill dhcpcd (messes with IP)
- systemctl stop dhcpcd.sevice
+ systemctl stop dhcpcd
 
 # start VPN
  openvpn --config ~/icy.ovpn
