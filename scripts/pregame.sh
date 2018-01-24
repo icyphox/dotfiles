@@ -9,4 +9,4 @@
  systemctl stop dhcpcd
 
 # start VPN
- openvpn --config ~/icy.ovpn
+ openvpn --config /home/icyphox/icy.ovpn
