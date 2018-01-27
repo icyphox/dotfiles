@@ -17,7 +17,7 @@ bg = ${xrdb:color0}
 
 [bar/top]
 width = 100%
-height = 32
+height = 40
 offset-x = 0%
 offset-y= 0%
 fixed-center = true
@@ -27,8 +27,8 @@ override-redirect = false
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = mononoki:size=10:;0
-font-1 = Wuncon Siji:size=10:;0
+font-0 = mononoki:size=12:;0
+font-1 = Wuncon Siji:size=12:;0
 
 modules-left =  date time volume battery 
 modules-center = xwindow 
