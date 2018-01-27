@@ -28,7 +28,7 @@ background = ${colors.bg}
 foreground = ${colors.fg}
 
 font-0 = mononoki:size=12:;0
-font-1 = Wuncon Siji:size=12:;0
+font-1 = Material Icons:size=12:;1
 
 modules-left =  date time volume battery 
 modules-center = xwindow 
@@ -38,7 +38,7 @@ tray-position = right
 tray-padding = 0
 tray-background = ${colors.bg}
 tray-transparent = false
-tray-detached = false2
+tray-detached = false
 
 underline-size = 3
 
@@ -53,9 +53,9 @@ type = internal/volume
 
 format-volume = <ramp-volume><label-volume>
 module-margin-right = 1
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 format-volume-background = ${colors.bg}
 ramp-volume-foreground = ${xrdb:color6}
@@ -66,7 +66,7 @@ label-muted = - muted
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${xrdb:color6}
 module-margin-left = 2
 format-padding = 2
@@ -79,17 +79,17 @@ enable-scroll = true
 
 format = <label-state>
 
-label-active =  
-label-active-foreground = ${xrdb:color6}
+label-active = 
+label-active-foreground = ${colors.fg}
 label-active-background = ${colors.bg}
 ;label-active-padding = 1
 
-label-empty = 
+label-empty = 
 label-empty-foreground = ${colors.fg}
 label-empty-background = ${colors.bg}
 ;label-empty-padding = 1
 
-label-urgent = 
+label-urgent = 
 label-urgent-foreground = #EC5f67
 label-urgent-background = ${colors.bg}
 ;label-urgent-padding = 1
@@ -99,14 +99,14 @@ label-urgent-background = ${colors.bg}
 type = internal/date
 interval = 1
 date = " %A, %d %B 
-format-prefix = "" 
+format-prefix = "" 
 format-prefix-foreground = ${xrdb:color6}
 
 [module/time]
 type = internal/date
 interval = 1
 date = " %I:%M" 
-format-prefix = ""
+format-prefix = ""
 format-prefix-foreground = ${xrdb:color6}
 
 [module/battery]
@@ -116,27 +116,17 @@ battery = BAT0
 adapter = ACAD
 poll-interval = 5
 
-format-charging = <animation-charging><label-charging>
+format-charging = <ramp-capacity><label-charging>
 format-discharging = <ramp-capacity><label-discharging>
 label-charging = %percentage%%
 label-charging-foreground = ${colors.fg}
 label-discharging = %percentage%%
 label-discharging-foreground = ${colors.fg}
-label-full =  full!
+label-full =  full!
 ramp-capacity-foreground = ${xrdb:color6}
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-bar-capacity-width = 10
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-foreground = ${xrdb:color6}
-animation-charging-framerate = 750
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 
 [module/spotipy]
 type = custom/script
