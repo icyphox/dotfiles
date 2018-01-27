@@ -78,7 +78,7 @@ rofi.color-window:  base00, base00, base00
 rofi.color-normal:  base00, base05, base00, base01, base0B
 rofi.color-active:  base01, base0B, base02, base0B, base01
 rofi.color-urgent:  #e12a36, #dd2a4b, #1b2b34
-rofi.font: mononoki 10
+rofi.font: mononoki 11
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.location:0
