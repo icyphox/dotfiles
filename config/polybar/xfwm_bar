@@ -27,7 +27,7 @@ override-redirect = false
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = mononoki:size=12:;0
+font-0 = mononoki:size=12:;1
 font-1 = Material Icons:size=12:;2
 
 modules-left =  date time volume battery 
@@ -116,10 +116,10 @@ battery = BAT0
 adapter = ACAD
 poll-interval = 5
 
-format-charging = <ramp-capacity><label-charging>
+format-charging = <label-charging>
 format-discharging = <ramp-capacity><label-discharging>
-label-charging = %percentage%%
-label-charging-foreground = ${colors.fg}
+label-charging =  %percentage%%
+label-charging-foreground = ${xrdb:color6}
 label-discharging = %percentage%%
 label-discharging-foreground = ${colors.fg}
 label-full =  full!
