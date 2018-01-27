@@ -135,6 +135,4 @@ exec-if = pgrep spotify > /dev/null
 interval = 0.01
 click-left = playerctl -p spotify play-pause 
 
-
 ; vim:ft=dosini
- 
