@@ -51,7 +51,7 @@
 
 ! Urxvt config
 !---------------------
-URxvt.font: xft:Dina:size=8
+URxvt.font: xft:mononoki:size=10
 URxvt.boldFont:
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
@@ -78,7 +78,7 @@ rofi.color-window:  base00, base00, base00
 rofi.color-normal:  base00, base05, base00, base01, base0B
 rofi.color-active:  base01, base0B, base02, base0B, base01
 rofi.color-urgent:  #e12a36, #dd2a4b, #1b2b34
-rofi.font: Dina 8
+rofi.font: mononoki 10
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.location:0
@@ -87,4 +87,10 @@ rofi.width: 350
 rofi.yoffset: 26
 rofi.padding: 32
 
-
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault

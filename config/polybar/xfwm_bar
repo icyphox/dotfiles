@@ -27,8 +27,8 @@ override-redirect = false
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = Dina:size=9:;0
-font-1 = Wuncon Siji:size=9:;0
+font-0 = mononoki:size=10:;0
+font-1 = Wuncon Siji:size=10:;0
 
 modules-left =  date time volume battery 
 modules-center = xwindow 
