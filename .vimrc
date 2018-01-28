@@ -6,8 +6,7 @@
 "
 "
 
-autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 
 set shiftwidth=4     " indent = 4 spaces
 set noexpandtab      " tabs are tabs
@@ -32,7 +31,7 @@ set rtp+=~/.fzf
 set timeout timeoutlen=3000 ttimeoutlen=100
 set undodir=~/.vim/undodir
 
-colorscheme agila
+"colorscheme agila
 
 let mapleader=' '
 nnoremap <leader>n : nohlsearch<cr>
@@ -130,3 +129,11 @@ function! HelpInNewTab ()
         execute "normal \<C-W>T"
     endif
 endfunction
+
+" base16 stuff
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+highlight LineNr ctermbg=none
