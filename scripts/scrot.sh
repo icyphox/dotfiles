@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # screenshootin' lika boss
-
-scrot ~/pics/scrots/scrot_$(date +%F_%T).png 
+n=6; output=$(tr -cd '[:alnum:]' < /dev/urandom | head -c$n)
+scrot ~/pics/scrots/$output.png
 notify-send 'screenshot taken'
-~/scripts/oxo.sh ~/Pictures/scrots/scrot_$(date +%F_%T).png 
 
