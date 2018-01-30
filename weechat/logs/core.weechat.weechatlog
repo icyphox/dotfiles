@@ -29,3 +29,8 @@
 2018-01-21 20:05:47		script: 351 scripts for WeeChat 2.0.1
 2018-01-21 20:06:18		python: scripts unloaded
 2018-01-21 20:06:18		perl: scripts unloaded
+2018-01-30 16:56:48		perl scripts loaded: iset
+2018-01-30 16:56:48		python scripts loaded: notify_send
+2018-01-30 16:56:48		script: downloading list of scripts...
+2018-01-30 16:56:48		Plugins loaded: alias, aspell, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, script, tcl, trigger, xfer
+2018-01-30 16:56:50		script: 351 scripts for WeeChat 2.0.1
