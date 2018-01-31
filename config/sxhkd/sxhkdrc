@@ -13,3 +13,6 @@ super + d
 
 super + ctrl  + l
 	~/scripts/lock.sh
+
+super + p
+	rofi-pass
