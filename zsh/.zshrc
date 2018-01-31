@@ -18,7 +18,7 @@ export INPUTRC=~/.inputrc
 ZSH_THEME="simple"
 
 # plugins
-#plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 #source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
