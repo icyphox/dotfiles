@@ -30,6 +30,7 @@ alias icyinfo="~/scripts/icyinfo.sh"
 alias gah='sudo $(fc -ln -1)'
 alias lol="base64 </dev/urandom | lolcat"
 alias up="~/scripts/icyup.sh"
+alias envactivate="source .env/bin/activate"
 alias sxiv="sxiv -b"
 
 # end and home keys
