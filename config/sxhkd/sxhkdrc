@@ -6,7 +6,7 @@
 #                                   
 
 super + Return
-	gnome-terminal
+	urxvtc
 
 super + d
 	rofi -show run
