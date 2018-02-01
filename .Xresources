@@ -63,7 +63,7 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt.visualBell: false
 URxvt.depth: 20
 !URxvt.lineSpace: 2
-URxvt.geometry: 80x24 
+URxvt.geometry: 65x19
 URxvt.intensityStyles: false
 URxvt.iso14755: false
 URxvt.iso14755_52: false
