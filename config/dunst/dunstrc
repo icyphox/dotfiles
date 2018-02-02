@@ -1,5 +1,5 @@
 [global]
-    font = mononoki 12
+    font = Monoid 10
     allow_markup = yes
     plain_text = no
     format = "%s\n%b"
