@@ -49,9 +49,9 @@
 *color15:      base07
 
 
-! Urxvt config
+! Urxvt config 
 !---------------------
-URxvt.font: xft:mononoki:size=12
+URxvt.font: xft:Monoid:size=10
 URxvt.boldFont:
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
