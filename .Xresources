@@ -52,17 +52,17 @@
 ! Urxvt config 
 !---------------------
 URxvt.font: xft:Monoid:size=10
-URxvt.boldFont:
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30
 URxvt.perl-ext: default,matcher
 URxvt.letterSpace: -1
 URxvt.matcher.button: 1
+URxvt.boldFont:
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.visualBell: false
 URxvt.depth: 20
-!URxvt.lineSpace: 2
+URxvt.lineSpace: 1
 URxvt.geometry: 65x19
 URxvt.intensityStyles: false
 URxvt.iso14755: false
