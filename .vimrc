@@ -111,6 +111,12 @@ let g:gitgutter_sign_modified                  = '±'
 let g:gitgutter_sign_removed                   = '-'
 let g:gitgutter_sign_removed_first_line        = '^'
 let g:gitgutter_sign_modified_removed          = '#'
+highlight clear SignColumn
+
+highlight GitGutterAdd ctermfg=red
+highlight GitGutterChange ctermfg=red
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=red
 
 let g:help_in_tabs = 1
 
@@ -129,11 +135,5 @@ function! HelpInNewTab ()
         execute "normal \<C-W>T"
     endif
 endfunction
-
-" base16 stuff
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
 
 highlight LineNr ctermbg=none
