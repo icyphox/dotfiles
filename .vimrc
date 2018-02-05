@@ -137,3 +137,6 @@ function! HelpInNewTab ()
 endfunction
 
 highlight LineNr ctermbg=none
+hi TabLine ctermbg=blue
+hi TabLineFill ctermbg=black
+hi TabLineSel ctermbg=magenta
