@@ -4,7 +4,6 @@
 " _| |/ / / / / / / / /  / /__  
 "(_)___/_/_/ /_/ /_/_/   \___/  
 "
-"
 
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 
@@ -31,7 +30,7 @@ set rtp+=~/.fzf
 set timeout timeoutlen=3000 ttimeoutlen=100
 set undodir=~/.vim/undodir
 
-"colorscheme agila
+colorscheme agila
 
 let mapleader=' '
 nnoremap <leader>n : nohlsearch<cr>
