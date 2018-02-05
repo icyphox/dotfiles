@@ -2,45 +2,48 @@
 !    | |/ /________  _________  __  _______________  _____
 !    |   // ___/ _ \/ ___/ __ \/ / / / ___/ ___/ _ \/ ___/
 ! _ /   |/ /  /  __(__  ) /_/ / /_/ / /  / /__/  __(__  ) 
-!(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/  
-!                                                         
+!(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/  !                                                         
+#define base00 #1b2b34
+#define base01 #343d46
+#define base02 #4f5b66
+#define base03 #65737e
+#define base04 #a7adba
+#define base05 #c0c5ce
+#define base06 #cdd3de
+#define base07 #d8dee9
+#define base08 #ec5f67
+#define base09 #f99157
+#define base0A #fac863
+#define base0B #99c794
+#define base0C #5fb3b3
+#define base0D #6699cc
+#define base0E #c594c5
+#define base0F #ab7967
 
-! special
-*.foreground:   #98d1ce
-*.background:   #0a0f14
-*.cursorColor:  #98d1ce
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
 
-! black
-*.color0:       #0a0f14
-*.color8:       #10151b
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
 
-! red
-*.color1:       #c33027
-*.color9:       #d26939
-
-! green
-*.color2:       #26a98b
-*.color10:      #081f2d
-
-! yellow
-*.color3:       #edb54b
-*.color11:      #245361
-
-! blue
-*.color4:       #195465
-*.color12:      #093748
-
-! magenta
-*.color5:       #4e5165
-*.color13:      #888ba5
-
-! cyan
-*.color6:       #33859d
-*.color14:      #599caa
-
-! white
-*.color7:       #98d1ce
-*.color15:      #d3ebe9
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
 
 ! Urxvt config 
 !---------------------
@@ -69,11 +72,11 @@ URxvt.keysym.KP_End:  \033[4~
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window:  #060a0c, #060a0c, #060a0c
-rofi.color-normal:  #060a0c, #c5d7e3, #060a0c, #58849c, #c5d7e3
-rofi.color-active:  #000, #000, #000, #000, #000
+rofi.color-window:  base00, base00, base00
+rofi.color-normal:  base00, base05, base00, base05, base00
+rofi.color-active:  base07, base09, #000, #000, #000
 rofi.color-urgent:  #e12a36, #dd2a4b, #1b2b34
-rofi.font: mononoki 12
+rofi.font: Monoid 10
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.location:0
