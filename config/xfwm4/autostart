@@ -3,7 +3,7 @@ xfsettingsd &
 xfce4-power-manager &
 sxhkd &
 redshift &
-/home/icyphox/scripts/bar.sh &
+/home/icyphox/bin/bar.sh &
 xfdesktop &
 xset b off
 urxvtd &
