@@ -119,13 +119,13 @@ let g:gitgutter_sign_removed                   = '-'
 let g:gitgutter_sign_removed_first_line        = '^'
 let g:gitgutter_sign_modified_removed          = '#'
 highlight clear SignColumn
-
 highlight GitGutterAdd ctermfg=red
 highlight GitGutterChange ctermfg=red
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=red
 
 let g:help_in_tabs = 1
+let g:deoplete#enable_at_startup = 1
 
 nmap <silent> H :let g:help_in_tabs = !g:help_in_tabs<CR
 
