@@ -18,6 +18,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'reedes/vim-pencil'
 Plug 'chriskempson/base16-vim'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 
@@ -41,11 +42,10 @@ set undodir=~/.vim/undodir
 colorscheme agila
 
 let mapleader=' '
-nnoremap <leader>n : nohlsearch<cr>
-nnoremap <leader>l : Lines<cr>
-nnoremap <leader>b : Buffers<cr>
-nnoremap <leader>o : only<cr>
-nnoremap <leader>t : call GetTabber()<cr>
+nnoremap <leader>n :nohlsearch<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>o :only<cr>
+nnoremap <leader>t :call GetTabber()<cr>
 
 let g:currentmode={
     \ 'n'  : 'NORMAL ',
