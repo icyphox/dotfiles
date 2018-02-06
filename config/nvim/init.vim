@@ -13,7 +13,6 @@ set tabstop=4        " tab = 4 spaces
 set softtabstop=4    " backspace through spaces
 
 call plug#begin()
-Plug 'junegunn/fzf'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'reedes/vim-pencil'
