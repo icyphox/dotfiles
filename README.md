@@ -1,4 +1,4 @@
-![xfwm](https://xix.ph0x.me/6jC79k.png)
+![xfwm](https://xix.ph0x.me/ryVzhy.png)
 
 # dotfiles
 dots from my latest Arch install
