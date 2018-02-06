@@ -10,4 +10,5 @@
 # daemons
 #xfce4-power-manager &
 #exec xfwm4-session.sh
+exec startdde
 
