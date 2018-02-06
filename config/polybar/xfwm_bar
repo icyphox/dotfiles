@@ -79,20 +79,20 @@ enable-scroll = true
 
 format = <label-state>
 
-label-active = 
-label-active-foreground = ${colors.fg}
+label-active = ×
+label-active-foreground = ${xrdb:color6}
 label-active-background = ${colors.bg}
-;label-active-padding = 1
+label-active-padding = 1
 
-label-empty = 
+label-empty = •
 label-empty-foreground = ${colors.fg}
 label-empty-background = ${colors.bg}
-;label-empty-padding = 1
+label-empty-padding = 1
 
-label-urgent = 
+label-urgent = !
 label-urgent-foreground = #EC5f67
 label-urgent-background = ${colors.bg}
-;label-urgent-padding = 1
+label-urgent-padding = 1
 
 
 [module/date]
