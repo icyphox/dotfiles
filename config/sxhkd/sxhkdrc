@@ -12,7 +12,7 @@ super + d
 	rofi -show run
 
 super + ctrl  + l
-	~/scripts/lock.sh
+	~/bin/lock.sh
 
 super + p
 	rofi-pass
