@@ -47,11 +47,11 @@ init
 cat <<EOF
 
 $user${f2}@${rst}$host
-        os${f2}:${rst}          ${f7}$os${rst}
-┌───┐   kernel${f2}:${rst}      ${f7}$kernel${rst}
-│${f2}^${rst}_${f2}^${rst}│   shell${f2}:${rst}       ${f7}$shell${rst}
-└───┘   init${f2}:${rst}        ${f7}$init${rst}
-        wm${f2}:${rst}          ${f7}$wm${rst}
+        ${f2}os:${rst}          ${f7}$os${rst}
+┌───┐   ${f2}kernel:${rst}      ${f7}$kernel${rst}
+│${f2}^${rst}_${f2}^${rst}│   ${f2}shell:${rst}       ${f7}$shell${rst}
+└───┘   ${f2}init:${rst}        ${f7}$init${rst}
+        ${f2}wm:${rst}          ${f7}$wm${rst}
 
 EOF
 
