@@ -5,6 +5,8 @@
 #(_)___/____/_/ /_/_/   \___/  
 #
 
+precmd() { print "" }
+
 # export thingys
 export ZSH=/home/icyphox/.oh-my-zsh
 export BROWSER=/usr/bin/firefox-nightly
