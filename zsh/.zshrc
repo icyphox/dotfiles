@@ -27,11 +27,11 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 alias icysite="cd ~/leet/icysite"
-alias scrot="~/scripts/scrot.sh"
-alias icyinfo="~/scripts/icyinfo.sh"
+alias scrot="~/bin/scrot.sh"
+alias icyinfo="~/bin/icyinfo.sh"
 alias gah='sudo $(fc -ln -1)'
 alias lol="base64 </dev/urandom | lolcat"
-alias up="~/scripts/icyup.sh"
+alias up="~/bin/icyup.sh"
 alias vim="nvim"
 alias envactivate="source .env/bin/activate"
 alias sxiv="sxiv -b"
