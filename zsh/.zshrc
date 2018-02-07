@@ -12,6 +12,7 @@ export EDITOR=/usr/bin/nvim
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$HOME/bin
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 
