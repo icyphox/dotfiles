@@ -5,7 +5,7 @@
 "(_)___/_/_/ /_/ /_/_/   \___/  
 "
 
-autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 
 set shiftwidth=4     " indent = 4 spaces
 set noexpandtab      " tabs are tabs
