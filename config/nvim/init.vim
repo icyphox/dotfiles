@@ -19,6 +19,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'reedes/vim-pencil'
 Plug 'chriskempson/base16-vim'
 Plug 'godlygeek/tabular'
+Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 call plug#end()
 
