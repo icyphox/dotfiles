@@ -8,7 +8,7 @@
 # export thingys
 export ZSH=/home/icyphox/.oh-my-zsh
 export BROWSER=/usr/bin/firefox-nightly
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
