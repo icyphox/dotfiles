@@ -4,22 +4,22 @@
 ! _ /   |/ /  /  __(__  ) /_/ / /_/ / /  / /__/  __(__  ) 
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
-#define base00 #1b2b34
-#define base01 #343d46
-#define base02 #4f5b66
-#define base03 #65737e
-#define base04 #a7adba
-#define base05 #c0c5ce
-#define base06 #cdd3de
-#define base07 #d8dee9
-#define base08 #ec5f67
-#define base09 #f99157
-#define base0A #fac863
-#define base0B #99c794
-#define base0C #5fb3b3
-#define base0D #6699cc
-#define base0E #c594c5
-#define base0F #ab7967
+#define base00 #282828
+#define base01 #3c3836
+#define base02 #504945
+#define base03 #665c54
+#define base04 #bdae93
+#define base05 #d5c4a1
+#define base06 #ebdbb2
+#define base07 #fbf1c7
+#define base08 #fb4934
+#define base09 #fe8019
+#define base0A #fabd2f
+#define base0B #b8bb26
+#define base0C #8ec07c
+#define base0D #83a598
+#define base0E #d3869b
+#define base0F #d65d0e
 
 *foreground:   base05
 #ifdef background_opacity
