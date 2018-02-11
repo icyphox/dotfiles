@@ -9,7 +9,7 @@
 export ZSH=/home/icyphox/.oh-my-zsh
 export BROWSER=/usr/bin/firefox-nightly
 export EDITOR=/usr/bin/nvim
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$HOME/bin
@@ -22,7 +22,7 @@ ZSH_THEME="spaceship"
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-#source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # aliases
 alias icysite="cd ~/leet/icysite"
@@ -46,4 +46,3 @@ if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
-
