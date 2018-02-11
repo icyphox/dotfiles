@@ -146,6 +146,7 @@ function! HelpInNewTab ()
 endfunction
 
 highlight LineNr ctermbg=none
+highlight Comment cterm=italic
 hi TabLine ctermbg=black
 hi TabLineFill ctermbg=black
 hi TabLineSel ctermbg=magenta
