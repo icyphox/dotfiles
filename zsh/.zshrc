@@ -16,7 +16,7 @@ export PATH=$PATH:$HOME/bin
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 
-ZSH_THEME="simple"
+ZSH_THEME="spaceship"
 
 # plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
