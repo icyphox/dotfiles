@@ -14,7 +14,6 @@ set softtabstop=4    " backspace through spaces
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'reedes/vim-pencil'
 Plug 'chriskempson/base16-vim'
