@@ -10,8 +10,8 @@
 set $mod Mod4
 
 # set fonts in funky way
-font pango: bitbuntufull 9
-for_window [class=".*"] title_format "<span font='bitbuntufull 8'> > %title</span>"
+font pango: Fira Sans Medium 14
+for_window [class=".*"] title_format "<span font='Fira Sans Medium 12'> > %title</span>"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -23,7 +23,7 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+q kill
 
 # lock the screen
-bindsym $mod+Ctrl+l exec ~/scripts/lock.sh
+bindsym $mod+Ctrl+l exec ~/bin/lock.sh
 
 # start rofi (an alternative to dmenu)
 bindsym $mod+d exec "rofi -show run"
@@ -139,7 +139,7 @@ mode "resize" {
 
 assign [class="Steam"] $tag4
 assign [class="Battle.net.exe"] $tag5
-assign [class="inox"] $tag1
+assign [class="firefox"] $tag1
 assign [class="spotify"] $tag3
 
 # selectively enable floating
@@ -186,7 +186,7 @@ exec xrdb -load ~/.Xresources
 exec compton &
 exec xautolock -time 7 -locker lock &
 exec killall -q xfce4-notifyd
-exec_always --no-startup-id ~/scripts/bar.sh
+exec_always --no-startup-id ~/bin/bar.sh
 exec xrdb .Xresources
 exec feh --bg-fill ~/.wallpaper/wall.jpg
 exec xautolock -time 5 -locker ~/scripts/lock.sh
