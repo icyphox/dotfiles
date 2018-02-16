@@ -48,7 +48,7 @@
 
 ! Urxvt config 
 !---------------------
-URxvt.font: xft:Monoid:size=10
+URxvt.font: xft:Fira Mono:size=13
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30
