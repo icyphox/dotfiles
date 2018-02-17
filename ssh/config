@@ -8,6 +8,8 @@ Host github.com
 	IdentityFile ~/.ssh/github
 
 Host webarchsrm.com
+	Hostname 13.127.51.16
+	Port 443
 	User ubuntu
 	IdentityFile ~/.ssh/webarch-aws.pem
 
