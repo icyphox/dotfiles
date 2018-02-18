@@ -10,8 +10,8 @@
 set $mod Mod4
 
 # set fonts in funky way
-font pango: Fira Sans Medium 13
-for_window [class=".*"] title_format "<span font='Fira Sans Medium 11'> > %title</span>"
+font pango: Operator Mono Book 13
+for_window [class=".*"] title_format "<span font='Operator Mono Book 12'> > %title</span>"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -188,7 +188,7 @@ exec xautolock -time 7 -locker lock &
 exec killall -q xfce4-notifyd
 exec_always --no-startup-id ~/bin/bar.sh
 exec xrdb .Xresources
-exec feh --bg-fill ~/.wallpaper/wall.jpg
+exec feh --bg-fill ~/.wall
 exec xautolock -time 5 -locker ~/scripts/lock.sh
 exec urxvtd &
 exec xset -b
