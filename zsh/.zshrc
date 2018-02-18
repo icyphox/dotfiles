@@ -17,6 +17,7 @@ export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 
 ZSH_THEME="spaceship"
+export SPACESHIP_CHAR_SYMBOL="> "
 
 # plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
