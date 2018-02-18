@@ -34,7 +34,6 @@ alias nvime='nvim ~/.config/nvim/init.vim'
 alias up="~/bin/icyup.sh"
 alias vim="nvim"
 alias vi="nvim"
-alias envactivate="source .env/bin/activate"
 alias sxiv="sxiv -b"
 
 # end and home keys
