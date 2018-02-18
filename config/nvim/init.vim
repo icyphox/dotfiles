@@ -20,6 +20,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 
