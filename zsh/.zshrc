@@ -16,8 +16,11 @@ export PATH=$PATH:$HOME/bin
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 
+# theme specefic
 ZSH_THEME="spaceship"
 export SPACESHIP_CHAR_SYMBOL="> "
+export SPACESHIP_USER_SHOW=always
+export SPACESHIP_HOST_SHOW=always
 
 # plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
