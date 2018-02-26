@@ -17,14 +17,14 @@ export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 
 # theme specefic
-ZSH_THEME="spaceship"
-export SPACESHIP_CHAR_SYMBOL="> "
+ZSH_THEME="simple"
+#export SPACESHIP_CHAR_SYMBOL="> "
 
 # plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # aliases
 alias icysite="cd ~/leet/icysite"
@@ -44,10 +44,10 @@ bindkey "^[[4~" end-of-line
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # gnome-keyring thing
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
+#if [ -n "$DESKTOP_SESSION" ];then
+#    eval $(gnome-keyring-daemon --start)
+#    export SSH_AUTH_SOCK
+#fi
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
