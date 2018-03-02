@@ -7,7 +7,7 @@ Host github.com
 	Port 443
 	IdentityFile ~/.ssh/github
 
-Host webarchsrm.com
+Host webarch
 	Hostname 13.127.51.16
 	Port 443
 	User ubuntu
@@ -17,4 +17,9 @@ Host boop
 	User icy
 	Port 443
 	Hostname boop.ph0x.me
+	IdentityFile ~/.ssh/id_rsa
+
+Host milan
+	Hostname 35.154.128.132
+	User ubuntu
 	IdentityFile ~/.ssh/id_rsa
