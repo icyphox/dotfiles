@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# nrnl.sh - displays sys info
+# icyinfo.sh - displays sys info
 
 # colors
 f=3 b=4
