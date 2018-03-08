@@ -34,7 +34,6 @@ set laststatus=2
 set noshowmode
 set hlsearch
 set incsearch
-"set cursorline
 set ignorecase
 set scrolloff=12
 set rtp+=~/.fzf
