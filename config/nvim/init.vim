@@ -131,13 +131,13 @@ let g:deoplete#enable_at_startup = 1
 
 nmap <silent> H :let g:help_in_tabs = !g:help_in_tabs<CR
 
-"Only apply to .txt files...
+" Only apply to .txt files
 augroup HelpInTabs
     autocmd!
     autocmd BufEnter  *.txt   call HelpInNewTab()
 augroup END
 
-"Only apply to help files...
+" Only apply to help files
 function! HelpInNewTab ()
     if &buftype == 'help' && g:help_in_tabs
         "Convert the help window to a tab...
