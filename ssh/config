@@ -23,3 +23,9 @@ Host milan
 	Hostname 35.154.128.132
 	User ubuntu
 	IdentityFile ~/.ssh/id_rsa
+
+Host parth
+	Hostname 139.59.23.170
+    User root
+	IdentityFile ~/.ssh/webarchdo
+
