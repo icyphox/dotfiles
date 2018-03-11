@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://xix.ph0x.me/rice.png" width="100px">dotfiles</h1>
+<h1 align="center"><img src="https://xix.ph0x.me/rice.png" width="100px"><font size="5">dotfiles</font></h1>
 
 ![gnome](https://xix.ph0x.me/asdflk.png)
 
