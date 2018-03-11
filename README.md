@@ -1,6 +1,4 @@
-<h1 align="center">:rice: dotfiles</h1>
-
-dots from my Pop!\_OS install 
+<h1 align="center"><img src="https://xix.ph0x.me/rice.png">dotfiles</h1>
 
 ![gnome](https://xix.ph0x.me/asdflk.png)
 
