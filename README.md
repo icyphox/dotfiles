@@ -1,4 +1,4 @@
-<center><h1>:rice: dotfiles</h1></center>  
+<h1 align="center">:rice: dotfiles</h1>
 
 dots from my Pop!\_OS install 
 
