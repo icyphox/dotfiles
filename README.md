@@ -1,5 +1,4 @@
 <p align="center">
-<img src="https://xix.ph0x.me/dotfiles.png">
 </p>
 
 *config files, scripts, and settings - all stored in one place and symlinked when necessary.*
