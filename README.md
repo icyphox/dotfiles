@@ -4,6 +4,9 @@
 
 ![gnome](https://xix.ph0x.me/asdflk.png)
 
+## dots for my Linux box
+config files, scripts, and settings - all stored in one place and symlinked when necessary.
+
 ### why is there no rice?
 it was eating into my time, and I found myself being less and less productive. 
 
