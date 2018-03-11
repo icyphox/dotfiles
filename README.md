@@ -1,7 +1,8 @@
-![gnome](https://xix.ph0x.me/asdflk.png)
+<center><h1>:rice: dotfiles</h1></center>  
 
-# dotfiles
 dots from my Pop!\_OS install 
+
+![gnome](https://xix.ph0x.me/asdflk.png)
 
 ### why is there no rice?
 it was eating into my time, and I found myself being less and less productive. 
