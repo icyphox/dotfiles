@@ -1,4 +1,7 @@
-<img src="https://xix.ph0x.me/dotfiles.png" align="center">
+<p align="center">
+<img src="https://xix.ph0x.me/dotfiles.png">
+</p>
+
 ![gnome](https://xix.ph0x.me/asdflk.png)
 
 ### why is there no rice?
