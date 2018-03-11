@@ -1,5 +1,4 @@
-<h1 align="center"><img src="https://xix.ph0x.me/rice.png" width="100px"><font size="5">dotfiles</font></h1>
-
+<img src="https://xix.ph0x.me/dotfiles.png" align="center">
 ![gnome](https://xix.ph0x.me/asdflk.png)
 
 ### why is there no rice?
