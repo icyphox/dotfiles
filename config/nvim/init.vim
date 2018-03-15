@@ -21,6 +21,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
+Plug 'ervandew/supertab'
 call plug#end()
 
 
@@ -39,6 +40,7 @@ set scrolloff=12
 set rtp+=~/.fzf
 set timeout timeoutlen=3000 ttimeoutlen=100
 set undodir=~/.vim/undodir
+set nowrap
 
 colorscheme agila
 
