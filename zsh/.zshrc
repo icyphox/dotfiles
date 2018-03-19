@@ -38,6 +38,7 @@ alias vi="nvim"
 alias sxiv="sxiv -b"
 alias todo="todo.sh"
 alias ls="exa"
+alias la="exa -al"
 
 # end and home keys
 bindkey "^[[1~" beginning-of-line
