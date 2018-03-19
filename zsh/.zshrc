@@ -21,10 +21,9 @@ ZSH_THEME="simple"
 #export SPACESHIP_CHAR_SYMBOL="> "
 
 # plugins
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # aliases
 alias icysite="cd ~/leet/icysite"
