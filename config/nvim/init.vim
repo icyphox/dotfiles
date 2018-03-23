@@ -22,6 +22,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'ervandew/supertab'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 
