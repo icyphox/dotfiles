@@ -42,6 +42,7 @@ set rtp+=~/.fzf
 set timeout timeoutlen=3000 ttimeoutlen=100
 set undodir=~/.vim/undodir
 set nowrap
+set cursorline
 
 colorscheme agila
 
