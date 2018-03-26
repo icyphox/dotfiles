@@ -31,12 +31,15 @@ export const configuration = {
     "tabs.mode": "buffers",
     "recorder.copyScreenshotToClipboard": true,
     "recorder.outputPath": "~/pics/scrots",
+	"language.python.languageServer.command": "pyls"
     //"oni.useDefaultConfig": true,
     //"oni.bookmarks": ["~/Documents"],
     "oni.loadInitVim": true,
     "editor.fontSize": "18px",
     "editor.fontFamily": "Operator Mono Book",
     "editor.clipboard.enabled": true,
+    "oni.useExternalPopupMenu": true,
+    "autoClosingPairs.enabled": true,
 
     // UI customizations
     "ui.animations.enabled": true,
