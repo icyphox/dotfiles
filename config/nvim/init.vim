@@ -23,7 +23,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'ervandew/supertab'
 Plug 'rust-lang/rust.vim'
-Plug 'python-mode/python-mode'
 call plug#end()
 
 
