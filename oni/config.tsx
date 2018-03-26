@@ -1,21 +1,10 @@
-
 import * as React from "/opt/Oni/resources/app/node_modules/react"
 import * as Oni from "/opt/Oni/resources/app/node_modules/oni-api"
 
 export const activate = (oni: Oni.Plugin.Api) => {
     console.log("config activated")
 
-    // Input
-    //
-    // Add input bindings here:
-    //
     oni.input.bind("<c-enter>", () => console.log("Control+Enter was pressed"))
-
-    //
-    // Or remove the default bindings here by uncommenting the below line:
-    //
-    // oni.input.unbind("<c-p>")
-
 }
 
 export const deactivate = (oni: Oni.Plugin.Api) => {
@@ -23,24 +12,22 @@ export const deactivate = (oni: Oni.Plugin.Api) => {
 }
 
 export const configuration = {
-    //add custom config here, such as
-
-    "ui.colorscheme": "nord",
+    "ui.colorscheme": "onedark",
     "ui.fontFamily": "Fira Sans",
     "ui.fontSize": "16px",
-    "tabs.mode": "buffers",
+    "tabs.mode": "buffer",
+    "tabs.enabled": true,
     "recorder.copyScreenshotToClipboard": true,
     "recorder.outputPath": "~/pics/scrots",
-	"language.python.languageServer.command": "pyls"
-    //"oni.useDefaultConfig": true,
-    //"oni.bookmarks": ["~/Documents"],
-    "oni.loadInitVim": true,
+    "language.python.languageServer.command": "pyls",
+//    "oni.loadInitVim": true,
+    "oni.useDefaultConfig": true,
+    "oni.hideMenu": true,
     "editor.fontSize": "18px",
     "editor.fontFamily": "Operator Mono Book",
     "editor.clipboard.enabled": true,
     "oni.useExternalPopupMenu": true,
     "autoClosingPairs.enabled": true,
-
     // UI customizations
     "ui.animations.enabled": true,
     "ui.fontSmoothing": "auto",
