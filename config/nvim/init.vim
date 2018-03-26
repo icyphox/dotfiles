@@ -147,7 +147,7 @@ function! HelpInNewTab ()
     endif
 endfunction
 
-highlight LineNr ctermbg=none
+highlight LineNr ctermbg=none guibg=none
 highlight Comment cterm=italic
 hi TabLine ctermbg=black
 hi TabLineFill ctermbg=black
