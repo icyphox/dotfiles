@@ -2,7 +2,7 @@
 <img src="https://xix.ph0x.me/dotfiles.png">
 </p>
 
-![gnome](https://xix.ph0x.me/asdflk.png)
+![gnome](https://xix.ph0x.me/2byoWB.png)
 
 
 ### why is there no rice?
