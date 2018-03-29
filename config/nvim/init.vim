@@ -23,6 +23,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'ervandew/supertab'
 Plug 'rust-lang/rust.vim'
+Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
 
@@ -51,6 +52,8 @@ nnoremap <leader>n :nohlsearch<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>o :only<cr>
 nnoremap <leader>t :call GetTabber()<cr>
+nnoremap H H:exec 'norm! '. &scrolloff . 'k'<cr>
+nnoremap L L:exec 'norm! '. &scrolloff . 'j'<cr>
 
 let g:currentmode={
     \ 'n'  : 'NORMAL ',
