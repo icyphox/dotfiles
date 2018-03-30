@@ -24,6 +24,7 @@ Plug 'mxw/vim-jsx'
 Plug 'ervandew/supertab'
 Plug 'rust-lang/rust.vim'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 
@@ -44,6 +45,7 @@ set timeout timeoutlen=3000 ttimeoutlen=100
 set undodir=~/.vim/undodir
 set nowrap
 set cursorline
+set conceallevel=2 
 
 colorscheme agila
 
@@ -158,3 +160,9 @@ hi TabLineFill ctermbg=black
 hi TabLineSel ctermbg=magenta
 hi CursorLine ctermbg=none 
 hi CursorLineNr ctermbg=none
+
+" vim-markdown stuff
+let g:vim_markdown_no_default_key_mappings=1
+let g:vim_markdown_toml_frontmatter=1
+let g:vim_markdown_yaml_fromtmatter=1
+let g:vim_markdown_folding_disabled=1
