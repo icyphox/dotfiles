@@ -1,5 +1,5 @@
 NEWLINE=$'\n'
-PROMPT='%{$fg[cyan]%}%~%{$fg[yellow]%}$(git_prompt_info)${NEWLINE}%{$fg[magenta]%}>%{$reset_color%} '
+PROMPT='${NEWLINE}%{$fg[cyan]%}%~%{$fg[yellow]%}$(git_prompt_info)${NEWLINE}%{$fg[magenta]%}>%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" "
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
