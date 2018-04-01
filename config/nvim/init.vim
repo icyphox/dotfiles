@@ -27,6 +27,12 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'plasticboy/vim-markdown'
 call plug#end()
 
+" indentation
+augroup indents
+	autocmd!
+	autocmd FileType less,css,html setlocal ts=2 sts=2 sw=2 expandtab
+	autocmd FileType text,markdown setlocal expandtab
+augroup END
 
 set swapfile
 set dir=/tmp
