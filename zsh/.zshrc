@@ -18,7 +18,6 @@ export INPUTRC=~/.inputrc
 
 # theme specefic
 ZSH_THEME="simple"
-#export SPACESHIP_CHAR_SYMBOL="> "
 
 # plugins
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
