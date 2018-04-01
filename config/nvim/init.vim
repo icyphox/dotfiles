@@ -4,8 +4,6 @@
 "| | | | | | |_ \ V /| | | | | | |
 "|_|_| |_|_|\__(_)_/ |_|_| |_| |_|
 
-"autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-
 set shiftwidth=4     " indent = 4 spaces
 set noexpandtab      " tabs are tabs
 set tabstop=4        " tab = 4 spaces
@@ -34,6 +32,7 @@ augroup indents
 	autocmd FileType text,markdown setlocal expandtab
 augroup END
 
+" basic settings
 set swapfile
 set dir=/tmp
 set number
@@ -53,8 +52,10 @@ set nowrap
 set cursorline
 set conceallevel=2 
 
+" colorscheme
 colorscheme agila
 
+" keybindings
 let mapleader=' '
 nnoremap <leader>n :nohlsearch<cr>
 nnoremap <leader>b :Buffers<cr>
@@ -63,6 +64,7 @@ nnoremap <leader>t :call GetTabber()<cr>
 nnoremap H H:exec 'norm! '. &scrolloff . 'k'<cr>
 nnoremap L L:exec 'norm! '. &scrolloff . 'j'<cr>
 
+" statusline
 let g:currentmode={
     \ 'n'  : 'NORMAL ',
     \ 'no' : 'N·Operator Pending ',
@@ -106,6 +108,7 @@ function! GitBranch()
 endfunction
 
 
+" bunch of functions
 function! S_gitgutter()  " formatted git hunk summary for statusline
 	if exists('b:gitgutter')
 		let l:summary = b:gitgutter.summary
@@ -140,18 +143,19 @@ highlight GitGutterChange ctermfg=red
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=red
 
+" deoplete 
 let g:help_in_tabs = 1
 let g:deoplete#enable_at_startup = 1
 
 nmap <silent> H :let g:help_in_tabs = !g:help_in_tabs<CR
 
-" Only apply to .txt files
+" only apply to .txt files
 augroup HelpInTabs
     autocmd!
     autocmd BufEnter  *.txt   call HelpInNewTab()
 augroup END
 
-" Only apply to help files
+" only apply to help files
 function! HelpInNewTab ()
     if &buftype == 'help' && g:help_in_tabs
         "Convert the help window to a tab...
@@ -159,6 +163,7 @@ function! HelpInNewTab ()
     endif
 endfunction
 
+" color overrides
 highlight LineNr ctermbg=none guibg=none
 highlight Comment cterm=italic
 hi TabLine ctermbg=black
@@ -167,7 +172,7 @@ hi TabLineSel ctermbg=magenta
 hi CursorLine ctermbg=none 
 hi CursorLineNr ctermbg=none
 
-" vim-markdown stuff
+" vim-markdown 
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_toml_frontmatter=1
 let g:vim_markdown_yaml_fromtmatter=1
