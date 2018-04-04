@@ -23,6 +23,7 @@ Plug 'ervandew/supertab'
 Plug 'rust-lang/rust.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'kristijanhusak/vim-carbon-now-sh'
 call plug#end()
 
 " indentation
@@ -63,6 +64,7 @@ nnoremap <leader>o :only<cr>
 nnoremap <leader>t :call GetTabber()<cr>
 nnoremap H H:exec 'norm! '. &scrolloff . 'k'<cr>
 nnoremap L L:exec 'norm! '. &scrolloff . 'j'<cr>
+vnoremap <F5> :CarbonNowSh<CR>
 
 " statusline
 let g:currentmode={
