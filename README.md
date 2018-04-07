@@ -1,15 +1,13 @@
-<p align="center">
-<img src="https://xix.ph0x.me/dotfiles.png">
-</p>
+<h1 align="center">
+    <img width="400" src="https://xix.ph0x.me/dotfiles.png">
+</h1>
 
 ![gnome](https://xix.ph0x.me/2byoWB.png)
 
+### System
+- HP Envy 13 
+- i5 8250U @ 1.60 GHz × 8
+- 8GB LP-DDR3 RAM
+- 256GB NVMe SSD
 
-### why is there no rice?
-it was eating into my time, and I found myself being less and less productive. 
 
-### will I get back to it?
-yeah definitely, just don't know when.
-
-### why not Arch?
-well it broke, and I wanted to try something new, something that didn't need setting up (and subsequently more time spent).
