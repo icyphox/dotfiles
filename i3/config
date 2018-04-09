@@ -177,8 +177,8 @@ client.unfocused        $base00 $base00 $base05 $base03 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
-smart_gaps on
-smart_borders on
+# smart_gaps on
+# smart_borders on
 
 
 # executions
