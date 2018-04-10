@@ -2,7 +2,7 @@
     <img width="400" src="https://xix.ph0x.me/dotfiles.png">
 </h1>
 
-![gnome](https://xix.ph0x.me/2byoWB.png)
+![gnome](https://xix.ph0x.me/1J1wG4.png)
 
 ### System
 - HP Envy 13 
