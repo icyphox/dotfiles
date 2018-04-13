@@ -25,6 +25,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 # sourced scripts
 source $ZSH/oh-my-zsh.sh
 source /usr/share/autojump/autojump.zsh
+source $HOME/.cargo/env
 
 # aliases
 alias icysite="cd ~/leet/icysite"
