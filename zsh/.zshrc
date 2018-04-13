@@ -34,6 +34,7 @@ alias icyinfo="~/bin/icyinfo.sh"
 alias gah='sudo $(fc -ln -1)'
 alias nvime='nvim ~/.config/nvim/init.vim'
 alias up="~/bin/icyup.sh"
+alias envac="source .env/bin/activate"
 alias vim="nvim"
 alias vi="nvim"
 alias sxiv="sxiv -b"
