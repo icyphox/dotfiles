@@ -42,6 +42,7 @@ alias todo="todo.sh"
 alias ls="exa"
 alias la="exa -al"
 alias warcraft="wine Warcraft/Frozen\ Throne.exe -opengl"
+alias socks="ssh -D 8008 boop"
 alias vpn="sudo openvpn --config client.ovpn --script-security 2"
 
 # end and home keys
