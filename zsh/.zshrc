@@ -16,6 +16,9 @@ export PATH=$PATH:$HOME/bin
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 
+# theme specefic
+ZSH_THEME="simple"
+
 # plugins
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
@@ -23,9 +26,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 source /usr/share/autojump/autojump.zsh
 # source $HOME/.cargo/env
-
-# theme specefic
-ZSH_THEME="simple"
 
 # aliases
 alias scrot="~/bin/scrot.sh"
