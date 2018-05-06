@@ -7,7 +7,7 @@
 
 # export thingys
 export ZSH=/home/icyphox/.oh-my-zsh
-export BROWSER=/usr/bin/firefox-nightly
+export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/nvim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export GOROOT=$HOME/go
@@ -16,19 +16,18 @@ export PATH=$PATH:$HOME/bin
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 
-# theme specefic
-ZSH_THEME="simple"
-
 # plugins
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 # sourced scripts
 source $ZSH/oh-my-zsh.sh
 source /usr/share/autojump/autojump.zsh
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
+
+# theme specefic
+ZSH_THEME="simple"
 
 # aliases
-alias icysite="cd ~/leet/icysite"
 alias scrot="~/bin/scrot.sh"
 alias icyinfo="~/bin/icyinfo.sh"
 alias gah='sudo $(fc -ln -1)'
