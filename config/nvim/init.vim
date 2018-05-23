@@ -24,6 +24,7 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'zchee/deoplete-jedi'
+Plug 'zah/nim.vim'
 call plug#end()
 
 " indentation
