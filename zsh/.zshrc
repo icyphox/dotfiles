@@ -15,6 +15,7 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$HOME/bin
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
+export PATH=$PATH:$HOME/leet/Nim/bin
 
 # theme specefic
 ZSH_THEME="simple"
