@@ -9,7 +9,10 @@ var data = newMultipartData()
 
 try:
   var file = paramStr(1)
-  data.addFiles({"file": fmt"{file}"})
+  try:
+    data.addFiles({"file": fmt"{file}"})
+  except IOError:
+    echo ";("
   let url = "http://0x0.st"
   echo client.postContent(url, multipart=data)
 except IndexError:
