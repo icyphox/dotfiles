@@ -53,6 +53,7 @@ set undodir=~/.vim/undodir
 set nowrap
 set cursorline
 set conceallevel=2 
+set mouse=a
 
 " colorscheme
 colorscheme agila
