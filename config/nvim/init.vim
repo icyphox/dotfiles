@@ -73,41 +73,39 @@ vnoremap <F5> :CarbonNowSh<CR>
 
 " statusline
 let g:currentmode={
-    \ 'n'  : 'NORMAL ',
-    \ 'no' : 'N·Operator Pending ',
-    \ 'v'  : 'VISUAL ',
-    \ 'V'  : 'V·Line ',
-    \ '' : 'V·Block',
-    \ 's'  : 'Select ',
-    \ 'S'  : 'S·Line ',
-    \ '' : 'S·Block',
-    \ 'i'  : 'INSERT ',
-    \ 'R'  : 'REPLACE ',
-    \ 'Rv' : 'V·Replace ',
-    \ 'c'  : 'Command ',
-    \ 'cv' : 'Vim Ex ',
-    \ 'ce' : 'Ex ',
-    \ 'r'  : 'Prompt ',
-    \ 'rm' : 'MORE ',
-    \ 'r?' : 'CONFIRM ',
-    \ '!'  : 'SHELL ',
-    \ 't'  : 'TERMINAL '}
+			\ 'n'  : 'NORMAL ',
+			\ 'no' : 'N·Operator Pending ',
+			\ 'v'  : 'VISUAL ',
+			\ 'V'  : 'V·Line ',
+			\ '' : 'V·Block',
+			\ 's'  : 'Select ',
+			\ 'S'  : 'S·Line ',
+			\ '' : 'S·Block',
+			\ 'i'  : 'INSERT ',
+			\ 'R'  : 'REPLACE ',
+			\ 'Rv' : 'V·Replace ',
+			\ 'c'  : 'Command ',
+			\ 'cv' : 'Vim Ex ',
+			\ 'ce' : 'Ex ',
+			\ 'r'  : 'Prompt ',
+			\ 'rm' : 'MORE ',
+			\ 'r?' : 'CONFIRM ',
+			\ '!'  : 'SHELL ',
+			\ 't'  : 'TERMINAL '}
 
 set statusline=
-set statusline+=%#TabLineSel#
+set statusline+=%#PrimaryBlock#
 set statusline+=\ %{g:currentmode[mode()]}
-set statusline+=%#TODO#
+set statusline+=%#TabLineSel#
 set statusline+=%{StatuslineGit()}
 set statusline+=%#TabLineFill#
 set statusline+=\ %f\ 
 set statusline+=%m
-set statusline+=%#TabLineFill#
 set statusline+=%=
-set statusline+=%#TODO#
-set statusline+=\ %l\  
 set statusline+=%#TabLineSel#
+set statusline+=\ %l\  
+set statusline+=%#PrimaryBlock#
 set statusline+=\ %y\ 
-set statusline+=%#TabLine#
 
 " for git branch in statusline, from nerdypepper
 function! GitBranch()
@@ -144,11 +142,6 @@ let g:gitgutter_sign_modified                  = '±'
 let g:gitgutter_sign_removed                   = '-'
 let g:gitgutter_sign_removed_first_line        = '^'
 let g:gitgutter_sign_modified_removed          = '#'
-highlight clear SignColumn
-highlight GitGutterAdd ctermfg=red
-highlight GitGutterChange ctermfg=red
-highlight GitGutterDelete ctermfg=red
-highlight GitGutterChangeDelete ctermfg=red
 
 " deoplete 
 let g:help_in_tabs = 1
@@ -158,27 +151,27 @@ nmap <silent> H :let g:help_in_tabs = !g:help_in_tabs<CR
 
 " only apply to .txt files
 augroup HelpInTabs
-    autocmd!
-    autocmd BufEnter  *.txt   call HelpInNewTab()
+	autocmd!
+	autocmd BufEnter  *.txt   call HelpInNewTab()
 augroup END
 
 " only apply to help files
 function! HelpInNewTab ()
-    if &buftype == 'help' && g:help_in_tabs
-        "Convert the help window to a tab...
-        execute "normal \<C-W>T"
-    endif
+	if &buftype == 'help' && g:help_in_tabs
+		"Convert the help window to a tab...
+		execute "normal \<C-W>T"
+	endif
 endfunction
 
-" color overrides
-highlight LineNr ctermbg=none guibg=none
-highlight Comment cterm=italic
-hi TabLine ctermbg=black
-hi TabLineFill ctermbg=black
-hi TabLineSel ctermbg=magenta
-hi CursorLine ctermbg=none 
-hi CursorLineNr ctermbg=none
-
+"  color overrides
+"highlight LineNr ctermbg=none guibg=none
+"highlight Comment cterm=italic
+"hi TabLine ctermbg=black
+"hi TabLineFill ctermbg=black
+"hi TabLineSel ctermbg=magenta
+"hi CursorLine ctermbg=none 
+"hi CursorLineNr ctermbg=none
+"
 " vim-markdown 
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_toml_frontmatter=1
