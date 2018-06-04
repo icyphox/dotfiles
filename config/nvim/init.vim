@@ -169,7 +169,7 @@ endfunction
 "hi TabLine ctermbg=black
 "hi TabLineFill ctermbg=black
 "hi TabLineSel ctermbg=magenta
-"hi CursorLine ctermbg=none 
+hi CursorLine ctermbg=none
 "hi CursorLineNr ctermbg=none
 "
 " vim-markdown 
