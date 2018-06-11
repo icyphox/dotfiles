@@ -6,7 +6,7 @@
 #
 
 # export thingys
-export ZSH=/home/icyphox/.oh-my-zsh
+export ZSH=/home/$USER/.oh-my-zsh
 export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/nvim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
@@ -18,7 +18,8 @@ export INPUTRC=~/.inputrc
 export PATH=$PATH:$HOME/leet/Nim/bin
 
 # theme specefic
-ZSH_THEME="simple"
+ZSH_THEME="icy"
+COMPLETION_WAITING_DOTS="true"
 
 # plugins
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
@@ -26,7 +27,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 # sourced scripts
 source $ZSH/oh-my-zsh.sh
 source /usr/share/autojump/autojump.zsh
-# source $HOME/.cargo/env
 
 # aliases
 alias scrot="~/bin/scrot.sh"
@@ -45,6 +45,7 @@ alias la="exa -al"
 alias warcraft="wine Warcraft/Frozen\ Throne.exe -opengl"
 alias socks="ssh -D 8008 boop"
 alias vpn="sudo openvpn --config client.ovpn --script-security 2"
+alias o="xdg-open"
 
 # end and home keys
 bindkey "^[[1~" beginning-of-line
