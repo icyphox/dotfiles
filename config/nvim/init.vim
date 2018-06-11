@@ -179,5 +179,5 @@ let g:vim_markdown_yaml_fromtmatter=1
 let g:vim_markdown_folding_disabled=1
 
 " deoplete-jedi
-let g:python_host_prog = '/home/icyphox/.pynvim2/bin/python'
-let g:python3_host_prog = '/home/icyphox/.pynvim3/bin/python'
+let g:python_host_prog = '/home/icy/.pynvim2/bin/python'
+let g:python3_host_prog = '/home/icy/.pynvim3/bin/python'
