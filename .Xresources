@@ -48,7 +48,7 @@
 
 ! Urxvt config 
 !---------------------
-URxvt.font: xft:Operator Mono Book:size=15
+URxvt.font: xft:Operator Mono Book:size=14
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30
