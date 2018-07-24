@@ -10,7 +10,6 @@ export ZSH=/home/$USER/.oh-my-zsh
 export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/nvim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$HOME/bin
 export GPG_TTY=$(tty)
