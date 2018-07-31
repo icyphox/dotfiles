@@ -49,7 +49,7 @@ alias o="xdg-open"
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Defer initialization of nvm until nvm, node or a node-dependent command is
 # run. Ensure this block is only run once if .bashrc gets sourced multiple times
