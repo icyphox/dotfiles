@@ -28,3 +28,8 @@ Host parth
     User root
 	IdentityFile ~/.ssh/webarchdo
 
+Host general.wisopt
+	Hostname general.wisopt.com
+	User ubuntu
+	IdentityFile ~/.ssh/Monkwish.pem
+
