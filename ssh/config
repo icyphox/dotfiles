@@ -33,3 +33,7 @@ Host general.wisopt
 	User ubuntu
 	IdentityFile ~/.ssh/Monkwish.pem
 
+Host jenkins.wisopt
+	Hostname jenkins.wisopt.com
+	User ubuntu
+	IdentityFile ~/.ssh/Monkwish.pem
