@@ -1,8 +1,7 @@
-<h1 align="center">
-    <img width="400" src="https://0x0.st/svaU.png">
-</h1>
+# dotfiles
+> config files from my Linux box
 
-![gnome](https://xix.ph0x.me/1J1wG4.png)
+![gnome](https://0x0.st/svaU.png)
 
 ### System
 - HP Envy 13 
