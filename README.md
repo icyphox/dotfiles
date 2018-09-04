@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img width="400" src="https://xix.ph0x.me/dotfiles.png">
+    <img width="400" src="https://0x0.st/svaU.png">
 </h1>
 
 ![gnome](https://xix.ph0x.me/1J1wG4.png)
