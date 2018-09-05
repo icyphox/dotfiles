@@ -45,6 +45,7 @@ alias socks="ssh -D 8008 boop"
 alias vpn="sudo openvpn --config client.ovpn --script-security 2"
 alias o="xdg-open"
 alias cat="bat"
+alias gc="git commit -v -s"
 
 # end and home keys
 bindkey "^[[1~" beginning-of-line
