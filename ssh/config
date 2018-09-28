@@ -22,18 +22,3 @@ Host milan
 	Hostname 35.154.128.132
 	User ubuntu
 	IdentityFile ~/.ssh/id_rsa
-
-Host parth
-	Hostname 139.59.23.170
-    User root
-	IdentityFile ~/.ssh/webarchdo
-
-Host general.wisopt
-	Hostname general.wisopt.com
-	User ubuntu
-	IdentityFile ~/.ssh/Monkwish.pem
-
-Host jenkins.wisopt
-	Hostname jenkins.wisopt.com
-	User ubuntu
-	IdentityFile ~/.ssh/Monkwish.pem
