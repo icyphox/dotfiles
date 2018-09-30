@@ -26,6 +26,7 @@ Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
 Plug 'w0rp/ale'
+Plug 'arrufat/vala.vim'
 call plug#end()
 
 " indentation
