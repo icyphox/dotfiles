@@ -17,18 +17,15 @@ Plug 'reedes/vim-pencil'
 Plug 'chriskempson/base16-vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
 Plug 'ervandew/supertab'
 Plug 'rust-lang/rust.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'zchee/deoplete-jedi'
 Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
 Plug 'w0rp/ale'
-Plug 'RRethy/vim-illuminate'
 call plug#end()
 
 " indentation
