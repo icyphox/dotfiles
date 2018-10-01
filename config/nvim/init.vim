@@ -4,10 +4,6 @@
 "| | | | | | |_ \ V /| | | | | | |
 "|_|_| |_|_|\__(_)_/ |_|_| |_| |_|
 
-set shiftwidth=4     " indent = 4 spaces
-set noexpandtab      " tabs are tabs
-set tabstop=4        " tab = 4 spaces
-set softtabstop=4    " backspace through spaces
 
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -36,6 +32,13 @@ augroup indents
 	autocmd FileType text,markdown setlocal expandtab
 augroup END
 
+augroup restorecursor
+	autocmd BufReadPost *
+				\ if line("'\"") > 1 && line("'\"") <= line("$") |
+				\   execute "normal! g`\"" |
+				\ endif
+augroup END
+
 " basic settings
 set swapfile
 set dir=/tmp
@@ -56,7 +59,23 @@ set nowrap
 set cursorline
 set conceallevel=2 
 set mouse=a
+set wildmenu
 
+set shiftwidth=4     " indent = 4 spaces
+set noexpandtab      " tabs are tabs
+set tabstop=4        " tab = 4 spaces
+set softtabstop=4    " backspace through spaces
+
+set wildignore+=.git,.hg,.svn
+set wildignore+=*.aux,*.out,*.toc
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
+set wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
+set wildignore+=*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
+set wildignore+=*.mp3,*.oga,*.ogg,*.wav,*.flac
+set wildignore+=*.eot,*.otf,*.ttf,*.woff
+set wildignore+=*.doc,*.pdf,*.cbr,*.cbz
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
+set wildignore+=*.swp,.lock,.DS_Store,._*
 " colorscheme
 colorscheme agila
 
