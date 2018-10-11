@@ -1,5 +1,5 @@
 # dotfiles
-> config files from my Linux box
+> my Linux configs
 
 ![gnome](https://0x0.st/svaU.png)
 
