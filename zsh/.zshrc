@@ -27,24 +27,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 # sourced scripts
 source $ZSH/oh-my-zsh.sh
 source /usr/share/autojump/autojump.zsh
-
-# aliases
-alias scrot="~/bin/scrot.sh"
-alias icyinfo="~/bin/icyinfo.sh"
-alias gah='sudo $(fc -ln -1)'
-alias nvime='nvim ~/.config/nvim/init.vim'
-alias up="~/bin/icyup.sh"
-alias envac="source .env/bin/activate"
-alias vim="nvim"
-alias vi="nvim"
-alias sxiv="sxiv -b"
-alias ls="exa"
-alias la="exa -al"
-alias socks="ssh -D 8008 boop"
-alias vpn="sudo openvpn --config client.ovpn --script-security 2"
-alias o="xdg-open"
-alias gc="git commit -v -s"
-alias gst="git status --short"
+source $HOME/.aliases
 
 # end and home keys
 bindkey "^[[1~" beginning-of-line
