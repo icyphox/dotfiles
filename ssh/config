@@ -7,6 +7,13 @@ Host github.com
 	Port 443
 	IdentityFile ~/.ssh/github
 
+Host gitlab.com
+	Hostname altssh.gitlab.com
+	User icyphox
+	Port 443
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/gitlab
+
 Host webarch
 	Hostname 13.127.51.16
 	User ubuntu
