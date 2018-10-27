@@ -176,6 +176,10 @@ endfunction
 
 " comments are italicized
 hi Comment cterm=italic
+" color overrides
+hi CursorLine ctermbg=none
+hi Visual ctermfg=15
+
 
 " vim-markdown 
 let g:vim_markdown_no_default_key_mappings=1
