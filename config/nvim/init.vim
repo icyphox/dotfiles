@@ -13,7 +13,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'reedes/vim-wordy', { 'for': ['text',  'markdown'] }
 Plug 'reedes/vim-litecorrect', { 'for': ['text',  'markdown'] }
-Plug 'reedes/vim-ditto', { 'for': ['text',  'markdown'] }
 Plug 'junegunn/goyo.vim', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 " }}}
