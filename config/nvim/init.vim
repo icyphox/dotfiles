@@ -61,12 +61,12 @@ set cursorline
 set conceallevel=2 
 set mouse=a
 set wildmenu
-
 set shiftwidth=4     " indent = 4 spaces
 set noexpandtab      " tabs are tabs
 set tabstop=4        " tab = 4 spaces
 set softtabstop=4    " backspace through spaces
 
+" wildcard ignores
 set wildignore+=.git,.hg,.svn
 set wildignore+=*.aux,*.out,*.toc
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
@@ -77,18 +77,16 @@ set wildignore+=*.eot,*.otf,*.ttf,*.woff
 set wildignore+=*.doc,*.pdf,*.cbr,*.cbz
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 set wildignore+=*.swp,.lock,.DS_Store,._*
+
 " colorscheme
 colorscheme agila
 
 " keybindings
 let mapleader=' '
 nnoremap <leader>n :nohlsearch<cr>
-nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>o :only<cr>
-nnoremap <leader>t :call GetTabber()<cr>
 nnoremap H H:exec 'norm! '. &scrolloff . 'k'<cr>
 nnoremap L L:exec 'norm! '. &scrolloff . 'j'<cr>
-vnoremap <F5> :CarbonNowSh<CR>
 
 " statusline
 let g:currentmode={
@@ -148,12 +146,6 @@ function! StatuslineGit()
 	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
 
-
-function! GetTabber()  " a lil function that integrates well with Tabular.vim
-	let c = nr2char(getchar())
-	:execute 'Tabularize /' . c
-endfunction"
-
 " git gutter settings
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_sign_added                     = '+'
@@ -182,15 +174,9 @@ function! HelpInNewTab ()
 	endif
 endfunction
 
-"  color overrides
-"highlight LineNr ctermbg=none guibg=none
-"highlight Comment cterm=italic
-"hi TabLine ctermbg=black
-"hi TabLineFill ctermbg=black
-"hi TabLineSel ctermbg=magenta
-hi CursorLine ctermbg=none
-"hi CursorLineNr ctermbg=none
-"
+" comments are italicized
+hi Comment cterm=italic
+
 " vim-markdown 
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_toml_frontmatter=1
