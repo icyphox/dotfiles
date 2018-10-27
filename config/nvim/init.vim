@@ -9,14 +9,17 @@ call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
-Plug 'reedes/vim-pencil'
-Plug 'reedes/vim-wordy'
-Plug 'reedes/vim-litecorrect'
-Plug 'junegunn/goyo.vim'
+" plugins for writing {{{
+Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
+Plug 'reedes/vim-wordy', { 'for': ['text',  'markdown'] }
+Plug 'reedes/vim-litecorrect', { 'for': ['text',  'markdown'] }
+Plug 'reedes/vim-ditto', { 'for': ['text',  'markdown'] }
+Plug 'junegunn/goyo.vim', { 'for': ['text',  'markdown'] }
+Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
+" }}}
 Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
 Plug 'yuttie/comfortable-motion.vim'
-Plug 'plasticboy/vim-markdown'
 Plug 'zchee/deoplete-jedi'
 Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
