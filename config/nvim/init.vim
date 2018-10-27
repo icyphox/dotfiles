@@ -11,10 +11,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'reedes/vim-pencil'
 Plug 'chriskempson/base16-vim'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
-Plug 'rust-lang/rust.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'zchee/deoplete-jedi'
@@ -22,7 +19,6 @@ Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
 Plug 'w0rp/ale'
-Plug 'arrufat/vala.vim'
 call plug#end()
 
 " indentation
