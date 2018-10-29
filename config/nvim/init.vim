@@ -43,7 +43,6 @@ augroup END
 " basic settings
 set swapfile
 set dir=/tmp
-set number
 set smartcase
 syntax on
 filetype plugin indent on
@@ -95,7 +94,7 @@ let g:currentmode={
 			\ 'v'  : 'VISUAL ',
 			\ 'V'  : 'V·Line ',
 			\ '' : 'V·Block',
-			\ 's'  : 'Select ',
+			\ 's'  : 'SELECT',
 			\ 'S'  : 'S·Line ',
 			\ '' : 'S·Block',
 			\ 'i'  : 'INSERT ',
@@ -104,7 +103,7 @@ let g:currentmode={
 			\ 'c'  : 'Command ',
 			\ 'cv' : 'Vim Ex ',
 			\ 'ce' : 'Ex ',
-			\ 'r'  : 'Prompt ',
+			\ 'r'  : 'PROMPT',
 			\ 'rm' : 'MORE ',
 			\ 'r?' : 'CONFIRM ',
 			\ '!'  : 'SHELL ',
@@ -115,7 +114,7 @@ set statusline+=%#PrimaryBlock#
 set statusline+=\ %{g:currentmode[mode()]}
 set statusline+=%#TabLineSel#
 set statusline+=%{StatuslineGit()}
-set statusline+=%#TabLineFill#
+set statusline+=%#TertiaryBlock#
 set statusline+=\ %f\ 
 set statusline+=%m
 set statusline+=%=
@@ -178,7 +177,8 @@ endfunction
 hi Comment cterm=italic
 " color overrides
 hi CursorLine ctermbg=none
-hi Visual ctermfg=15
+hi Visual ctermfg=white ctermbg=darkgray
+hi Comment ctermfg=darkgray
 
 
 " vim-markdown 
