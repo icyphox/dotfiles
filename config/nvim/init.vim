@@ -16,7 +16,6 @@ Plug 'reedes/vim-litecorrect', { 'for': ['text',  'markdown'] }
 Plug 'junegunn/goyo.vim', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 " }}}
-Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'zchee/deoplete-jedi'
