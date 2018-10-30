@@ -178,7 +178,7 @@ endfunction
 hi Comment cterm=italic
 " color overrides
 hi CursorLine ctermbg=none
-hi Visual ctermfg=15
+hi Visual ctermfg=white cterm=bold ctermbg=none
 
 
 " vim-markdown 
