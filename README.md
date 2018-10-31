@@ -1,7 +1,7 @@
 # dotfiles
 > my Linux configs
 
-![gnome](https://0x0.st/svaU.png)
+![gnome](https://0x0.st/sI8d.png)
 
 ### System
 - HP Envy 13 
