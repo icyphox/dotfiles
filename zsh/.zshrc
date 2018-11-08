@@ -14,7 +14,7 @@ export PATH=$PATH:$HOME/bin
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 export PATH=$PATH:$HOME/Leet/Nim/bin
-export PATH=$PATH:$HOME/.nimble/bin
+export PATH=$PATH:$HOME/.nimble
 
 # theme specefic
 ZSH_THEME="icy"

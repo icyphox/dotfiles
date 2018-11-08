@@ -24,6 +24,7 @@ Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
 Plug 'w0rp/ale'
+Plug 'skywind3000/vim-keysound'
 call plug#end()
 
 " indentation
@@ -178,7 +179,7 @@ endfunction
 hi Comment cterm=italic
 " color overrides
 hi CursorLine ctermbg=none
-hi Visual ctermfg=white cterm=bold ctermbg=none
+hi Visual ctermfg=white cterm=bold ctermbg=magenta
 
 
 " vim-markdown 
