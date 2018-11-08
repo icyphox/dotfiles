@@ -191,3 +191,9 @@ let g:vim_markdown_folding_disabled=1
 " deoplete-jedi
 let g:python_host_prog = '/home/icy/.pynvim2/bin/python'
 let g:python3_host_prog = '/home/icy/.pynvim3/bin/python'
+
+" keysound
+let g:keysound_enable = 1
+let g:keysound_volume = 1000
+let g:keysound_py_version = 3
+let g:keysound_theme = 'mario'
