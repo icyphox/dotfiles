@@ -15,6 +15,8 @@ Plug 'reedes/vim-wordy', { 'for': ['text',  'markdown'] }
 Plug 'reedes/vim-litecorrect', { 'for': ['text',  'markdown'] }
 Plug 'junegunn/goyo.vim', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
+Plug 'kana/vim-textobj-user', { 'for': ['text', 'markdown'] }
+Plug 'reedes/vim-textobj-quote', { 'for': ['text', 'markdown'] }
 " }}}
 Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
@@ -196,4 +198,13 @@ let g:python3_host_prog = '/home/icy/.pynvim3/bin/python'
 let g:keysound_enable = 1
 let g:keysound_volume = 1000
 let g:keysound_py_version = 3
-let g:keysound_theme = 'mario'
+let g:keysound_theme = 'typewriter'
+
+" textobj_quote
+augroup textobj_quote
+    autocmd!
+    autocmd FileType markdown call textobj#quote#init({'educate': 0})
+    autocmd FileType textile call textobj#quote#init({'educate': 0})
+    autocmd FileType text call textobj#quote#init({'educate': 0})
+augroup END
+
