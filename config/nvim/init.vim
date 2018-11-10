@@ -6,7 +6,7 @@
 
 
 call plug#begin()
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 " plugins for writing {{{
@@ -19,7 +19,7 @@ Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
 Plug 'yuttie/comfortable-motion.vim'
-Plug 'zchee/deoplete-jedi'
+" Plug 'zchee/deoplete-jedi'
 Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
