@@ -203,8 +203,8 @@ let g:keysound_theme = 'typewriter'
 " textobj_quote
 augroup textobj_quote
     autocmd!
-    autocmd FileType markdown call textobj#quote#init({'educate': 0})
-    autocmd FileType textile call textobj#quote#init({'educate': 0})
-    autocmd FileType text call textobj#quote#init({'educate': 0})
+    autocmd FileType markdown call textobj#quote#init({'educate': 1})
+    autocmd FileType textile call textobj#quote#init({'educate': 1})
+    autocmd FileType text call textobj#quote#init({'educate': 1})
 augroup END
 
