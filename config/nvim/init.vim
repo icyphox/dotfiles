@@ -208,3 +208,9 @@ augroup textobj_quote
     autocmd FileType text call textobj#quote#init({'educate': 1})
 augroup END
 
+" litecorrect
+augroup litecorrect
+    autocmd!
+    autocmd FileType markdown,mkd call litecorrect#init()
+    autocmd FileType textile call litecorrect#init()
+augroup END
