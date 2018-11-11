@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# nim-proj.sh: initializes 
+
+help() {
+	echo "Usage:"
+	echo "nim-proj <name> <description>"
+}
+
+if [ $# -eq 2 ]; then
+	nimble init $1
+	cd $1
+	cat <<- EOF > readme.md
+	# $1
+	> $2
+	EOF
+	git init
+else
+	help
+fi
