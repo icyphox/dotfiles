@@ -17,7 +17,11 @@ export PATH=$PATH:$HOME/Leet/Nim/bin
 export PATH=$PATH:$HOME/.nimble/bin
 
 # theme specefic
-ZSH_THEME="icy"
+_nicy_prompt() {
+	PROMPT=$("/home/icy/.nimble/bin/nicy")
+}
+precmd_functions+=_nicy_prompt
+_nicy_prompt
 COMPLETION_WAITING_DOTS="true"
 
 # plugins
