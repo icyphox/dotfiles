@@ -25,7 +25,7 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'skywind3000/vim-keysound'
 call plug#end()
 
