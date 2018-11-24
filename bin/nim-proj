@@ -10,10 +10,72 @@ help() {
 if [ $# -eq 2 ]; then
 	nimble init $1
 	cd $1
+	
 	cat <<- EOF > readme.md
 	# $1
 	> $2
 	EOF
+	
+	cat <<- "EOF" > .travis.yml
+	language: c
+	
+	cache: ccache
+	cache:
+	    directories:
+	        - .cache
+	
+	matrix:
+	    include:
+	        - os: linux
+	          env: CHANNEL=stable
+	          compiler: gcc
+	
+	        - os: linux
+	          env: CHANNEL=devel
+	          compiler: gcc
+	
+	        - os: osx
+	          env: CHANNEL=stable
+	          compiler: clang
+	
+	    allow_failures:
+	        - env: CHANNEL=devel
+	        - os: osx
+	
+	    fast_finish: true
+	
+	env:
+	    global:
+	        - PROGNAME="$(basename ${TRAVIS_BUILD_DIR})"
+	        - NIMFILE="src/${PROGNAME}.nim"
+	        - BINFILE="src/${PROGNAME}"
+	        - ASSETFILE="${PROGNAME}-${TRAVIS_TAG}-linux64"
+	
+	install:
+	    - export CHOOSENIM_NO_ANALYTICS=1
+	    - curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
+	    - sh init.sh -y
+	    - export PATH=~/.nimble/bin:$PATH
+	    - echo "export PATH=~/.nimble/bin:$PATH" >> ~/.profile
+	    - choosenim $CHANNEL
+	
+	script:
+	    - cd "${TRAVIS_BUILD_DIR}"
+	    - nim c "${NIMFILE}" 
+	    - "${BINFILE}" 
+	
+	before_deploy:
+	    - cd "${TRAVIS_BUILD_DIR}"
+	    - cp "${BINFILE}" "${ASSETFILE}"
+	deploy:
+	    provider: releases
+	    api_key: "${GITHUB_OAUTH_TOKEN}"
+	    file: "${ASSETFILE}"
+	    skip_cleanup: true
+	    on:
+	    tags: true	
+	EOF
+
 	git init
 else
 	help
