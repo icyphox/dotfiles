@@ -18,7 +18,7 @@ export PATH=$PATH:$HOME/.nimble/bin
 
 # theme specefic
 _nicy_prompt() {
-	PROMPT=$("$HOME/.nimble/bin/nicy")
+	PROMPT=$("$HOME/Dotfiles/zsh/prompt")
 }
 precmd_functions+=_nicy_prompt
 _nicy_prompt
