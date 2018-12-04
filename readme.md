@@ -3,4 +3,4 @@
 
 ![scrot](https://0x0.st/sI8d.png)
 
-**Note**: If you’re here for my rice, don’t bother; I’ve long since given that up.
+**Note**: I don’t rice anymore and I rarely update anything other than my [init.vim](https://github.com/icyphox/dotfiles/blob/master/config/nvim/init.vim).
