@@ -9,7 +9,8 @@ let
   clean = color("•", "green")
   g = gitBranch & gitStatus(dirty, clean)
   git = italics(g)
+  venv = color(virtualenv(), "red")
 
 
 # the prompt
-echo fmt"{nl}{virtualenv()}{cwd}{git}{nl}{prompt}"
+echo fmt"{nl}{venv}{cwd}{git}{nl}{prompt}"
