@@ -35,4 +35,9 @@ Host emerald
 	User nerdypepper
 	IdentityFile ~/.ssh/id_rsa
 	Port 443
+
+Host atlantis
+	User ubuntu
+	Hostname 13.127.190.17
+	IdentityFile ~/.ssh/atlantis.pem
 	
