@@ -1,6 +1,6 @@
 Host *
-	ServerAliveInterval 20
-	ServerAliveCountMax 2
+	ServerAliveInterval 5
+	ServerAliveCountMax 1
 
 Host github.com
 	Hostname ssh.github.com
