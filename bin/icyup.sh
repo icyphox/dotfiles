@@ -10,8 +10,8 @@ if [ "$1" != "" ]; then
 	file=$1
 	ext="${file##*.}"
 	fullname="$fn.$ext"
-	scp $1 boop:www/upload/$fullname
-	echo "https://xix.ph0x.me/$fullname"
+	scp $1 emerald:icywww/stuff/$fullname
+	echo "https://x.icyphox.sh/$fullname"
 else
 	echo "no path specified :v"
 fi
