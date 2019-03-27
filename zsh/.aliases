@@ -15,4 +15,4 @@ alias vpn="vpnon.sh"
 alias o="xdg-open"
 alias gc="git commit -v -s"
 alias gst="git status --short"
-
+alias nvmon=". ~/.nvm/nvm.sh"
