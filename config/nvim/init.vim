@@ -6,7 +6,7 @@
 
 
 call plug#begin()
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 " plugins for writing {{{
@@ -21,11 +21,11 @@ Plug 'reedes/vim-textobj-quote', { 'for': ['text', 'markdown'] }
 Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
 Plug 'yuttie/comfortable-motion.vim'
-" Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-jedi'
 Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'skywind3000/vim-keysound'
 call plug#end()
 
@@ -80,6 +80,9 @@ set wildignore+=*.eot,*.otf,*.ttf,*.woff
 set wildignore+=*.doc,*.pdf,*.cbr,*.cbz
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 set wildignore+=*.swp,.lock,.DS_Store,._*
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 " colorscheme
 colorscheme agila
