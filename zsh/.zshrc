@@ -16,21 +16,20 @@ export INPUTRC=~/.inputrc
 export PATH=$PATH:$HOME/Leet/Nim/bin
 export PATH=$PATH:$HOME/.nimble/bin
 
+# zsh setup
+autoload -Uz compinit colors add-zsh-hook
+colors
+compinit
+zstyle ':completion:*' list-colors "di=34"
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+export ZLE_REMOVE_SUFFIX_CHARS=''
+setopt extended_glob autocd
+
 # theme specefic
 _nicy_prompt() {
 	PROMPT=$("$HOME/Dotfiles/zsh/prompt")
 }
-precmd_functions+=_nicy_prompt
-_nicy_prompt
-COMPLETION_WAITING_DOTS="true"
-
-# plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting k)
-
-# sourced scripts
-source $ZSH/oh-my-zsh.sh
-source /usr/share/autojump/autojump.zsh
-source $HOME/.aliases
+add-zsh-hook precmd _nicy_prompt
 
 # end and home keys
 bindkey "^[[1~" beginning-of-line
@@ -44,3 +43,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# sourced scripts
+source /usr/share/autojump/autojump.zsh
+source $HOME/.aliases
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/git.zsh
