@@ -25,6 +25,19 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 export ZLE_REMOVE_SUFFIX_CHARS=''
 setopt extended_glob autocd
 
+# command history
+[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
+
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history
+
 # theme specefic
 _nicy_prompt() {
 	PROMPT=$("$HOME/Dotfiles/zsh/prompt")
@@ -43,9 +56,13 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# fpath
+fpath=($HOME/.zsh/zsh-completions/src $fpath)
+
 # sourced scripts
 source /usr/share/autojump/autojump.zsh
 source $HOME/.aliases
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $HOME/.zsh/git.zsh
