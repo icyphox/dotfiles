@@ -17,13 +17,20 @@ export PATH=$PATH:$HOME/Leet/Nim/bin
 export PATH=$PATH:$HOME/.nimble/bin
 
 # zsh setup
-autoload -Uz compinit colors add-zsh-hook
+autoload -Uz compinit colors add-zsh-hook history-search-end
 colors
 compinit
 zstyle ':completion:*' list-colors "di=34"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 export ZLE_REMOVE_SUFFIX_CHARS=''
-setopt extended_glob autocd
+setopt extended_glob
+setopt autocd
+
+# partial history matching
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[OA" history-beginning-search-backward-end
+bindkey "^[OB" history-beginning-search-forward-end
 
 # command history
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
@@ -38,7 +45,7 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
-# theme specefic
+# prompt
 _nicy_prompt() {
 	PROMPT=$("$HOME/Dotfiles/zsh/prompt")
 }
