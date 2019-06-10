@@ -16,7 +16,7 @@ Plug 'reedes/vim-litecorrect', { 'for': ['text',  'markdown'] }
 Plug 'junegunn/goyo.vim', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 Plug 'kana/vim-textobj-user', { 'for': ['text', 'markdown'] }
-Plug 'reedes/vim-textobj-quote', { 'for': ['text', 'markdown'] }
+Plug 'reedes/vim-textobj-quote' 
 " }}}
 Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
@@ -68,6 +68,7 @@ set shiftwidth=4     " indent = 4 spaces
 set noexpandtab      " tabs are tabs
 set tabstop=4        " tab = 4 spaces
 set softtabstop=4    " backspace through spaces
+set nocompatible
 
 " wildcard ignores
 set wildignore+=.git,.hg,.svn
@@ -205,10 +206,10 @@ let g:keysound_theme = 'default'
 
 " textobj_quote
 augroup textobj_quote
-    autocmd!
-    autocmd FileType markdown call textobj#quote#init({'educate': 1})
-    autocmd FileType textile call textobj#quote#init({'educate': 1})
-    autocmd FileType text call textobj#quote#init({'educate': 1})
+  autocmd!
+  autocmd FileType markdown call textobj#quote#init({'educate': 1})
+  autocmd FileType textile call textobj#quote#init({'educate': 1})
+  autocmd FileType text call textobj#quote#init({'educate': 1})
 augroup END
 
 " litecorrect
