@@ -26,7 +26,7 @@ Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
 Plug 'w0rp/ale'
-Plug 'skywind3000/vim-keysound'
+" Plug 'skywind3000/vim-keysound'
 call plug#end()
 
 " indentation
