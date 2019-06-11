@@ -10,14 +10,14 @@
 set $mod Mod4
 
 # set fonts in funky way
-font pango: Operator Mono Book 13
-for_window [class=".*"] title_format "<span font='Operator Mono Book 12'> > %title</span>"
+font pango: SF Mono SemiBold 13
+for_window [class=".*"] title_format "<span font='SF Mono SemiBold 11'> › %title</span>"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
-#for_window [class="URxvt"] floating enable
+bindsym $mod+Return exec gnome-terminal
+for_window [class="Telegram"] floating enable
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -152,22 +152,22 @@ bindsym $mod+r mode "resize"
 
 ## colors
 
-set $base00 #282828
-set $base01 #3c3836
-set $base02 #504945
-set $base03 #665c54
-set $base04 #bdae93
-set $base05 #d5c4a1
-set $base06 #ebdbb2
-set $base07 #fbf1c7
-set $base08 #fb4934
-set $base09 #fe8019
-set $base0A #fabd2f
-set $base0B #b8bb26
-set $base0C #8ec07c
-set $base0D #83a598
-set $base0E #d3869b
-set $base0F #d65d0e
+set $base00 #292d3e
+set $base01 #444267
+set $base02 #32374d
+set $base03 #676e95
+set $base04 #8796b0
+set $base05 #959dcb
+set $base06 #959dcb
+set $base07 #ffffff
+set $base08 #f07178
+set $base09 #f78c6c
+set $base0A #ffcb6b
+set $base0B #c3e88d
+set $base0C #89ddff
+set $base0D #82aaff
+set $base0E #c792ea
+set $base0F #ff5370
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
@@ -183,15 +183,15 @@ client.background       $base07
 
 # executions
 exec xrdb -load ~/.Xresources
-exec compton &
-exec xautolock -time 7 -locker lock &
-exec killall -q xfce4-notifyd
+# exec compton &
+# exec xautolock -time 7 -locker lock &
+# exec killall -q xfce4-notifyd
 exec_always --no-startup-id ~/bin/bar.sh
 exec xrdb .Xresources
-exec feh --bg-fill ~/.wall
-exec xautolock -time 5 -locker ~/scripts/lock.sh
-exec urxvtd &
-exec xset -b
+# exec feh --bg-fill ~/.wall
+# exec xautolock -time 5 -locker ~/scripts/lock.sh
+# exec urxvtd &
+# exec xset -b
 
 # cycle workspaces
 bindsym $mod+Tab workspace back_and_forth

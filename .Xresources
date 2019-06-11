@@ -4,22 +4,26 @@
 ! _ /   |/ /  /  __(__  ) /_/ / /_/ / /  / /__/  __(__  ) 
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
-#define base00 #282828
-#define base01 #3c3836
-#define base02 #504945
-#define base03 #665c54
-#define base04 #bdae93
-#define base05 #d5c4a1
-#define base06 #ebdbb2
-#define base07 #fbf1c7
-#define base08 #fb4934
-#define base09 #fe8019
-#define base0A #fabd2f
-#define base0B #b8bb26
-#define base0C #8ec07c
-#define base0D #83a598
-#define base0E #d3869b
-#define base0F #d65d0e
+
+! Base16 Material Palenight
+! Scheme: Nate Peterson
+
+#define base00 #292d3e
+#define base01 #444267
+#define base02 #32374d
+#define base03 #676e95
+#define base04 #8796b0
+#define base05 #959dcb
+#define base06 #959dcb
+#define base07 #ffffff
+#define base08 #f07178
+#define base09 #f78c6c
+#define base0A #ffcb6b
+#define base0B #c3e88d
+#define base0C #89ddff
+#define base0D #82aaff
+#define base0E #c792ea
+#define base0F #ff5370
 
 *foreground:   base05
 #ifdef background_opacity
@@ -39,12 +43,22 @@
 *color7:       base05
 
 *color8:       base03
-*color9:       base09
-*color10:      base01
-*color11:      base02
-*color12:      base04
-*color13:      base06
-*color14:      base0F
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
 
 ! Urxvt config 
 !---------------------
@@ -77,7 +91,7 @@ rofi.color-window:  base00, base00, base00
 rofi.color-normal:  base00, base05, base00, base05, base00
 rofi.color-active:  base07, base09, #000, #000, #000
 rofi.color-urgent:  #e12a36, #dd2a4b, #1b2b34
-rofi.font: Operator Mono Book 15
+rofi.font: SF Mono SemiBold 13
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.location:0
