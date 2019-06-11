@@ -16,6 +16,7 @@ Plug 'reedes/vim-litecorrect', { 'for': ['text',  'markdown'] }
 Plug 'junegunn/goyo.vim', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 Plug 'kana/vim-textobj-user', { 'for': ['text', 'markdown'] }
+Plug 'junegunn/goyo.vim'
 Plug 'reedes/vim-textobj-quote' 
 " }}}
 Plug 'chriskempson/base16-vim'

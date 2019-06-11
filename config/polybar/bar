@@ -12,7 +12,7 @@
 ;margin-bottom = 2
 
 [colors]
-fg = ${xrdb:color7}
+fg = ${xrdb:color15}
 bg = ${xrdb:color0}
 
 [bar/top]
@@ -27,17 +27,15 @@ override-redirect = false
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = Operator Mono Book:size=12:;1
-font-1 = Feather:size=12:;2
+font-0 = SF Mono:size=12:weight=semibold;1
 
-modules-left =  date time volume battery 
-modules-center = xwindow 
-modules-right = ewmh
+modules-left =  date time volume battery ewmh
+modules-center =  
+modules-right = xwindow
 
-tray-position = right
+tray-position = false
 tray-padding = 0
 tray-background = ${colors.bg}
-tray-transparent = false
 tray-detached = false
 
 underline-size = 3
@@ -49,18 +47,14 @@ module-margin-left = 2
 module-margin-right = 2
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
-format-volume = <ramp-volume><label-volume>
+format-volume = <label-volume>
+label-volume = vol %percentage%%
 module-margin-right = 1
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
 
 format-volume-background = ${colors.bg}
-ramp-volume-foreground = ${xrdb:color6}
-
-label-muted =  muted
+label-muted = muted
 
 
 [module/xwindow]
@@ -98,15 +92,13 @@ label-urgent-padding = 1
 [module/date]
 type = internal/date
 interval = 1
-date = " %A, %d %B 
-format-prefix = "" 
+date = %a, %d %b 
 format-prefix-foreground = ${xrdb:color6}
 
 [module/time]
 type = internal/date
 interval = 1
-date = " %I:%M" 
-format-prefix = ""
+date = %I:%M 
 format-prefix-foreground = ${xrdb:color6}
 
 [module/battery]
@@ -117,16 +109,12 @@ adapter = ACAD
 poll-interval = 5
 
 format-charging = <label-charging>
-format-discharging = <ramp-capacity><label-discharging>
-label-charging =  %percentage%%
-label-charging-foreground = ${xrdb:color6}
-label-discharging = %percentage%%
-label-discharging-foreground = ${colors.fg}
-label-full =  full!
-ramp-capacity-foreground = ${xrdb:color6}
-ramp-capacity-0 = !
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+format-discharging = <label-discharging>
+label-charging = bat %percentage%%
+label-charging-foreground = ${xrdb:color10}
+label-discharging = bat %percentage%%
+label-discharging-foreground = ${xrdb:color15}
+label-full = full!
 
 [module/spotipy]
 type = custom/script

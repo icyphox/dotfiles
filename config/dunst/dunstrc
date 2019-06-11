@@ -1,5 +1,5 @@
 [global]
-    font = Monoid 10
+    font = SF Mono Semibold 12
     allow_markup = yes
     plain_text = no
     format = "%s\n%b"
@@ -10,7 +10,7 @@
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "300x5-30+24"
+    geometry = "300x5-20+28"
     shrink = no
     transparency = 0
     transparency = 40
@@ -22,9 +22,9 @@
     line_height = 0
     notification_height = 0
     separator_height = 2
-    padding = 8
+    padding = 20
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 20
 
     # Define a color for the separator.
     # possible values are:
@@ -53,9 +53,9 @@
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [frame]
-    width = 1
-    width = 2
-    color = "#eceff4"
+    width = 4
+    width = 3
+    color = "#ffffff"
 
 [shortcuts]
 
@@ -86,8 +86,8 @@
     timeout = 5
 
 [urgency_normal]
-    background = "#eceff4"
-    foreground = "#3b4252"
+    background = "#ffffff"
+    foreground = "#292d3e"
     timeout = 5
 
 [urgency_critical]

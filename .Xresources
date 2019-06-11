@@ -8,13 +8,13 @@
 ! Base16 Material Palenight
 ! Scheme: Nate Peterson
 
-#define base00 #292d3e
-#define base01 #444267
-#define base02 #32374d
-#define base03 #676e95
-#define base04 #8796b0
-#define base05 #959dcb
-#define base06 #959dcb
+#define base00 #212121
+#define base01 #303030
+#define base02 #353535
+#define base03 #4a4a4a
+#define base04 #b2ccd6
+#define base05 #eeffff
+#define base06 #eeffff
 #define base07 #ffffff
 #define base08 #f07178
 #define base09 #f78c6c
@@ -59,7 +59,6 @@
 *color19:      base02
 *color20:      base04
 *color21:      base06
-
 ! Urxvt config 
 !---------------------
 URxvt.font: xft:Operator Mono Book:size=14
