@@ -190,6 +190,7 @@ exec compton &
 exec_always --no-startup-id ~/bin/bar.sh
 exec feh --bg-fill ~/.wall
 exec_always --no-startup-id ~/.local/bin/flashfocus
+exec_always dunst
 # exec xautolock -time 5 -locker ~/scripts/lock.sh
 # exec urxvtd &
 # exec xset -b

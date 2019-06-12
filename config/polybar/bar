@@ -12,7 +12,7 @@
 ;margin-bottom = 2
 
 [colors]
-fg = ${xrdb:color15}
+fg = ${xrdb:color21}
 bg = ${xrdb:color0}
 
 [bar/top]
@@ -113,7 +113,7 @@ format-discharging = <label-discharging>
 label-charging = bat %percentage%%
 label-charging-foreground = ${xrdb:color10}
 label-discharging = bat %percentage%%
-label-discharging-foreground = ${xrdb:color15}
+label-discharging-foreground = ${xrdb:color21}
 label-full = full!
 
 [module/spotipy]
