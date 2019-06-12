@@ -17,7 +17,7 @@ floating_modifier $mod
 for_window [class="^.*"] border none
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec xfce4-terminal
 for_window [class="Telegram"] floating enable
 
 # kill focused window
@@ -188,7 +188,6 @@ exec compton &
 # exec xautolock -time 7 -locker lock &
 # exec killall -q xfce4-notifyd
 exec_always --no-startup-id ~/bin/bar.sh
-exec xrdb .Xresources
 exec feh --bg-fill ~/.wall
 # exec xautolock -time 5 -locker ~/scripts/lock.sh
 # exec urxvtd &
