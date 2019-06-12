@@ -189,6 +189,7 @@ exec compton &
 # exec killall -q xfce4-notifyd
 exec_always --no-startup-id ~/bin/bar.sh
 exec feh --bg-fill ~/.wall
+exec_always --no-startup-id ~/.local/bin/flashfocus
 # exec xautolock -time 5 -locker ~/scripts/lock.sh
 # exec urxvtd &
 # exec xset -b

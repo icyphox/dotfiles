@@ -15,6 +15,7 @@ export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
 export PATH=$PATH:$HOME/Leet/Nim/bin
 export PATH=$PATH:$HOME/.nimble/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # zsh setup
 autoload -Uz compinit colors add-zsh-hook history-search-end
