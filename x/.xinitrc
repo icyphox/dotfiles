@@ -7,6 +7,5 @@
 #(_)_/\_\_|_| |_|_|\__|_|  \___|
 #
 
-exec i3
 setxkbmap -option compose:caps
-# temp fix for borked gnome-terminal
+exec i3
