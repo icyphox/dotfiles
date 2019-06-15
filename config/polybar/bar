@@ -110,8 +110,8 @@ poll-interval = 5
 
 format-charging = <label-charging>
 format-discharging = <label-discharging>
-label-charging = bat %percentage%%
-label-charging-foreground = ${xrdb:color10}
+label-charging = bat+ %percentage%%
+label-charging-foreground = ${xrdb:color21}
 label-discharging = bat %percentage%%
 label-discharging-foreground = ${xrdb:color21}
 label-full = full!

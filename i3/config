@@ -185,7 +185,7 @@ client.background       $base07
 # executions
 exec xrdb -load ~/.Xresources
 exec compton &
-# exec xautolock -time 7 -locker lock &
+exec xautolock -time 7 -locker ~/bin/lock.sh
 # exec killall -q xfce4-notifyd
 exec_always --no-startup-id ~/bin/bar.sh
 exec feh --bg-fill ~/.wall
