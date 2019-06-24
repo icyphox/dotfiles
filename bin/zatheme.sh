@@ -6,7 +6,7 @@ echo 'set incremental-search true
 
 set recolor "true"
 
-set default-bg "'$( get_xres color7 )'"
+set default-bg "'$( get_xres color0 )'"
 set default-fg "'$( get_xres color7 )'"
 
 set completion-bg "'$( get_xres color0 )'"
