@@ -16,6 +16,7 @@ export INPUTRC=~/.inputrc
 export PATH=$PATH:$HOME/Leet/Nim/bin
 export PATH=$PATH:$HOME/.nimble/bin
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/go/bin
 
 # zsh setup
 autoload -Uz compinit colors add-zsh-hook history-search-end

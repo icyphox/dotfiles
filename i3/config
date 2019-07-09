@@ -10,8 +10,8 @@
 set $mod Mod4
 
 # set fonts in funky way
-font pango: SF Mono SemiBold 13
-for_window [class=".*"] title_format "<span font='SF Mono SemiBold 11'> › %title</span>"
+font pango: SF Mono SemiBold 12
+# for_window [class=".*"] title_format "<span font='SF Mono SemiBold 11'> › %title</span>"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 for_window [class="^.*"] border none
