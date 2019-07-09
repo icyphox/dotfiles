@@ -49,7 +49,7 @@ setopt share_history
 
 # prompt
 _nicy_prompt() {
-	PROMPT=$("$HOME/.nimble/bin/nicy")
+	PROMPT="$($HOME/.nimble/bin/nicy)"
 }
 add-zsh-hook precmd _nicy_prompt
 
