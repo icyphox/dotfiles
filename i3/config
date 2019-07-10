@@ -137,18 +137,12 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# assign windows to workspaces
-
-assign [class="Steam"] $tag4
-assign [class="Battle.net.exe"] $tag5
-assign [class="firefox"] $tag1
-assign [class="spotify"] $tag3
 
 # selectively enable floating
 
-for_window [class="Steam"] floating enable
-for_window [class="Keybase"] floating enable
-for_window [class="Battle.net.exe"] floating enable
+#for_window [class="Steam"] floating enable
+#for_window [class="Keybase"] floating enable
+#for_window [class="Battle.net.exe"] floating enable
 
 bindsym $mod+r mode "resize"
 
