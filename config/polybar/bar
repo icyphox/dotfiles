@@ -13,7 +13,7 @@
 
 [colors]
 fg = ${xrdb:color21}
-bg = ${xrdb:color0}
+bg = #001b2b34
 
 [bar/top]
 width = 100%
