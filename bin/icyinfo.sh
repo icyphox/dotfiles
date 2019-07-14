@@ -1,22 +1,31 @@
 #!/usr/bin/env bash
-# icyinfo.sh - displays sys info
+# icyinfo, but better
 
-# colors
-f=3 b=4
-for j in f b; do
-	for i in {0..7}; do
-		printf -v $j$i "%b" "\e[${!j}${i}m"
-	done
-done
-bld=$'\e[1m'
-rst=$'\e[0m'
-inv=$'\e[7m'
+BLK="\e[30m"
+RED="\e[31m"
+GRN="\e[32m"
+YLW="\e[33m"
+BLU="\e[34m"
+PUR="\e[35m"
+CYN="\e[36m"
+BRED="\e[31m"
+BGRN="\e[32m"
+BYLW="\e[33m"
+BBLU="\e[34m"
+BPUR="\e[35m"
+BCYN="\e[36m"
+WHT="\e[37m"
+RST="\e[0m"
 
-# detect
+BAR="▁▁▁▁"
+COLOR_BARS="$RED$BAR$GRN$BAR$YLW$BAR$BLU$BAR$PUR$BAR$CYN$BAR$RST"
+
 user=$(whoami)
 host=$(hostname)
 kernel=$(uname -r)
+uptime=$(uptime -p)    # too long to print
 shell=$(basename $SHELL)
+
 os() {
 	os=$(source /etc/os-release && echo $ID)
 	export os
@@ -33,32 +42,19 @@ wm() {
 	export wm
 }
 
-init() {
-	init=$(readlink /sbin/init)
-	init=${init##*/}
-	init=${init%%-*}
-	export init
-}
 
-# exec
 os
 wm
-init
-cat <<EOF
 
-$user${f2}@${rst}$host
-        ${f2}os:${rst}          ${f7}$os${rst}
-┌───┐   ${f2}kernel:${rst}      ${f7}$kernel${rst}
-│${f2}^${rst}_${f2}^${rst}│   ${f2}shell:${rst}       ${f7}$shell${rst}
-└───┘   ${f2}init:${rst}        ${f7}$init${rst}
-        ${f2}wm:${rst}          ${f7}$wm${rst}
-
-EOF
-
-# optional blocks
-if  [[ $1 = "-b" ]]; then
-	pcs() { for i in {0..7}; do echo -en "\e[${1}$((30+$i))m \u2588\u2588 \e[0m"; done; }
-	printf "\n%s\n%s\n\n" "$(pcs)" "$(pcs '1;')"
-else
-	:
-fi
+clear
+printf "$COLOR_BARS\n\n"
+printf "${CYN}$user${RST}@${CYN}$host${RST}     ${CYN}   |\___/|${RST}\n"
+printf "                ${CYN}/     \\ ${RST} \n"
+printf "               ${CYN}/__${RST}${PUR}^ ^${RST}${CYN}__\\ ${RST} \n"
+printf "                  ${CYN}\o/    ${RST}\n\n"
+printf "os:               ${CYN}$os${RST}\n"
+printf "kernel:   ${CYN}$kernel${RST}\n"
+# printf "uptime:    ${CYN}$uptime${RST}\n"
+printf "wm:                   ${CYN}$wm${RST}\n"
+printf "shell:               ${CYN}$shell${RST}\n"
+printf "$COLOR_BARS\n"
