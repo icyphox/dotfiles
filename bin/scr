@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
+scr_path=~/pics/scrots
 n=6; output=$(tr -cd '[:alnum:]' < /dev/urandom | head -c$n)
-import -window root ~/pics/scrots/$output.png
+import -window root "$scr_path/$output.png"
 notify-send 'screenshot taken!'
-xclip -selection clipboard -t image/png -i ~/pics/scrots/$output.png
+xclip -selection clipboard -t image/png -i "$scr_path/$output.png"

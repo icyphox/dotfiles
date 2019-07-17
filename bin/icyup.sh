@@ -1,17 +1,14 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
-hash=`md5sum <<EOF
-$RANDOM
-EOF` 
-
-fn=`echo $hash | awk '// { print $1 }'`
+n=3; fn=$(tr -cd '[:alnum:]' < /dev/urandom | head -c$n)
 
 if [ "$1" != "" ]; then
 	file=$1
 	ext="${file##*.}"
 	fullname="$fn.$ext"
-	scp $1 emerald:icywww/stuff/$fullname
+	scp -P 443 "$1" emerald:icywww/stuff/"$fullname"
 	echo "https://x.icyphox.sh/$fullname"
+	echo "https://x.icyphox.sh/$fullname" | xclip -selection clipboard
 else
 	echo "no path specified :v"
 fi
