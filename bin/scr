@@ -2,6 +2,15 @@
 
 scr_path=~/pics/scrots
 n=6; output=$(tr -cd '[:alnum:]' < /dev/urandom | head -c$n)
-import -window root "$scr_path/$output.png"
-notify-send 'screenshot taken!'
+
+if [ "$1" == "" ]; then
+	import -window root "$scr_path/$output.png"
+	notify-send 'screenshot taken!'
+elif [ "$1" == "-w" ]; then
+	import -window "$(xdotool getwindowfocus)" "$scr_path/$output.png"
+	convert "$scr_path/$output.png" \( +clone -background black -shadow 60x60+0+0 \) \
+	+swap -background transparent -layers merge +repage "$scr_path/$output.png"
+	notify-send 'window screenshot taken!'
+fi
+
 xclip -selection clipboard -t image/png -i "$scr_path/$output.png"
