@@ -8,9 +8,10 @@ if [ "$1" == "" ]; then
 	notify-send 'screenshot taken!'
 elif [ "$1" == "-w" ]; then
 	import -window "$(xdotool getwindowfocus)" "$scr_path/$output.png"
-	convert "$scr_path/$output.png" \( +clone -background black -shadow 60x60+0+0 \) \
-	+swap -background transparent -layers merge +repage "$scr_path/$output.png"
+	convert "$scr_path/$output.png" \( +clone -background transparent -shadow 60x40+0+15 \) \
+	+swap -background white -layers merge +repage "$scr_path/$output.png"
 	notify-send 'window screenshot taken!'
+# elif [ "$1" == "-s" ]; then
 fi
 
 xclip -selection clipboard -t image/png -i "$scr_path/$output.png"
