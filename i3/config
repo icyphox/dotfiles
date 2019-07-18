@@ -17,7 +17,7 @@ floating_modifier $mod
 for_window [class="^.*"] border none
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec urxvtc
 for_window [class="Telegram"] floating enable
 
 # kill focused window

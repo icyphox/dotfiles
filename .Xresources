@@ -58,7 +58,7 @@
 *color21:      base06
 ! Urxvt config 
 !---------------------
-URxvt.font: xft:Operator Mono Book:size=14
+URxvt.font: xft:SF Mono:Semibold:size=13
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30
