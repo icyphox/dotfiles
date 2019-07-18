@@ -98,25 +98,25 @@ nnoremap L L:exec 'norm! '. &scrolloff . 'j'<cr>
 
 " statusline
 let g:currentmode={
-			\ 'n'  : 'NORMAL ',
-			\ 'no' : 'N·Operator Pending ',
-			\ 'v'  : 'VISUAL ',
-			\ 'V'  : 'V·Line ',
-			\ '' : 'V·Block',
-			\ 's'  : 'Select ',
-			\ 'S'  : 'S·Line ',
-			\ '' : 'S·Block',
-			\ 'i'  : 'INSERT ',
-			\ 'R'  : 'REPLACE ',
-			\ 'Rv' : 'V·Replace ',
-			\ 'c'  : 'Command ',
-			\ 'cv' : 'Vim Ex ',
-			\ 'ce' : 'Ex ',
-			\ 'r'  : 'Prompt ',
-			\ 'rm' : 'MORE ',
-			\ 'r?' : 'CONFIRM ',
-			\ '!'  : 'SHELL ',
-			\ 't'  : 'TERMINAL '}
+			\ 'n'  : 'normal ',
+			\ 'no' : 'n·operator pending ',
+			\ 'v'  : 'visual ',
+			\ 'V'  : 'v·line ',
+			\ '' : 'v·block ',
+			\ 's'  : 'select ',
+			\ 'S'  : 's·line ',
+			\ '' : 's·block ',
+			\ 'i'  : 'insert ',
+			\ 'R'  : 'replace ',
+			\ 'Rv' : 'v·replace ',
+			\ 'c'  : 'command ',
+			\ 'cv' : 'vim ex ',
+			\ 'ce' : 'ex ',
+			\ 'r'  : 'prompt ',
+			\ 'rm' : 'more ',
+			\ 'r?' : 'confirm ',
+			\ '!'  : 'shell ',
+			\ 't'  : 'terminal '}
 
 set statusline=
 set statusline+=%#PrimaryBlock#
