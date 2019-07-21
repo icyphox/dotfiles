@@ -12,7 +12,6 @@ set $mod Mod4
 # set fonts in funky way
 font pango: SF Mono SemiBold 12
 # for_window [class=".*"] title_format "<span font='SF Mono SemiBold 11'> › %title</span>"
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 for_window [class="^.*"] border none
 
@@ -30,7 +29,6 @@ bindsym $mod+Ctrl+l exec ~/bin/lock.sh
 bindsym $mod+d exec "rofi -show run"
 
 # disable title bar
-#new_window pixel 2
 new_window normal 0
 
 # change focus
@@ -115,12 +113,6 @@ bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 15 px or 15 ppt
         bindsym j resize grow height 15 px or 15 ppt
         bindsym k resize shrink height 15 px or 15 ppt
@@ -137,17 +129,9 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-
-# selectively enable floating
-
-#for_window [class="Steam"] floating enable
-#for_window [class="Keybase"] floating enable
-#for_window [class="Battle.net.exe"] floating enable
-
 bindsym $mod+r mode "resize"
 
-## colors
-
+# colors
 set $base00 #1b2b34
 set $base01 #343d46
 set $base02 #4f5b66
@@ -165,7 +149,6 @@ set $base0D #6699cc
 set $base0E #c594c5
 set $base0F #ab7967
 
-# Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base05 $base05 $base00 $base05 $base05
 client.focused_inactive $base01 $base01 $base05 $base03 $base01
@@ -176,7 +159,6 @@ client.background       $base07
 # smart_gaps on
 # smart_borders on
 
-
 # executions
 exec xrdb -load ~/.Xresources
 exec compton &
@@ -185,6 +167,7 @@ exec_always --no-startup-id ~/bin/bar.sh
 exec feh --bg-fill ~/.wall
 exec_always --no-startup-id ~/.local/bin/flashfocus
 exec_always dunst
+exec redshift &
 exec --no-startup-id udiskie -ans &
 
 # cycle workspaces
@@ -204,7 +187,6 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # media player controls
-
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
