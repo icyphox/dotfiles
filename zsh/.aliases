@@ -1,21 +1,23 @@
 #!/usr/bin/zsh
 
-alias scrot="~/bin/scrot.sh"
-alias icyinfo="~/bin/icyinfo.sh"
 alias gah='sudo $(fc -ln -1)'
-alias nvime='nvim ~/.config/nvim/init.vim'
-alias up="~/bin/icyup.sh"
-alias envac="source .env/bin/activate"
-alias vim="nvim"
-alias vi="nvim"
-alias ls="ls --color=auto"
-alias sxiv="sxiv -b"
+alias nvime="nvim ~/.config/nvim/init.vim"
 alias socks="ssh -D 8008 emerald"
-alias vpn="vpnon.sh"
 alias o="xdg-open"
 alias gc="git commit -v -s"
 alias gst="git status --short"
 alias ga="git add"
 alias gd="git diff --minimal"
 alias gl="git log --oneline --decorate --graph"
-alias nvmon=". ~/.nvm/nvm.sh"
+
+function up {
+	~/bin/icyup.sh "$1"
+}
+
+function nvmon {
+	source ~/.nvm/nvm.sh
+}
+
+function envac {
+	source .env/bin/activate
+}
