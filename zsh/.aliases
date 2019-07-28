@@ -2,7 +2,7 @@
 
 alias gah='sudo $(fc -ln -1)'
 alias nvime="nvim ~/.config/nvim/init.vim"
-alias socks="ssh -D 8008 emerald"
+alias socks="ssh -D 8008 emerald -f"
 alias o="xdg-open"
 alias gc="git commit -v -s"
 alias gst="git status --short"
