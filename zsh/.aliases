@@ -21,3 +21,7 @@ function nvmon {
 function envac {
 	source .env/bin/activate
 }
+
+function vpn {
+	~/bin/vpnon.sh
+}
