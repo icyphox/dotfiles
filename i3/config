@@ -194,5 +194,5 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # screenshot
 bindsym Print exec scr
-bindsym Ctrl+Alt_L+Print exec "scr -w"
+bindsym Ctrl+Print exec "scr -w"
 bindsym Ctrl+Shift+Print exec "scr -s"
