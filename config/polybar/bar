@@ -12,7 +12,7 @@
 ;margin-bottom = 2
 
 [colors]
-fg = ${xrdb:color21}
+fg = ${xrdb:color0}
 bg = #001b2b34
 
 [bar/top]
@@ -111,9 +111,9 @@ poll-interval = 5
 format-charging = <label-charging>
 format-discharging = <label-discharging>
 label-charging = bat+ %percentage%%
-label-charging-foreground = ${xrdb:color21}
+label-charging-foreground = ${colors.fg}
 label-discharging = bat %percentage%%
-label-discharging-foreground = ${xrdb:color21}
+label-discharging-foreground = ${colors.fg}
 label-full = full!
 
 [module/spotipy]
