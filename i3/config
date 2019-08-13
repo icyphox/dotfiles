@@ -132,22 +132,22 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # colors
-set $base00 #1b2b34
-set $base01 #343d46
-set $base02 #4f5b66
-set $base03 #65737e
-set $base04 #a7adba
-set $base05 #c0c5ce
-set $base06 #cdd3de
-set $base07 #d8dee9
-set $base08 #ec5f67
-set $base09 #f99157
-set $base0A #fac863
-set $base0B #99c794
-set $base0C #5fb3b3
-set $base0D #6699cc
-set $base0E #c594c5
-set $base0F #ab7967
+set $base00 #292d3e
+set $base01 #444267
+set $base02 #32374d
+set $base03 #676e95
+set $base04 #8796b0
+set $base05 #959dcb
+set $base06 #959dcb
+set $base07 #ffffff
+set $base08 #f07178
+set $base09 #f78c6c
+set $base0A #ffcb6b
+set $base0B #c3e88d
+set $base0C #89ddff
+set $base0D #82aaff
+set $base0E #c792ea
+set $base0F #ff5370
 
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base05 $base05 $base00 $base05 $base05
