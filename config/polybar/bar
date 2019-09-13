@@ -31,9 +31,9 @@ foreground = ${colors.fg}
 
 font-0 = SF Mono:size=12:weight=semibold;3
 
-modules-left =  date time volume battery ewmh
+modules-left =  date time volume battery
 modules-center =  
-modules-right = xwindow
+modules-right = ewmh
 
 tray-position = false
 tray-padding = 0
@@ -49,15 +49,11 @@ module-margin-left = 2
 module-margin-right = 2
 
 [module/volume]
-type = internal/alsa
-
-format-volume = <label-volume>
-label-volume = vol %percentage%%
-module-margin-right = 1
-
-format-volume-background = ${colors.bg}
-label-muted = muted
-
+type = custom/script
+interval = 0.01
+exec = ~/bin/vol.sh -q
+scroll-up = ~/bin/vol.sh -i
+scroll-down = ~/bin/vol.sh -d
 
 [module/xwindow]
 type = internal/xwindow
@@ -90,33 +86,20 @@ label-urgent-foreground = #EC5f67
 label-urgent-background = ${colors.bg}
 label-urgent-padding = 1
 
-
 [module/date]
-type = internal/date
-interval = 1
-date = %a, %d %b 
-format-prefix-foreground = ${xrdb:color6}
+type = custom/script
+interval = 1.0
+exec = ~/bin/time.sh -d
 
 [module/time]
-type = internal/date
-interval = 1
-date = %I:%M 
-format-prefix-foreground = ${xrdb:color6}
+type = custom/script
+interval = 1.0
+exec = ~/bin/time.sh -t
 
 [module/battery]
-type = internal/battery
-full-at = 100
-battery = BAT0
-adapter = ACAD
-poll-interval = 5
-
-format-charging = <label-charging>
-format-discharging = <label-discharging>
-label-charging = bat+ %percentage%%
-label-charging-foreground = ${colors.fg}
-label-discharging = bat %percentage%%
-label-discharging-foreground = ${colors.fg}
-label-full = full!
+type = custom/script
+interval = 1.0
+exec = ~/bin/bat.sh
 
 [module/spotipy]
 type = custom/script
