@@ -14,10 +14,11 @@ font pango: SF Mono SemiBold 13
 for_window [class=".*"] title_format "<span font='SF Mono SemiBold 11'> › %title</span>"
 floating_modifier $mod
 for_window [class="^.*"] border 1
+for_window [class="Firefox"] border none
+for_window [class="Discord"] border none
 
 # start a terminal
 bindsym $mod+Return exec urxvtc
-for_window [class="Telegram"] floating enable
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -167,7 +168,7 @@ exec_always --no-startup-id ~/bin/bar.sh
 exec feh --bg-fill ~/.wall
 exec_always --no-startup-id ~/.local/bin/flashfocus
 exec_always dunst
-exec redshift &
+exec_always redshift &
 exec --no-startup-id udiskie -ans &
 
 # cycle workspaces
