@@ -9,6 +9,7 @@ call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
+Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
 " plugins for writing {{{
 Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'reedes/vim-wordy', { 'for': ['text',  'markdown'] }
@@ -47,7 +48,7 @@ augroup END
 " basic settings
 set swapfile
 set dir=/tmp
-set number
+set nonumber
 set smartcase
 syntax on
 filetype plugin indent on
@@ -61,7 +62,7 @@ set rtp+=~/.fzf
 set timeout timeoutlen=3000 ttimeoutlen=100
 set undodir=~/.vim/undodir
 set nowrap
-set cursorline
+set nocursorline
 set conceallevel=2 
 set mouse=a
 set wildmenu
@@ -87,7 +88,7 @@ set wildignore+=*.swp,.lock,.DS_Store,._*
 let g:deoplete#enable_at_startup = 1
 
 " colorscheme
-colorscheme agila
+colorscheme plain
 
 " keybindings
 let mapleader=' '
@@ -102,7 +103,7 @@ let g:currentmode={
 			\ 'no' : 'n·operator pending ',
 			\ 'v'  : 'visual ',
 			\ 'V'  : 'v·line ',
-			\ '' : 'v·block ',
+			\ '' : 'v·block ',
 			\ 's'  : 'select ',
 			\ 'S'  : 's·line ',
 			\ '' : 's·block ',
@@ -118,19 +119,23 @@ let g:currentmode={
 			\ '!'  : 'shell ',
 			\ 't'  : 'terminal '}
 
+hi PrimaryBlock   ctermfg=06 ctermbg=00
+hi SecondaryBlock ctermfg=08 ctermbg=00
+hi Blanks   ctermfg=07 ctermbg=00
+
 set statusline=
 set statusline+=%#PrimaryBlock#
 set statusline+=\ %{g:currentmode[mode()]}
-set statusline+=%#TabLineSel#
+set statusline+=%#SecondaryBlock#
 set statusline+=%{StatuslineGit()}
-set statusline+=%#TabLineFill#
+set statusline+=%#Blanks#
 set statusline+=\ %f\ 
 set statusline+=%m
 set statusline+=%=
-set statusline+=%#TabLineSel#
+set statusline+=%#SecondaryBlock#
 set statusline+=\ %l\  
 set statusline+=%#PrimaryBlock#
-set statusline+=\ %y\ 
+set statusline+=%{&filetype}
 
 " for git branch in statusline, from nerdypepper
 function! GitBranch()
@@ -186,7 +191,6 @@ endfunction
 hi Comment cterm=italic
 " color overrides
 hi CursorLine ctermbg=none
-hi Visual ctermfg=white cterm=bold ctermbg=magenta
 
 
 " vim-markdown 
@@ -219,3 +223,4 @@ augroup litecorrect
     autocmd FileType markdown,mkd call litecorrect#init()
     autocmd FileType textile call litecorrect#init()
 augroup END
+
