@@ -1,1 +1,1 @@
-source ~/Leet/peda/peda.py
+source /home/icy/.gdbinit-gef.py
