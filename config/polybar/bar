@@ -31,7 +31,7 @@ foreground = ${colors.fg}
 
 font-0 = SF Mono:size=12:weight=semibold;3
 
-modules-left =  date time volume battery
+modules-left =  date time volume battery music
 modules-center =  
 modules-right = ewmh
 
@@ -100,6 +100,11 @@ exec = ~/bin/time.sh -t
 type = custom/script
 interval = 1.0
 exec = ~/bin/bat.sh
+
+[module/music]
+type = custom/script
+interval = 1.0
+exec = ~/bin/np.sh
 
 [module/spotipy]
 type = custom/script
