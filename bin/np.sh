@@ -9,7 +9,7 @@ light="$(xres color8)"
 USER="icyphox"
 URL="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks"
 URL+="&user=$USER&api_key=$API_KEY&format=json&limit=1&nowplaying=true"
-NOTPLAYING="not playing"
+NOTPLAYING=" "
 RES=$(curl -s $URL)
 NOWPLAYING=$(jq '.recenttracks.track[0]."@attr".nowplaying' <<< "$RES" | tr -d '"')
 
@@ -20,5 +20,5 @@ then
 	ARTIST=$(jq '.recenttracks.track[0].artist."#text"' <<< "$RES" | tr -d '"')
 	echo -ne "%{F$light}$TRACK %{F$fg}by $ARTIST"
 else
-	echo -ne " "
+	echo -ne "$NOTPLAYING"
 fi

@@ -10,10 +10,10 @@ export ZSH=/home/$USER/.oh-my-zsh
 export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/nvim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-export PATH=$PATH:$HOME/bin
+export PATH=$HOME/bin:$PATH
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
-export PATH=$PATH:$HOME/Leet/Nim/bin
+export PATH=$PATH:$HOME/leet/Nim/bin
 export PATH=$PATH:$HOME/.nimble/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
@@ -53,10 +53,6 @@ _nicy_prompt() {
 }
 add-zsh-hook precmd _nicy_prompt
 
-# end and home keys
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # base16-shell 
@@ -77,3 +73,8 @@ source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # emacsy binds
 bindkey -e
+# end and home keys
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+
+

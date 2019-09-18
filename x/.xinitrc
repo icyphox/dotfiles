@@ -11,7 +11,6 @@ setxkbmap -option compose:caps
 dbus-update-activation-environment --systemd DISPLAY
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
-$HOME/bin/mail.sh
 urxvtd &
 libinput-gestures-setup start
 exec i3

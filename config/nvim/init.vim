@@ -67,8 +67,8 @@ set conceallevel=2
 set mouse=a
 set wildmenu
 set shiftwidth=4     " indent = 4 spaces
-set noexpandtab      " tabs are tabs
 set tabstop=4        " tab = 4 spaces
+set expandtab
 set softtabstop=4    " backspace through spaces
 set nocompatible
 
@@ -198,6 +198,7 @@ let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_toml_frontmatter=1
 let g:vim_markdown_yaml_fromtmatter=1
 let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_conceal=0
 
 " deoplete-jedi
 let g:python_host_prog = '/home/icy/.pynvim2/bin/python'
