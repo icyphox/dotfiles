@@ -10,6 +10,7 @@ alias ga="git add"
 alias gd="git diff --minimal"
 alias gl="git log --oneline --decorate --graph"
 alias ls="ls --color"
+alias vim="nvim"
 
 function up {
 	~/bin/icyup.sh "$1"

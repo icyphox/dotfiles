@@ -65,11 +65,14 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 fpath=($HOME/.zsh/zsh-completions/src $fpath)
 
 # sourced scripts
-source /usr/share/autojump/autojump.zsh
 source $HOME/.aliases
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# autojump
+[[ -s /home/icy/.autojump/etc/profile.d/autojump.sh ]] && source /home/icy/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
 
 # emacsy binds
 bindkey -e

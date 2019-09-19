@@ -6,14 +6,12 @@
 
 
 call plug#begin()
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
 " plugins for writing {{{
 Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'reedes/vim-wordy', { 'for': ['text',  'markdown'] }
-Plug 'reedes/vim-litecorrect', { 'for': ['text',  'markdown'] }
 Plug 'junegunn/goyo.vim', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 Plug 'kana/vim-textobj-user', { 'for': ['text', 'markdown'] }
@@ -23,7 +21,6 @@ Plug 'reedes/vim-textobj-quote'
 Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
 Plug 'yuttie/comfortable-motion.vim'
-Plug 'zchee/deoplete-jedi'
 Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
