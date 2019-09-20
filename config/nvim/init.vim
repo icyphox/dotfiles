@@ -9,6 +9,7 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
+Plug 'dag/vim-fish',
 " plugins for writing {{{
 Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'reedes/vim-wordy', { 'for': ['text',  'markdown'] }
@@ -80,9 +81,6 @@ set wildignore+=*.eot,*.otf,*.ttf,*.woff
 set wildignore+=*.doc,*.pdf,*.cbr,*.cbz
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 set wildignore+=*.swp,.lock,.DS_Store,._*
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
 
 " colorscheme
 colorscheme plain
@@ -197,10 +195,6 @@ let g:vim_markdown_yaml_fromtmatter=1
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_conceal=0
 
-" deoplete-jedi
-let g:python_host_prog = '/home/icy/.pynvim2/bin/python'
-let g:python3_host_prog = '/home/icy/.pynvim3/bin/python'
-
 " keysound
 let g:keysound_enable = 1
 let g:keysound_volume = 1000
@@ -213,12 +207,5 @@ augroup textobj_quote
   autocmd FileType markdown call textobj#quote#init({'educate': 1})
   autocmd FileType textile call textobj#quote#init({'educate': 1})
   autocmd FileType text call textobj#quote#init({'educate': 1})
-augroup END
-
-" litecorrect
-augroup litecorrect
-    autocmd!
-    autocmd FileType markdown,mkd call litecorrect#init()
-    autocmd FileType textile call litecorrect#init()
 augroup END
 

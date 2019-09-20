@@ -29,7 +29,7 @@ override-redirect = false
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = SF Mono:size=12:weight=semibold;3
+font-0 = SF Mono:size=13:weight=semibold;3
 
 modules-left =  date time volume battery music
 modules-center =  
@@ -72,7 +72,7 @@ enable-scroll = true
 format = <label-state>
 
 label-active = ×
-label-active-foreground = ${xrdb:color6}
+label-active-foreground = ${colors.fg}
 label-active-background = ${colors.bg}
 label-active-padding = 1
 

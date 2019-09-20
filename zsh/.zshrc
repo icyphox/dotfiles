@@ -20,8 +20,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 # zsh setup
 autoload -Uz compinit colors add-zsh-hook history-search-end
-colors
-compinit
+#colors
 zstyle ':completion:*' list-colors "di=34"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 export ZLE_REMOVE_SUFFIX_CHARS=''
@@ -56,13 +55,13 @@ add-zsh-hook precmd _nicy_prompt
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # base16-shell 
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+#BASE16_SHELL="$HOME/.config/base16-shell/"
+#[ -n "$PS1" ] && \
+#    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # fpath
-fpath=($HOME/.zsh/zsh-completions/src $fpath)
+#fpath=($HOME/.zsh/zsh-completions/src $fpath)
 
 # sourced scripts
 source $HOME/.aliases
@@ -73,11 +72,15 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -s /home/icy/.autojump/etc/profile.d/autojump.sh ]] && source /home/icy/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
+# fff
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
 
 # emacsy binds
 bindkey -e
 # end and home keys
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
-
 

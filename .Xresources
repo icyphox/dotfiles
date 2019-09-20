@@ -54,7 +54,7 @@
 
 ! Urxvt config 
 !---------------------
-URxvt.font: xft:SF Mono:Semibold:size=12
+URxvt.font: xft:SF Mono:Semibold:size=13
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30
