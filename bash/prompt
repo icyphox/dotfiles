@@ -17,16 +17,29 @@ git_branch() {
 
     if [[ $git_status =~ $on_branch ]]; then
         local branch=${BASH_REMATCH[1]}
-        echo -ne " ${grn} $branch ${rst}"
+        echo -ne "${ylw} $branch ${rst}"
     elif [[ $git_status =~ $on_commit ]]; then
         local commit=${BASH_REMATCH[1]}
-        echo -ne " ${ylw} $commit ${rst}"
+        echo -ne "${cyn} $commit ${rst}"
+    fi
+}
+
+dirtyorclean() {
+    status="$(git status --porcelain 2> /dev/null)"
+    local exit="$?"
+    if [[ "$exit" -eq 0 ]]; then
+        if [[ ${#status} -eq 0 ]]; then
+            echo -ne "${grn}•${rst}"
+        else
+            echo -ne "${red}×${rst}"
+        fi
+    else
+        echo -ne ""
     fi
 }
 
 prompt_pwd() {
-   path="$(echo $PWD)"
-   echo -ne "\001${gry}\002$path\001${rst}\002"
+    echo -ne "\001${gry}\002$(dirs +0)\001${rst}\002"
 }
 
 rootornot() {
@@ -37,5 +50,5 @@ rootornot() {
     fi
 }
 
-PS1='\n\w$(git_branch)\n$(rootornot) '
+PS1='\n$(prompt_pwd)$(git_branch)$(dirtyorclean)\n$(rootornot) '
 PS2="> "

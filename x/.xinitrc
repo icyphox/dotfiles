@@ -10,5 +10,6 @@
 setxkbmap -option compose:caps
 urxvtd &
 source ~/.fehbg
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 libinput-gestures-setup start
 exec i3 
