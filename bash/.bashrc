@@ -16,7 +16,6 @@ shopt -s histappend
 export HISTCONTROL=ignoreboth:erasedups
 HISTSIZE=1000
 HISTFILESIZE=2000
-#export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # cool options for cool kids
 shopt -s \
@@ -48,3 +47,9 @@ fi
 # source aliases and prompt
 source ~/.bash/aliases
 source ~/.bash/prompt
+
+# autojump
+[[ -s /home/icy/.autojump/etc/profile.d/autojump.sh ]] && source /home/icy/.autojump/etc/profile.d/autojump.sh
+
+# title
+trap 'echo -ne "\033]0;$BASH_COMMAND\007"' DEBUG

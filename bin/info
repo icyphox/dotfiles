@@ -24,13 +24,14 @@ COLOR_BARS="$RED$BAR$GRN$BAR$YLW$BAR$BLU$BAR$PUR$BAR$CYN$BAR$RST"
 user=$(whoami)
 host=$(hostname)
 kernel=$(uname -r)
-uptime=$(uptime -p)    # too long to print
+#uptime=$(uptime -p)    # too long to print
 shell=$(basename $SHELL)
 
 os() {
 	os=$(source /etc/os-release && echo $ID)
 	export os
 }
+
 
 wm() {
 	id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
@@ -43,9 +44,15 @@ wm() {
 	export wm
 }
 
+pkgs() {
+    pkgs=$(apk info | wc -l)
+    export pkgs
+}
 
+# get our vars
 os
 wm
+pkgs
 
 COL=$(tput cols)
 ROW=$(tput lines)
@@ -73,10 +80,10 @@ printf "%s%b" "$PADC" "╋╋╋┗━┻┛\n\n"
 #printf "%s%b" "$PADC" "$COLOR_BARS\n\n"
 printf "%s%b" "$PADC" "${CYN}$user${RST}@${CYN}$host${RST}\n"
 printf "%s%b" "$PADC" "os:               ${CYN}$os${RST}\n"
-printf "%s%b" "$PADC" "kernel:   ${CYN}$kernel${RST}\n"
-#printf "%s%b" "$PADC" "uptime:    ${CYN}$uptime${RST}\n"
+printf "%s%b" "$PADC" "kernel:${CYN}$kernel${RST}\n"
+printf "%s%b" "$PADC" "pkgs:                ${CYN}$pkgs${RST}\n"
 printf "%s%b" "$PADC" "wm:                   ${CYN}$wm${RST}\n"
-printf "%s%b" "$PADC" "shell:               ${CYN}$shell${RST}\n"
+printf "%s%b" "$PADC" "shell:              ${CYN}$shell${RST}\n"
 printf "%s%b" "$PADC" "$COLOR_BARS\n"
 
 tput civis

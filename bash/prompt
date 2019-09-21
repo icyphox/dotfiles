@@ -37,5 +37,5 @@ rootornot() {
     fi
 }
 
-PS1='\n$(prompt_pwd)$(git_branch)\n$(rootornot) '
+PS1='\n\w$(git_branch)\n$(rootornot) '
 PS2="> "
