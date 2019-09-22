@@ -168,7 +168,7 @@ exec_always --no-startup-id ~/bin/bar.sh
 exec feh --bg-tile ~/.wall
 exec_always --no-startup-id ~/.local/bin/flashfocus
 exec_always dunst
-exec_always redshift &
+exec_always redshift -l 12.825888:80.039520
 exec --no-startup-id udiskie -ans &
 
 # cycle workspaces
