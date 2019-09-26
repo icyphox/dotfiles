@@ -19,7 +19,7 @@ bg = #001b2b34
 
 [bar/top]
 width = 100%
-height = 30 
+height = 32 
 offset-x = 0%
 offset-y= 0%
 fixed-center = true
@@ -29,7 +29,7 @@ override-redirect = false
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = SF Mono:size=13:weight=semibold;3
+font-0 = SF Mono:size=14:weight=semibold;3
 
 modules-left =  date time volume battery music
 modules-center =  

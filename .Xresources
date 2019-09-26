@@ -5,25 +5,22 @@
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
 
-! Base16 Helios
-! Scheme: Alex Meyer (https://github.com/reyemxela)
-
-#define base00 #111111
-#define base01 #303030
-#define base02 #353535
-#define base03 #4A4A4A
-#define base04 #B2CCD6
-#define base05 #FFFFFF
-#define base06 #EEFFFF
-#define base07 #FFFFFF
-#define base08 #F07178
-#define base09 #F78C6C
-#define base0A #FDF200
-#define base0B #13CA91
-#define base0C #00FECA
-#define base0D #7898FB
-#define base0E #FF2079
-#define base0F #FF5370
+#define base00 #151515
+#define base01 #202020
+#define base02 #303030
+#define base03 #505050
+#define base04 #b0b0b0
+#define base05 #d0d0d0
+#define base06 #e0e0e0
+#define base07 #f5f5f5
+#define base08 #fb9fb1
+#define base09 #eda987
+#define base0A #ddb26f
+#define base0B #acc267
+#define base0C #12cfc0
+#define base0D #6fc2ef
+#define base0E #e1a3ee
+#define base0F #deaf8f
 
 *foreground:   base05
 #ifdef background_opacity
@@ -38,7 +35,7 @@
 *color2:       base0B
 *color3:       base0A
 *color4:       base0D
-*color5:       base0E
+*color5:      
 *color6:       base0C
 *color7:       base05
 
@@ -54,7 +51,7 @@
 
 ! Urxvt config 
 !---------------------
-URxvt.font: xft:SF Mono:Semibold:size=13
+URxvt.font: xft:SF Mono:size=14:style=Semibold:antialias=true 
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30
@@ -85,7 +82,7 @@ rofi.color-window:  base00, base00, base00
 rofi.color-normal:  base00, base05, base00, base05, base00
 rofi.color-active:  base07, base09, #000, #000, #000
 rofi.color-urgent:  #e12a36, #dd2a4b, #1b2b34
-rofi.font: SF Mono SemiBold 13
+rofi.font: SF Mono Semibold 13
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.location:0

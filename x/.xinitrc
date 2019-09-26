@@ -7,7 +7,7 @@
 #(_)_/\_\_|_| |_|_|\__|_|  \___|
 #
 
-setxkbmap -option compose:caps
+setxkbmap -option 'grp:alt_shift_toggle' -layout us,ru
 urxvtd &
 source ~/.fehbg
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

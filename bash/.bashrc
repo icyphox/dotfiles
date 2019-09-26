@@ -48,8 +48,9 @@ fi
 source ~/.bash/aliases
 source ~/.bash/prompt
 
-# autojump
-[[ -s /home/icy/.autojump/etc/profile.d/autojump.sh ]] && source /home/icy/.autojump/etc/profile.d/autojump.sh
+# z
+export _Z_CMD="j"
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 # title
-trap 'echo -ne "\033]0;$BASH_COMMAND\007"' DEBUG
+#trap 'echo -ne "\033]0;$BASH_COMMAND\007"' DEBUG
