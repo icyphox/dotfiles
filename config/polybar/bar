@@ -14,12 +14,12 @@
 [colors]
 fg = ${xrdb:color0}
 ;fg = ${xrdb:color21}
-bg = #001b2b34
-;bg = ${xrdb:color0}
+bg = #9f1d1f21
+;bg = ${xrdb:color7}
 
 [bar/top]
 width = 100%
-height = 32 
+height = 35
 offset-x = 0%
 offset-y= 0%
 fixed-center = true
