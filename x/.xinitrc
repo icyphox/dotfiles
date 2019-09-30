@@ -10,6 +10,6 @@
 setxkbmap -option 'grp:alt_shift_toggle' -layout us,ru
 urxvtd &
 source ~/.fehbg
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 libinput-gestures-setup start
 exec i3 

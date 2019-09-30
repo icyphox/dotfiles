@@ -82,7 +82,7 @@ rofi.color-window:  base00, base00, base00
 rofi.color-normal:  base00, base05, base00, base05, base00
 rofi.color-active:  base07, base09, #000, #000, #000
 rofi.color-urgent:  #e12a36, #dd2a4b, #1b2b34
-rofi.font: SF Mono Semibold 13
+rofi.font: SF Mono Semibold 14
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.location:0
