@@ -84,6 +84,7 @@ set wildignore+=*.swp,.lock,.DS_Store,._*
 
 " colorscheme
 colorscheme plain
+set background=dark
 
 " keybindings
 let mapleader=' '
