@@ -1,21 +1,48 @@
 #!/usr/bin/env bash
+# scr: screenshot tool
 
 scr_path=~/pics/scrots
 n=6; output=$(tr -cd '[:alnum:]' < /dev/urandom | head -c$n)
 
-if [ "$1" == "" ]; then
-    notify-send "screenshot taken!"
-	import -window root "$scr_path/$output.png"
-elif [ "$1" == "-w" ]; then
-    notify-send "window screenshot taken!"
-	import -window "$(xdotool getwindowfocus)" "$scr_path/$output.png"
-	convert "$scr_path/$output.png" \( +clone -background transparent -shadow 60x40+0+15 \) \
-	+swap -background white -layers merge +repage "$scr_path/$output.png"
-elif [ "$1" == "-s" ]; then
-    notify-send "selection screenshot taken!"
-	g=$(slop --highlight --tolerance=0 --color=0.3,0.4,0.6,0.4)
-	sleep 1
-	import -window root -crop "$g" +repage "$scr_path/$output.png"
+usage() {
+    echo "usage:"
+    echo "  scr [option]"
+    echo "options:"
+    echo "  -f    full screenshot"
+    echo "  -w    window screenshot"
+    echo "  -s    selection screenshot"
+}
+
+while getopts fws option
+do
+    case $option in
+        f)
+            import -window root "$scr_path/$output.png"
+            notify-send "screenshot taken!"
+            ;;
+        w)
+            import -window "$(xdotool getwindowfocus)" "$scr_path/$output.png"
+            convert "$scr_path/$output.png" \( +clone -background transparent -shadow 60x40+0+15 \) \
+	        +swap -background white -layers merge +repage "$scr_path/$output.png"
+            notify-send "window screenshot taken!"
+            ;;
+        s)
+            g=$(slop --highlight --tolerance=0 --color=0.3,0.4,0.6,0.4)
+	        sleep 1
+	        import -window root -crop "$g" +repage "$scr_path/$output.png"
+            notify-send "selection screenshot taken!"
+            ;;
+        * | ?)
+            usage
+            exit;;
+        esac
+done
+
+if [ $OPTIND -eq 1 ]; then
+    echo "scr: missing argument"
+    usage
+    exit
 fi
+
 
 xclip -selection clipboard -t image/png -i "$scr_path/$output.png"
