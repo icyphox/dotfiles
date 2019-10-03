@@ -1,5 +1,5 @@
 Host *
-	ServerAliveInterval 5
+	ServerAliveInterval 3
 	ServerAliveCountMax 1
 
 Host github.com

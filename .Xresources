@@ -51,7 +51,7 @@
 
 ! Urxvt config 
 !---------------------
-URxvt.font: xft:SF Mono:size=14:style=Semibold:antialias=true 
+URxvt.font: xft:Roboto Mono:size=14:style=Medium:antialias=true 
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30
@@ -59,7 +59,7 @@ URxvt.perl-ext: default,matcher
 URxvt.letterSpace: -1
 URxvt.matcher.button: 1
 URxvt.boldFont:
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/firefox --new-tab
 URxvt.visualBell: false
 URxvt.depth: 20
 URxvt.lineSpace: 1
@@ -82,7 +82,7 @@ rofi.color-window:  base00, base00, base00
 rofi.color-normal:  base00, base05, base00, base05, base00
 rofi.color-active:  base07, base09, #000, #000, #000
 rofi.color-urgent:  #e12a36, #dd2a4b, #1b2b34
-rofi.font: SF Mono Semibold 14
+rofi.font: Roboto Mono Medium 14
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.location:0
