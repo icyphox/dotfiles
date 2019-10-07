@@ -59,7 +59,7 @@ URxvt.perl-ext: default,matcher
 URxvt.letterSpace: -1
 URxvt.matcher.button: 1
 URxvt.boldFont:
-URxvt.url-launcher: /usr/bin/firefox --new-tab
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.visualBell: false
 URxvt.depth: 20
 URxvt.lineSpace: 1

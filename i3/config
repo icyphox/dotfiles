@@ -10,8 +10,8 @@
 set $mod Mod4
 
 # set fonts in funky way
-font pango: SF Mono SemiBold 13
-for_window [class=".*"] title_format "<span font='SF Mono SemiBold 11'> › %title</span>"
+font pango: Roboto Mono Medium 14
+for_window [class=".*"] title_format "<span font='Roboto Mono Medium 13'> › %title</span>"
 floating_modifier $mod
 for_window [class="^.*"] border none
 for_window [class="Firefox"] border none

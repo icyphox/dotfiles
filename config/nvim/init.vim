@@ -99,7 +99,7 @@ let g:currentmode={
 			\ 'no' : 'n·operator pending ',
 			\ 'v'  : 'visual ',
 			\ 'V'  : 'v·line ',
-			\ '' : 'v·block ',
+			\ '' : 'v·block ',
 			\ 's'  : 'select ',
 			\ 'S'  : 's·line ',
 			\ '' : 's·block ',
@@ -195,6 +195,14 @@ let g:vim_markdown_toml_frontmatter=1
 let g:vim_markdown_yaml_fromtmatter=1
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_conceal=0
+
+" vim-pencil
+let g:pencil#textwidth = 72
+let g:pencil#conceallevel = 0
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init({'wrap': 'hard', 'autoformat': 0})
+augroup END
 
 " keysound
 let g:keysound_enable = 1

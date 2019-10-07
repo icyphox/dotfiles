@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-fg="$(xres color0)"
+fg="$(xres color15)"
 light="$(xres color8)"
 
 while getopts idq options

@@ -12,9 +12,8 @@
 ;margin-bottom = 2
 
 [colors]
-fg = ${xrdb:color0}
-;fg = ${xrdb:color21}
-bg = #9f1d1f21
+fg = ${xrdb:color7}
+bg = #001d1f21
 ;bg = ${xrdb:color7}
 
 [bar/top]
