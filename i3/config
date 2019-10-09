@@ -179,9 +179,9 @@ bindsym $mod+q workspace next
 bindsym $mod+p exec "rofi-pass"
 
 # volume controls
-bindsym XF86AudioRaiseVolume exec amixer sset Master 2%+
-bindsym XF86AudioLowerVolume exec amixer sset Master 2%-
-bindsym XF86AudioMute exec amixer sset Master toggle
+bindsym XF86AudioRaiseVolume exec pamixer -i 2
+bindsym XF86AudioLowerVolume exec pamixer -d 2
+bindsym XF86AudioMute exec pamixer -t
 
 # brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5

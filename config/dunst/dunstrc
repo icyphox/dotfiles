@@ -1,5 +1,5 @@
 [global]
-    font = SF Mono Semibold 12
+    font = Roboto Mono Medium 14
     allow_markup = yes
     plain_text = no
     format = "%s\n%b"

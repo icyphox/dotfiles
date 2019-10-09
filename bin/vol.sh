@@ -7,19 +7,18 @@ while getopts idq options
 do
 	case $options in
 		i)
-			amixer sset Master 2%+
+			pamixer -i 2
 			;;
 
 		d)
-			amixer sset Master 2%-
+			pamixer -d 2
 			;;
 		q)
-			if [[ $(amixer get Master | awk -F"[][] " '{ print $3 }' | tr -d '\n') = "[on]" ]]
-			then
-				cur_vol=$(amixer get Master | awk -F"[][]" '/dB/ { print $2 }' | tr -d '\n')
-				echo -ne "%{F$light}vol %{F$fg}$cur_vol"
-			else
+			cur_vol=$(pamixer --get-volume-human)
+            if [[ "$cur_vol" == "muted" ]]; then
 				echo -ne "%{F$light}vol %{F$fg}muted"
+			else
+			    echo -ne "%{F$light}vol %{F$fg}$cur_vol"
 			fi
 			;;
 	esac
