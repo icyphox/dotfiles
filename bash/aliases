@@ -11,6 +11,9 @@ alias gd="git diff --minimal"
 alias gl="git log --oneline --decorate --graph"
 alias ls="ls --color"
 alias vim="nvim"
+alias xi="sudo xbps-install -S"
+alias xr="sudo xbps-remove -R"
+alias xs="xbps-query -Rs"
 
 function up {
 	~/bin/icyup.sh "$1"

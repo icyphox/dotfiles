@@ -35,3 +35,6 @@ $if mode=emacs
 "\e[H": beginning-of-line
 "\e[F": end-of-line
 $endif
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
