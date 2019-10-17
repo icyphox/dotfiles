@@ -3,7 +3,7 @@
 # requires the last.fm API key
 
 source ~/.lastfm    # `export API_KEY="<key>"`
-fg="$(xres color0)"
+fg="$(xres color15)"
 light="$(xres color8)"
 
 USER="icyphox"
