@@ -44,7 +44,7 @@
 [frame]
     width = 4
     width = 3
-    color = "#4d4d4c"
+    color = "#c7ccd1"
 
 [shortcuts]
     close = ctrl+space
@@ -57,13 +57,13 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#4d4d4c"
-    foreground = "#ffffff"
+    background = "#c7ccd1"
+    foreground = "#1c2023"
     timeout = 5
 
 [urgency_normal]
-    background = "#4d4d4c"
-    foreground = "#ffffff"
+    background = "#c7ccd1"
+    foreground = "#1c2023"
     timeout = 5
 
 [urgency_critical]

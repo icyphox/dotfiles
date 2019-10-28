@@ -133,22 +133,22 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # colors
-set $base00 #ffffff
-set $base01 #e0e0e0
-set $base02 #d6d6d6
-set $base03 #8e908c
-set $base04 #969896
-set $base05 #4d4d4c
-set $base06 #282a2e
-set $base07 #1d1f21
-set $base08 #c82829
-set $base09 #f5871f
-set $base0A #eab700
-set $base0B #718c00
-set $base0C #51c5b6
-set $base0D #4271ae
-set $base0E #ff0080
-set $base0F #a3685a
+set $base00 #1c2023
+set $base01 #393f45
+set $base02 #565e65
+set $base03 #747c84
+set $base04 #adb3ba
+set $base05 #c7ccd1
+set $base06 #dfe2e5
+set $base07 #f3f4f5
+set $base08 #c7ae95
+set $base09 #c7c795
+set $base0A #aec795
+set $base0B #95c7ae
+set $base0C #95aec7
+set $base0D #ae95c7
+set $base0E #c795ae
+set $base0F #c79595
 
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base05 $base05 $base00 $base05 $base05
@@ -194,6 +194,6 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # screenshot
-bindsym Print exec scr
+bindsym Print exec "scr -f"
 bindsym Ctrl+Print exec "scr -w"
 bindsym Ctrl+Shift+Print exec "scr -s"

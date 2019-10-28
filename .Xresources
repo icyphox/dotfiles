@@ -5,22 +5,22 @@
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
 
-#define base00 #ffffff
-#define base01 #e0e0e0
-#define base02 #d6d6d6
-#define base03 #8e908c
-#define base04 #969896
-#define base05 #4d4d4c
-#define base06 #282a2e
-#define base07 #1d1f21
-#define base08 #c82829
-#define base09 #f5871f
-#define base0A #eab700
-#define base0B #718c00
-#define base0C #51c5b6
-#define base0D #4271ae
-#define base0E #ff0080
-#define base0F #a3685a
+#define base00 #1c2023
+#define base01 #393f45
+#define base02 #565e65
+#define base03 #747c84
+#define base04 #adb3ba
+#define base05 #c7ccd1
+#define base06 #dfe2e5
+#define base07 #f3f4f5
+#define base08 #c7ae95
+#define base09 #c7c795
+#define base0A #aec795
+#define base0B #95c7ae
+#define base0C #95aec7
+#define base0D #ae95c7
+#define base0E #c795ae
+#define base0F #c79595
 
 *foreground:   base05
 #ifdef background_opacity
@@ -35,7 +35,7 @@
 *color2:       base0B
 *color3:       base0A
 *color4:       base0D
-*color5:      
+*color5:       base0E
 *color6:       base0C
 *color7:       base05
 

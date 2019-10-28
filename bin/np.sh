@@ -3,8 +3,8 @@
 # requires the last.fm API key
 
 source ~/.lastfm    # `export API_KEY="<key>"`
-fg="$(xres color15)"
-light="$(xres color8)"
+fg="$(xres color10)"
+light="$(xres color15)"
 
 USER="icyphox"
 URL="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks"
