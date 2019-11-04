@@ -9,15 +9,11 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
-Plug 'dag/vim-fish',
 " plugins for writing {{{
 Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'reedes/vim-wordy', { 'for': ['text',  'markdown'] }
 Plug 'junegunn/goyo.vim', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
-Plug 'kana/vim-textobj-user', { 'for': ['text', 'markdown'] }
-Plug 'junegunn/goyo.vim'
-Plug 'reedes/vim-textobj-quote' 
 " }}}
 Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
@@ -26,7 +22,6 @@ Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 Plug 'NerdyPepper/agila.vim'
 Plug 'w0rp/ale'
-" Plug 'skywind3000/vim-keysound'
 call plug#end()
 
 " indentation
@@ -163,10 +158,6 @@ let g:gitgutter_sign_removed                   = '-'
 let g:gitgutter_sign_removed_first_line        = '^'
 let g:gitgutter_sign_modified_removed          = '#'
 
-" deoplete 
-let g:help_in_tabs = 1
-let g:deoplete#enable_at_startup = 1
-
 nmap <silent> H :let g:help_in_tabs = !g:help_in_tabs<CR
 
 " only apply to .txt files
@@ -202,19 +193,5 @@ let g:pencil#conceallevel = 0
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init({'wrap': 'hard', 'autoformat': 0})
-augroup END
-
-" keysound
-let g:keysound_enable = 1
-let g:keysound_volume = 1000
-let g:keysound_py_version = 3
-let g:keysound_theme = 'default'
-
-" textobj_quote
-augroup textobj_quote
-  autocmd!
-  autocmd FileType markdown call textobj#quote#init({'educate': 1})
-  autocmd FileType textile call textobj#quote#init({'educate': 1})
-  autocmd FileType text call textobj#quote#init({'educate': 1})
 augroup END
 
