@@ -10,6 +10,8 @@ export INPUTRC=~/.inputrc
 export PATH=$PATH:$HOME/.nimble/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
+export PW_DIR=~/passwords
+export PW_KEY=x@icyphox.sh
 
 # better history syncing
 shopt -s histappend
@@ -46,7 +48,9 @@ fi
 
 # source aliases and prompt
 source ~/.bash/aliases
-source ~/.bash/prompt
+if [ "$(id -u)" != 0 ]; then
+    source ~/.bash/prompt
+fi
 
 # z
 export _Z_CMD="j"

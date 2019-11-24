@@ -59,6 +59,7 @@ URxvt.perl-ext: default,matcher
 URxvt.letterSpace: -1
 URxvt.matcher.button: 1
 URxvt.boldFont: xft:Roboto Mono:size=14:style=Bold:antialias=true
+URxvt.italicFont: xft:Roboto Mono:size=14:style=Italic:antialias=true
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.visualBell: false
 URxvt.depth: 20
