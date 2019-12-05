@@ -1,9 +1,4 @@
 xrdb -load .Xresources &
-xfsettingsd &
-xfce4-power-manager &
 sxhkd &
 redshift &
-/home/icyphox/bin/bar.sh &
-xfdesktop &
-xset b off
-urxvtd &
+/home/icy/bin/bar.sh &

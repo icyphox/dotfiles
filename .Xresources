@@ -5,22 +5,22 @@
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
 
-#define base00 #1c2023
-#define base01 #393f45
-#define base02 #565e65
-#define base03 #747c84
-#define base04 #adb3ba
-#define base05 #c7ccd1
-#define base06 #dfe2e5
-#define base07 #f3f4f5
-#define base08 #c7ae95
-#define base09 #c7c795
-#define base0A #aec795
-#define base0B #95c7ae
-#define base0C #95aec7
-#define base0D #ae95c7
-#define base0E #c795ae
-#define base0F #c79595
+#define base00 #f8f8f8
+#define base01 #e8e8e8
+#define base02 #d8d8d8
+#define base03 #b8b8b8
+#define base04 #585858
+#define base05 #383838
+#define base06 #282828
+#define base07 #181818
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f79a0e
+#define base0B #538947
+#define base0C #4b8093
+#define base0D #7cafc2
+#define base0E #96609e
+#define base0F #a16946
 
 *foreground:   base05
 #ifdef background_opacity
@@ -47,7 +47,6 @@
 *color13:      base06
 *color14:      base0F
 *color15:      base07
-
 
 ! Urxvt config 
 !---------------------

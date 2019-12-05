@@ -43,12 +43,9 @@ prompt_pwd() {
 }
 
 rootornot() {
-    if [[ "$(id -u)" -eq 0 ]]; then
+    [[ "$(id -u)" -eq 0 ]] &&
         echo -ne "\001${red}\002#\001${rst}\002"
-    else
-	    echo -ne ";"
-    fi
 }
 
-PS1='\n$(prompt_pwd)$(git_branch)$(dirtyorclean)\n$(rootornot) '
+PS1='\n$(prompt_pwd)$(git_branch)$(dirtyorclean)$(rootornot) '
 PS2="> "

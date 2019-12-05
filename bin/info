@@ -17,7 +17,7 @@ BCYN="\e[36m"
 WHT="\e[37m"
 RST="\e[0m"
 
-BAR="▁▁▁▁"
+BAR="█▓▒░"
 ((LEN = ${#BAR} * 6))
 COLOR_BARS="$RED$BAR$GRN$BAR$YLW$BAR$BLU$BAR$PUR$BAR$CYN$BAR$RST"
 
@@ -82,7 +82,7 @@ printf "%s%b" "$PADC" "${CYN}$user${RST}@${CYN}$host${RST}\n"
 printf "%s%b" "$PADC" "os:                 ${CYN}$os${RST}\n"
 printf "%s%b" "$PADC" "kernel:         ${CYN}$kernel${RST}\n"
 printf "%s%b" "$PADC" "pkgs:                ${CYN}$pkgs${RST}\n"
-printf "%s%b" "$PADC" "wm:                   ${CYN}$wm${RST}\n"
+printf "%s%b" "$PADC" "wm:                ${CYN}$wm${RST}\n"
 printf "%s%b" "$PADC" "shell:              ${CYN}$shell${RST}\n"
 printf "%s%b" "$PADC" "$COLOR_BARS\n"
 

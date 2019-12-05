@@ -1,4 +1,4 @@
-#!/usr/bin/env dash 
+#!/usr/bin/env bash
  
 #        _       _ _            
 #  __  _(_)_ __ (_) |_ _ __ ___ 
@@ -10,7 +10,9 @@
 setxkbmap -option 'grp:alt_shift_toggle' -layout us,ru -option 'compose:caps'
 urxvtd &
 devmon &
-source ~/.fehbg
+~/.fehbg &
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
-libinput-gestures-setup start
-exec i3 
+sxhkd &
+~/bin/bar.sh &
+xrdb -l ~/.Xresources
+exec xfwm4

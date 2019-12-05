@@ -6,7 +6,7 @@
 #                                   
 
 super + Return
-	urxvtc
+	urxvtc -cd "/home/icy"
 
 super + d
 	rofi -show run
@@ -16,3 +16,27 @@ super + ctrl  + l
 
 super + p
 	rofi-pass
+
+XF86AudioRaiseVolume
+    pamixer -i 2
+
+XF86AudioLowerVolume
+    pamixer -d 2
+
+XF86AudioMute
+    pamixer -t
+
+XF86MonBrightnessUp
+   xbacklight -inc 5
+
+XF86MonBrightnessDown 
+   xbacklight -dec 5
+
+Print
+   scr -f
+
+ctrl + Print 
+   scr -w
+
+ctrl + shift + Print
+   scr -s
