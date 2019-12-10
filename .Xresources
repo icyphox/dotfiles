@@ -50,7 +50,7 @@
 
 ! Urxvt config 
 !---------------------
-URxvt.font: xft:Roboto Mono:size=14:style=Medium:antialias=true 
+URxvt.font: xft:Roboto Mono:size=14:style=Medium:antialias=true, xft:Noto Sans:size=14:style=Medium:antialias=true 
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30
@@ -63,7 +63,7 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt.visualBell: false
 URxvt.depth: 20
 URxvt.lineSpace: 1
-URxvt.geometry: 65x19
+URxvt.geometry: 80x20 
 URxvt.intensityStyles: false
 URxvt.iso14755: false
 URxvt.iso14755_52: false

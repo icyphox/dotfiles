@@ -6,7 +6,7 @@
 #                                   
 
 super + Return
-	urxvtc -cd "/home/icy"
+    alacritty
 
 super + d
 	rofi -show run

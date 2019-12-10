@@ -39,7 +39,7 @@ dirtyorclean() {
 }
 
 prompt_pwd() {
-    echo -ne "\001${gry}\002$(dirs +0)\001${rst}\002"
+    echo -ne "\001${cyn}\002$(dirs +0)\001${rst}\002"
 }
 
 rootornot() {
@@ -47,5 +47,5 @@ rootornot() {
         echo -ne "\001${red}\002#\001${rst}\002"
 }
 
-PS1='\n$(prompt_pwd)$(git_branch)$(dirtyorclean)$(rootornot) '
+PS1='\n$(prompt_pwd)$(git_branch)$(dirtyorclean)\n▲$(rootornot) '
 PS2="> "
