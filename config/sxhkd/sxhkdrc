@@ -9,7 +9,7 @@ super + Return
     alacritty
 
 super + d
-	rofi -show run
+	dmenu_run
 
 super + ctrl  + l
 	~/bin/lock.sh
