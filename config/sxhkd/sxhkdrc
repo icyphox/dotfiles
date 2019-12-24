@@ -15,7 +15,7 @@ super + ctrl  + l
 	~/bin/lock.sh
 
 super + p
-	rofi-pass
+    ~/bin/pwmenu.sh
 
 XF86AudioRaiseVolume
     pamixer -i 2
