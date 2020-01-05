@@ -50,7 +50,7 @@
 
 ! Urxvt config 
 !---------------------
-URxvt.font: xft:Roboto Mono:size=14:style=Medium:antialias=true, xft:Noto Sans:size=14:style=Medium:antialias=true 
+URxvt.font: xft:Roboto Mono:style=Medium:size=14:antialias=true, xft:Noto Sans:size=14:style=Medium:antialias=true 
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30

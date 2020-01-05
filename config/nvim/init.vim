@@ -85,6 +85,7 @@ nnoremap <leader>n :nohlsearch<cr>
 nnoremap <leader>o :only<cr>
 nnoremap H H:exec 'norm! '. &scrolloff . 'k'<cr>
 nnoremap L L:exec 'norm! '. &scrolloff . 'j'<cr>
+nnoremap <C-t> :tabedit
 
 " statusline
 let g:currentmode={

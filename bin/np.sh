@@ -10,7 +10,7 @@ USER="icyphox"
 URL="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks"
 URL+="&user=$USER&api_key=$API_KEY&format=json&limit=1&nowplaying=true"
 NOTPLAYING=" "
-RES=$(curl -s $URL)
+RES="$(curl -s $URL)"
 NOWPLAYING=$(jq '.recenttracks.track[0]."@attr".nowplaying' <<< "$RES" | tr -d '"')
 
 
