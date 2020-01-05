@@ -1,18 +1,3 @@
-# export thingys
-export ZSH=/home/$USER/.oh-my-zsh
-export BROWSER=/usr/bin/firefox
-export EDITOR=/usr/bin/nvim
-export SSH_KEY_PATH="~/.ssh/id_rsa"
-export PATH=$HOME/bin:$PATH
-export GPG_TTY=$(tty)
-export INPUTRC=~/.inputrc
-#export PATH=$PATH:$HOME/leet/Nim/bin
-export PATH=$PATH:$HOME/.nimble/bin
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:/usr/local/go/bin
-export PW_DIR=~/passwords
-export PW_KEY=x@icyphox.sh
-
 # better history syncing
 shopt -s histappend
 export HISTCONTROL=ignoreboth:erasedups
@@ -46,15 +31,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# source aliases and prompt
-source ~/.bash/aliases
-if [ "$(id -u)" != 0 ]; then
-    source ~/.bash/prompt
-fi
-
 # z
-export _Z_CMD="j"
 source ~/leet/z/z.sh
 
-# title
-#trap 'echo -ne "\033]0;$BASH_COMMAND\007"' DEBUG
+for i in ~/.bashrc.d/[0-9]*; do
+    . "$i"
+done

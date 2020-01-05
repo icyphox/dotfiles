@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 alias gah='sudo $(fc -ln -1)'
 alias nvime="nvim ~/.config/nvim/init.vim"
 alias socks="ssh -D 8008 emerald -fN"

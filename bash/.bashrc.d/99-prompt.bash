@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 red="\e[31m"
 grn="\e[32m"
 ylw="\e[33m"
