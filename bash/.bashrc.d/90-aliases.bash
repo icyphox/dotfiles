@@ -29,8 +29,10 @@ function vpn {
 	~/bin/vpnon.sh
 }
 
-function f() {
-    fff "$@"
-    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+function dt() {
+    time.sh -n
 }
 
+function bat() {
+    bat.sh -n
+}
