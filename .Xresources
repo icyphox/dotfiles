@@ -28,7 +28,7 @@
 #else
 *background:   base00
 #endif
-*cursorColor:  base05
+*cursorColor:  base09
 
 *color0:       base00
 *color1:       base08
@@ -50,7 +50,7 @@
 
 ! Urxvt config 
 !---------------------
-URxvt.font: xft:Roboto Mono:style=Medium:size=14:antialias=true, xft:Noto Sans:size=14:style=Medium:antialias=true 
+URxvt.font: xft:Roboto Mono:style=Medium:size=14:antialias=true,xft:Noto Sans:size=14:style=Medium:antialias=true 
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 30

@@ -18,19 +18,16 @@ do
     case $option in
         f)
             import -window root "$scr_path/$output.png"
-            notify-send "screenshot taken!"
             ;;
         w)
             import -window "$(xdotool getwindowfocus)" "$scr_path/$output.png"
             convert "$scr_path/$output.png" \( +clone -background transparent -shadow 60x40+0+15 \) \
 	        +swap -background white -layers merge +repage "$scr_path/$output.png"
-            notify-send "window screenshot taken!"
             ;;
         s)
             g=$(slop --highlight --tolerance=0 --color=0.3,0.4,0.6,0.4)
 	        sleep 1
 	        import -window root -crop "$g" +repage "$scr_path/$output.png"
-            notify-send "selection screenshot taken!"
             ;;
         * | ?)
             usage

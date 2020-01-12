@@ -1,7 +1,6 @@
 # export thingys
-export ZSH=/home/$USER/.oh-my-zsh
 export BROWSER=/usr/bin/firefox
-export EDITOR=/usr/bin/nvim
+export EDITOR=/usr/bin/vim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export PATH=$HOME/bin:$PATH
 export GPG_TTY=$(tty)
@@ -13,3 +12,16 @@ export PATH=$PATH:/usr/local/go/bin
 export PW_DIR=~/passwords
 export PW_KEY=x@icyphox.sh
 export _Z_CMD="j"
+export CFLAGS="-O3 -pipe -march=native"
+export CXXFLAGS="-O3 -pipe -march=native"
+export MAKEFLAGS="-j8"
+
+# gpg-agent
+
+[[ -f "$HOME/.gpg-agent-info" ]] && {
+    . "$HOME/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+    export SSH_AGENT_PID
+}
+

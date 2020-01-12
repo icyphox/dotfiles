@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
  
 #        _       _ _            
 #  __  _(_)_ __ (_) |_ _ __ ___ 
@@ -8,11 +8,10 @@
 #
 
 setxkbmap -option 'grp:alt_shift_toggle' -layout us,ru -option 'compose:caps'
-urxvtd &
-devmon &
+#devmon &
 ~/.fehbg &
-eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "${HOME}/.gpg-agent-info")"
 sxhkd &
-~/bin/bar.sh &
 xrdb -l ~/.Xresources
-exec xfwm4
+st &
+exec ~/leet/2bwm/2bwm

@@ -5,11 +5,11 @@
 #|___/_/\_\_| |_|_|\_\__,_|_|  \___|
 #                                   
 
-super + Return
-    alacritty
+#super + Return
+#    alacritty
 
-super + d
-	dmenu_run
+#super + d
+#	dmenu_run
 
 super + ctrl  + l
 	~/bin/lock.sh
@@ -27,10 +27,10 @@ XF86AudioMute
     pamixer -t
 
 XF86MonBrightnessUp
-   xbacklight -inc 5
+   lux -a 20
 
 XF86MonBrightnessDown 
-   xbacklight -dec 5
+   lux -s 20
 
 Print
    scr -f

@@ -1,5 +1,5 @@
 # dotfiles
 > my Linux configs
 
-![scrot](https://x.icyphox.sh/WSX.png)
+![scrot](https://x.icyphox.sh/kPj.png)
 

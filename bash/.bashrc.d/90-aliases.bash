@@ -1,5 +1,5 @@
 alias gah='sudo $(fc -ln -1)'
-alias nvime="nvim ~/.config/nvim/init.vim"
+alias vime="vim .vimrc"
 alias socks="ssh -D 8008 emerald -fN"
 alias o="xdg-open"
 alias gc="git commit -v -s"
@@ -8,10 +8,7 @@ alias ga="git add"
 alias gd="git diff --minimal"
 alias gl="git log --oneline --decorate --graph"
 alias ls="ls --color"
-alias vim="nvim"
-alias xi="sudo xbps-install -S"
-alias xr="sudo xbps-remove -R"
-alias xs="xbps-query -Rs"
+alias vim="vim"
 
 function up {
 	~/bin/icyup.sh "$1"
