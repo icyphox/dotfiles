@@ -14,4 +14,5 @@ eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "${HOME}/.gpg-a
 sxhkd &
 xrdb -l ~/.Xresources
 st &
+compton &
 exec ~/leet/2bwm/2bwm
