@@ -14,7 +14,6 @@ Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'reedes/vim-wordy', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 " }}}
-Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
 Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
@@ -43,7 +42,6 @@ set smartcase
 syntax on
 filetype plugin indent on
 set laststatus=2
-set noshowmode
 set hlsearch
 set incsearch
 set ignorecase
@@ -61,6 +59,7 @@ set tabstop=4        " tab = 4 spaces
 set expandtab
 set softtabstop=4    " backspace through spaces
 set nocompatible
+set noshowmode
 
 " wildcard ignores
 set wildignore+=.git,.hg,.svn

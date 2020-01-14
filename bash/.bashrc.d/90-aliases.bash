@@ -1,5 +1,5 @@
 alias gah='sudo $(fc -ln -1)'
-alias vime="vim .vimrc"
+alias vime="vim ~/.vimrc"
 alias socks="ssh -D 8008 emerald -fN"
 alias o="xdg-open"
 alias gc="git commit -v -s"
