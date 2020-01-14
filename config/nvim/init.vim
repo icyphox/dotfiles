@@ -85,6 +85,13 @@ nnoremap H H:exec 'norm! '. &scrolloff . 'k'<cr>
 nnoremap L L:exec 'norm! '. &scrolloff . 'j'<cr>
 nnoremap <C-t> :tabedit
 
+" Not an editor command: Wqa
+:command! WQ wq
+:command! Wq wq
+:command! Wqa wqa
+:command! W w
+:command! Q q
+
 " statusline
 let g:currentmode={
 			\ 'n'  : 'normal ',
