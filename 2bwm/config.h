@@ -221,19 +221,10 @@ static key keys[] = {
        DESKTOPCHANGE(     XK_3,                             2)
        DESKTOPCHANGE(     XK_4,                             3)
        DESKTOPCHANGE(     XK_5,                             4)
-       DESKTOPCHANGE(     XK_6,                             5)
-       DESKTOPCHANGE(     XK_7,                             6)
-       DESKTOPCHANGE(     XK_8,                             7)
-       DESKTOPCHANGE(     XK_9,                             8)
-       DESKTOPCHANGE(     XK_0,                             9)
 };
 // the last argument makes it a root window only event
 static Button buttons[] = {
     {  MOD        ,XCB_BUTTON_INDEX_1,     mousemotion,   {.i=TWOBWM_MOVE}, false},
     {  MOD        ,XCB_BUTTON_INDEX_3,     mousemotion,   {.i=TWOBWM_RESIZE}, false},
-    {  MOD|SHIFT,  XCB_BUTTON_INDEX_1,     changeworkspace, {.i=0}, false},
-    {  MOD|SHIFT,  XCB_BUTTON_INDEX_3,     changeworkspace, {.i=1}, false},
-    {  MOD|ALT,    XCB_BUTTON_INDEX_1,     changescreen,    {.i=1}, false},
-    {  MOD|ALT,    XCB_BUTTON_INDEX_3,     changescreen,    {.i=0}, false}
-    {  MOD }
+    {  MOD        ,XCB_BUTTON_INDEX_1,     raisewindow,   {.i=TWOBWM_RESIZE}, false}
 };
