@@ -1,5 +1,5 @@
 # export thingys
-export BROWSER=/usr/bin/firefox
+export BROWSER=/usr/local/bin/vimb
 export EDITOR=/usr/bin/vim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export PATH=$HOME/bin:$PATH

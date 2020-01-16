@@ -1,0 +1,30 @@
+set download-path=~/downloads
+set input-autohide=true
+set spell-checking=true
+set spell-checking-languages=en
+set webgl=true
+set incsearch=true
+set default-font=DejaVu Sans
+set accelerated-2d-canvas=true
+set dark-mode=true
+set strict-ssl=false
+set home-page=start.icyphox.sh
+set status-bar=false
+
+set monospace-font=Roboto Mono
+
+# The font family used as the default for content using sans-serif font.
+set sans-serif-font=Roboto
+
+# The font family used as the default for content using serif font.
+set serif-font=Liberation Serif
+
+# The default font size used to display text.
+set font-size=16
+
+# Default font size for the monospace font.
+set monospace-font-size=14
+
+nmap + zI
+nmap - zO
+nmap = zz
