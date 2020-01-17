@@ -9,7 +9,7 @@ set accelerated-2d-canvas=true
 set dark-mode=true
 set strict-ssl=false
 set home-page=start.icyphox.sh
-set status-bar=false
+set status-bar=true
 
 set monospace-font=Roboto Mono
 
@@ -28,3 +28,14 @@ set monospace-font-size=14
 nmap + zI
 nmap - zO
 nmap = zz
+
+# shortcuts
+
+shortcut-add tw=https://twitter.com
+shortcut-add dd=https://duckduckgo.com
+shortcut-add lob=https://lobste.rs
+shortcut-add gh=https://github.com
+
+# keybinds
+nnoremap S :set status-bar=false
+nnoremap s :set status-bar=true
