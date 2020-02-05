@@ -14,7 +14,7 @@ export PW_KEY=x@icyphox.sh
 export _Z_CMD="j"
 export CFLAGS="-O3 -pipe -march=native"
 export CXXFLAGS="-O3 -pipe -march=native"
-export MAKEFLAGS="-j8"
+export MAKEFLAGS="-j4"
 
 # gpg-agent
 

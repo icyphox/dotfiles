@@ -25,9 +25,7 @@ do
 	        +swap -background white -layers merge +repage "$scr_path/$output.png"
             ;;
         s)
-            g=$(slop --highlight --tolerance=0 --color=0.3,0.4,0.6,0.4)
-	        sleep 1
-	        import -window root -crop "$g" +repage "$scr_path/$output.png"
+	        import "$scr_path/$output.png"
             ;;
         * | ?)
             usage
@@ -43,3 +41,4 @@ fi
 
 
 xclip -selection clipboard -t image/png -i "$scr_path/$output.png"
+cp "$scr_path/$output.png" "$scr_path/latest.png"
