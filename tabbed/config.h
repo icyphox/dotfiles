@@ -2,10 +2,10 @@
 
 /* appearance */
 static const char font[]        = "Roboto Mono:style=Medium:size=14";
-static const char* normbgcolor  = "#121212";
-static const char* normfgcolor  = "#cbd6e2";
-static const char* selbgcolor   = "#cbd6e2";
-static const char* selfgcolor   = "#121212";
+static const char* normbgcolor  = "#5e646f";
+static const char* normfgcolor  = "#fafafa";
+static const char* selbgcolor   = "#fafafa";
+static const char* selfgcolor   = "#5e646f";
 static const char* urgbgcolor   = "#111111";
 static const char* urgfgcolor   = "#cc0000";
 static const char before[]      = "<";

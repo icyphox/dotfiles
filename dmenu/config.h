@@ -4,16 +4,16 @@ static const char *fonts[] = {
 	"Roboto Mono:style=Medium:size=14"
 };
 static int centered = 1;
-static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+static const char *prompt      = NULL;     /* -p  option; prompt to the left of input field */
 static unsigned int lineheight = 35;
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#121212", "#cbd6e2" },
-	[SchemeSel] = { "#cbd6e2", "#121212" },
+	[SchemeNorm] = { "#5e646f", "#fafafa" },
+	[SchemeSel] = { "#fafafa", "#5e646f" },
 	[SchemeOut] = { "#000000", "#00ffff" },
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
-static unsigned int lines      = 5;
+static unsigned int lines      = 6;
 
 /*
  * Characters not considered part of a word while deleting words

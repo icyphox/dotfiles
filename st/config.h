@@ -82,32 +82,31 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* Normal colors */
-	"#000000", /*  0: Base 00 - Black   */
-	"#bf8b56", /*  1: Base 08 - Red     */
-	"#56bf8b", /*  2: Base 0B - Green   */
-	"#8bbf56", /*  3: Base 0A - Yellow  */
-	"#8b56bf", /*  4: Base 0D - Blue    */
-	"#bf568b", /*  5: Base 0E - Magenta */
-	"#568bbf", /*  6: Base 0C - Cyan    */
-	"#cbd6e2", /*  7: Base 05 - White   */
+	"#fafafa", /*  0: Base 00 - Black   */
+	"#db7070", /*  1: Base 08 - Red     */
+	"#7c9f4b", /*  2: Base 0B - Green   */
+	"#d69822", /*  3: Base 0A - Yellow  */
+	"#6587bf", /*  4: Base 0D - Blue    */
+	"#b870ce", /*  5: Base 0E - Magenta */
+	"#509c93", /*  6: Base 0C - Cyan    */
+	"#5e646f", /*  7: Base 05 - White   */
 
 	/* Bright colors */
-	"#627e99", /*  8: Base 03 - Bright Black */
-	"#bfbf56", /* 16: Base 09 */
-	"#223b54", /* 18: Base 01 */
-	"#405c79", /* 19: Base 02 */
-	"#aabcce", /* 20: Base 04 */
-	"#e5ebf1", /* 21: Base 06 */
-	"#bf5656", /* 17: Base 0F */
-	"#f7f9fb", /* 15: Base 05 - Bright White */
+	"#5e646f", /*  8: Base 03 - Bright Black */
+	"#db7070", /* 16: Base 09 */
+	"#7c9f4b", /* 18: Base 01 */
+	"#d69822", /* 19: Base 02 */
+	"#6587bf", /* 20: Base 04 */
+	"#b870ce", /* 21: Base 06 */
+	"#509c93", /* 17: Base 0F */
+	"#5e646f", /* 15: Base 05 - Bright White */
 
 	[255] = 0,
 
-	[256] = "#cbd6e2", /* default fg: Base 05 */
-	[257] = "#000000", /* default bg: Base 00 */
+	[256] = "#5e646f", /* default fg: Base 05 */
+	[257] = "#fafafa", /* default bg: Base 00 */
 };
 
 // Foreground, background, cursor, and reversed cursor colors
