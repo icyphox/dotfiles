@@ -7,3 +7,5 @@
        verbose = true
 [gpg]
        program = gpg2
+[credential]
+	helper = store

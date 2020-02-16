@@ -21,8 +21,6 @@ do
             ;;
         w)
             import -window "$(xdotool getwindowfocus)" "$scr_path/$output.png"
-            convert "$scr_path/$output.png" \( +clone -background transparent -shadow 60x40+0+15 \) \
-	        +swap -background white -layers merge +repage "$scr_path/$output.png"
             ;;
         s)
 	        import "$scr_path/$output.png"
