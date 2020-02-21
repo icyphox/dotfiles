@@ -17,7 +17,6 @@ Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 Plug 'ervandew/supertab'
 Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
-Plug 'NerdyPepper/agila.vim'
 call plug#end()
 
 " indentation
@@ -196,6 +195,6 @@ let g:pencil#textwidth = 72
 let g:pencil#conceallevel = 0
 augroup pencil
   autocmd!
-  autocmd FileType markdown,mkd call pencil#init({'wrap': 'hard', 'autoformat': 0})
+  autocmd FileType markdown,mkd,text call pencil#init({'wrap': 'hard', 'autoformat': 0})
 augroup END
 

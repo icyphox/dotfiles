@@ -65,7 +65,7 @@ os="$ID"
 pkgs="$(kiss l | wc -l)"
 
 printf '\e[2J'
-
+printf '\e[?25l'
 
 printf '%b\n' "$art"
 
@@ -79,3 +79,4 @@ prinfo "shell" "       $shell" "$prev_line"
 
 # Pause
 read -rsn1 _
+reset

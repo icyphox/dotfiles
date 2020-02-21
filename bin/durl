@@ -3,4 +3,9 @@
 regex='(https?|ftp|mailto)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
 url=$(grep -Eo "$regex" | dmenu -p "url:" -w "$WINDOWID" | tr -d '\n')
 [[ "$url" = "" ]] && exit
-vimb -e $(</tmp/tabbed.xid) "$url" &
+
+if [[ "$(pgrep vimb)" != "" ]]; then
+    vimb -e $(</tmp/tabbed.xid) "$url" &
+else
+    firefox --new-tab "$url"
+fi

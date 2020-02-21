@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Roboto Mono:size=14:style=Medium:antialias=true:autohint=true";
+static char *font = "SF Mono:size=14:style=Semibold:antialias=true:autohint=true";
 static int borderpx = 32;
 
 /*
@@ -63,7 +63,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "xterm-256color";
 
 /*
  * spaces per tab
@@ -128,7 +128,7 @@ static unsigned int cursorshape = 2;
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 80;
+static unsigned int cols = 60;
 static unsigned int rows = 24;
 
 /*
