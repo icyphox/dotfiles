@@ -9,31 +9,35 @@ alias gl="git log --oneline --decorate --graph"
 alias ls="ls --color"
 alias vim="vim"
 
-function socks {
+socks() {
     pkill ssh
     ssh -D 8008 emerald -fN
 }
 
-function up {
+up() {
 	~/bin/icyup.sh "$1"
 }
 
-function nvmon {
+nvmon() {
 	source ~/.nvm/nvm.sh
 }
 
-function envac {
+envac() {
 	source .env/bin/activate
 }
 
-function vpn {
+vpn() {
 	~/bin/vpnon.sh
 }
 
-function dt() {
+dt() {
     time.sh -n
 }
 
-function bat() {
+bat() {
     bat.sh -n
+}
+
+ggp() {
+    git push "$(git remote show)" "$(git branch --show-current)" 
 }
