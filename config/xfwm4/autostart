@@ -1,4 +1,0 @@
-xrdb -load .Xresources &
-sxhkd &
-redshift &
-/home/icy/bin/bar.sh &

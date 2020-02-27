@@ -8,7 +8,7 @@ upload() {
 	file=$1
 	ext="${file##*.}"
 	fullname="$fn.$ext"
-	scp -P 443 "$1" emerald:icywww/stuff/"$fullname"
+	scp -P 443 "$1" emerald:icywww/uploads/"$fullname"
 	echo "https://x.icyphox.sh/$fullname"
 	echo "https://x.icyphox.sh/$fullname" | xclip -selection clipboard
 }
