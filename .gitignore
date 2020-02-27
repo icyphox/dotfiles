@@ -1,5 +1,0 @@
-weechat/logs/*
-weechat/weechat.log
-weechat/script/*
-bin/.oxo
-zsh/prompt
