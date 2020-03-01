@@ -1,3 +1,0 @@
-#!/bin/sh
-
-tabbed -df vimb -e > /tmp/tabbed.xid
