@@ -37,7 +37,7 @@ static const char *colors[] = {
     "#ff6666",
     "#cc9933",
     "#0d131a",
-    "#000000"
+    "#FAFAFA"
 };
 
 /* if this is set to true the inner border and outer borders colors will be swapped */

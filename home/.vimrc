@@ -11,11 +11,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
 " plugins for writing {{{
 Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
-Plug 'reedes/vim-wordy', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 " }}}
 Plug 'ervandew/supertab'
-Plug 'zah/nim.vim'
 Plug 'wellle/targets.vim'
 call plug#end()
 
