@@ -34,10 +34,6 @@ dt() {
     time.sh -n
 }
 
-bat() {
-    bat.sh -n
-}
-
 ggp() {
     git push "$(git remote show)" "$(git branch --show-current)" 
 }
