@@ -37,3 +37,7 @@ dt() {
 ggp() {
     git push "$(git remote show)" "$(git branch --show-current)" 
 }
+
+gcl() {
+    git clone "$@"
+}
