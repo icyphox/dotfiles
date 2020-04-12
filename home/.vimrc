@@ -9,6 +9,7 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
+Plug 'dbeniamine/vim-mail'
 " plugins for writing {{{
 Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
@@ -22,6 +23,7 @@ augroup indents
 	autocmd!
 	autocmd FileType less,css,html setlocal ts=2 sts=2 sw=2 expandtab
 	autocmd FileType text,markdown setlocal expandtab
+	autocmd FileType rgbds setlocal autoindent
 augroup END
 
 augroup restorecursor
@@ -57,6 +59,7 @@ set expandtab
 set softtabstop=4    " backspace through spaces
 set nocompatible
 set noshowmode
+set fillchars+=vert:│
 
 " wildcard ignores
 set wildignore+=.git,.hg,.svn
@@ -196,3 +199,4 @@ augroup pencil
   autocmd FileType markdown,mkd,text call pencil#init({'wrap': 'hard', 'autoformat': 0})
 augroup END
 
+au BufRead,BufNewFile *.asm set filetype=rgbds
