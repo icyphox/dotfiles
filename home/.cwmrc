@@ -1,0 +1,43 @@
+# .cwmrc
+
+sticky yes
+snapdist 4
+unbind-key all
+
+fontname "SF Mono:style=Regular:size=14"
+
+# groups
+bind-key 4-1 group-only-1
+bind-key 4-2 group-only-2
+bind-key 4-3 group-only-3
+bind-key 4-4 group-only-4
+bind-key 4-5 group-only-5
+bind-key 4S-1 window-movetogroup-1
+bind-key 4S-2 window-movetogroup-2
+bind-key 4S-3 window-movetogroup-3
+bind-key 4S-4 window-movetogroup-4
+bind-key 4S-5 window-movetogroup-5
+
+# keybinds
+bind-key 4-Return 'urxvtc'
+bind-key 4-d menu-exec
+bind-key M-Tab window-cycle
+bind-key MS-Tab window-rcycle
+bind-key 4-Tab group-cycle
+bind-key 4S-Tab group-rcycle
+bind-key 4-f window-maximize
+bind-key 4-v window-vtile 
+bind-key 4-h window-htile
+bind-key 4S-q window-close
+bind-key 4S-h window-snap-left
+bind-key 4S-l window-snap-right 
+bind-key 4S-r restart
+bind-key 4S-e quit
+bind-key 4S-k window-vmaximize
+
+# mousebinds
+unbind-mouse all
+
+bind-mouse 4S-1 window-resize
+bind-mouse 4-1 window-move
+bind-mouse 4-2 window-lower
