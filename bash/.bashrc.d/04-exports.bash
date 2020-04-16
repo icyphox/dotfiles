@@ -1,6 +1,6 @@
 # export thingys
 export BROWSER=/usr/local/bin/vimb
-export EDITOR=/usr/bin/nvim
+export EDITOR=/usr/local/bin/nvim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export PATH=$HOME/bin:$PATH
 export GPG_TTY=$(tty)
