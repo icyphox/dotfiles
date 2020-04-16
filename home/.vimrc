@@ -59,7 +59,6 @@ set expandtab
 set softtabstop=4    " backspace through spaces
 set nocompatible
 set noshowmode
-set fillchars+=vert:│
 
 " wildcard ignores
 set wildignore+=.git,.hg,.svn

@@ -8,12 +8,12 @@
 #
 
 setxkbmap -option 'grp:alt_shift_toggle' -layout us,ru -variant ',phonetic' -option 'compose:caps'
-~/.fehbg &
+# ~/.fehbg &
 eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "${HOME}/.gpg-agent-info")"
-sxhkd &
+# sxhkd &
 xrdb -l ~/.Xresources
-st &
-date -s "$(date -u -I) $(date -u +%H:%M:%S)"
+# st &
 compton &
+urxvtd &
 xsetroot -cursor_name left_ptr
-exec 2bwm
+exec cwm

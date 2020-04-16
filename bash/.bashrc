@@ -26,7 +26,7 @@ bind 'TAB:menu-complete'
 complete -cf doas
 
 # z
-source ~/leet/z/z.sh
+# source ~/leet/z/z.sh
 
 for i in ~/.bashrc.d/[0-9]*; do
     . "$i"

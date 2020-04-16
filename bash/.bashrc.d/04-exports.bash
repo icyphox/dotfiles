@@ -1,6 +1,6 @@
 # export thingys
 export BROWSER=/usr/local/bin/vimb
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export PATH=$HOME/bin:$PATH
 export GPG_TTY=$(tty)
@@ -13,6 +13,7 @@ export PATH=$PATH:/usr/local/pgsql/bin
 export PW_DIR=~/passwords
 export PW_KEY=x@icyphox.sh
 export _Z_CMD="j"
+export MOZ_ACCELERATED=1
 export CFLAGS="-O3 -pipe -march=native"
 export CXXFLAGS="-O3 -pipe -march=native"
 export MAKEFLAGS="-j4"

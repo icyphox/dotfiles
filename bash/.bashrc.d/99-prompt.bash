@@ -9,31 +9,34 @@ gry="\e[94m"
 rst="\e[0m"
 
 git_branch() {
-    local git_status="$(git status 2> /dev/null)"
-    local on_branch="On branch ([^${IFS}]*)"
-    local on_commit="HEAD detached at ([^${IFS}]*)"
-    status="$(git status --porcelain 2> /dev/null)"
-    local exit="$?"
-    color=""
+    [[ -d "$PWD/.git" ]] && {
+        local git_status="$(git status 2> /dev/null)"
+        local on_branch="On branch ([^${IFS}]*)"
+        local on_commit="HEAD detached at ([^${IFS}]*)"
+        status="$(git status --porcelain 2> /dev/null)"
+        local exit="$?"
+        color=""
 
-    if [[ "$exit" -eq 0 ]]; then
-        if [[ "${#status}" -eq 0 ]]; then
-            color="${grn}"  
+        if [[ "$exit" -eq 0 ]]; then
+            if [[ "${#status}" -eq 0 ]]; then
+                color="${grn}"  
+            else
+                color="${red}"
+            fi
         else
-            color="${red}"
+            printf ''
         fi
-    else
-        printf ''
-    fi
 
 
-    if [[ $git_status =~ $on_branch ]]; then
-        local branch=${BASH_REMATCH[1]}
-        printf '%b'  "$color $branch $rst"
-    elif [[ $git_status =~ $on_commit ]]; then
-        local commit=${BASH_REMATCH[1]}
-        printf '%b' "$color $commit $rst"
-    fi
+        if [[ $git_status =~ $on_branch ]]; then
+            local branch=${BASH_REMATCH[1]}
+            printf '%b'  "$color $branch $rst"
+        elif [[ $git_status =~ $on_commit ]]; then
+            local commit=${BASH_REMATCH[1]}
+            printf '%b' "$color $commit $rst"
+        fi
+    
+    }
 }
 
 prompt_pwd() {

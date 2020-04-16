@@ -6,8 +6,8 @@ alias gst="git status --short"
 alias ga="git add"
 alias gd="git diff --minimal"
 alias gl="git log --oneline --decorate --graph"
-alias ls="ls --color"
-alias vim="vim"
+alias ls="colorls -G"
+alias vim="nvim"
 
 socks() {
     pkill ssh
