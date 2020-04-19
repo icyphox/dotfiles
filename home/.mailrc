@@ -1,0 +1,39 @@
+set v15-compat
+set netrc-lookup
+set netrc-pipe='gpg2 -qd ~/.netrc.gpg'
+set sendcharsets=utf-8,iso-8859-1
+set reply-in-same-charset
+set fullnames
+set followup-to followup-to-honour=ask-yes reply-to-honour=ask-yes
+set sendwait
+
+set imap-cache=~/.cache/nail
+imap-keepalive=240
+
+
+account "personal" {
+    localopts yes
+    set from="Anirudh Oppiliappan <x@icyphox.sh>"
+    set folder=imaps://m.icyphox.sh:993 
+    set record=+Sent
+    set inbox=+INBOX
+    set mta=smtp://m.icyphox.sh:587 smtp-use-starttls
+    shortcut fwc "+Free Writers Club" \
+        sent +Sent \
+        inbox +INBOX \
+        drafts +Drafts \
+        trash +Trash \
+        archive +Archives
+}
+
+account personal
+set askattach
+set markanswered
+set reply-to-honour
+set editalong
+set history-gabby history-file=.s-nailhist
+set autosort=thread
+retain date from to cc subject
+set mime-counter-evidence=0xE
+commandalias ls !ls -latro
+commandalias ps !ps axu
