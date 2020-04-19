@@ -33,7 +33,7 @@ bind-key 4S-h window-snap-left
 bind-key 4S-l window-snap-right 
 bind-key 4S-r restart
 bind-key 4S-e quit
-bind-key 4S-k window-vmaximize
+bind-key 4S-u window-vmaximize
 
 # mousebinds
 unbind-mouse all
