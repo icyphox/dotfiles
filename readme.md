@@ -1,5 +1,5 @@
 # dotfiles
-> my Linux configs
+> my *nix configs
 
 ![scrot](https://x.icyphox.sh/zDYdj.png)
 
