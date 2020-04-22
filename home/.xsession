@@ -15,6 +15,7 @@ export ENV="$HOME/.kshrc"
 ~/.fehbg &
 xrdb -l ~/.Xresources &
 compton &
+syndaemon -k -i 0.5 -d
 urxvtd &
 xsetroot -cursor_name left_ptr -solid steelblue &
 cwm
