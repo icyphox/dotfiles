@@ -9,3 +9,9 @@
        program = gpg2
 [credential]
 	helper = store
+
+[sendemail]
+    smtpserver = m.icyphox.sh
+    smtpuser = x@icyphox.sh
+    smtpencryption = tls
+    smtpserverport = 587

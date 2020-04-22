@@ -4,11 +4,10 @@ set netrc-pipe='gpg2 -qd ~/.netrc.gpg'
 set sendcharsets=utf-8,iso-8859-1
 set reply-in-same-charset
 set fullnames
-set followup-to followup-to-honour=ask-yes reply-to-honour=ask-yes
-set sendwait
+set followup-to followup-to-honour=ask-yes
 
 set imap-cache=~/.cache/nail
-imap-keepalive=240
+set imap-keepalive=240
 
 
 account "personal" {
@@ -31,7 +30,8 @@ set askattach
 set markanswered
 set reply-to-honour
 set editalong
-set history-gabby history-file=.s-nailhist
+set history-gabby=all 
+set history-file=~/.s-nailhist
 set autosort=thread
 retain date from to cc subject
 set mime-counter-evidence=0xE
