@@ -7,6 +7,7 @@ alias gd="git diff --minimal"
 alias gl="git log --oneline --decorate --graph"
 alias ls="colorls -G"
 alias vim="nvim"
+alias ..="cd .."
 
 socks() {
     pkill ssh

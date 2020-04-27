@@ -3,7 +3,7 @@
        email = x@icyphox.sh
        signingkey = 8A93F96F78C5D4C4
 [commit]
-	gpgsign = false
+	   gpgsign = true
        verbose = true
 [gpg]
        program = gpg2

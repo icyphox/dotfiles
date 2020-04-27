@@ -20,6 +20,8 @@ bind-key 4S-5 window-movetogroup-5
 
 # keybinds
 bind-key 4-Return 'urxvtc'
+bind-key CS-Print "/home/icy/bin/scr -s"
+bind-key C-Print "/home/icy/bin/scr"
 bind-key 4-d menu-exec
 bind-key M-Tab window-cycle
 bind-key MS-Tab window-rcycle

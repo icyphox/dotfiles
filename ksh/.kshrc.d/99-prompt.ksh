@@ -10,6 +10,13 @@ bprp="\033[35;1m"
 gry="\033[94m"
 rst="\033[0m"
 
+git_status() {
+    [[ -d "$PWD"/.git ]] && {
+        git_status="$(git status 2> /dev/null)"
+            on_branch=""
+    }
+}
+
 prompt_pwd() {
     printf '%b' "\001${cyn}\002$(pwd)\001${rst}\002"
 }
