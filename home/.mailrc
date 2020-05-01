@@ -44,8 +44,6 @@ set editalong
 set history-gabby=all 
 set history-file=~/.s-nailhist
 set autosort=date
-retain date from to cc subject
-set mime-counter-evidence=0xE
 
 define trash {
     move "$@" +Trash

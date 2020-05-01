@@ -43,3 +43,7 @@ unbind-mouse all
 bind-mouse 4S-1 window-resize
 bind-mouse 4-1 window-move
 bind-mouse 4-2 window-lower
+
+# other
+borderwidth 1
+snapdist 10

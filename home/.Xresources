@@ -6,22 +6,23 @@
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
 
-#define base00 #f8f8f8
-#define base01 #e8e8e8
-#define base02 #d8d8d8
-#define base03 #b8b8b8
-#define base04 #585858
-#define base05 #383838
-#define base06 #282828
-#define base07 #181818
-#define base08 #ab4642
-#define base09 #dc9656
-#define base0A #f79a0e
-#define base0B #538947
-#define base0C #4b8093
-#define base0D #7cafc2
-#define base0E #96609e
-#define base0F #a16946
+
+#define base00 #fafafa
+#define base01 #dedede
+#define base02 #cccccc
+#define base03 #aaaaaa
+#define base04 #8a8a8a
+#define base05 #676767
+#define base06 #454545
+#define base07 #232323
+#define base08 #db7070
+#define base09 #db7070
+#define base0A #d69822
+#define base0B #7c9f4b
+#define base0C #509c93
+#define base0D #6587bf
+#define base0E #b870ce
+#define base0F #509c93
 
 *foreground:   base05
 #ifdef background_opacity
@@ -29,7 +30,7 @@
 #else
 *background:   base00
 #endif
-*cursorColor:  base09
+*cursorColor:  base05
 
 *color0:       base00
 *color1:       base08
@@ -48,7 +49,6 @@
 *color13:      base06
 *color14:      base0F
 *color15:      base07
-
 ! Urxvt config 
 !---------------------
 URxvt.font: xft:SF Mono:style=Regular:size=14:antialias=true,xft:Noto Sans:size=14:style=Medium:antialias=true 
