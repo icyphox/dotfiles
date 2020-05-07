@@ -6,7 +6,6 @@
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
 
-
 #define base00 #fafafa
 #define base01 #dedede
 #define base02 #cccccc
@@ -49,8 +48,8 @@
 *color13:      base06
 *color14:      base0F
 *color15:      base07
+
 ! Urxvt config 
-!---------------------
 URxvt.font: xft:SF Mono:style=Regular:size=14:antialias=true,xft:Noto Sans:size=14:style=Medium:antialias=true 
 URxvt.scrollBar: false
 URxvt.cursorBlink: false
@@ -60,7 +59,7 @@ URxvt.letterSpace: -1
 URxvt.matcher.button: 1
 URxvt.boldFont: xft:SF Mono:size=14:style=Bold:antialias=true
 URxvt.italicFont: xft:SF Mono:size=14:style=Italic:antialias=true
-URxvt.url-launcher: /usr/local/bin/firefox
+URxvt.url-launcher: /usr/local/bin/iridium
 URxvt.visualBell: false
 URxvt.depth: 20
 URxvt.lineSpace: 1
@@ -75,3 +74,10 @@ URxvt.keysym.KP_End:  \033[4~
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.locale: utf8
+
+! Xclock config
+XClock.analog: false
+XClock.twentyfour: false
+XClock.render: true
+XClock.face: SF Mono:style=Regular:size=14:antialias=true
+XClock.strftime: "%a, %d %b %I:%M"
