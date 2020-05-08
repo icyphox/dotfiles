@@ -204,3 +204,7 @@ augroup setMail
     autocmd!
     autocmd BufRead,BufNewFile /tmp/nail-* setlocal ft=mail
 augroup END
+
+" insert date
+abclear
+cabbrev dt read !~/bin/time.sh -n<cr>
