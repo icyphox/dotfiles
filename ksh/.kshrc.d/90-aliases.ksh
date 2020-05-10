@@ -36,10 +36,6 @@ vpn() {
 	~/bin/vpnon.sh
 }
 
-dt() {
-    time.sh -n
-}
-
 ggp() {
     git push "$(git remote show)" "$(git branch --show-current)" 
 }

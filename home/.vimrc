@@ -207,4 +207,5 @@ augroup END
 
 " insert date
 abclear
-cabbrev dt read !~/bin/time.sh -n<cr>
+cabbrev dt read !~/bin/date.sh<cr>
+cabbrev tm read !date "+\%H:\%M"
