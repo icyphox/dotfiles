@@ -161,27 +161,10 @@ let g:gitgutter_sign_removed                   = '-'
 let g:gitgutter_sign_removed_first_line        = '^'
 let g:gitgutter_sign_modified_removed          = '#'
 
-nmap <silent> H :let g:help_in_tabs = !g:help_in_tabs<CR
-
-" only apply to .txt files
-augroup HelpInTabs
-	autocmd!
-	autocmd BufEnter  *.txt   call HelpInNewTab()
-augroup END
-
-" only apply to help files
-function! HelpInNewTab ()
-	if &buftype == 'help' && g:help_in_tabs
-		"Convert the help window to a tab...
-		execute "normal \<C-W>T"
-	endif
-endfunction
-
 " comments are italicized
 hi Comment cterm=italic
 " color overrides
 hi CursorLine ctermbg=none
-
 
 " vim-markdown 
 let g:vim_markdown_no_default_key_mappings=1
