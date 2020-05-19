@@ -50,7 +50,6 @@ define trash {
 }
 commandalias del call trash
 
-set customhdr='Content-Type: text/plain; charset=us-ascii, Content-Transfer-Encoding: 7bit'
 retain date from to cc subject
 set mime-counter-evidence=0xE
 
