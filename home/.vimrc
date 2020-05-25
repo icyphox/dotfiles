@@ -10,6 +10,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
 Plug 'dbeniamine/vim-mail'
+Plug 'tpope/vim-surround'
 " plugins for writing {{{
 Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }

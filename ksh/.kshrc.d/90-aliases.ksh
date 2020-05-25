@@ -8,6 +8,7 @@ alias gl="git log --oneline --decorate --graph"
 alias ls="colorls -G"
 alias vim="nvim"
 alias ..="cd .."
+alias m="nail"
 
 socks() {
     pkill ssh

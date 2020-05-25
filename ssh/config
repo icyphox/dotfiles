@@ -14,3 +14,7 @@ Host emerald
 	IdentityFile ~/.ssh/id_rsa
 	Port 443
 
+Host salad
+	Hostname 192.168.0.108
+	User pi
+
