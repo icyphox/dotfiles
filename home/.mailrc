@@ -22,7 +22,8 @@ account "personal" {
         inbox +INBOX \
         drafts +Drafts \
         trash +Trash \
-        archive +Archives
+        archive +Archives \
+        lob +Lobste.rs
 }
 
 set prompt='> '

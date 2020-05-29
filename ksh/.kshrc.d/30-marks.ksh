@@ -1,11 +1,11 @@
 export MARKPATH=$HOME/.marks
 
 function mark {
-  mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+  mkdir -p "$MARKPATH"; ln -s "$PWD" "$MARKPATH/$1"
 }
 
 function unmark {
-  rm -i "$MARKPATH/$1"
+    rm -i "$MARKPATH/"$(basename $PWD)""
 }
 
 function marks {

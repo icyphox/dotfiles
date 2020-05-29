@@ -21,7 +21,7 @@ bind-key 4S-5 window-movetogroup-5
 # execs
 bind-key 4-Return 'urxvtc'
 bind-key CS-Print "/home/icy/bin/scr -s"
-bind-key C-Print "/home/icy/bin/scr"
+bind-key C-Print "/home/icy/bin/scr -f"
 bind-key 4-n "urxvtc -e nvim /home/icy/notes"
 
 # keybinds
