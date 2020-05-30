@@ -17,6 +17,7 @@ Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 " }}}
 Plug 'ervandew/supertab'
 Plug 'wellle/targets.vim'
+Plug 'tpope/vim-rsi'
 call plug#end()
 
 " indentation
