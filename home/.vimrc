@@ -16,6 +16,7 @@ Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 " }}}
 Plug 'ervandew/supertab'
+Plug 'Clavelito/indent-awk.vim'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-rsi'
 call plug#end()
