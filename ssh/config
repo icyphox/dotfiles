@@ -18,3 +18,7 @@ Host fern
 	Hostname 192.168.0.110
 	User pi
 
+Host fern-remote
+    Hostname 139.59.93.193
+    User pi
+    Port 22222
