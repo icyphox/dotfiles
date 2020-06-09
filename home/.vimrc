@@ -17,6 +17,7 @@ Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 " }}}
 Plug 'ervandew/supertab'
 Plug 'Clavelito/indent-awk.vim'
+Plug 'soywod/iris.vim'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-rsi'
 call plug#end()
@@ -196,3 +197,18 @@ augroup END
 abclear
 cabbrev dt read !~/bin/date.sh<cr>
 cabbrev tm read !date "+\%H:\%M"
+
+" iris mail client
+let g:iris_name = "Anirudh Oppiliappan"
+let g:iris_mail = "x@icyphox.sh"
+
+let g:iris_imap_host = "m.icyphox.sh"
+let g:iris_imap_port = 993
+
+let g:iris_smtp_host = "m.icyphox.sh"
+let g:iris_smtp_port = 587
+
+let g:iris_imap_passwd_show_cmd = "pw -s default"
+let g:iris_smtp_passwd_show_cmd = "pw -s default"
+
+

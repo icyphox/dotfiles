@@ -1,0 +1,20 @@
+IMAPAccount personal
+Host m.icyphox.sh
+User x@icyphox.sh
+PassCmd "pw -s default"
+SSLType IMAPS
+
+IMAPStore remote
+Account personal
+
+MaildirStore local
+Subfolders Verbatim
+Path ~/mail/
+Inbox ~/mail/Inbox
+
+Channel personal
+Master :remote:
+Slave :local:
+Patterns *
+Create Both
+SyncState *

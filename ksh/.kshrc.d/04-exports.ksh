@@ -1,5 +1,5 @@
 # export thingys
-export BROWSER=/usr/local/bin/vimb
+export BROWSER=/usr/local/bin/iridium
 export EDITOR=/usr/local/bin/nvim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export PATH=$HOME/bin:$PATH

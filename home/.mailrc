@@ -6,24 +6,19 @@ set reply-in-same-charset
 set fullnames
 set followup-to followup-to-honour=ask-yes
 
-set imap-cache=~/.cache/nail
-set imap-keepalive=240
-
-
 account "personal" {
     localopts yes
     set from="Anirudh Oppiliappan <x@icyphox.sh>"
-    set folder=imaps://m.icyphox.sh:993 
+    set folder=~/mail
     set record=+Sent
-    set inbox=+INBOX
+    set inbox=+Inbox
     set mta=smtp://m.icyphox.sh:587 smtp-use-starttls
     shortcut fwc "+Free Writers Club" \
         sent +Sent \
-        inbox +INBOX \
+        inbox +Inbox \
         drafts +Drafts \
         trash +Trash \
-        archive +Archives \
-        lob +Lobste.rs
+        archive +Archives
 }
 
 set prompt='> '
@@ -54,3 +49,7 @@ commandalias del call trash
 retain date from to cc subject
 set mime-counter-evidence=0xE
 
+define sync {
+    !mbsync -a
+}
+commandalias n call sync

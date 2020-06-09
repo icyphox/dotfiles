@@ -9,6 +9,7 @@ alias ls="colorls -G"
 alias vim="nvim"
 alias ..="cd .."
 alias m="nail"
+alias tb="nc termbin.com 9999 | xclip -sel c"
 
 socks() {
     pkill ssh

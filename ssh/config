@@ -9,10 +9,10 @@ Host github.com
 	IdentityFile ~/.ssh/github
 
 Host emerald
-	Hostname 139.59.93.193
+    Hostname 139.59.93.193
 	User nerdypepper
 	IdentityFile ~/.ssh/id_rsa
-	Port 443
+	Port 22
 
 Host fern
 	Hostname 192.168.0.110
