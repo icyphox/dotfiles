@@ -198,17 +198,14 @@ abclear
 cabbrev dt read !~/bin/date.sh<cr>
 cabbrev tm read !date "+\%H:\%M"
 
-" iris mail client
-let g:iris_name = "Anirudh Oppiliappan"
-let g:iris_mail = "x@icyphox.sh"
-
-let g:iris_imap_host = "m.icyphox.sh"
-let g:iris_imap_port = 993
-
-let g:iris_smtp_host = "m.icyphox.sh"
-let g:iris_smtp_port = 587
-
-let g:iris_imap_passwd_show_cmd = "pw -s default"
-let g:iris_smtp_passwd_show_cmd = "pw -s default"
-
-
+" change cursor
+" doesn't actually work :(
+if exists('$TMUX')
+    let &t_SI .= "\ePtmux;\e\e[6 q\e\\"
+    let &t_EI .= "\ePtmux;\e\e[2 q\e\\"
+    let &t_SR .= "\ePtmux;\e\e[4 q\e\\"
+else
+    let &t_SI .= "\e[6 q"
+    let &t_EI .= "\e[2 q"
+    let &t_SR .= "\e[4 q"
+endif
