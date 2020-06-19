@@ -11,7 +11,7 @@ setxkbmap -option 'grp:alt_shift_toggle' -layout us,ru -variant ',phonetic' -opt
 eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "${HOME}/.gpg-agent-info")"
 export LC_CTYPE="en_US.UTF-8"
 export ENV="$HOME/.kshrc"
-# sxhkd &
+sxhkd &
 ~/.fehbg &
 xrdb -l ~/.Xresources &
 syndaemon -k -i 0.5 -d
