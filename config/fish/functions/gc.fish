@@ -1,4 +1,4 @@
-# Defined in - @ line 1
-function gc --wraps='git commit -v -s' --description 'alias gc=git commit -v -s'
-  git commit -v -s $argv;
+# Defined in /tmp/fish.ybggTQ/gc.fish @ line 2
+function gc --wraps='git commit -v' --wraps='git commit -v' --description 'alias gc=git commit -v'
+  git commit -v $argv;
 end
