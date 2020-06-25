@@ -15,7 +15,7 @@ Host emerald
 	Port 22
 
 Host fern
-	Hostname 192.168.0.110
+	Hostname 192.168.0.102
 	User pi
 
 Host fern-remote

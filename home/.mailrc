@@ -39,7 +39,7 @@ set reply-to-honour
 set editalong
 set history-gabby=all 
 set history-file=~/.s-nailhist
-set autosort=thread
+set autosort=date
 
 define trash {
     move "$@" +Trash
