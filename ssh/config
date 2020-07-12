@@ -15,10 +15,25 @@ Host emerald
 	Port 22
 
 Host fern
-	Hostname 192.168.0.102
+	Hostname 192.168.0.100
 	User pi
 
 Host fern-remote
     Hostname 139.59.93.193
     User pi
     Port 22222
+
+Host cometchat-dev
+    Hostname stats.cometchat-dev.com
+    User ubuntu
+    IdentityFile ~/.ssh/cometchat
+
+Host openfire-dev
+    Hostname 35.189.112.205
+    User Ajay
+    IdentityFile ~/.ssh/cometchat
+
+Host jade
+    Hostname 152.67.160.69
+    User ubuntu
+    IdentityFile ~/.ssh/id_rsa
