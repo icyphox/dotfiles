@@ -37,3 +37,13 @@ Host jade
     Hostname 152.67.160.69
     User ubuntu
     IdentityFile ~/.ssh/id_rsa
+
+Host settings-us
+    Hostname ec2-18-224-18-191.us-east-2.compute.amazonaws.com
+    User ubuntu
+    IdentityFile ~/.ssh/cometchat
+
+Host ws-benchmark
+    Hostname ec2-18-217-39-235.us-east-2.compute.amazonaws.com
+    User ubuntu
+    IdentityFile ~/.ssh/cometchat-aws.pem

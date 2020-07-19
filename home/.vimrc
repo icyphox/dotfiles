@@ -17,9 +17,9 @@ Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 " }}}
 Plug 'ervandew/supertab'
 Plug 'Clavelito/indent-awk.vim'
-Plug 'soywod/iris.vim'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-rsi'
+Plug 'zah/nim.vim'
 call plug#end()
 
 " indentation
@@ -54,6 +54,7 @@ set timeout timeoutlen=3000 ttimeoutlen=100
 set undodir=~/.vim/undodir
 set nowrap
 set nocursorline
+set nofoldenable
 set conceallevel=2 
 set mouse=a
 set wildmenu
@@ -83,11 +84,13 @@ set background=dark
 
 " keybindings
 let mapleader=' '
-nnoremap <leader>n :nohlsearch<cr>
+nnoremap <leader><esc> :nohlsearch<cr>
 nnoremap <leader>o :only<cr>
 nnoremap H H:exec 'norm! '. &scrolloff . 'k'<cr>
 nnoremap L L:exec 'norm! '. &scrolloff . 'j'<cr>
 nnoremap <C-t> :tabedit
+nnoremap <leader>n :bnext<cr>
+nnoremap <leader>p :bprev<cr>
 
 " Not an editor command: Wqa
 :command! WQ wq
@@ -209,3 +212,4 @@ else
     let &t_EI .= "\e[2 q"
     let &t_SR .= "\e[4 q"
 endif
+
