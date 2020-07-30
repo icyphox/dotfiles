@@ -6,7 +6,7 @@
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
 
-#define base00 #fafafa
+#define base00 #e0e0e0
 #define base01 #dedede
 #define base02 #cccccc
 #define base03 #aaaaaa
@@ -81,3 +81,18 @@ XClock.twentyfour: false
 XClock.render: true
 XClock.face: SF Mono:style=Regular:size=14:antialias=true
 XClock.strftime: "%a, %d %b %I:%M"
+
+! Xlock config
+XLock.dpmsoff: 1
+! plain white-on-black lock screen
+XLock.description: off
+XLock.echokeys: off
+XLock.info:
+XLock.foreground: black
+XLock.background: white
+XLock.mode: blank
+XLock.username: username: 
+XLock.password: password: 
+XLock.font        : -misc-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-1
+XLock.planfont    : -misc-fixed-medium-r-normal-*-13-*-*-*-*-*-iso10646-1
+
