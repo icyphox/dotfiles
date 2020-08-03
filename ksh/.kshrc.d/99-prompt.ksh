@@ -1,31 +1,36 @@
 set -o emacs
+lf='
+'
+cr=$(print -n '\r')
+esc=$(print -n '\033')
+ps1flag=$(print -n '\001')
 
-red="\033[31m"
-grn="\033[32m"
-ylw="\033[33m"
-cyn="\033[36m"
-blu="\033[34m"
-prp="\033[35m"
-bprp="\033[35;1m"
-gry="\033[94m"
-rst="\033[0m"
+red="$esc[31m"
+grn="$esc[32m"
+ylw="$esc[33m"
+cyn="$esc[36m"
+blu="$esc[34m"
+prp="$esc[35m"
+bprp="$esc[35;1m"
+gry="$esc[94m"
+rst="$esc[0m"
 
 git_status() {
-    [[ -d "$PWD"/.git ]] && {
-        git_status="$(git status 2> /dev/null)"
-            on_branch=""
-    }
+	if [[ -d .git ]]; then
+		git_status=$(git status 2>/dev/null)
+		on_branch=
+	fi
 }
 
-prompt_pwd() {
-    printf '%b' "\001${cyn}\002$(pwd)\001${rst}\002"
-}
+# first, set the rootornot part
+if [[ $(id -u) = 0 ]]; then
+	PS1="$ps1flag$red$ps1flag#$ps1flag$rst$ps1flag"
+else
+	PS1=
+fi
 
-rootornot() {
-    [[ "$(id -u)" -eq 0 ]] &&
-        printf '%b' "\001${red}\002#\001${rst}\002"
-}
-
-PS1='\n$(prompt_pwd)\n▲$(rootornot) '
+# then, combine it all
+PS1="$ps1flag$cr
+$ps1flag$cyn$ps1flag\$PWD$ps1flag$rst$ps1flag
+▲$PS1 "
 PS2="> "
-
