@@ -49,5 +49,5 @@ bind-mouse 4-1 window-move
 bind-mouse 4-2 window-lower
 
 # other
-borderwidth 1
+borderwidth 0
 snapdist 10

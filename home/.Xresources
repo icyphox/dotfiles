@@ -6,7 +6,7 @@
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
 
-#define base00 #e0e0e0
+#define base00 #f4f4f4
 #define base01 #fafafa
 #define base02 #cccccc
 #define base03 #aaaaaa
