@@ -27,7 +27,6 @@ augroup indents
 	autocmd!
 	autocmd FileType less,css,html setlocal ts=2 sts=2 sw=2 expandtab
 	autocmd FileType text,markdown setlocal expandtab
-	autocmd FileType rgbds setlocal autoindent
 augroup END
 
 augroup restorecursor
@@ -188,8 +187,6 @@ augroup pencil
   autocmd!
   autocmd FileType markdown,mkd,text call pencil#init({'wrap': 'hard', 'autoformat': 0})
 augroup END
-
-au BufRead,BufNewFile *.asm set filetype=rgbds
 
 augroup setMail
     autocmd!

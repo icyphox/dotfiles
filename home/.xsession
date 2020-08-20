@@ -17,4 +17,5 @@ xrdb -l ~/.Xresources &
 syndaemon -k -i 0.5 -d
 urxvtd &
 xsetroot -cursor_name left_ptr
+st &
 cwm
