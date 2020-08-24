@@ -19,7 +19,7 @@ Host fern
 	User pi
 
 Host fern-remote
-    Hostname 139.59.93.193
+    Hostname 152.67.160.69
     User pi
     Port 22222
 
