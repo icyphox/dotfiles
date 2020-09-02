@@ -40,6 +40,7 @@ set editalong
 set history-gabby=all 
 set history-file=~/.s-nailhist
 set autosort=date
+set pipe-text/html='?* lynx -stdin -force_html -dump'
 
 define trash {
     move "$@" +Trash
@@ -53,3 +54,4 @@ define sync {
     !mbsync -a
 }
 commandalias n call sync
+
