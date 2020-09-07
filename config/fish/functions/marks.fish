@@ -11,7 +11,7 @@ end
 
 function marks
     for f in $MARKPATH/*
-        printf '%s → %s\n' (basename $f) (readlink $f)
+        printf '%s -> %s\n' (basename $f) (readlink $f)
     end
 end
 
