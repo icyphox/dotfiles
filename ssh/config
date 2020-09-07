@@ -9,10 +9,6 @@ Host github.com
 	IdentityFile ~/.ssh/github
 
 Host fern
-	Hostname 192.168.0.100
-	User pi
-
-Host fern-remote
     Hostname 152.67.160.69
     User pi
     Port 22222
