@@ -12,13 +12,13 @@ account "personal" {
     set folder=~/mail
     set record=+Sent
     set inbox=+Inbox
-    set mta=smtp://m.icyphox.sh:587 smtp-use-starttls
+    set mta=smtps://smtp.migadu.com
     shortcut fwc "+Free Writers Club" \
         sent +Sent \
         inbox +Inbox \
         drafts +Drafts \
         trash +Trash \
-        archive +Archives
+        archive +Archive
 }
 
 set prompt='> '
@@ -55,7 +55,14 @@ set mime-counter-evidence=0xE
 
 define sync {
     !mbsync -a
+    newmail
 }
 commandalias n call sync
 commandalias mv mimeview
 
+define signature {
+    vput ! sig cat ~/.signature
+    vput csop message-inject-tail trim-end $sig
+}
+
+set on-compose-leave=signature
