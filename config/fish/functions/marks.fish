@@ -15,6 +15,6 @@ function marks
     end
 end
 
-function j -d 'The based jumper.'
+function n -d 'The based jumper.'  # n because workman
     cd (realpath $MARKPATH/$argv) 2>/dev/null || printf '%s\n' "error: no such mark $argv"
 end

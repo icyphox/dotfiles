@@ -1,4 +1,4 @@
-complete -c j -f -r
+complete -c n -f -r
 
 set -l paths ""
 
@@ -6,4 +6,4 @@ for f in $MARKPATH/*
     set -a paths (basename $f)
 end
 
-complete -c j -a "$paths"
+complete -c n -a "$paths"
