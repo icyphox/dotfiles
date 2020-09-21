@@ -21,7 +21,7 @@ Plug 'Clavelito/indent-awk.vim'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-rsi'
 Plug 'zah/nim.vim'
-Plug 'nicwest/vim-workman'
+Plug 'icyphox/vim-workman', { 'branch': 'iceman' }
 call plug#end()
 
 " indentation
