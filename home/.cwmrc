@@ -26,20 +26,20 @@ bind-key C-Print "/home/icy/bin/scr -f"
 bind-key 4-n "st -e nvim /home/icy/notes"
 
 # keybinds
-bind-key 4-d 'dmenu_run'
+bind-key 4-h 'dmenu_run'
 bind-key M-Tab window-cycle
 bind-key MS-Tab window-rcycle
 bind-key 4-Tab group-cycle
 bind-key 4S-Tab group-rcycle
-bind-key 4-f window-maximize
-bind-key 4-v window-vtile 
-bind-key 4-h window-htile
+bind-key 4-t window-maximize
+bind-key 4-c window-vtile 
+bind-key 4-y window-htile
 bind-key 4S-q window-close
-bind-key 4S-h window-snap-left
-bind-key 4S-l window-snap-right 
-bind-key 4S-r restart
-bind-key 4S-e quit
-bind-key 4S-u window-vmaximize
+bind-key 4S-y window-snap-left
+bind-key 4S-o window-snap-right 
+bind-key 4S-w restart
+bind-key 4S-r quit
+bind-key 4S-b window-vmaximize
 
 # mousebinds
 unbind-mouse all
