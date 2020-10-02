@@ -20,7 +20,7 @@ Plug 'ervandew/supertab'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-rsi'
 Plug 'zah/nim.vim'
-Plug 'icyphox/vim-workman', { 'branch': 'iceman' }
+" Plug 'icyphox/vim-workman', { 'branch': 'iceman' }
 call plug#end()
 
 " indentation
@@ -212,4 +212,4 @@ else
 endif
 
 " for workman in normal mode
-let g:workman_normal_qwerty = 1
+" let g:workman_normal_qwerty = 0
