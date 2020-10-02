@@ -12,7 +12,7 @@ account "personal" {
     set folder=~/mail
     set record=+Sent
     set inbox=+Inbox
-    set mta=smtps://smtp.migadu.com
+    set mta=smtps://smtp.yandex.com
     shortcut fwc "+Free Writers Club" \
         sent +Sent \
         inbox +Inbox \

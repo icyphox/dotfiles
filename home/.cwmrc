@@ -26,7 +26,7 @@ bind-key C-Print "/home/icy/bin/scr -f"
 bind-key 4-n "st -e nvim /home/icy/notes"
 
 # keybinds
-bind-key 4-h 'dmenu_run'
+bind-key 4-h menu-exec
 bind-key M-Tab window-cycle
 bind-key MS-Tab window-rcycle
 bind-key 4-Tab group-cycle

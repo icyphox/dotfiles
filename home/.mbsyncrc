@@ -1,5 +1,5 @@
 IMAPAccount personal
-Host imap.migadu.com
+Host imap.yandex.com
 User x@icyphox.sh
 PassCmd "pw -s default"
 SSLType IMAPS
