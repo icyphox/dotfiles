@@ -12,7 +12,7 @@ account "personal" {
     set folder=~/mail
     set record=+Sent
     set inbox=+Inbox
-    set mta=smtps://smtp.yandex.com
+    set mta=smtps://smtp.migadu.com
     shortcut fwc "+Free Writers Club" \
         sent +Sent \
         inbox +Inbox \
@@ -44,6 +44,7 @@ set autosort=date
 set pipe-text/html='w3m -T text/html -dump'
 set pipe-image/png='feh -'
 set pipe-image/jpg='feh -'
+set pipe-application/pdf='zathura -'
 
 define trash {
     move "$@" +Trash

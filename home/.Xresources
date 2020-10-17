@@ -49,6 +49,10 @@
 *color14:      base0F
 *color15:      base07
 
+*.font: Go Mono:style=Regular:size=14:antialias=true
+*.italicFont: Go Mono:style=Italic:size=14:antialias=true
+*.boldFont: Go Mono:style=Bold:size=14:antialias=true
+
 ! Urxvt config 
 URxvt.font: xft:SF Mono:style=Regular:size=14:antialias=true,xft:Noto Sans:size=14:style=Medium:antialias=true 
 URxvt.scrollBar: false
