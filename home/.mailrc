@@ -9,12 +9,27 @@ set followup-to followup-to-honour=ask-yes
 account "personal" {
     localopts yes
     set from="Anirudh Oppiliappan <x@icyphox.sh>"
-    set folder=~/mail
+    set folder=~/mail/personal
     set record=+Sent
     set inbox=+Inbox
     set mta=smtps://smtp.migadu.com
     shortcut fwc "+Free Writers Club" \
         sent +Sent \
+        inbox +Inbox \
+        drafts +Drafts \
+        trash +Trash \
+        archive +Archive
+}
+
+account "homescreen" {
+    localopts yes
+    set from="Anirudh Oppiliappan <icy@homescreens.org>"
+    set netrc-pipe='gpg2 -qd ~/.netrc-hs.gpg'
+    set folder=~/mail/homescreen
+    set record=+Sent
+    set inbox=+Inbox
+    set mta=smtps://smtp.migadu.com
+    shortcut sent +Sent \
         inbox +Inbox \
         drafts +Drafts \
         trash +Trash \
