@@ -9,7 +9,7 @@
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
-Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
+Plug 'git@fern:vim/vim-colors-plain'
 Plug 'dbeniamine/vim-mail'
 Plug 'tpope/vim-surround'
 " plugins for writing {{{

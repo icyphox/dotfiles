@@ -7,7 +7,7 @@
 #(_)_/\_\_|_| |_|_|\__|_|  \___|
 #
 
-xmodmap ~/leet/xmodmap/xmodmap.workman
+xmodmap ~/.xmodmap
 eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "${HOME}/.gpg-agent-info")"
 export LC_CTYPE="en_US.UTF-8"
 export ENV="$HOME/.kshrc"
