@@ -11,7 +11,7 @@
 	helper = store
 
 [sendemail]
-    smtpserver = m.icyphox.sh
+    smtpserver = smtp.migadu.com
     smtpuser = x@icyphox.sh
-    smtpencryption = tls
-    smtpserverport = 587
+    smtpencryption = ssl
+    smtpserverport = 465
