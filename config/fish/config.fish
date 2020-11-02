@@ -7,3 +7,7 @@ set -gx BROWSER iridium
 set -gx PW_KEY x@icyphox.sh
 
 source ~/.config/fish/functions/marks.fish
+
+function fish_user_key_bindings
+    bind \cr '__fzy_history (commandline -b)'
+end
