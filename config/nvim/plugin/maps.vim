@@ -15,3 +15,9 @@ nnoremap <leader>p :bprev<cr>
 :command! W w
 :command! Q q
 
+" check if fzy is loaded and in PATH
+if executable('fzy') && fzy_loaded
+    nnoremap <leader>e :call FzyCommand("find . -type f", ":e")<cr>
+    nnoremap <leader>v :call FzyCommand("find . -type f", ":vs")<cr>
+    nnoremap <leader>s :call FzyCommand("find . -type f", ":sp")<cr>
+endif
