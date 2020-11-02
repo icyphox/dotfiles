@@ -57,6 +57,7 @@ set softtabstop=4    " backspace through spaces
 set nocompatible
 set noshowmode
 set clipboard=unnamedplus
+set hidden
 
 " wildcard ignores
 set wildignore+=.git,.hg,.svn

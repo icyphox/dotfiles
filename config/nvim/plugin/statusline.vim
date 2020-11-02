@@ -33,6 +33,6 @@ set statusline+=\ %f\
 set statusline+=%m
 set statusline+=%=
 set statusline+=%#SecondaryBlock#
-set statusline+=\ %l\  
+set statusline+=\ %l,%c\  
 set statusline+=%#PrimaryBlock#
 set statusline+=%{&filetype}
