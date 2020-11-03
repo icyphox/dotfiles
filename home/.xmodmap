@@ -34,10 +34,10 @@ keycode  39 =            s             S           ssharp        asciitilde
 keycode  40 =            h             H       dead_caron        asciitilde            
 keycode  41 =            t             T       dead_acute  dead_doubleacute            
 keycode  42 =            g             G      dead_ogonek        asciitilde            
-keycode  43 =            y             Y       udiaeresis        Udiaeresis            
-keycode  44 =            n             N           ntilde            Ntilde            
-keycode  45 =            e             E           eacute            Eacute            
-keycode  46 =            o             O           oacute            Oacute            
+keycode  43 =            y             Y              Left        udiaeresis
+keycode  44 =            n             N              Down            ntilde     
+keycode  45 =            e             E              Up              eacute   
+keycode  46 =            o             O              Right           oacute      
 keycode  47 =            i             I      leftsinglequotemark    leftdoublequotemark
 keycode  48 =   apostrophe      quotedbl      rightsinglequotemark   rightdoublequotemark            
                                                                                       
@@ -52,10 +52,9 @@ keycode  59 =        comma          less     dead_cedilla        asciitilde
 keycode  60 =       period       greater    dead_abovedot        asciitilde            
 keycode  61 =        slash      question     questiondown        asciitilde            
                                                                                       
-keycode  66 =    BackSpace        Escape        BackSpace         BackSpace            
+keycode  66 =       Mode_switch
 keycode  94 =        minus    underscore           endash            emdash            
 keycode  65 =        space         space            space      nobreakspace            
-keycode 113 =  Mode_switch   Mode_switch                                               
 clear Lock
 
 !clear Shift

@@ -18,7 +18,8 @@ account "personal" {
         inbox +Inbox \
         drafts +Drafts \
         trash +Trash \
-        archive +Archive
+        archive +Archive \
+        spam +Junk
 }
 
 account "homescreen" {
