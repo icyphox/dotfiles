@@ -49,20 +49,20 @@
 *color14:      base0F
 *color15:      base07
 
-*.font: SF Mono:style=Regular:size=15:antialias=true
-*.italicFont: SF Mono:style=Italic:size=15:antialias=true
-*.boldFont: SF Mono:style=Bold:size=15:antialias=true
+*.font: SF Mono:style=Regular:size=13:antialias=true
+*.italicFont: SF Mono:style=Italic:size=13:antialias=true
+*.boldFont: SF Mono:style=Bold:size=13:antialias=true
 
 ! Urxvt config 
-URxvt.font: xft:SF Mono:style=Regular:size=15:antialias=true,xft:Noto Sans:size=14:style=Medium:antialias=true 
+URxvt.font: xft:SF Mono:style=Regular:size=13:antialias=true,xft:Noto Sans:size=14:style=Medium:antialias=true 
 URxvt.scrollBar: false
 URxvt.cursorBlink: false
 URxvt.internalBorder: 30
 URxvt.perl-ext: default,matcher
 URxvt.letterSpace: -1
 URxvt.matcher.button: 1
-URxvt.boldFont: xft:SF Mono:size=15:style=Bold:antialias=true
-URxvt.italicFont: xft:SF Mono:size=15:style=Italic:antialias=true
+URxvt.boldFont: xft:SF Mono:size=13:style=Bold:antialias=true
+URxvt.italicFont: xft:SF Mono:size=13:style=Italic:antialias=true
 URxvt.url-launcher: /usr/local/bin/iridium
 URxvt.visualBell: false
 URxvt.depth: 20
@@ -83,7 +83,7 @@ URxvt.locale: utf8
 XClock.analog: false
 XClock.twentyfour: false
 XClock.render: true
-XClock.face: SF Mono:style=Regular:size=15:antialias=true
+XClock.face: xft:SF Mono:style=Regular:size=13:antialias=true
 XClock.strftime: "%a, %d %b %I:%M"
 
 ! Xlock config

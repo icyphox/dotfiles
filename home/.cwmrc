@@ -4,7 +4,7 @@ sticky yes
 snapdist 4
 unbind-key all
 
-fontname "SF Mono:style=Regular:size=14"
+fontname "SF Mono:style=Regular:size=13"
 
 # groups
 bind-key 4-1 group-only-1
