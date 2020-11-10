@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+BLK="\e[30m"
+RED="\e[31m"
+GRN="\e[32m"
+YLW="\e[33m"
+BLU="\e[34m"
+PUR="\e[35m"
+CYN="\e[36m"
+WHT="\e[37m"
+RST="\e[0m"
+
+printf '%b\n' " no color "
+printf '%b\n' "${BLK} black ${RST}   [black]"
+printf '%b\n' "${RED} red ${RST}     [red]"
+printf '%b\n' "${GRN} green ${RST}   [green]"
+printf '%b\n' "${YLW} yellow ${RST}  [yellow]"
+printf '%b\n' "${BLU} blue ${RST}    [blue]"
+printf '%b\n' "${PUR} purple ${RST}  [purple]"
+printf '%b\n' "${CYN} cyan ${RST}    [cyan]"
+printf '%b\n' "${WHT} white ${RST}   [white]"

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+random_name="$(tr -dc 'a-zA-Z0-9' < /dev/random | fold -w 5 | head -n 1)"
+
+export LATEST_SCROT="$HOME/pics/scrots/latest.png"
+
+upload() {
+    file="$(basename "$1")"
+	ext="${file##*.}"
+	fullname="$random_name.$ext"
+	scp -P 22222 "$1" fern:~/www/icy/uploads/"$fullname"
+	printf '%s\n' "https://x.icyphox.sh/$fullname"
+	printf '%s' "https://x.icyphox.sh/$fullname" | xclip -selection clipboard
+}
+
+if [ "$1" == "l" ]; then
+    upload "$LATEST_SCROT" 
+elif [ "$1" != "l" ]; then
+   upload "$1" 
+fi

@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+# icyinfo, but better
+
+export BLK="\e[30m"
+export RED="\e[31m"
+export GRN="\e[32m"
+export YLW="\e[33m"
+export BLU="\e[34m"
+export PUR="\e[35m"
+export CYN="\e[36m"
+export BRED="\e[31m"
+export BGRN="\e[32m"
+export BYLW="\e[33m"
+export BBLU="\e[34m"
+export BPUR="\e[35m"
+export BCYN="\e[36m"
+export WHT="\e[37m"
+export RST="\e[0m"
+
+#BAR="████"
+#((LEN = ${#BAR} * 6))
+#COLOR_BARS="$RED$BAR$GRN$BAR$YLW$BAR$BLU$BAR$PUR$BAR$CYN$BAR$RST"
+
+basename() {
+    # Usage: basename "path" ["suffix"]
+    local tmp
+
+    tmp=${1%"${1##*[!/]}"}
+    tmp=${tmp##*/}
+    tmp=${tmp%"${2/"$tmp"}"}
+
+    printf '%s\n' "${tmp:-/}"
+}
+
+prinfo() {
+    # 1 - field
+    # 2 - info
+	# 3 - prev line
+	prev_line="$1$2"
+	export prev_line	
+
+
+	printf '\e[%sD\e[B' "${#3}"
+    printf '%b' "${BLU}$1${RST}$2"
+}
+
+user="$USER"
+host="$HOSTNAME"
+kernel="$(uname -r)"
+shell="$(basename "$SHELL")"
+
+# cactus art
+#art="
+#${GRN}
+#    o 
+#.oo.Oo.
+#   O. 
+#    Ooo'${RST}
+# ${RED}___${RST}${GRN}O${RST}${RED}___
+# \     /
+#  \___/${RST}
+#"
+
+# blowfish
+
+printf '\e[?25l'
+printf '\e[2J'
+art="
+${YLW}      \.-----./
+      / ^ ^ ^ \ ${RST}
+    (${PUR}o${RST})(${PUR}o${RST})${YLW} ^ ^ |_/|${RST}
+     ${RED}{}${RST} ${YLW}^ ^ > ^| \|
+      \^ ^ ^ ^/
+       /-----\\ ${RST}
+
+"
+
+printf '%b' "$art"
+os="$(uname)"
+pkgs="$(pkg_info | wc -l)"
+
+printf '%b\n' "${CYN}$user${RST}@${CYN}$host${RST}"
+
+prinfo "os" "          $os"
+prinfo "kernel" "      $kernel" "$prev_line"
+prinfo "pkgs" "   $pkgs" "$prev_line"
+prinfo "shell" "       $shell" "$prev_line"
+
+
+# Pause
+read -rsn1 _
+clear
