@@ -49,7 +49,7 @@ keycode  56 =            v             V               oe                OE
 keycode  57 =            k             K   dead_abovering        asciitilde            
 keycode  58 =            l             L          lstroke           Lstroke            
 keycode  59 =        comma          less     dead_cedilla        asciitilde            
-keycode  60 =       period       greater    dead_abovedot        asciitilde            
+keycode  60 =       period       greater     ellipsis            asciitilde            
 keycode  61 =        slash      question     questiondown        asciitilde            
                                                                                       
 keycode  66 =       Mode_switch
