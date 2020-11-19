@@ -16,5 +16,13 @@ sxhkd &
 xrdb -l ~/.Xresources &
 syndaemon -k -i 0.5 -d
 xsetroot -cursor_name left_ptr
+
+# xnotify
+XNOTIFY_FIFO="$HOME/.cache/xnotify$DISPLAY.fifo"
+export XNOTIFY_FIFO
+rm -f $XNOTIFY_FIFO
+mkfifo $XNOTIFY_FIFO
+xnotify <$XNOTIFY_FIFO 3<>$XNOTIFY_FIFO &
+
 st &
 cwm

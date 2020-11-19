@@ -53,6 +53,15 @@
 *.italicFont: SF Mono:style=Italic:size=13:antialias=true
 *.boldFont: SF Mono:style=Bold:size=13:antialias=true
 
+! xnotify
+xnotify.border: base05
+xnotify.background: base05
+xnotify.foreground: base00
+xnotify.gap: 5
+xnotify.geometry: 400x0
+xnotify.gravity: NE
+xnotify.title.font: SF Mono:style=Bold:size=13:antialias=true
+
 ! Urxvt config 
 URxvt.font: xft:SF Mono:style=Regular:size=13:antialias=true,xft:Noto Sans:size=14:style=Medium:antialias=true 
 URxvt.scrollBar: false

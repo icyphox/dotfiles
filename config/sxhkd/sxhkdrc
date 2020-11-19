@@ -32,15 +32,9 @@
 # XF86MonBrightnessDown 
 #    lux -s 20
 # 
-# Print
-#    scr -f
-# 
-# ctrl + Print 
-#    scr -w
-# 
-# ctrl + shift + Print
-#    scr -s
-#
+ctrl + bracketright
+   scr -s
+
 XF86AudioPlay
     cmus-remote -u
 
