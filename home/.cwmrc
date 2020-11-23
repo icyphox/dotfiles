@@ -24,6 +24,7 @@ bind-key 4-p '/home/icy/bin/pwmenu.sh'
 bind-key CS-Print "/home/icy/bin/scr -s"
 bind-key C-Print "/home/icy/bin/scr -f"
 bind-key 4-n "st -e nvim /home/icy/notes"
+bind-key 4-l "/home/icy/bin/log"
 
 # keybinds
 bind-key 4-d menu-exec

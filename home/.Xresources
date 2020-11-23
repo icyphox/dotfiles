@@ -58,9 +58,16 @@ xnotify.border: base05
 xnotify.background: base05
 xnotify.foreground: base00
 xnotify.gap: 5
-xnotify.geometry: 400x0
 xnotify.gravity: NE
 xnotify.title.font: SF Mono:style=Bold:size=13:antialias=true
+
+! xprompt
+xprompt.font: SF Mono:style=Regular:size=13:antialias=true
+xprompt.background: base05
+xprompt.foreground: base00
+xprompt.gravity: C
+xprompt.borderWidth: 0
+xprompt.geometry: 1200x50
 
 ! Urxvt config 
 URxvt.font: xft:SF Mono:style=Regular:size=13:antialias=true,xft:Noto Sans:size=14:style=Medium:antialias=true 
