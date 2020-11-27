@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xsetroot -solid "$(xres color8)"

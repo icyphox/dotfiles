@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # stolen from nerdy
 
 xrdb -query | grep -w $1 | awk '{print $2}'

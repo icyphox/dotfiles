@@ -6,113 +6,39 @@
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
 
-#define base00 #f4f4f4
-#define base01 #fafafa
-#define base02 #cccccc
-#define base03 #aaaaaa
-#define base04 #8a8a8a
-#define base05 #676767
-#define base06 #454545
-#define base07 #232323
-#define base08 #db7070
-#define base09 #db7070
-#define base0A #d69822
-#define base0B #7c9f4b
-#define base0C #509c93
-#define base0D #6587bf
-#define base0E #b870ce
-#define base0F #509c93
+*foreground:   #676767
+*background:   #f4f4f4
+*cursor:       #676767
 
-*foreground:   base05
-#ifdef background_opacity
-*background:   [background_opacity]base00
-#else
-*background:   base00
-#endif
-*cursorColor:  base05
+*color0:       #f4f4f4
+*color1:       #db7070
+*color2:       #7c9f4b
+*color3:       #d69822
+*color4:       #6587bf
+*color5:       #b870ce
+*color6:       #509c93
+*color7:       #676767
 
-*color0:       base00
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
+*color8:       #aaaaaa
+*color9:       #db7070
+*color10:      #fafafa
+*color11:      #cccccc
+*color12:      #8a8a8a
+*color13:      #454545
+*color14:      #509c93
+*color15:      #232323
 
-*color8:       base03
-*color9:       base09
-*color10:      base01
-*color11:      base02
-*color12:      base04
-*color13:      base06
-*color14:      base0F
-*color15:      base07
-
-*.font: SF Mono:style=Regular:size=13:antialias=true
-*.italicFont: SF Mono:style=Italic:size=13:antialias=true
-*.boldFont: SF Mono:style=Bold:size=13:antialias=true
+*.font: SF Mono:style=Regular:size=12:antialias=true
+*.italicFont: SF Mono:style=Italic:size=12:antialias=true
+*.boldFont: SF Mono:style=Bold:size=12:antialias=true
 
 ! xnotify
-xnotify.border: base05
-xnotify.background: base05
-xnotify.foreground: base00
 xnotify.gap: 5
 xnotify.gravity: NE
-xnotify.title.font: SF Mono:style=Bold:size=13:antialias=true
+xnotify.title.font: SF Mono:style=Bold:size=12:antialias=true
 
 ! xprompt
-xprompt.font: SF Mono:style=Regular:size=13:antialias=true
-xprompt.background: base05
-xprompt.foreground: base00
+xprompt.font: SF Mono:style=Regular:size=12:antialias=true
 xprompt.gravity: C
 xprompt.borderWidth: 0
 xprompt.geometry: 1200x50
-
-! Urxvt config 
-URxvt.font: xft:SF Mono:style=Regular:size=13:antialias=true,xft:Noto Sans:size=14:style=Medium:antialias=true 
-URxvt.scrollBar: false
-URxvt.cursorBlink: false
-URxvt.internalBorder: 30
-URxvt.perl-ext: default,matcher
-URxvt.letterSpace: -1
-URxvt.matcher.button: 1
-URxvt.boldFont: xft:SF Mono:size=13:style=Bold:antialias=true
-URxvt.italicFont: xft:SF Mono:size=13:style=Italic:antialias=true
-URxvt.url-launcher: /usr/local/bin/iridium
-URxvt.visualBell: false
-URxvt.depth: 20
-URxvt.lineSpace: 1
-URxvt.geometry: 80x20 
-URxvt.intensityStyles: false
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-URxvt.keysym.Home: \033[1~
-URxvt.keysym.End: \033[4~
-URxvt.keysym.KP_Home: \033[1~
-URxvt.keysym.KP_End:  \033[4~
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.locale: utf8
-
-! Xclock config
-XClock.analog: false
-XClock.twentyfour: false
-XClock.render: true
-XClock.face: xft:SF Mono:style=Regular:size=13:antialias=true
-XClock.strftime: "%a, %d %b %I:%M"
-
-! Xlock config
-XLock.dpmsoff: 1
-! plain white-on-black lock screen
-XLock.description: off
-XLock.echokeys: off
-XLock.info:
-XLock.foreground: black
-XLock.background: white
-XLock.mode: blank
-XLock.username: username: 
-XLock.password: password: 
-XLock.font        : -misc-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-1
-XLock.planfont    : -misc-fixed-medium-r-normal-*-13-*-*-*-*-*-iso10646-1
-

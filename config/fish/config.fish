@@ -2,7 +2,7 @@ set fish_greeting
 
 set -gx PATH ~/bin ~/.local/bin ~/leet/Nim/bin ~/.nimble/bin \
 /usr/local/bin /usr/bin /bin /sbin /usr/sbin /usr/X11R6/bin \
-~/bin/wm
+~/go/bin
 
 set -gx EDITOR nvim
 set -gx BROWSER iridium

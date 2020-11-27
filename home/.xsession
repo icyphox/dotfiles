@@ -12,8 +12,8 @@ eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "${HOME}/.gpg-a
 export LC_CTYPE="en_US.UTF-8"
 export ENV="$HOME/.kshrc"
 sxhkd &
-~/.fehbg &
 xrdb -l ~/.Xresources &
+~/bin/bgfill
 syndaemon -k -i 0.5 -d
 xsetroot -cursor_name left_ptr
 
