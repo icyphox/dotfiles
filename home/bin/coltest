@@ -20,6 +20,8 @@ RST="\e[0m"
 # printf '%b\n' "${CYN} cyan ${RST}    [cyan]"
 # printf '%b\n' "${WHT} white ${RST}   [white]"
 
+printf '\n'
+
 for (( i=0; i<7; i++ )); do
     printf '\033[4%sm  \033[m ' "$i"
 done
