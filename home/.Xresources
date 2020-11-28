@@ -6,7 +6,7 @@
 !(_)_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/ 
 !
 
-#include ".colors/gray"
+#include ".colors/dark"
 
 
 *.font: SF Mono:style=Regular:size=12:antialias=true
