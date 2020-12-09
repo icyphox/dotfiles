@@ -9,39 +9,14 @@ Host github.com
 	IdentityFile ~/.ssh/github
 
 Host fern
-    Hostname 152.67.160.69
+    Hostname 152.67.160.174
     User pi
     Port 22222
 
-Host cometchat-dev
-    Hostname stats.cometchat-dev.com
-    User ubuntu
-    IdentityFile ~/.ssh/cometchat
-
-Host openfire-dev
-    Hostname ec2-3-129-59-18.us-east-2.compute.amazonaws.com
-    User ubuntu
-    IdentityFile ~/.ssh/cometchat-aws.pem
-
 Host jade
-    Hostname 152.67.160.69
+    Hostname 152.67.162.71
     User ubuntu
     IdentityFile ~/.ssh/id_rsa
-
-Host settings-us
-    Hostname ec2-18-224-18-191.us-east-2.compute.amazonaws.com
-    User ubuntu
-    IdentityFile ~/.ssh/cometchat
-
-Host settings-eu
-    Hostname ssh.breakout-settings-tml-eu.cometchat.io
-    User ubuntu
-    IdentityFile ~/.ssh/cometchat
-
-Host ws-benchmark
-    Hostname ec2-18-217-39-235.us-east-2.compute.amazonaws.com
-    User ubuntu
-    IdentityFile ~/.ssh/cometchat-aws.pem
 
 Host pantwo
     Hostname 100.64.1.3
