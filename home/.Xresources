@@ -17,6 +17,7 @@
 xnotify.gap: 5
 xnotify.gravity: NE
 xnotify.title.font: SF Mono:style=Bold:size=12:antialias=true
+xnotify.wrap: true
 
 ! xprompt
 xprompt.font: SF Mono:style=Regular:size=12:antialias=true
