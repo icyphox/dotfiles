@@ -32,7 +32,7 @@
 # XF86MonBrightnessDown 
 #    lux -s 20
 # 
-ctrl + bracketright
+ctrl + shift + bracketright
    scr -s
 
 XF86AudioPlay

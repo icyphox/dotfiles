@@ -1,3 +1,4 @@
+set tw=72
 setlocal expandtab
 call pencil#init({'wrap': 'hard', 'autoformat': 0})
 
