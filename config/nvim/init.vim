@@ -13,7 +13,6 @@ Plug 'git@fern:vim/vim-colors-plain'
 Plug 'dbeniamine/vim-mail', { 'for': ['mail'] }
 Plug 'tpope/vim-surround'
 " plugins for writing {{{
-Plug 'reedes/vim-pencil', { 'for': ['text',  'markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
 " }}}
 Plug 'ervandew/supertab'
@@ -87,10 +86,6 @@ let g:gitgutter_sign_modified_removed          = '#'
 hi Comment cterm=italic
 " color overrides
 hi CursorLine ctermbg=none
-
-" vim-pencil
-let g:pencil#textwidth = 72
-let g:pencil#conceallevel = 0
 
 augroup setMail
     autocmd!

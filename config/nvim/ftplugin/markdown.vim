@@ -1,6 +1,5 @@
 set tw=72
 setlocal expandtab
-call pencil#init({'wrap': 'hard', 'autoformat': 0})
 
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_toml_frontmatter=1
