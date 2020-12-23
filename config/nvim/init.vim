@@ -82,6 +82,9 @@ let g:gitgutter_sign_removed                   = '-'
 let g:gitgutter_sign_removed_first_line        = '^'
 let g:gitgutter_sign_modified_removed          = '#'
 
+" default to text for files without extensions
+au BufNewFile,BufRead * if &ft == '' | set ft=text | endif
+
 " comments are italicized
 hi Comment cterm=italic
 " color overrides
