@@ -12,9 +12,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'git@fern:vim/vim-colors-plain'
 Plug 'dbeniamine/vim-mail', { 'for': ['mail'] }
 Plug 'tpope/vim-surround'
-" plugins for writing {{{
 Plug 'plasticboy/vim-markdown', { 'for': ['text',  'markdown'] }
-" }}}
+Plug 'git@fern:vim/better-text-objs'
 Plug 'ervandew/supertab'
 Plug 'wellle/targets.vim'
 Plug 'tpope/vim-rsi'
