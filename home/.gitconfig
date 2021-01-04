@@ -15,3 +15,6 @@
     smtpuser = x@icyphox.sh
     smtpencryption = ssl
     smtpserverport = 465
+
+[init]
+    defaultBranch = master
