@@ -19,24 +19,3 @@ Patterns *
 Create Both
 SyncState *
 
-IMAPAccount homescreen
-Host imap.migadu.com
-User icy@homescreens.org
-PassCmd "pw -s default"
-SSLType IMAPS
-
-IMAPStore hs-remote
-Account homescreen
-
-MaildirStore hs-local
-Subfolders Verbatim
-Path ~/mail/homescreen/
-Inbox ~/mail/homescreen/Inbox
-
-Channel homescreen
-Master :hs-remote:
-Slave :hs-local:
-Patterns *
-Create Both
-SyncState *
-

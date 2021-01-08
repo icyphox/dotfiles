@@ -22,21 +22,6 @@ account "personal" {
         spam +Junk
 }
 
-account "homescreen" {
-    localopts yes
-    set from="Anirudh Oppiliappan <icy@homescreens.org>"
-    set netrc-pipe='gpg2 -qd ~/.netrc-hs.gpg'
-    set folder=~/mail/homescreen
-    set record=+Sent
-    set inbox=+Inbox
-    set mta=smtps://smtp.migadu.com
-    shortcut sent +Sent \
-        inbox +Inbox \
-        drafts +Drafts \
-        trash +Trash \
-        archive +Archive
-}
-
 set prompt='> '
 set colour-pager crt
 
