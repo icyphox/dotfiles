@@ -6,7 +6,7 @@
 	   gpgsign = true
        verbose = true
 [gpg]
-       program = gpg2
+       program = gpg
 [credential]
 	helper = store
 
