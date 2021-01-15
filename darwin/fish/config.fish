@@ -8,8 +8,11 @@ set -gx EDITOR nvim
 set -gx BROWSER iridium
 set -gx PW_KEY x@icyphox.sh
 
-source ~/.config/fish/functions/marks.fish
+# source ~/.config/fish/functions/marks.fish
 
 function fish_user_key_bindings
     bind \cr '__fzy_history (commandline -b)'
 end
+
+# workaround for slow completions on macOS
+function __fish_describe_command; end
