@@ -8,6 +8,11 @@ Host github.com
     TCPKeepAlive yes
 	IdentityFile ~/.ssh/github
 
+Host deepsource
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/deepsource-git
+
 Host fern
     Hostname 152.67.160.174
     User pi

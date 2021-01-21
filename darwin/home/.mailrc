@@ -1,0 +1,71 @@
+set v15-compat
+set netrc-lookup
+set netrc-pipe='gpg -qd ~/.netrc.gpg'
+set sendcharsets=utf-8,iso-8859-1
+set reply-in-same-charset
+set fullnames
+set followup-to followup-to-honour=ask-yes
+
+account "personal" {
+    localopts yes
+    set from="Anirudh Oppiliappan <x@icyphox.sh>"
+    set folder=~/mail/personal
+    set record=+Sent
+    set inbox=+Inbox
+    set mta=smtps://smtp.migadu.com
+    shortcut fwc "+Free Writers Club" \
+        sent +Sent \
+        inbox +Inbox \
+        drafts +Drafts \
+        trash +Trash \
+        archive +Archive \
+        spam +Junk
+}
+
+set prompt='> '
+set colour-pager crt
+
+colour 256 sum-dotmark ft=bold,fg=13 dot
+colour 256 sum-header fg=007 older
+colour 256 sum-header bg=253,fg=white dot
+colour 256 sum-header fg=white
+colour 256 sum-thread bg=008 dot
+colour 256 sum-thread fg=cyan
+
+account personal
+set askattach
+set markanswered
+set autocollapse
+set reply-to-honour
+set editalong
+set history-gabby=all 
+set history-file=~/.s-nailhist
+set autosort=date
+
+set pipe-text/html='w3m -T text/html -dump'
+set pipe-image/png='feh -'
+set pipe-image/jpg='feh -'
+set pipe-image/jpeg='feh -'
+set pipe-application/pdf='zathura -'
+
+define trash {
+    move "$@" +Trash
+}
+commandalias del call trash
+
+retain date from to cc subject
+set mime-counter-evidence=0xE
+
+define sync {
+    !mbsync -a
+    newmail
+}
+commandalias n call sync
+commandalias mv mimeview
+
+define signature {
+    vput ! sig cat ~/.signature
+    vput csop message-inject-tail trim-end $sig
+}
+
+set on-compose-leave=signature
