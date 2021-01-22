@@ -92,6 +92,7 @@ hi CursorLine ctermbg=none
 augroup setMail
     autocmd!
     autocmd BufRead,BufNewFile /tmp/nail-* setlocal ft=mail
+    autocmd BufRead,BufNewFile *s-nail-* setlocal ft=mail
 augroup END
 
 " insert date

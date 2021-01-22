@@ -5,3 +5,4 @@ darwin/fish/functions/__z_add.fish
 darwin/fish/functions/__z_clean.fish
 darwin/fish/functions/__z_complete.fish
 darwin/fish/functions/fisher.fish
+darwin/fish/completions/helm.fish
