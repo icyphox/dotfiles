@@ -1,5 +1,3 @@
-let g:fzy_loaded=0
-
 function! s:completed(winid, filename, action, ...) abort
     bdelete!
     call win_gotoid(a:winid)
@@ -25,6 +23,3 @@ function! FzyCommand(choice_command, vim_command)
     endif
     startinsert
 endfunction
-
-let g:fzy_loaded=1
-
