@@ -17,3 +17,4 @@ paq 'zah/nim.vim'
 
 require('settings')
 require('maps')
+require('statusline')
