@@ -36,17 +36,17 @@ vim.api.nvim_exec(
 
 
 local stl = {
-	'%#PrimaryBlock#',
-	mode(),
-	'%#SecondaryBlock#',
-	'%#Blanks#',
-	'%f',
-	'%m',
-	'%=',
-	'%#SecondaryBlock#',
-	'%l,%c ',
-	'%#PrimaryBlock#',
-	'%{&filetype}',
+  '%#PrimaryBlock#',
+  mode(),
+  '%#SecondaryBlock#',
+  '%#Blanks#',
+  '%f',
+  '%m',
+  '%=',
+  '%#SecondaryBlock#',
+  '%l,%c ',
+  '%#PrimaryBlock#',
+  '%{&filetype}',
 }
 
 vim.o.statusline = table.concat(stl)

@@ -55,6 +55,9 @@ g.gitgutter_sign_removed                   = '-'
 g.gitgutter_sign_removed_first_line        = '^'
 g.gitgutter_sign_modified_removed          = '#'
 
+-- speed up python
+g.python3_host_prog = '$HOME/.pyenv/versions/3.9.1/bin/python3.9'
+
 -- window-local options
 wo.number = false
 wo.wrap = false

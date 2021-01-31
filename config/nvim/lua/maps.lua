@@ -19,9 +19,15 @@ cmd(':command! Wqa wqa')
 cmd(':command! W w')
 cmd(':command! Q q')
 
--- check if fzy is loaded and in PATH
+--  fzy mappings
 if vim.fn.executable('fzy') then
-	map('', '<leader>e', ':call FzyCommand("find . -type f ! -path \'*.git/*\'", ":e")<cr>', { noremap=true, silent=true })
+  _G.fzy = require('fzy').fzy
+  map(
+    '', 
+    '<leader>e', 
+    ':call v:lua.fzy("find -L . -type f ! -path \'*.git/*\'", ":e")<cr>',
+    { noremap=true, silent=true }
+  )
 else
-        print('fzy not in PATH!')
+        print(' not in PATH!')
 end
