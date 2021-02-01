@@ -19,15 +19,32 @@ cmd(':command! Wqa wqa')
 cmd(':command! W w')
 cmd(':command! Q q')
 
+local function fzy_ignore(patterns)
+  pattern_cmd = {}
+  for _, p in ipairs(patterns) do
+    table.insert(pattern_cmd, string.format("! -path '%s'", p))
+  end
+
+  return table.concat(pattern_cmd, ' ')
+end
+
 --  fzy mappings
 if vim.fn.executable('fzy') then
   _G.fzy = require('fzy').fzy
   map(
     '', 
     '<leader>e', 
-    ':call v:lua.fzy("find -L . -type f ! -path \'*.git/*\'", ":e")<cr>',
+    -- TODO: Rework this directory ignores into a table
+    string.format(
+    ':call v:lua.fzy("find -L . -type f %s", ":e")<cr>',
+    fzy_ignore({'*.git/*', '*node_modules*'})
+    ),
     { noremap=true, silent=true }
   )
+
+  --map('',
+  --'<leader>f',
+  --'')
 else
-        print(' not in PATH!')
+  print('fzy not in PATH!')
 end
