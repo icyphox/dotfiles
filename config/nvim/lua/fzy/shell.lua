@@ -1,9 +1,8 @@
--- returns the fzy output, do with it what you will
 local fn = vim.fn
 local cmd = vim.cmd
 local M = {}
 
-function M.fzy(fzy_cmd, action)
+function M.fzy_shell_cmd(fzy_cmd, action)
   -- save shell output to a temp file
   file = fn.tempname()
   shell_cmd = {
@@ -38,8 +37,6 @@ function M.fzy(fzy_cmd, action)
     -- ex: ':e somefile'
     vim.cmd(table.concat({ action, fzy_out }, ' '))
   end })
-
-  return fzy_out
 end
 
 return M

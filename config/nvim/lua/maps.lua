@@ -30,21 +30,22 @@ end
 
 --  fzy mappings
 if vim.fn.executable('fzy') then
-  _G.fzy = require('fzy').fzy
+  _G.fzy_shell_cmd = require('fzy.shell').fzy_shell_cmd
   map(
     '', 
     '<leader>e', 
-    -- TODO: Rework this directory ignores into a table
     string.format(
-    ':call v:lua.fzy("find -L . -type f %s", ":e")<cr>',
-    fzy_ignore({'*.git/*', '*node_modules*'})
+    ':call v:lua.fzy_shell_cmd("find -L . -type f %s", ":e")<cr>',
+    fzy_ignore{'*.git/*', '*node_modules*', '*.pyc'}
     ),
     { noremap=true, silent=true }
   )
 
-  --map('',
-  --'<leader>f',
-  --'')
+  _G.fzy_buffers = require('fzy.buffers').fzy_buffers
+  map('',
+  '<leader>b',
+  ':call v:lua.fzy_buffers()<cr>',
+  { noremap=true, silent=true })
 else
   print('fzy not in PATH!')
 end
