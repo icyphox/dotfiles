@@ -2,20 +2,29 @@ local fn = vim.fn
 local cmd = vim.cmd
 local M = {}
 
+local function get_line_nr(s)
+  for c in s:gmatch('%d+%s') do
+    c = string.gsub(c, '%s', '')
+    return tonumber(c)
+  end
+end
 
-local function build_index()
+
+local function annotated_input()
   local lines = {}
 
   -- index each line in the current buffer
   -- for jumping to
-  for line = 1, fn.line('$') do
-    lines[fn.getline(line)] = line
+  --
+  for nr = 1, fn.line('$') do
+    table.insert(lines, fn.getline(nr))
   end
+
 
   local outfile = fn.tempname()
   local f = io.open(outfile, 'a')
-  for l, _ in pairs(lines) do
-    f:write(l, '\n')
+  for n, l in pairs(lines) do
+    f:write(n .. '\t' .. l, '\n')
   end
   f:close()
 
@@ -24,7 +33,7 @@ end
 
 function M.fzy_jmp()
   local outfile = fn.tempname()
-  local idxfile, lines = build_index()
+  local idxfile, lines = annotated_input()
   shell_cmd = {
     '/bin/sh',
     '-c',
@@ -46,10 +55,10 @@ function M.fzy_jmp()
     line_choice = f:read('*all')
 
     -- strip '\n'
-    line_choice, _ = string.gsub(line_choice, '\n', '')
+    selected, _ = string.gsub(line_choice, '\n', '')
 
     -- jump to line
-    cmd(':' .. lines[line_choice])
+    cmd(':' .. get_line_nr(selected))
 
     -- housekeeping
     f:close()
