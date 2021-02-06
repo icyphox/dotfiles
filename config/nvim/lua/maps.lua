@@ -45,7 +45,15 @@ if vim.fn.executable('fzy') then
   map('',
   '<leader>b',
   ':call v:lua.fzy_buffers()<cr>',
-  { noremap=true, silent=true })
+  { noremap=true, silent=true }
+  )
+
+  _G.fzy_jmp = require('fzy.jump').fzy_jmp
+  map('',
+  '<leader>f',
+  ':call v:lua.fzy_jmp()<cr>',
+  { noremap=true, silent=true}
+  )
 else
   print('fzy not in PATH!')
 end

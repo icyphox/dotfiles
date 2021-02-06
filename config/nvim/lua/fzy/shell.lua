@@ -8,7 +8,7 @@ function M.fzy_shell_cmd(fzy_cmd, action)
   shell_cmd = {
     '/bin/sh',
     '-c',
-    fzy_cmd .. ' | fzy > ' .. file
+    fzy_cmd .. ' | fzy -p "edit > " > ' .. file
   }
 
   -- get current winid to jump back to

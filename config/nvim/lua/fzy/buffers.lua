@@ -30,7 +30,7 @@ function M.fzy_buffers()
   shell_cmd = {
     '/bin/sh', 
     '-c',
-    'fzy < ' .. buffile .. ' > ' .. outfile
+    'fzy -p "buf > " < ' .. buffile .. ' > ' .. outfile
   }
 
   -- start a new buffer
