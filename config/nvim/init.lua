@@ -14,6 +14,8 @@ paq 'wellle/targets.vim'
 paq 'tpope/vim-rsi'
 paq 'editorconfig/editorconfig-vim'
 paq 'zah/nim.vim'
+paq 'neovim/nvim-lspconfig'
+paq 'nvim-lua/completion-nvim'
 
 require('settings')
 require('maps')
