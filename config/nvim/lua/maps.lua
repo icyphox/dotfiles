@@ -1,5 +1,6 @@
 local cmd = vim.cmd
 local map = vim.api.nvim_set_keymap
+local M = {}
 
 -- map the leader key
 map('n', '<Space>', '', {})
@@ -32,8 +33,8 @@ end
 if vim.fn.executable('fzy') then
   _G.fzy_shell_cmd = require('fzy.shell').fzy_shell_cmd
   map(
-    '', 
-    '<leader>e', 
+    '',
+    '<leader>e',
     string.format(
     ':call v:lua.fzy_shell_cmd("find -L . -type f %s", ":e")<cr>',
     fzy_ignore{'*.git/*', '*node_modules*', '*.pyc'}
@@ -57,3 +58,17 @@ if vim.fn.executable('fzy') then
 else
   print('fzy not in PATH!')
 end
+
+-- lspconfig
+function M.on_attach(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  local opts = { noremap=true, silent=true }
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+end
+
+return M

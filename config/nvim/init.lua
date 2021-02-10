@@ -9,14 +9,19 @@ paq 'dbeniamine/vim-mail'
 paq 'tpope/vim-surround'
 paq 'plasticboy/vim-markdown'
 paq{ 'vim/better-text-objs', url='https://git.peppe.rs' }
-paq 'ervandew/supertab'
 paq 'wellle/targets.vim'
 paq 'tpope/vim-rsi'
 paq 'editorconfig/editorconfig-vim'
 paq 'zah/nim.vim'
 paq 'neovim/nvim-lspconfig'
-paq 'nvim-lua/completion-nvim'
 
 require('settings')
 require('maps')
 require('statusline')
+
+-- lsp setup
+require('lsp.yaml')
+require('lsp.lua')
+require('lsp.python')
+
+vim.lsp.set_log_level 'debug'
