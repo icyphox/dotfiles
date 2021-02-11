@@ -14,6 +14,9 @@ paq 'tpope/vim-rsi'
 paq 'editorconfig/editorconfig-vim'
 paq 'zah/nim.vim'
 paq 'neovim/nvim-lspconfig'
+paq 'nvim-lua/completion-nvim'
+paq 'steelsojka/completion-buffers'
+
 
 require('settings')
 require('maps')

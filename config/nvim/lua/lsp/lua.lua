@@ -7,10 +7,6 @@ local bin_path = root_path .. '/bin/macOS/lua-language-server'
 
 require'lspconfig'.sumneko_lua.setup {
   cmd = { bin_path, "-E", root_path .. '/main.lua' },
-  root_dir = function(fname)
-    return util.find_git_ancestor(fname) or
-      util.path.dirname(fname)
-  end,
   settings = {
     Lua = {
       runtime = {
