@@ -86,8 +86,8 @@ cmd('au BufNewFile,BufRead * if &ft == "" | set ft=text | endif')
 cmd('au BufEnter * lua require"completion".on_attach()')
 g.completion_chain_complete_list = {
   default = {
-    { complete_items = { 'lsp' } },
     { complete_items = { 'buffers' } },
+    { complete_items = { 'lsp' } },
     { mode = { '<c-p>' } },
     { mode = { '<c-n>' } }
   },

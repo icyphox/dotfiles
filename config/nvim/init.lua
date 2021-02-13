@@ -23,7 +23,7 @@ require('maps')
 require('statusline')
 
 -- lsp setup
-require('lsp.yaml')
+-- require('lsp.yaml') shits too noisy
 require('lsp.lua')
 require('lsp.python')
 
