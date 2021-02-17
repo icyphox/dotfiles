@@ -26,5 +26,6 @@ require('statusline')
 -- require('lsp.yaml') shits too noisy
 require('lsp.lua')
 require('lsp.python')
+require('lsp.go')
 
 vim.lsp.set_log_level 'debug'

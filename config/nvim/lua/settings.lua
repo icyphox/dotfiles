@@ -28,6 +28,7 @@ o.shiftwidth = 4
 o.softtabstop = 4
 o.showmode = false
 o.clipboard = 'unnamedplus'
+o.listchars='tab:│ ,nbsp:␣,trail:·,extends:>,precedes:<'
 o.hidden = true
 o.wildignore = [[
 .git,.hg,.svn
@@ -60,6 +61,7 @@ g.python3_host_prog = '$HOME/.pyenv/versions/3.9.1/bin/python3.9'
 
 -- window-local options
 wo.number = false
+wo.list = true
 wo.wrap = false
 
 -- buffer-local options
@@ -86,8 +88,8 @@ cmd('au BufNewFile,BufRead * if &ft == "" | set ft=text | endif')
 cmd('au BufEnter * lua require"completion".on_attach()')
 g.completion_chain_complete_list = {
   default = {
-    { complete_items = { 'buffers' } },
     { complete_items = { 'lsp' } },
+    { complete_items = { 'buffers' } },
     { mode = { '<c-p>' } },
     { mode = { '<c-n>' } }
   },

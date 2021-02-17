@@ -1,7 +1,9 @@
 setlocal noexpandtab
 setlocal autoindent
+setlocal shiftwidth=4
 setlocal smarttab
 setlocal formatoptions=croql
+setlocal tabstop=4
 
 " stolen from https://go.googlesource.com/go/+/c4f5421/misc/vim/ftplugin/go/fmt.vim
 
