@@ -20,6 +20,7 @@ function __fish_describe_command; end
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/icy/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/icy/Downloads/google-cloud-sdk/path.fish.inc'; end
 set -g fish_user_paths "/usr/local/opt/node@14/bin" $fish_user_paths
+set -gx PATH $PATH $HOME/.krew/bin
 
 
 # pyenv init

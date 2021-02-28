@@ -27,7 +27,6 @@ o.tabstop = 4
 o.shiftwidth = 4
 o.softtabstop = 4
 o.showmode = false
-o.clipboard = 'unnamedplus'
 o.listchars='tab:│ ,nbsp:␣,trail:·,extends:>,precedes:<'
 o.hidden = true
 o.wildignore = [[
