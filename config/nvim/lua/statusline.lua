@@ -27,7 +27,7 @@ local stl = {
   '%#Blanks#',
   '%m',
   '%#SecondaryBlock#',
-  ' ' .. '(git_branch())' .. clean_or_dirty(),
+  ' ' .. git_branch() .. clean_or_dirty(),
   '%=',
   '%#SecondaryBlock#',
   '%l,%c ',
