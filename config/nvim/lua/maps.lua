@@ -82,4 +82,6 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 ]], false)
 
+map('i', '<Tab>', '<C-n>', options)
+
 return M
