@@ -40,4 +40,4 @@ local stl = {
   '%{&filetype}',
 }
 
-vim.wo.statusline = table.concat(stl)
+vim.o.statusline = table.concat(stl)
