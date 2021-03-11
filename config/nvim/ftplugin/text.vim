@@ -1,2 +1,2 @@
 setlocal expandtab
-set tw=72
+setlocal ts=4 tw=72
