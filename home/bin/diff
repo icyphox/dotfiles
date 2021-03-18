@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[[ "$#" = 0 ]] && {
+    printf '%s\n' "usage: file1 file2 ... fileN"
+    exit
+}
+nvim -d "$@"

@@ -7,7 +7,6 @@ paq 'airblade/vim-gitgutter'
 paq{ 'vim/vim-colors-plain', url='https://git.peppe.rs' }
 paq 'dbeniamine/vim-mail'
 paq 'tpope/vim-surround'
-paq 'plasticboy/vim-markdown'
 paq{ 'vim/better-text-objs', url='https://git.peppe.rs' }
 paq 'wellle/targets.vim'
 paq 'tpope/vim-rsi'

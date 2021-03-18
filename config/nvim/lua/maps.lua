@@ -83,6 +83,8 @@ set shortmess+=c
 ]], false)
 
 -- complete from buffer
-map('i', '<expr><Tab>', '<C-n>', options)
+vim.api.nvim_exec([[
+inoremap <expr> <Tab> getline('.')[col('.') - 2] =~ '\w' ? "<C-N>" : "<Tab>"
+]], false)
 
 return M
