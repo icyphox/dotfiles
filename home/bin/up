@@ -1,16 +1,27 @@
 #!/usr/bin/env bash
 
-random_name="$(tr -dc 'a-zA-Z0-9' < /dev/random | fold -w 5 | head -n 1)"
+gen_random() {
+    chars="abcdefghijklmnopqrstuvwxyz0123456789-~"
+    for i in { 1 .. 6 }; do
+        printf '%s' "${chars:RANDOM%${#chars}:1}"
+    done
+}
+
+random_name="$(gen_random)"
 
 export LATEST_SCROT="$HOME/pics/scrots/latest.png"
 
 upload() {
     file="$(basename "$1")"
-	ext="${file##*.}"
-	fullname="$random_name.$ext"
-	scp -P 22222 "$1" fern:~/www/icy/uploads/"$fullname"
-	printf '%s\n' "https://x.icyphox.sh/$fullname"
-	printf '%s' "https://x.icyphox.sh/$fullname" | xclip -selection clipboard
+    ext="${file##*.}"
+    fullname="$random_name.$ext"
+    rsync --archive --partial --progress --rsh=ssh "$1" fern:~/www/icy/uploads/"$fullname"
+    printf '%s\n' "https://x.icyphox.sh/$fullname"
+    if [ "$(uname)" != "Darwin" ]; then
+        printf '%s' "https://x.icyphox.sh/$fullname" | xclip -selection clipboard
+    else
+        printf '%s' "https://x.icyphox.sh/$fullname" | pbcopy
+    fi
 }
 
 if [ "$1" == "l" ]; then
