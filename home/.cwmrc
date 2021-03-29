@@ -32,7 +32,7 @@ bind-key M-Tab window-cycle
 bind-key MS-Tab window-rcycle
 bind-key 4-Tab group-cycle
 bind-key 4S-Tab group-rcycle
-bind-key 4-t window-maximize
+bind-key 4S-space window-maximize
 bind-key 4-c window-vtile 
 bind-key 4-y window-htile
 bind-key 4S-q window-close

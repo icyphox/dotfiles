@@ -16,6 +16,7 @@ xrdb -l ~/.Xresources &
 ~/bin/bgfill
 syndaemon -k -i 0.5 -d
 xsetroot -cursor_name left_ptr
+redshift -l 12.972442:12.972442 &
 
 # xnotify
 XNOTIFY_FIFO="$HOME/.cache/xnotify$DISPLAY.fifo"
