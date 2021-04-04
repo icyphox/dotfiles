@@ -28,3 +28,6 @@
 [mergetool "vimdiff3"]
 	path = nvim
         prompt = false
+[bash]
+	showDirtyState = true
+	showUntrackedFiles = false
