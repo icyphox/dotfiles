@@ -1,8 +1,8 @@
 Host github.com
-	Hostname ssh.github.com
-	Port 443
+        Hostname ssh.github.com
+        Port 443
     TCPKeepAlive yes
-	IdentityFile ~/.ssh/github
+        IdentityFile ~/.ssh/github
 
 Host deepsource
     Hostname github.com
@@ -30,6 +30,6 @@ Host leaf
     IdentityFile ~/.ssh/id_rsa
 
 Host *
-	ServerAliveInterval 180
-	ServerAliveCountMax 3
+        ServerAliveInterval 180
+        ServerAliveCountMax 3
         UseKeychain yes
