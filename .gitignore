@@ -1,8 +1,8 @@
-darwin/fish/completions/kubectl.fish
-darwin/fish/completions/fisher.fish
-darwin/fish/functions/__z.fish
-darwin/fish/functions/__z_add.fish
-darwin/fish/functions/__z_clean.fish
-darwin/fish/functions/__z_complete.fish
-darwin/fish/functions/fisher.fish
-darwin/fish/completions/helm.fish
+config/fish/completions/kubectl.fish
+config/fish/completions/fisher.fish
+config/fish/functions/__z.fish
+config/fish/functions/__z_add.fish
+config/fish/functions/__z_clean.fish
+config/fish/functions/__z_complete.fish
+config/fish/functions/fisher.fish
+config/fish/completions/helm.fish
