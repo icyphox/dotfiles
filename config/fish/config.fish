@@ -13,3 +13,6 @@ source ~/.config/fish/functions/marks.fish
 function fish_user_key_bindings
     bind \cr '__fzy_history (commandline -b)'
 end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/icy/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/icy/Downloads/google-cloud-sdk/path.fish.inc'; end
