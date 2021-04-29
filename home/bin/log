@@ -2,7 +2,6 @@
 # life log
 
 date="$(date "+%Y-%m-%d %H:%M:%S")"
-l="$(printf '' | xprompt "$date")"
+l="$(cat)"
 [ "$l" = "" ] && exit
 printf '%s\t%s\n' "$date" "$l" >> ~/log
-
