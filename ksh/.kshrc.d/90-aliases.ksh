@@ -5,7 +5,6 @@ alias gc="git commit -v -s"
 alias ga="git add"
 alias gd="git diff --minimal"
 alias gl="git log --oneline --decorate --graph"
-alias ls="colorls -G"
 alias vim="nvim"
 alias ..="cd .."
 alias m="nail"
@@ -44,4 +43,12 @@ ggp() {
 
 gcl() {
     git clone "$@"
+}
+
+ls() {
+    if [ "$(uname)" == "OpenBSD" ]; then
+        colorls -G "$@"
+    else
+        /bin/ls -G "$@"
+    fi
 }

@@ -1,8 +1,8 @@
 Host github.com
         Hostname ssh.github.com
         Port 443
-    TCPKeepAlive yes
-        IdentityFile ~/.ssh/github
+        TCPKeepAlive yes
+        IdentityFile ~/.ssh/github-new
 
 Host deepsource
     Hostname github.com
