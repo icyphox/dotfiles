@@ -5,8 +5,9 @@ set -gx PATH ~/bin ~/.local/bin ~/leet/Nim/bin ~/.nimble/bin \
 ~/go/bin
 
 set -gx EDITOR nvim
-set -gx BROWSER iridium
+set -gx BROWSER firefox
 set -gx PW_KEY x@icyphox.sh
+set -U Z_CMD "n"
 
 # source ~/.config/fish/functions/marks.fish
 

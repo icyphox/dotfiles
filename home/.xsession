@@ -26,4 +26,5 @@ mkfifo $XNOTIFY_FIFO
 xnotify <$XNOTIFY_FIFO 3<>$XNOTIFY_FIFO &
 
 st &
-cwm
+~/code/bar/bar "somestring" &
+~/leet/cwm/cwm

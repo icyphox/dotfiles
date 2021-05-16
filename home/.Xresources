@@ -24,3 +24,13 @@ xprompt.font: SF Mono:style=Regular:size=12:antialias=true
 xprompt.gravity: C
 xprompt.borderWidth: 0
 xprompt.geometry: 1200x50
+
+! xterm
+xterm*faceName: SF Mono
+xterm*faceSize: 12
+xterm*scrollBar: false
+xterm*internalBorder: 32
+xterm.vt100.locale: false
+xterm.vt100.utf8: true
+xterm.vt100.metaSendsEscape: true
+
