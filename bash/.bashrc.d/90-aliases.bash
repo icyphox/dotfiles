@@ -1,22 +1,11 @@
-alias gah='sudo $(fc -ln -1)'
 alias vime="vim ~/.vimrc"
 alias o="xdg-open"
-alias gc="git commit -v -s"
+alias gc="git commit -v -S"
 alias gst="git status --short"
 alias ga="git add"
 alias gd="git diff --minimal"
 alias gl="git log --oneline --decorate --graph"
-alias ls="colorls -G"
 alias vim="nvim"
-
-socks() {
-    pkill ssh
-    ssh -D 8008 emerald -fN
-}
-
-up() {
-	~/bin/icyup.sh "$1"
-}
 
 nvmon() {
 	source ~/.nvm/nvm.sh
@@ -38,6 +27,14 @@ ggp() {
     git push "$(git remote show)" "$(git branch --show-current)" 
 }
 
-gcl() {
-    git clone "$@"
+
+ls() {
+    case "$OSTYPE" in
+        "darwin"*)
+            /bin/ls -G "$@"
+            ;;
+        *"bsd"*)
+            colorls -G "$@"
+            ;;
+    esac
 }
