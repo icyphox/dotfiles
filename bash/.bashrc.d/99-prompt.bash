@@ -9,7 +9,7 @@ gry="\e[94m"
 rst="\e[0m"
 
 git_branch() {
-    [[ -d "$PWD/.git" ]] && {
+    [[ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = "true" ]] && {
         local git_status="$(git status 2> /dev/null)"
         local on_branch="On branch ([^${IFS}]*)"
         local on_commit="HEAD detached at ([^${IFS}]*)"
@@ -35,7 +35,6 @@ git_branch() {
             local commit=${BASH_REMATCH[1]}
             printf '%b' "$color $commit $rst"
         fi
-    
     }
 }
 

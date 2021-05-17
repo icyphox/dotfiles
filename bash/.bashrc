@@ -1,8 +1,8 @@
 # better history syncing
 shopt -s histappend
 export HISTCONTROL=ignoreboth:erasedups
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=40000
+HISTFILESIZE=40000
 
 # cool options for cool kids
 shopt -s \
@@ -23,10 +23,19 @@ bind 'set colored-stats on'
 bind 'set completion-display-width 1'
 bind 'TAB:menu-complete'
 
+# fzy reverse search
+__fzy_history() {
+    ch="$(fc -l | fzy | cut -f2)"
+    : "${ch#"${ch%%[![:space:]]*}"}"
+    printf "$_"
+}
+
+bind -x '"\C-r": READLINE_LINE=$(__fzy_history); READLINE_POINT="${#READLINE_LINE}"'
+
 complete -cf doas
 
 # z
-# source ~/leet/z/z.sh
+. /usr/local/etc/profile.d/z.sh
 
 for i in ~/.bashrc.d/[0-9]*; do
     . "$i"
