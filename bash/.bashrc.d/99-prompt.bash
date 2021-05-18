@@ -15,13 +15,14 @@ git_branch() {
         local on_commit="HEAD detached at ([^${IFS}]*)"
         status="$(git status --porcelain 2> /dev/null)"
         local exit="$?"
-        color=""
 
         if [[ "$exit" -eq 0 ]]; then
             if [[ "${#status}" -eq 0 ]]; then
-                color="${grn}"  
+                color="${grn}"
+                sym="·"
             else
                 color="${red}"
+                sym="×"
             fi
         else
             printf ''
@@ -30,16 +31,21 @@ git_branch() {
 
         if [[ $git_status =~ $on_branch ]]; then
             local branch=${BASH_REMATCH[1]}
-            printf '%b'  "$color $branch $rst"
+            printf '%b'  " ($branch $color$sym$rst)"
         elif [[ $git_status =~ $on_commit ]]; then
             local commit=${BASH_REMATCH[1]}
-            printf '%b' "$color $commit $rst"
+            printf '%b' " ($commit $color$sym$rst)"
         fi
     }
 }
 
+short_pwd() {
+    wd=$(dirs +0)
+    sed 's:\([^/]\)[^/]*/:\1/:g' <<< "${wd/#$HOME/\~}"
+}
+
 prompt_pwd() {
-    printf '%b' "\001${cyn}\002$(dirs +0)\001${rst}\002"
+    printf '%b' "\001${cyn}\002$(short_pwd)\001${rst}\002"
 }
 
 rootornot() {
