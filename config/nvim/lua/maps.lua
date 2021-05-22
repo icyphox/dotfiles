@@ -37,7 +37,7 @@ if vim.fn.executable('fzy') then
     '<leader>e',
     string.format(
     ':call v:lua.fzy_shell_cmd("find -L . -type f %s", ":e")<cr>',
-    fzy_ignore{'*.git/*', '*node_modules*', '*.pyc'}
+    fzy_ignore{'*.git/*', '*node_modules*', '*.pyc', '*migrations*'}
     ),
     { noremap=true, silent=true }
   )

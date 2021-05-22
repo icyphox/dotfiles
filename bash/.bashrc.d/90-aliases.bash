@@ -38,3 +38,14 @@ ls() {
             ;;
     esac
 }
+
+m() {
+    case "$OSTYPE" in
+        "darwin"*)
+            s-nail "$@"
+            ;;
+        *"bsd"*)
+            nail "$@"
+            ;;
+    esac
+}
