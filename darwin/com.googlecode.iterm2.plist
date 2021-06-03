@@ -852,7 +852,7 @@
 			<key>Guid</key>
 			<string>1FA48ED0-C56C-4189-9FCE-54B76BFD9373</string>
 			<key>Horizontal Spacing</key>
-			<real>0.91000000000000003</real>
+			<real>0.96999999999999997</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -1210,6 +1210,8 @@
 			<false/>
 			<key>Shortcut</key>
 			<string></string>
+			<key>Show Status Bar</key>
+			<false/>
 			<key>Silence Bell</key>
 			<false/>
 			<key>Sync Title</key>
@@ -1219,7 +1221,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>4</integer>
+			<integer>0</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -1232,6 +1234,8 @@
 			<false/>
 			<key>Use Custom Tab Title</key>
 			<true/>
+			<key>Use Custom Window Title</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
