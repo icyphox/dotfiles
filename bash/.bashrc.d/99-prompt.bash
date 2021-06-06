@@ -19,7 +19,7 @@ git_branch() {
         if [[ "$exit" -eq 0 ]]; then
             if [[ "${#status}" -eq 0 ]]; then
                 color="${grn}"
-                sym="·"
+                sym="•"
             else
                 color="${red}"
                 sym="×"

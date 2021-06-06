@@ -32,7 +32,6 @@ local stl = {
   '%#Blanks#',
   '%m',
   '%#SecondaryBlock#',
-  git_branch(),
   '%=',
   '%#SecondaryBlock#',
   '%l,%c ',
@@ -40,4 +39,4 @@ local stl = {
   '%{&filetype}',
 }
 
-vim.o.statusline = table.concat(stl)
+vim.opt_global.statusline = table.concat(stl)
