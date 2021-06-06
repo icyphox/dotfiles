@@ -23,7 +23,7 @@ require('statusline')
 
 -- lsp setup
 -- require('lsp.yaml') shits too noisy
-require('lsp.lua')
+-- require('lsp.lua') it's horrible
 require('lsp.python')
 require('lsp.go')
 
