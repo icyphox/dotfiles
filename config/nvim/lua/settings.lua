@@ -1,8 +1,6 @@
 u = require('utils')
 
-local o = vim.o
-local wo = vim.wo
-local bo = vim.bo
+local o = vim.opt
 local g = vim.g
 local cmd = vim.cmd
 
@@ -29,6 +27,7 @@ o.softtabstop = 4
 o.showmode = true
 o.listchars='tab:│ ,nbsp:␣,trail:·,extends:>,precedes:<'
 o.hidden = true
+o.completeopt = { 'menuone', 'noselect', 'noinsert' }
 o.wildignore = [[
 .git,.hg,.svn
 *.aux,*.out,*.toc
@@ -59,12 +58,12 @@ g.gitgutter_sign_modified_removed          = '#'
 g.python3_host_prog = '$HOME/.pyenv/versions/3.9.1/bin/python3.9'
 
 -- window-local options
-wo.number = false
-wo.list = true
-wo.wrap = false
+o.number = false
+o.list = true
+o.wrap = false
 
 -- buffer-local options
-bo.expandtab = true
+o.expandtab = true
 
 -- augroups don't have an interface yet
 u.create_augroup({
@@ -72,16 +71,12 @@ u.create_augroup({
     { 'BufRead,BufNewFile', '*s-nail-*', 'setlocal', 'ft=mail' },
 }, 'ftmail')
 
+-- restore cursor
+cmd([[ au BufReadPost * call setpos(".", getpos("'\"")) ]])
 
-u.create_augroup({
-    { 'BufReadPost', '*', [[
-    if line("'\"") > 1 && line("'\"") <= line("$")
-      execute "normal! g`\""
-    endif
-    ]] }
-}, 'restorecursor')
-
+-- unknown files are 'text'
 cmd('au BufNewFile,BufRead * if &ft == "" | set ft=text | endif')
+
 
 -- completion-nvim
 cmd('au BufEnter * lua require"completion".on_attach()')
