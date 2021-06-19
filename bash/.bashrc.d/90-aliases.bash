@@ -6,6 +6,7 @@ alias ga="git add"
 alias gd="git diff --minimal"
 alias gl="git log --oneline --decorate --graph"
 alias vim="nvim"
+alias k="kubectl"
 
 nvmon() {
 	source ~/.nvm/nvm.sh

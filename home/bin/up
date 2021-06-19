@@ -1,31 +1,22 @@
 #!/usr/bin/env bash
 
-gen_random() {
-    chars="abcdefghijklmnopqrstuvwxyz0123456789-~"
-    for i in { 1 .. 6 }; do
-        printf '%s' "${chars:RANDOM%${#chars}:1}"
-    done
-}
-
-random_name="$(gen_random)"
-
-export LATEST_SCROT="$HOME/pics/scrots/latest.png"
+LATEST_SCROT="$HOME/pics/scrots/latest.png"
 
 upload() {
-    file="$(basename "$1")"
-    ext="${file##*.}"
-    fullname="$random_name.$ext"
-    rsync --archive --partial --progress --rsh=ssh "$1" fern:~/www/icy/uploads/"$fullname"
-    printf '%s\n' "https://x.icyphox.sh/$fullname"
-    if [ "$(uname)" != "Darwin" ]; then
-        printf '%s' "https://x.icyphox.sh/$fullname" | xclip -selection clipboard
-    else
-        printf '%s' "https://x.icyphox.sh/$fullname" | pbcopy
-    fi
+    out="$(curl -s -F "file=@$1" -F "key=$(pw -s fsrv)" https://x.icyphox.sh)"
+    case "$OSTYPE" in
+        darwin*)
+            printf "$out" | pbcopy
+            ;;
+        *)
+            printf "$out" | xclip -sel c
+            ;;
+    esac
+    printf "$out\n"
 }
 
 if [ "$1" == "l" ]; then
-    upload "$LATEST_SCROT" 
+    upload "$LATEST_SCROT"
 elif [ "$1" != "l" ]; then
-   upload "$1" 
+   upload "$1"
 fi
