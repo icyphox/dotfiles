@@ -34,9 +34,13 @@ bind -x '"\C-r": READLINE_LINE=$(__fzy_history); READLINE_POINT="${#READLINE_LIN
 
 complete -cf doas
 
-# z
+# z (darwin)
 [[ -f /usr/local/etc/profile.d/z.sh ]] &&
 . /usr/local/etc/profile.d/z.sh
+
+# z (bsd)
+[[ -f ~/bin/z.sh ]]
+. ~/bin/z.sh
 
 for i in ~/.bashrc.d/[0-9]*; do
     . "$i"

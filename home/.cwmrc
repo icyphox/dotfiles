@@ -53,7 +53,7 @@ bind-mouse 4-2 window-lower
 borderwidth 0
 snapdist 10
 ignore icybar
-gap 30 0 0 0
+gap 0 0 0 0
 autogroup 0 icybar
 
 # colors
