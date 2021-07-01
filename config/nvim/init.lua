@@ -1,21 +1,19 @@
 vim.cmd 'packadd paq-nvim'
-local paq = require 'paq-nvim'.paq
-paq{'savq/paq-nvim', opt=true}
-
-paq 'jiangmiao/auto-pairs'
-paq 'airblade/vim-gitgutter'
-paq{ 'vim/vim-colors-plain', url='https://git.peppe.rs' }
-paq 'dbeniamine/vim-mail'
-paq 'tpope/vim-surround'
-paq{ 'vim/better-text-objs', url='https://git.peppe.rs' }
-paq 'wellle/targets.vim'
-paq 'tpope/vim-rsi'
-paq 'editorconfig/editorconfig-vim'
-paq 'zah/nim.vim'
-paq 'neovim/nvim-lspconfig'
-paq 'nvim-lua/completion-nvim'
-paq 'steelsojka/completion-buffers'
-
+require 'paq-nvim' {
+ 'jiangmiao/auto-pairs';
+ 'airblade/vim-gitgutter';
+{ 'vim/vim-colors-plain', url='https://git.peppe.rs' };
+ 'dbeniamine/vim-mail';
+ 'tpope/vim-surround';
+{ 'vim/better-text-objs', url='https://git.peppe.rs' };
+ 'wellle/targets.vim';
+ 'tpope/vim-rsi';
+ 'editorconfig/editorconfig-vim';
+ 'zah/nim.vim';
+ 'neovim/nvim-lspconfig';
+ 'nvim-lua/completion-nvim';
+ 'steelsojka/completion-buffers';
+}
 
 require('settings')
 require('maps')
@@ -26,5 +24,3 @@ require('statusline')
 -- require('lsp.lua') it's horrible
 require('lsp.python')
 require('lsp.go')
-
-vim.lsp.set_log_level 'debug'
