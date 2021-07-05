@@ -23,6 +23,10 @@ bind 'set colored-stats on'
 bind 'set completion-display-width 1'
 bind 'TAB:menu-complete'
 
+# Ctrl+W kills word
+stty werase undef
+bind '"\C-w": backward-kill-word'
+
 # fzy reverse search
 __fzy_history() {
     ch="$(fc -l 1000 | fzy | cut -f2)"

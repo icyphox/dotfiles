@@ -8,6 +8,7 @@ export INPUTRC=~/.inputrc
 export PATH=$PATH:$HOME/.nimble/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:/usr/local/pgsql/bin
 export PW_DIR=~/.pw
 export PW_KEY=x@icyphox.sh

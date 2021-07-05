@@ -15,7 +15,7 @@ Host fern
     Port 22222
 
 Host jade
-    Hostname 152.67.162.71
+    Hostname 152.67.182.105
     User ubuntu
     IdentityFile ~/.ssh/id_rsa
 
