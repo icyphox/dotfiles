@@ -1,6 +1,6 @@
 #!/bin/sh
- 
-#        _       _ _            
+
+#        _       _ _
 #  __  _(_)_ __ (_) |_ _ __ ___ 
 #  \ \/ / | '_ \| | __| '__/ __|
 # _ >  <| | | | | | |_| | | (__ 
@@ -26,5 +26,4 @@ mkfifo $XNOTIFY_FIFO
 xnotify <$XNOTIFY_FIFO 3<>$XNOTIFY_FIFO &
 
 st &
-~/code/bar/bar "somestring" &
 ~/leet/cwm/cwm

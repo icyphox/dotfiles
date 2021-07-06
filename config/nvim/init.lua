@@ -3,13 +3,10 @@ require 'paq-nvim' {
  'jiangmiao/auto-pairs';
  'airblade/vim-gitgutter';
 { 'vim/vim-colors-plain', url='https://git.peppe.rs' };
- 'dbeniamine/vim-mail';
  'tpope/vim-surround';
 { 'vim/better-text-objs', url='https://git.peppe.rs' };
  'wellle/targets.vim';
  'tpope/vim-rsi';
- 'editorconfig/editorconfig-vim';
- 'zah/nim.vim';
  'neovim/nvim-lspconfig';
  'nvim-lua/completion-nvim';
  'steelsojka/completion-buffers';
