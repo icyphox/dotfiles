@@ -1,4 +1,4 @@
-u = require('utils')
+local u = require('utils')
 
 local o = vim.opt
 local g = vim.g
@@ -64,6 +64,10 @@ o.wrap = false
 
 -- buffer-local options
 o.expandtab = true
+
+-- set statusline
+stl = require('statusline.line')
+o.statusline = '%!luaeval("stl.statusline()")'
 
 -- augroups don't have an interface yet
 u.create_augroup({
