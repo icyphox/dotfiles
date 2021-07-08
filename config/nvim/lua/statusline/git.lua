@@ -22,7 +22,7 @@ local function get_git_head(head_file)
     f_head:close()
     local branch = HEAD:match('ref: refs/heads/(.+)$')
     if branch then git_branch = branch
-    else git_branch =  HEAD:sub(1,6) end
+    else git_branch =  HEAD:sub(1,7) end
   end
   return nil
 end

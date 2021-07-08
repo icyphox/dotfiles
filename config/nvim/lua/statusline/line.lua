@@ -1,11 +1,12 @@
 local git = require('statusline.git')
+local utils = require('utils')
 
 -- set highlights for statusline sections
 vim.api.nvim_exec(
 [[
-	hi PrimaryBlock ctermfg=06 ctermbg=00
-	hi SecondaryBlock   ctermfg=07 ctermbg=00
-	hi Blanks   ctermfg=08 ctermbg=00
+  hi PrimaryBlock ctermfg=06 ctermbg=00
+  hi SecondaryBlock   ctermfg=07 ctermbg=00
+  hi Blanks   ctermfg=08 ctermbg=00
   hi GitClean ctermfg=02 ctermbg=00
   hi GitDirty ctermfg=01 ctermbg=00
 ]], false)
@@ -32,4 +33,10 @@ local stl = {
   '%{&filetype}',
 }
 
-vim.opt_global.statusline = table.concat(stl)
+_G.statusline = function()
+  return table.concat(stl)
+end
+
+utils.create_augroup({
+  { 'WinEnter,BufEnter', '*', 'setlocal', 'statusline=%!v:lua.statusline()' },
+}, 'Statusline')
