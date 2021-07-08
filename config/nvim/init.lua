@@ -14,7 +14,7 @@ require 'paq-nvim' {
 
 require('settings')
 require('maps')
-require('statusline')
+require('statusline.line')
 
 -- lsp setup
 -- require('lsp.yaml') shits too noisy
