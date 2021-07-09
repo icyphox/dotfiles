@@ -36,8 +36,7 @@ local function watch_head()
       watch_head()
     end))
   else
-    -- set to nil when git dir was not found
-    M.git_branch = nil
+    M.git_branch = ''
   end
 end
 
