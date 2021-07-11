@@ -29,7 +29,7 @@ bind '"\C-w": backward-kill-word'
 
 # fzy reverse search
 __fzy_history() {
-    ch="$(fc -l 1000 | fzy | cut -f2)"
+    ch="$(fc -l 1 | awk -F'\t' '{print $2}' | sort -u | fzy)"
     : "${ch#"${ch%%[![:space:]]*}"}"
     printf "$_"
 }
