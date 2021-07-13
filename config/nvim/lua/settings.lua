@@ -41,9 +41,11 @@ o.wildignore = [[
 *.swp,.lock,.DS_Store,._*
 ]]
 
+vim.cmd("syntax on")
 -- i couldn't figure out how to set the colorscheme in lua
-vim.cmd('syntax on')
 vim.cmd('colorscheme plain')
+
+vim.cmd('au TextYankPost * lua vim.highlight.on_yank{timeout=200}')
 o.background = 'dark'
 
 -- gitgutter options
