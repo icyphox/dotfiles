@@ -1,6 +1,6 @@
 Host github.com
-        Hostname ssh.github.com
-        Port 443
+        Hostname github.com
+        Port 22
         TCPKeepAlive yes
         IdentityFile ~/.ssh/github-new
 
