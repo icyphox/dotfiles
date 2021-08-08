@@ -12,3 +12,5 @@ config/fish/functions/_nvm_list.fish
 config/fish/functions/_nvm_version_activate.fish
 config/fish/functions/_nvm_version_deactivate.fish
 config/fish/functions/nvm.fish
+
+prompt/prompt
