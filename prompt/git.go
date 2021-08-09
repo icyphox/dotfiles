@@ -22,7 +22,6 @@ func getGitDir() string {
 		}
 		cwd = filepath.Dir(cwd)
 	}
-	return ""
 }
 
 // Returns the current git branch or current ref sha.
@@ -33,10 +32,10 @@ func gitBranch(repo *git.Repository) string {
 	if branch := filepath.Base(head); branch != "HEAD" {
 		return branch
 	} else {
-		// Detached HEAD state.
+		// Detached HEAD state; return the first 7
+		// chars of commit sha.
 		return sha[:7]
 	}
-	return ""
 }
 
 // Returns • if clean, else ×.
