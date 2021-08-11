@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/go-git/go-git/v5"
+	git "github.com/libgit2/git2go/v31"
 )
 
 const (
@@ -55,7 +55,7 @@ func makePrompt() string {
 	home := os.Getenv("HOME")
 	gitDir := getGitDir()
 	if len(gitDir) > 0 {
-		repo, _ := git.PlainOpen(getGitDir())
+		repo, _ := git.OpenRepository(getGitDir())
 		return fmt.Sprintf(
 			"\n%s (%s %s)\n%s",
 			cyan(trimPath(cwd, home)),

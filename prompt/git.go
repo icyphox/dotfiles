@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/go-git/go-git/v5"
+	git "github.com/libgit2/git2go/v31"
 )
 
 // Recursively traverse up until we find .git
@@ -26,24 +26,25 @@ func getGitDir() string {
 
 // Returns the current git branch or current ref sha.
 func gitBranch(repo *git.Repository) string {
-	h, _ := repo.Head()
-	head := h.Strings()[0]
-	sha := h.Strings()[1]
-	if branch := filepath.Base(head); branch != "HEAD" {
-		return branch
+	ref, _ := repo.Head()
+	if ref.IsBranch() {
+		name, _ := ref.Branch().Name()
+		return name
 	} else {
-		// Detached HEAD state; return the first 7
-		// chars of commit sha.
-		return sha[:7]
+		return ref.Target().String()[:7]
 	}
 }
 
 // Returns • if clean, else ×.
 func gitStatus(repo *git.Repository) string {
-	worktree, _ := repo.Worktree()
-	status, _ := worktree.Status()
-	if status.IsClean() {
+	sl, _ := repo.StatusList(&git.StatusOptions{
+		Show:  git.StatusShowIndexAndWorkdir,
+		Flags: git.StatusOptIncludeUntracked | git.StatusOptRenamesHeadToIndex | git.StatusOptSortCaseSensitively,
+	})
+	n, _ := sl.EntryCount()
+	if n != 0 {
+		return red("×")
+	} else {
 		return green("•")
 	}
-	return red("×")
 }
