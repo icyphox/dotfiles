@@ -1,16 +1,1 @@
-config/fish/completions/kubectl.fish
-config/fish/completions/fisher.fish
-config/fish/functions/__z.fish
-config/fish/functions/__z_add.fish
-config/fish/functions/__z_clean.fish
-config/fish/functions/__z_complete.fish
-config/fish/functions/fisher.fish
-config/fish/completions/helm.fish
-config/fish/completions/nvm.fish
-config/fish/functions/_nvm_index_update.fish
-config/fish/functions/_nvm_list.fish
-config/fish/functions/_nvm_version_activate.fish
-config/fish/functions/_nvm_version_deactivate.fish
-config/fish/functions/nvm.fish
-
 prompt/prompt
