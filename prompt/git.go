@@ -39,7 +39,7 @@ func gitBranch(repo *git.Repository) string {
 func gitStatus(repo *git.Repository) string {
 	sl, _ := repo.StatusList(&git.StatusOptions{
 		Show:  git.StatusShowIndexAndWorkdir,
-		Flags: git.StatusOptIncludeUntracked | git.StatusOptRenamesHeadToIndex | git.StatusOptSortCaseSensitively,
+		Flags: git.StatusOptIncludeUntracked,
 	})
 	n, _ := sl.EntryCount()
 	if n != 0 {
