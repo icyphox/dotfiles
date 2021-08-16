@@ -31,7 +31,7 @@ func gitBranch(repo *git.Repository) string {
 		name, _ := ref.Branch().Name()
 		return name
 	} else {
-		return ref.Target().String()[:7]
+		return ref.Target().String()[:8]
 	}
 }
 
