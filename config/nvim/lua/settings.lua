@@ -56,8 +56,8 @@ g.gitgutter_sign_removed                   = '-'
 g.gitgutter_sign_removed_first_line        = '^'
 g.gitgutter_sign_modified_removed          = '#'
 
--- speed up python
-g.python3_host_prog = '$HOME/.pyenv/versions/3.9.1/bin/python3.9'
+-- use a python3 venv
+g.python3_host_prog = vim.env.HOME .. '/leet/vim-python3/bin/python3'
 
 -- window-local options
 o.number = false
@@ -83,14 +83,5 @@ cmd([[ au BufReadPost * call setpos(".", getpos("'\"")) ]])
 -- unknown files are 'text'
 cmd('au BufNewFile,BufRead * if &ft == "" | set ft=text | endif')
 
-
--- completion-nvim
-cmd('au BufEnter * lua require"completion".on_attach()')
-g.completion_chain_complete_list = {
-  default = {
-    { complete_items = { 'lsp' } },
-    { complete_items = { 'buffers' } },
-    { mode = { '<c-p>' } },
-    { mode = { '<c-n>' } }
-  },
-}
+-- coq.nvim
+g.coq_settings = { auto_start = 'shut-up' }

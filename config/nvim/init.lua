@@ -1,6 +1,5 @@
 vim.cmd 'packadd paq-nvim'
 require 'paq-nvim' {
-  'hjson/vim-hjson';
   'jiangmiao/auto-pairs';
   'airblade/vim-gitgutter';
   { 'vim/vim-colors-plain', url='https://git.peppe.rs' };
@@ -9,8 +8,8 @@ require 'paq-nvim' {
   'wellle/targets.vim';
   'tpope/vim-rsi';
   'neovim/nvim-lspconfig';
-  'nvim-lua/completion-nvim';
-  'steelsojka/completion-buffers';
+  { 'ms-jpq/coq_nvim', branch='coq' };
+  { 'ms-jpq/coq.artifacts', branch='artifacts' };
 }
 
 require('settings')
