@@ -7,7 +7,7 @@ map('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
 
-options = { noremap = true }
+local options = { noremap = true, silent = true }
 map('n', '<leader><esc>', ':nohlsearch<cr>', options)
 map('n', '<leader>n', ':bnext<cr>', options)
 map('n', '<leader>p', ':bprev<cr>', options)
@@ -80,11 +80,15 @@ set completeopt=menuone,noinsert,noselect
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
+
 ]], false)
 
--- complete from buffer
-vim.api.nvim_exec([[
-inoremap <expr> <Tab> getline('.')[col('.') - 2] =~ '\w' ? "<C-N>" : "<Tab>"
-]], false)
+
+-- walmart autopairs
+vim.api.nvim_set_keymap('i', '{', '{}<esc>i', options)
+vim.api.nvim_set_keymap('i', '(', '()<esc>i', options)
+vim.api.nvim_set_keymap('i', '[', '[]<esc>i', options)
+vim.api.nvim_set_keymap('i', '\'', '\'\'<esc>i', options)
+vim.api.nvim_set_keymap('i', '\"', '\"\"<esc>i', options)
 
 return M
