@@ -10,9 +10,9 @@ Host deepsource
     IdentityFile ~/.ssh/deepsource-git
 
 Host fern
-    Hostname 152.67.160.174
+    Hostname 152.67.182.105
     User pi
-    Port 22222
+    Port 2222
 
 Host jade
     Hostname 152.67.182.105

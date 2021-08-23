@@ -13,9 +13,9 @@ Host deepsource
     IdentityFile ~/.ssh/deepsource-git
 
 Host fern
-    Hostname 152.67.160.174
+    Hostname 152.67.182.105
     User pi
-    Port 22222
+    Port 2222
 
 Host jade
     Hostname 152.67.182.105
@@ -25,9 +25,4 @@ Host jade
 Host pantwo
     Hostname 100.64.1.3
     User icy
-    IdentityFile ~/.ssh/id_rsa
-
-Host leaf
-    Hostname 152.67.160.174
-    User ubuntu
     IdentityFile ~/.ssh/id_rsa
