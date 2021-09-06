@@ -64,7 +64,6 @@ shell="$(basename "$SHELL")"
 # blowfish
 
 printf '\e[?25l'
-printf '\e[2J'
 art="
 ${YLW}      \.-----./
       / ^ ^ ^ \ ${RST}
@@ -89,4 +88,5 @@ prinfo "shell" "       $shell" "$prev_line"
 
 # Pause
 read -rsn1 _
-clear
+printf '\n'
+printf '\e[?25h'
