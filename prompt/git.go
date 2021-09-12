@@ -27,6 +27,11 @@ func getGitDir() string {
 // Returns the current git branch or current ref sha.
 func gitBranch(repo *git.Repository) string {
 	ref, _ := repo.Head()
+	// Quick hack to fix crash when ref is nil;
+	// i.e., new repo with no commits.
+	if ref == nil {
+		return "no commit"
+	}
 	if ref.IsBranch() {
 		name, _ := ref.Branch().Name()
 		return name
