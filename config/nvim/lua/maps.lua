@@ -85,10 +85,10 @@ set shortmess+=c
 
 
 -- walmart autopairs
-vim.api.nvim_set_keymap('i', '{', '{}<esc>i', options)
-vim.api.nvim_set_keymap('i', '(', '()<esc>i', options)
-vim.api.nvim_set_keymap('i', '[', '[]<esc>i', options)
-vim.api.nvim_set_keymap('i', '\'', '\'\'<esc>i', options)
-vim.api.nvim_set_keymap('i', '\"', '\"\"<esc>i', options)
+-- vim.api.nvim_set_keymap('i', '{', '{}<esc>i', options)
+-- vim.api.nvim_set_keymap('i', '(', '()<esc>i', options)
+-- vim.api.nvim_set_keymap('i', '[', '[]<esc>i', options)
+-- vim.api.nvim_set_keymap('i', '\'', '\'\'<esc>i', options)
+-- vim.api.nvim_set_keymap('i', '\"', '\"\"<esc>i', options)
 
 return M

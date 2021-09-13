@@ -25,9 +25,11 @@ dt() {
 }
 
 ggp() {
-    git push "$(git remote show)" "$(git branch --show-current)" 
+    [[ "$1" == "-f" ]] && {
+        git push "$(git remote show)" -f "$(git branch --show-current)"
+    }
+    git push "$(git remote show)" "$(git branch --show-current)"
 }
-
 
 ls() {
     case "$OSTYPE" in

@@ -29,10 +29,6 @@ Host leaf
     User ubuntu
     IdentityFile ~/.ssh/id_rsa
 
-Host lime
-    Hostname 152.67.177.194
-    User opc
-
 Host *
         ServerAliveInterval 180
         ServerAliveCountMax 3

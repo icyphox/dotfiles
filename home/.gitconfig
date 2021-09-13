@@ -31,3 +31,5 @@
 [bash]
 	showDirtyState = true
 	showUntrackedFiles = false
+[pull]
+	rebase = true
