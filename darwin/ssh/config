@@ -49,14 +49,6 @@ Host *
 #
 # You should not hand-edit this section, unless you are deleting it.
 #
-Host rainmaker.asia-south1-c.deepsource-production
-    HostName 35.200.252.172
-    IdentityFile /Users/icy/.ssh/google_compute_engine
-    UserKnownHostsFile=/Users/icy/.ssh/google_compute_known_hosts
-    HostKeyAlias=compute.5954000129691123210
-    IdentitiesOnly=yes
-    CheckHostIP=no
-
 Host enterprise.us-central1-a.deepsource-dev
     HostName 34.133.47.102
     IdentityFile /Users/icy/.ssh/google_compute_engine
@@ -86,6 +78,14 @@ Host tailscale.asia-south1-c.deepsource-dev
     IdentityFile /Users/icy/.ssh/google_compute_engine
     UserKnownHostsFile=/Users/icy/.ssh/google_compute_known_hosts
     HostKeyAlias=compute.4702344397461811265
+    IdentitiesOnly=yes
+    CheckHostIP=no
+
+Host rainmaker.asia-south1-c.deepsource-production
+    HostName 35.200.252.172
+    IdentityFile /Users/icy/.ssh/google_compute_engine
+    UserKnownHostsFile=/Users/icy/.ssh/google_compute_known_hosts
+    HostKeyAlias=compute.5954000129691123210
     IdentitiesOnly=yes
     CheckHostIP=no
 

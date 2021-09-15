@@ -1,0 +1,12 @@
+#!/bin/sh
+# git new-push-remote: adds a new push-only remote to a repository
+# without removing the existing push remote.
+
+[[ "$@" == "" ]] && {
+    printf '%s\n' "usage: git new-push-remote <remote url>"
+    exit
+}
+
+old_push_remote="$(git remote -v | grep '(push)' | awk '{print $2}')"
+git remote set-url "$(git remote show)" --add --push "$1"
+git remote set-url "$(git remote show)" --add --push "$old_push_remote"
