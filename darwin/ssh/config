@@ -24,9 +24,9 @@ Host pantwo
     User icy
     IdentityFile ~/.ssh/id_rsa
 
-Host leaf
-    Hostname 152.67.160.174
-    User ubuntu
+Host lapis
+    Hostname 150.230.131.193
+    User icy
     IdentityFile ~/.ssh/id_rsa
 
 Host *
