@@ -1,10 +1,17 @@
 vim.cmd 'packadd paq-nvim'
+
+-- impatient.nvim
+-- TODO: remove this once it's merged
+require('impatient')
+
 require 'paq-nvim' {
   'tpope/vim-rsi';
   'tpope/vim-surround';
   'wellle/targets.vim';
   'neovim/nvim-lspconfig';
   'airblade/vim-gitgutter';
+  'nathom/filetype.nvim';
+  'lewis6991/impatient.nvim';
   { 'ms-jpq/coq_nvim', branch='coq' };
   { 'ms-jpq/coq.artifacts', branch='artifacts' };
   { 'vim/better-text-objs', url='https://git.peppe.rs' };

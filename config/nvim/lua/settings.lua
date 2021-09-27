@@ -85,3 +85,6 @@ cmd('au BufNewFile,BufRead * if &ft == "" | set ft=text | endif')
 
 -- coq.nvim
 g.coq_settings = { auto_start = 'shut-up' }
+
+-- filetype.nvim
+g.did_load_filetypes = 1

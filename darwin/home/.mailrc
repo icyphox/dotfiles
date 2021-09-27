@@ -13,14 +13,14 @@ account "personal" {
     set record=+Sent
     set inbox=+Inbox
     set mta=smtps://smtp.migadu.com:465
-    shortcut fwc "+Free Writers Club" \
+    shortcut \
         sent +Sent \
         inbox +Inbox \
         drafts +Drafts \
         trash +Trash \
         archive +Archive \
         spam +Junk \
-        lob +Inbox/Lobste.rs
+        rl "+Read Later"
 }
 
 set prompt='> '
