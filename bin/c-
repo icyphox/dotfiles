@@ -1,3 +1,8 @@
 #!/bin/sh
 
-sed s@^['	'' ']*//@@
+symbol="$1"
+
+[ ! "$symbol" ] && symbol="// "
+
+
+sed "s!^$symbol*!!"
