@@ -1,35 +1,42 @@
 [user]
-        name = Anirudh Oppiliappan
-        email = x@icyphox.sh
-        signingkey = 8A93F96F78C5D4C4
+    name = Anirudh Oppiliappan
+    email = x@icyphox.sh
+    signingkey = 8A93F96F78C5D4C4
 [commit]
-        gpgsign = true
-        verbose = true
+    gpgsign = true
+    verbose = true
 [gpg]
-        program = gpg
+    program = gpg
 [credential]
-        helper = store
+    helper = store
 
 [sendemail]
-        smtpserver = smtp.migadu.com
-        smtpuser = x@icyphox.sh
-        smtpencryption = ssl
-        smtpserverport = 465
+    smtpserver = smtp.migadu.com
+    smtpuser = x@icyphox.sh
+    smtpencryption = ssl
+    smtpserverport = 465
 
 [init]
-        defaultBranch = master
+    defaultBranch = master
 [diff]
 	tool = vimdiff3
 [difftool "vimdiff3"]
 	path = nvim
-        prompt = false
+    prompt = false
 [merge]
 	tool = vimdiff3
 [mergetool "vimdiff3"]
 	path = nvim
-        prompt = false
+    prompt = false
 [bash]
 	showDirtyState = true
 	showUntrackedFiles = false
 [pull]
 	rebase = true
+[color]
+    ui = false
+    branch = false
+    diff = false
+    interactive = false
+    status = false
+    log = false

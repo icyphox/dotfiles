@@ -13,18 +13,6 @@ const (
 	promptSym = "▲"
 )
 
-var (
-	red   = color("\033[31m%s\033[0m")
-	green = color("\033[32m%s\033[0m")
-	cyan  = color("\033[36m%s\033[0m")
-)
-
-func color(s string) func(...interface{}) string {
-	return func(args ...interface{}) string {
-		return fmt.Sprintf(s, fmt.Sprint(args...))
-	}
-}
-
 // Truncates the current working directory:
 //   /home/icy/foo/bar -> ~/f/bar
 func trimPath(cwd, home string) string {
@@ -58,7 +46,7 @@ func makePrompt() string {
 		repo, _ := git.OpenRepository(getGitDir())
 		return fmt.Sprintf(
 			"\n%s (%s %s)\n%s",
-			cyan(trimPath(cwd, home)),
+			trimPath(cwd, home),
 			gitBranch(repo),
 			gitStatus(repo),
 			promptSym,
@@ -66,7 +54,7 @@ func makePrompt() string {
 	}
 	return fmt.Sprintf(
 		"\n%s\n%s",
-		cyan(trimPath(cwd, home)),
+		trimPath(cwd, home),
 		promptSym,
 	)
 }

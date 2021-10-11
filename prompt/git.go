@@ -48,8 +48,8 @@ func gitStatus(repo *git.Repository) string {
 	})
 	n, _ := sl.EntryCount()
 	if n != 0 {
-		return red("×")
+		return "×"
 	} else {
-		return green("•")
+		return "•"
 	}
 }

@@ -5,6 +5,9 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:/usr/local/pgsql/bin
 
+export PLAN9=/usr/local/plan9
+export PATH=$PATH:$PLAN9/bin
+
 # export thingys
 export EDITOR=/usr/local/bin/nvim
 export SSH_KEY_PATH="~/.ssh/id_rsa"
