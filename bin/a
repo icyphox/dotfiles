@@ -1,0 +1,16 @@
+#!/bin/sh
+
+export NO_COLOR=1
+export PAGER=nobs
+
+if ! pgrep -x plumber > /dev/null
+then
+	plumber
+fi
+
+if ! pgrep -x acme > /dev/null
+then
+    acme -a -f /mnt/font/SFMono-Regular/14a/font $1
+else
+    editinacme $1
+fi
