@@ -84,7 +84,33 @@ cmd([[ au BufReadPost * call setpos(".", getpos("'\"")) ]])
 cmd('au BufNewFile,BufRead * if &ft == "" | set ft=text | endif')
 
 -- coq.nvim
-g.coq_settings = { auto_start = 'shut-up' }
+g.coq_settings = {
+  auto_start = 'shut-up',
+  display = {
+    icons = {
+      mode = 'none'
+    },
+    preview = {
+      border = 'solid',
+    },
+  },
+}
 
 -- filetype.nvim
 g.did_load_filetypes = 1
+
+-- disable built-in plugins
+local disabled_built_ins = {
+  'gzip',
+  'man',
+  'shada_plugin',
+  'tarPlugin',
+  'tar',
+  'zipPlugin',
+  'zip',
+  'netrwPlugin',
+}
+
+for i = 1, 8 do
+  g['loaded_' .. disabled_built_ins[i]] = 1
+end

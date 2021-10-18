@@ -13,7 +13,6 @@ require 'paq-nvim' {
   'nathom/filetype.nvim';
   'lewis6991/impatient.nvim';
   { 'ms-jpq/coq_nvim', branch='coq' };
-  { 'ms-jpq/coq.artifacts', branch='artifacts' };
   { 'vim/better-text-objs', url='https://git.peppe.rs' };
   { 'vim/vim-colors-plain', url='https://git.peppe.rs' };
 }
