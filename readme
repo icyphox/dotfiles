@@ -3,7 +3,7 @@ dotfiles
 
 Screenshot: https://x.icyphox.sh/7UVnt.png
 
-· OS:     OpenBSD 6.9 and macOS Big Sur
+· OS:     OpenBSD 7.0
 · WM:     cwm
 · Shell:  bash
 · Editor: nvim, with init.lua
