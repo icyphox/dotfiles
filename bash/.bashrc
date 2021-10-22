@@ -43,7 +43,7 @@ complete -cf doas
 . /usr/local/etc/profile.d/z.sh
 
 # z (bsd)
-[[ -f ~/bin/z.sh ]]
+[[ -f ~/bin/z.sh ]] &&
 . ~/bin/z.sh
 
 for i in ~/.bashrc.d/[0-9]*; do
