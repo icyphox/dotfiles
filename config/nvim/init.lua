@@ -10,7 +10,6 @@ require 'paq-nvim' {
   'wellle/targets.vim';
   'neovim/nvim-lspconfig';
   'airblade/vim-gitgutter';
-  'nathom/filetype.nvim';
   'lewis6991/impatient.nvim';
   { 'ms-jpq/coq_nvim', branch='coq' };
   { 'vim/better-text-objs', url='https://git.peppe.rs' };
