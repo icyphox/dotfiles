@@ -6,7 +6,7 @@ require('impatient')
 
 require 'paq-nvim' {
   'tpope/vim-rsi';
-  'blackCauldron7/surround.nvim';
+  'tpope/vim-surround';
   'wellle/targets.vim';
   'neovim/nvim-lspconfig';
   'airblade/vim-gitgutter';
