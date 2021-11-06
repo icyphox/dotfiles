@@ -37,4 +37,4 @@ xterm.termName: xterm-256color
 xterm.vt100.translations: #override \n\
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
-
+XTerm.vt100.colorBDMode: true
