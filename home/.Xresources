@@ -33,4 +33,8 @@ xterm*internalBorder: 32
 xterm.vt100.locale: false
 xterm.vt100.utf8: true
 xterm.vt100.metaSendsEscape: true
+xterm.termName: xterm-256color
+xterm.vt100.translations: #override \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
 

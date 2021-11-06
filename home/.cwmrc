@@ -19,7 +19,7 @@ bind-key 4S-4 window-movetogroup-4
 bind-key 4S-5 window-movetogroup-5
 
 # execs
-bind-key 4-Return '/usr/local/bin/st'
+bind-key 4-Return '/usr/X11R6/bin/xterm'
 bind-key 4-p '/home/icy/bin/pwmenu.sh'
 bind-key CS-Print "/home/icy/bin/scr -s"
 bind-key C-Print "/home/icy/bin/scr -f"
