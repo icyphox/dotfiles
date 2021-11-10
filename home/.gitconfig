@@ -19,17 +19,17 @@
 [init]
     defaultBranch = master
 [diff]
-	tool = vimdiff3
+    tool = vimdiff3
 [difftool "vimdiff3"]
-	path = nvim
+    path = nvim
     prompt = false
 [merge]
-	tool = vimdiff3
+    tool = vimdiff3
 [mergetool "vimdiff3"]
-	path = nvim
+    path = nvim
     prompt = false
 [bash]
-	showDirtyState = true
-	showUntrackedFiles = false
+    showDirtyState = true
+    showUntrackedFiles = false
 [pull]
-	rebase = true
+    rebase = true
