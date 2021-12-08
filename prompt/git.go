@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	git "github.com/libgit2/git2go/v31"
+	git "github.com/libgit2/git2go/v33"
 )
 
 // Recursively traverse up until we find .git
