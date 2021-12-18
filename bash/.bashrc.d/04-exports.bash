@@ -10,6 +10,7 @@ export PATH=$PATH:$PLAN9/bin
 
 # export thingys
 export EDITOR=nvim
+export BROWSER=firefox
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export GPG_TTY=$(tty)
 export INPUTRC=~/.inputrc
