@@ -16,13 +16,4 @@ items="$(printf '%s\n' "${urls[@]}" "${wwws[@]}" "${ips[@]}" "${gits[@]}" |
 
 [ -z "$items" ] && exit
 
-chosen="$(fzy <<< "$items" | awk '{ print $2 }')"
-
-case "$OSTYPE" in
-    darwin*)
-        printf "$chosen" | pbcopy
-        ;;
-    *)
-        printf "$chosen" | xclip -sel c
-        ;;
-esac
+fzy <<< "$items" | awk '{ print $2 }'

@@ -13,10 +13,11 @@ export LC_CTYPE="en_US.UTF-8"
 export ENV="$HOME/.kshrc"
 sxhkd &
 xrdb -l ~/.Xresources &
-~/bin/bgfill
+xsetroot -solid '#cccccc'
+xrandr --dpi 96
 syndaemon -k -i 0.5 -d
 xsetroot -cursor_name left_ptr
-redshift -l 12.972442:77.580643 -t 6400:3700 -m randr &
+redshift -l 12.972442:77.580643 -t 6400:5700 -m randr &
 
 # xnotify
 XNOTIFY_FIFO="$HOME/.cache/xnotify$DISPLAY.fifo"
