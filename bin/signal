@@ -1,0 +1,10 @@
+#!/bin/sh
+# signal: launch signal-desktop via a vm (vmm(4))
+
+status="$(vmctl status 1 | grep running)"
+if [ "$status" == "" ]; then
+    vmctl start pantwo
+    sleep 10
+fi
+
+ssh -Y pantwo signal-desktop &> /dev/null
