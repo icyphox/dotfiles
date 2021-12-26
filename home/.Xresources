@@ -22,8 +22,8 @@ xnotify.wrap: true
 ! xprompt
 xprompt.font: SF Mono:style=Regular:size=12:antialias=true
 xprompt.gravity: C
-xprompt.borderWidth: 0
-xprompt.geometry: 1200x50
+xprompt.borderWidth: 1
+xprompt.geometry: 400x50
 
 ! xterm
 xterm*faceName: SF Mono
