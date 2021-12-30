@@ -11,14 +11,17 @@ require 'paq-nvim' {
   'neovim/nvim-lspconfig';
   'airblade/vim-gitgutter';
   'lewis6991/impatient.nvim';
+  'nvim-treesitter/nvim-treesitter';
+  'nvim-treesitter/playground';
   { 'ms-jpq/coq_nvim', branch='coq' };
+  { 'ms-jpq/coq.artifacts', branch='artifacts' };
   { 'vim/better-text-objs', url='https://git.peppe.rs' };
-  { 'vim/vim-colors-plain', url='https://git.peppe.rs' };
 }
 
 require('settings')
 require('maps')
 require('statusline.line')
+require('treesitter')
 
 -- lsp setup
 -- require('lsp.yaml') shits too noisy

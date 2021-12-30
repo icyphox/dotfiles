@@ -1,16 +1,11 @@
 Host *
-	ServerAliveInterval 180
-	ServerAliveCountMax 3
+    ServerAliveInterval 180
+    ServerAliveCountMax 3
 
 Host github.com
-	Hostname github.com
-    TCPKeepAlive yes
-	IdentityFile ~/.ssh/github-pantone
-
-Host deepsource
     Hostname github.com
-    User git
-    IdentityFile ~/.ssh/deepsource-git
+    TCPKeepAlive yes
+    IdentityFile ~/.ssh/github-pantone
 
 Host fern
     Hostname 152.67.182.105
