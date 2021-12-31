@@ -238,7 +238,7 @@ hi link TSBoolean Constant
 hi link TSCharacter Constant
 hi link TSComment Comment
 hi link TSConstructor Normal
-hi link TSConditional Normal
+hi link TSConditional Statement
 hi link TSConstant Constant
 hi link TSConstBuiltin secondAccent
 hi link TSConstMacro secondAccent
@@ -247,7 +247,7 @@ hi link TSException Error
 hi link TSField Normal
 hi link TSFloat Constant
 hi link TSFunction Normal
-hi link TSFuncBuiltin Noise
+hi link TSFuncBuiltin secondAccent
 hi link TSFuncMacro secondAccent
 hi link TSInclude Noise
 hi link TSKeyword Statement
@@ -277,7 +277,7 @@ hi link TSStrike Underlined
 hi link TSTitle Statement
 hi link TSLiteral Noise
 hi link TSURI Constant
-hi link TSType secondAccent
+hi link TSType Noise
 hi link TSTypeBuiltin secondAccent
 hi link TSVariable Normal
 hi link TSVariableBuiltin Normal
