@@ -12,6 +12,7 @@
 *.font: SF Mono:style=Regular:size=12:antialias=true
 *.italicFont: SF Mono:style=Italic:size=12:antialias=true
 *.boldFont: SF Mono:style=Bold:size=12:antialias=true
+*.borderpx: 30
 
 ! xnotify
 xnotify.gap: 5

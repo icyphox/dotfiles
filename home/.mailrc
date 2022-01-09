@@ -8,7 +8,7 @@ set followup-to followup-to-honour=ask-yes
 
 account "personal" {
     localopts yes
-    set from="Anirudh Oppiliappan <x@icyphox.sh>"
+    set from="Anirudh Oppiliappan <anirudh@oppiliappan.com>"
     set folder=~/mail/personal
     set record=+Sent
     set inbox=+Inbox
