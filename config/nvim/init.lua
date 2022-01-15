@@ -22,6 +22,7 @@ require('settings')
 require('maps')
 require('statusline.line')
 require('treesitter')
+require('fzy/fzy')
 
 -- lsp setup
 -- require('lsp.yaml') shits too noisy

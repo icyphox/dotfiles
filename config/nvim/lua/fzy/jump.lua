@@ -9,7 +9,6 @@ local function get_line_nr(s)
   end
 end
 
-
 local function annotated_input()
   local lines = {}
 
@@ -19,7 +18,6 @@ local function annotated_input()
   for nr = 1, fn.line('$') do
     table.insert(lines, fn.getline(nr))
   end
-
 
   local outfile = fn.tempname()
   local f = io.open(outfile, 'a')
@@ -32,39 +30,25 @@ local function annotated_input()
 end
 
 function M.fzy_jmp()
-  local outfile = fn.tempname()
   local idxfile, lines = annotated_input()
-  shell_cmd = {
-    '/bin/sh',
-    '-c',
-    'fzy -p "jmp > "  < ' ..  idxfile ..  ' > ' .. outfile
+
+  fzy_cmd = {
+    'fzy -p "jmp > " ',
+    '< ' .. idxfile,
   }
 
-  winid = fn.win_getid()
-  -- start a new buffer
-  cmd('botright 10 new')
-  cmd('startinsert')
-
-  fn.termopen(shell_cmd, { on_exit = function()
-    -- delete buffer on exit
-    cmd('bd!')
-    fn.win_gotoid(winid)
-
-    -- read contents of file
-    local f = io.open(outfile, 'r')
-    line_choice = f:read('*all')
-
+  require('fzy/fzy').fzy_search(table.concat(fzy_cmd), function(stdout)
     -- strip '\n'
-    selected, _ = string.gsub(line_choice, '\n', '')
+    local selected, _ = stdout:gsub('\n', '')
+    cmd('bd!')
 
+    print(get_line_nr(selected))
     -- jump to line
     cmd(':' .. get_line_nr(selected))
-
     -- housekeeping
-    f:close()
-    os.remove(outfile)
     os.remove(idxfile)
-  end })
-end
+  end
+  )
 
+end
 return M

@@ -46,7 +46,7 @@ vim.cmd("syntax on")
 vim.cmd('colorscheme plain')
 
 vim.cmd('au TextYankPost * lua vim.highlight.on_yank{timeout=200}')
-o.background = 'dark'
+o.background = 'light'
 
 -- gitgutter options
 g.gitgutter_override_sign_column_highlight = 0
