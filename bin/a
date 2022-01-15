@@ -10,7 +10,7 @@ fi
 
 if ! pgrep -x acme > /dev/null
 then
-    acme -a -f /mnt/font/SFMono-Regular/14a/font $1
+    ~/code/acme/o.acme -a -f /mnt/font/SFMonoLigaturized-Regular/12a/font $1
 else
     editinacme $1
 fi

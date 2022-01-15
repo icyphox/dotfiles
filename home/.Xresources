@@ -39,3 +39,9 @@ xterm.termName: xterm-256color
 xterm.vt100.translations: #override \n\
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
+! ssh-askpass
+*Dialog.font: SF Mono:style=Regular:size=12:antialias=true
+*shadowThickness: 0
+*borderWidth: 0
+*?.background: rgb:f4/f4/f4

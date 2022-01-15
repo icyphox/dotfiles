@@ -1,0 +1,9 @@
+#!/bin/sh
+# unlock gpg key on login
+
+pw="$(ssh-askpass 'Unlock your GPG key')"
+keygrip=$(gpg-connect-agent -q 'keyinfo --list' /bye | awk '/KEYINFO/ { print $3 }')
+
+for k in $keygrip; do
+    echo "$pw" | /usr/local/libexec/gpg-preset-passphrase --preset $k
+done
