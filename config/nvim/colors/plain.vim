@@ -34,25 +34,6 @@ let s:light_yellow    = { "gui": "#F3E430", "cterm": "3"  }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 
 if &background == "dark"
-  let s:bg              = s:black
-  let s:bg_subtle       = s:light_black
-  let s:bg_very_subtle  = s:subtle_black
-  let s:norm            = s:lighter_gray
-  let s:norm_subtle     = s:light_gray
-  let s:purple          = s:light_purple
-  let s:cyan            = s:light_cyan
-  let s:green           = s:light_green
-  let s:red             = s:light_red
-  let s:yellow          = s:light_yellow
-  let s:visual          = s:subtle_black
-  let s:cursor_line     = s:subtle_black
-  let s:status_line     = s:lighter_black
-  let s:status_line_nc  = s:subtle_black
-  let s:constant        = s:light_green
-  let s:comment         = s:lighter_black
-  let s:selection       = s:light_purple
-  let s:warning         = s:yellow
-else
   let s:bg              = s:white
   let s:bg_subtle       = s:lighter_gray
   let s:bg_very_subtle  = s:light_gray
@@ -70,6 +51,25 @@ else
   let s:constant        = s:dark_blue
   let s:comment         = s:light_gray
   let s:selection       = s:light_yellow
+  let s:warning         = s:yellow
+else
+  let s:bg              = s:black
+  let s:bg_subtle       = s:light_black
+  let s:bg_very_subtle  = s:subtle_black
+  let s:norm            = s:lighter_gray
+  let s:norm_subtle     = s:light_gray
+  let s:purple          = s:light_purple
+  let s:cyan            = s:light_cyan
+  let s:green           = s:light_green
+  let s:red             = s:light_red
+  let s:yellow          = s:light_yellow
+  let s:visual          = s:subtle_black
+  let s:cursor_line     = s:subtle_black
+  let s:status_line     = s:lighter_black
+  let s:status_line_nc  = s:subtle_black
+  let s:constant        = s:light_green
+  let s:comment         = s:lighter_black
+  let s:selection       = s:light_purple
   let s:warning         = s:yellow
 endif
 
@@ -93,6 +93,7 @@ call s:h("Noise",         {"fg": s:norm_subtle})
 call s:h("Cursor",        {"bg": s:green, "fg": s:norm})
 call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
 call s:h("Function",      {"fg": s:norm, "cterm": "bold"})
+call s:h("FloatWin",      {"fg": s:black, "bg": s:white})
 
 hi! link Constant         firstAccent
 hi! link Character        Constant
@@ -363,3 +364,5 @@ call s:h("cssBraces",     {"bg": s:bg, "fg": s:selection})
 hi link cssTextProp Noise
 hi link cssTagName Normal
 
+" floatwin
+hi link NormalFloat FloatWin
