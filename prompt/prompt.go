@@ -38,19 +38,38 @@ func trimPath(cwd, home string) string {
 	return filepath.Join(truncItems...)
 }
 
+var branchCh = make(chan string)
+var statusCh = make(chan string)
+
 func makePrompt() string {
 	cwd, _ := os.Getwd()
 	home := os.Getenv("HOME")
 	gitDir := getGitDir()
+
 	if len(gitDir) > 0 {
 		repo, _ := git.OpenRepository(getGitDir())
-		return fmt.Sprintf(
-			"\n%s (%s %s)\n%s",
-			trimPath(cwd, home),
-			gitBranch(repo),
-			gitStatus(repo),
-			promptSym,
-		)
+
+		go getGitBranch(repo)
+		go getGitStatus(repo)
+
+		select {
+		case status := <-statusCh:
+			return fmt.Sprintf(
+				"\n%s (%s %s)\n%s",
+				trimPath(cwd, home),
+				<-branchCh,
+				status,
+				promptSym,
+			)
+		default:
+			return fmt.Sprintf(
+				"\n%s (%s %s)\n%s",
+				trimPath(cwd, home),
+				<-branchCh,
+				<-statusCh,
+				promptSym,
+			)
+		}
 	}
 	return fmt.Sprintf(
 		"\n%s\n%s",

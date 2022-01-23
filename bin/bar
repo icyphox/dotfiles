@@ -1,0 +1,11 @@
+#!/bin/sh
+
+while :; do
+    vol="$(sndioctl -n output.level)"
+    bat="$(bat -q)"
+    time="$(date +"%H:%M")"
+    date="$(date.sh)"
+#    printf '%s\t\t\t\t%s\t\t\t\t%s\t\t\t%s' "$bat" "vol $(echo $vol*100 / 1 | bc)" "$date" "$time"
+    echo "$(date)"
+    sleep 0.5
+done | ~/code/barito/barito

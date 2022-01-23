@@ -42,7 +42,6 @@ function M.fzy_jmp()
     local selected, _ = stdout:gsub('\n', '')
     cmd('bd!')
 
-    print(get_line_nr(selected))
     -- jump to line
     cmd(':' .. get_line_nr(selected))
     -- housekeeping

@@ -25,31 +25,31 @@ func getGitDir() string {
 }
 
 // Returns the current git branch or current ref sha.
-func gitBranch(repo *git.Repository) string {
+func getGitBranch(repo *git.Repository) {
 	ref, _ := repo.Head()
 	// Quick hack to fix crash when ref is nil;
 	// i.e., new repo with no commits.
 	if ref == nil {
-		return "no commit"
+		branchCh <- "no commit"
 	}
 	if ref.IsBranch() {
 		name, _ := ref.Branch().Name()
-		return name
+		branchCh <- name
 	} else {
-		return ref.Target().String()[:8]
+		branchCh <- ref.Target().String()[:8]
 	}
 }
 
 // Returns • if clean, else ×.
-func gitStatus(repo *git.Repository) string {
+func getGitStatus(repo *git.Repository) {
 	sl, _ := repo.StatusList(&git.StatusOptions{
 		Show:  git.StatusShowIndexAndWorkdir,
 		Flags: git.StatusOptIncludeUntracked,
 	})
 	n, _ := sl.EntryCount()
 	if n != 0 {
-		return "×"
+		statusCh <- "×"
 	} else {
-		return "•"
+		statusCh <- "•"
 	}
 }
