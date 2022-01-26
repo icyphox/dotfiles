@@ -31,6 +31,14 @@ ggp() {
     git push "$(git remote show)" "$(git branch --show-current)"
 }
 
+gpl() {
+    git pull -r "$(git remote show)" "$(git branch --show-current)"
+}
+
+gpm() {
+    git pull -r origin master
+}
+
 ls() {
     case "$OSTYPE" in
         "darwin"*)
