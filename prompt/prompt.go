@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"path/filepath"
 	"strings"
 
 	git "github.com/libgit2/git2go/v33"
@@ -22,16 +21,17 @@ func trimPath(cwd, home string) string {
 		path = cwd
 		return path
 	}
-	items := strings.Split(path, "/")
-	truncItems := []string{}
-	for i, item := range items {
-		if i == (len(items) - 1) {
-			truncItems = append(truncItems, item)
-			break
-		}
-		truncItems = append(truncItems, item[:1])
-	}
-	return filepath.Join(truncItems...)
+	return path
+	// items := strings.Split(path, "/")
+	// truncItems := []string{}
+	// for i, item := range items {
+	// 	if i == (len(items) - 1) {
+	// 		truncItems = append(truncItems, item)
+	// 		break
+	// 	}
+	// 	truncItems = append(truncItems, item[:1])
+	// }
+	// return filepath.Join(truncItems...)
 }
 
 func main() {

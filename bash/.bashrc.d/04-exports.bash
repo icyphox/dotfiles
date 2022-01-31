@@ -1,13 +1,3 @@
-# PATH mods
-export PATH=$HOME/bin:$PATH
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:/usr/local/pgsql/bin
-
-export PLAN9=/usr/local/plan9
-export PATH=$PATH:$PLAN9/bin
-
 # export thingys
 export EDITOR=nvim
 export BROWSER=firefox
