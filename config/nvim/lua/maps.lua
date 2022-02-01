@@ -12,6 +12,10 @@ map('n', '<leader><esc>', ':nohlsearch<cr>', options)
 map('n', '<leader>n', ':bnext<cr>', options)
 map('n', '<leader>p', ':bprev<cr>', options)
 
+-- search matches in the middle of the window
+map('n', 'n', 'nzzzv', options)
+map('n', 'N', 'Nzzzv', options)
+
 -- Not an editor command: Wqa
 cmd(':command! WQ wq')
 cmd(':command! WQ wq')
