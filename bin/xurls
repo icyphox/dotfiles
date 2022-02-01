@@ -16,4 +16,5 @@ items="$(printf '%s\n' "${urls[@]}" "${wwws[@]}" "${ips[@]}" "${gits[@]}" |
 
 [ -z "$items" ] && exit
 
-fzy <<< "$items" | awk '{ print $2 }'
+u="$(fzy <<< "$items" | awk '{ print $2 }')"
+luakit "$u"
