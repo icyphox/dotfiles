@@ -10,7 +10,7 @@ xrdb -l ~/.Xresources
 xsetroot -solid '#cccccc'
 xrandr --dpi 96
 xsetroot -cursor_name left_ptr
-xrandr --output DP2 --set "Broadcast RGB" "Full"
+xrandr --output DP-1 --set "Broadcast RGB" "Full"
 
 # touchpad setup
 syndaemon -k -i 0.5 -d
