@@ -84,28 +84,27 @@ def handle_msg(data, pbuffer, date, tags, displayed, highlight, prefix, message)
 
     return weechat.WEECHAT_RC_OK
 
-def process_cb(data, command, return_code, out, err):
-    if return_code == weechat.WEECHAT_HOOK_PROCESS_ERROR:
-        weechat.prnt("", "Error with command '%s'" % command)
-    elif return_code != 0:
-        weechat.prnt("", "return_code = %d" % return_code)
-        weechat.prnt("", "notify-send has an error")
-    return weechat.WEECHAT_RC_OK
-
 def notify_user(origin, message):
-    hook = weechat.hook_process_hashtable("notify-send",
-        { 
-          "arg1": "WeeChat", "arg2": "",
-          "arg3": origin + '\t', "arg4": message,
-        },
-        20000, "process_cb", "")
+    notify_cmd = [
+        "notify-send",
+        f"{origin}: {message}"
+    ]
+    try:
+        subprocess.check_call(
+            notify_cmd,
+            stderr=subprocess.STDOUT,
+            stdout=subprocess.DEVNULL,
+        )
+    except Exception as e:
+        weechat.prnt("", e)
+        return weechat.WEECHAT_HOOK_PROCESS_ERROR
 
     return weechat.WEECHAT_RC_OK
 
 # execute initializations in order
 if __name__ == "__main__":
-    weechat.register(xnotify_name, "kevr", xnotify_version, xnotify_license,
-        "{} - A libnotify script for weechat".format(xnotify_name), "", "")
+    weechat.register(xnotify_name, "icy", xnotify_version, xnotify_license,
+        "{} - xnotify plugin for weechat".format(xnotify_name), "", "")
 
     cfg = config()
     print_hook = weechat.hook_print("", "", "", 1, "handle_msg", "")
