@@ -10,8 +10,8 @@ let s:black           = { "gui": "#222222", "cterm": "0"   }
 let s:medium_gray     = { "gui": "#767676", "cterm": "8" }
 let s:white           = { "gui": "#F1F1F1", "cterm": "7"  }
 let s:actual_white    = { "gui": "#FFFFFF", "cterm": "15" }
-let s:light_black     = { "gui": "#424242", "cterm": "8"   }
-let s:lighter_black   = { "gui": "#545454", "cterm": "8" }
+let s:light_black     = { "gui": "#424242", "cterm": "11"   }
+let s:lighter_black   = { "gui": "#545454", "cterm": "12" }
 let s:subtle_black    = { "gui": "#303030", "cterm": "11" }
 let s:light_gray      = { "gui": "#999999", "cterm": "12" }
 let s:lighter_gray    = { "gui": "#CCCCCC", "cterm": "7" }
@@ -93,7 +93,7 @@ call s:h("Noise",         {"fg": s:norm_subtle})
 call s:h("Cursor",        {"bg": s:green, "fg": s:norm})
 call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
 call s:h("Function",      {"fg": s:norm, "cterm": "bold"})
-call s:h("FloatWin",      {"fg": s:black, "bg": s:white})
+call s:h("FloatWin",      {"fg": s:norm, "bg": s:black})
 
 hi! link Constant         firstAccent
 hi! link Character        Constant
@@ -193,7 +193,7 @@ call s:h("StatusLineOk",      {"gui": "underline", "bg": s:bg, "fg": s:green})
 call s:h("StatusLineError",   {"gui": "underline", "bg": s:bg, "fg": s:pink})
 call s:h("StatusLineWarning", {"gui": "underline", "bg": s:bg, "fg": s:warning})
 
-call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_very_subtle})
+call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuSel",      {"fg": s:green, "bg": s:bg_very_subtle, "gui": "bold"})
 call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
@@ -282,6 +282,7 @@ hi link TSType Noise
 hi link TSTypeBuiltin secondAccent
 hi link TSVariable Normal
 hi link TSVariableBuiltin Normal
+hi link TSRepeat Statement
 
 " nvim-lsp diagnostics
 hi link LspDiagnosticsDefaultError Error

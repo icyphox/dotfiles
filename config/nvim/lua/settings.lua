@@ -91,7 +91,7 @@ g.coq_settings = {
       mode = 'none'
     },
     preview = {
-      border = 'solid',
+      border = 'rounded',
     },
   },
 }

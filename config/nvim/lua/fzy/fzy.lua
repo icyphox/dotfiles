@@ -21,7 +21,7 @@ function M.fzy_search(cmd, exit_fn)
             relative = 'editor',
             style = 'minimal',
             noautocmd = true,
-            border = 'none',
+            border = 'rounded',
             width = width,
             height = height,
             col = math.min((o.columns - width) / 2),
