@@ -39,6 +39,17 @@ gpm() {
     git pull -r origin master
 }
 
+gco() {
+    [[ "$1" == "" ]] && return 1
+
+    git rev-parse --verify "$1" &> /dev/null
+    if [ $? -eq 0 ]; then
+        git checkout "$1"
+    else
+        git checkout -b "$1"
+    fi
+}
+
 ls() {
     case "$OSTYPE" in
         "darwin"*)
