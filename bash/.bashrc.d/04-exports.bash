@@ -12,6 +12,7 @@ export MOZ_ACCELERATED=1
 export CFLAGS="-O3 -pipe -march=native"
 export CXXFLAGS="-O3 -pipe -march=native"
 export MAKEFLAGS="-j4"
+export LC_ALL="en_US.UTF-8"
 # not this time elgoog
 export GOPROXY=direct
 
@@ -22,3 +23,12 @@ export GOPROXY=direct
     export SSH_AUTH_SOCK
     export SSH_AGENT_PID
 }
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:/usr/local/pgsql/bin
+export PATH=$PATH:/usr/local/plan9/bin
+
