@@ -16,6 +16,10 @@ map('n', '<leader>p', ':bprev<cr>', options)
 map('n', 'n', 'nzzzv', options)
 map('n', 'N', 'Nzzzv', options)
 
+-- remain in visual after indenting
+map('v', '<', '<gv', options)
+map('v', '>', '>gv', options)
+
 -- Not an editor command: Wqa
 cmd(':command! WQ wq')
 cmd(':command! WQ wq')
@@ -72,8 +76,6 @@ function M.on_attach(client, bufnr)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', options)
 end
 
--- completion-nvim
--- FIXME: rewrite this in Lua
 vim.api.nvim_exec([[
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -86,13 +88,5 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 ]], false)
-
-
--- walmart autopairs
--- vim.api.nvim_set_keymap('i', '{', '{}<esc>i', options)
--- vim.api.nvim_set_keymap('i', '(', '()<esc>i', options)
--- vim.api.nvim_set_keymap('i', '[', '[]<esc>i', options)
--- vim.api.nvim_set_keymap('i', '\'', '\'\'<esc>i', options)
--- vim.api.nvim_set_keymap('i', '\"', '\"\"<esc>i', options)
 
 return M
