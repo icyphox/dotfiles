@@ -22,28 +22,13 @@ func trimPath(cwd, home string) string {
 		return path
 	}
 	return path
-	// items := strings.Split(path, "/")
-	// truncItems := []string{}
-	// for i, item := range items {
-	// 	if i == (len(items) - 1) {
-	// 		truncItems = append(truncItems, item)
-	// 		break
-	// 	}
-	// 	truncItems = append(truncItems, item[:1])
-	// }
-	// return filepath.Join(truncItems...)
 }
 
 func main() {
-
-	help := `usage: prompt OPTIONS PATH
-	-p				path to truncate
-	-gb				git branch
-	-gs				git status`
 	if len(os.Args) != 3 {
-		fmt.Println(help)
 		os.Exit(1)
 	}
+
 	gitDir := getGitDir(os.Args[2])
 	switch os.Args[1] {
 	case "-p":
@@ -68,7 +53,6 @@ func main() {
 		}
 		fmt.Print("")
 	default:
-		fmt.Println(help)
 		os.Exit(1)
 	}
 }
