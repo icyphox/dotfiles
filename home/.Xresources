@@ -9,25 +9,25 @@
 #include ".colors/light"
 
 
-*.font: SF Mono:style=Regular:size=12:antialias=true
-*.italicFont: SF Mono:style=Italic:size=12:antialias=true
-*.boldFont: SF Mono:style=Bold:size=12:antialias=true
+*.font: Input:style=Regular:size=12:antialias=true
+*.italicFont: Input:style=Italic:size=12:antialias=true
+*.boldFont: Input:style=Bold:size=12:antialias=true
 *.borderpx: 30
 
 ! xnotify
 xnotify.gap: 5
 xnotify.gravity: NE
-xnotify.title.font: SF Mono:style=Bold:size=12:antialias=true
+xnotify.title.font: Input:style=Bold:size=12:antialias=true
 xnotify.wrap: true
 
 ! xprompt
-xprompt.font: SF Mono:style=Regular:size=12:antialias=true
+xprompt.font: Input:style=Regular:size=12:antialias=true
 xprompt.gravity: C
 xprompt.borderWidth: 1
 xprompt.geometry: 400x50
 
 ! xterm
-xterm*faceName: SF Mono
+xterm*faceName: Input
 xterm*faceSize: 12
 xterm*scrollBar: false
 xterm*internalBorder: 32
@@ -41,7 +41,7 @@ xterm.vt100.translations: #override \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
 
 ! ssh-askpass
-*Dialog.font: SF Mono:style=Regular:size=12:antialias=true
+*Dialog.font: Input:style=Regular:size=12:antialias=true
 *shadowThickness: 0
 *borderWidth: 0
 *?.background: rgb:f4/f4/f4
