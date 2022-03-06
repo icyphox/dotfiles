@@ -1,6 +1,8 @@
 Host *
     ServerAliveInterval 180
     ServerAliveCountMax 3
+    HostKeyAlgorithms ssh-rsa,ssh-ed25519
+    PubkeyAcceptedKeyTypes ssh-rsa,ssh-ed25519
 
 Host github.com
     Hostname github.com
@@ -27,4 +29,7 @@ Host lapis2
     User icy
     IdentityFile ~/.ssh/id_rsa
 
-
+Host methi
+    Hostname 152.70.78.124
+    User icy
+    IdentityFile ~/.ssh/id_ed25519

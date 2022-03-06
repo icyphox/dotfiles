@@ -1,4 +1,3 @@
-alias vime="vim ~/.vimrc"
 alias o="xdg-open"
 alias gc="git commit -v -S"
 alias gst="git status --short"

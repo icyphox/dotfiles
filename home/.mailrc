@@ -43,7 +43,7 @@ set history-gabby=all
 set history-file=~/.s-nailhist
 set autosort=date
 
-set pipe-text/html='w3m -T text/html -dump'
+set pipe-text/html='w3m -T text/html'
 set pipe-image/png='feh -'
 set pipe-image/jpg='feh -'
 set pipe-image/jpeg='feh -'
