@@ -40,7 +40,7 @@ func main() {
 		branchCh := make(chan string)
 		if len(gitDir) > 0 {
 			repo, _ := git.OpenRepository(gitDir)
-			go getGitBranch(repo, branchCh)
+			go getGitBranch(repo)
 			fmt.Print(<-branchCh)
 		}
 		fmt.Print("")
@@ -48,7 +48,7 @@ func main() {
 		statusCh := make(chan string) // git info
 		if len(gitDir) > 0 {
 			repo, _ := git.OpenRepository(gitDir)
-			go getGitStatus(repo, statusCh)
+			go getGitStatus(repo, "•", "×")
 			fmt.Print(<-statusCh)
 		}
 		fmt.Print("")

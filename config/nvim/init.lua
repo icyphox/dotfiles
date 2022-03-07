@@ -1,10 +1,6 @@
-vim.cmd 'packadd paq-nvim'
-
--- impatient.nvim
--- TODO: remove this once it's merged
-require 'impatient'
-
-require 'paq-nvim' {
+require 'paq' {
+  'savq/paq-nvim';
+  'lewis6991/impatient.nvim';
   'tpope/vim-rsi';
   'tpope/vim-surround';
   'wellle/targets.vim';
@@ -17,6 +13,10 @@ require 'paq-nvim' {
   { 'ms-jpq/coq.artifacts', branch='artifacts' };
   { 'vim/better-text-objs', url='https://git.peppe.rs' };
 }
+
+-- impatient.nvim
+-- TODO: remove this once it's merged
+require 'impatient'
 
 require('settings')
 require('maps')

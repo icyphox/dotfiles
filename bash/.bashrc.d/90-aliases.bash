@@ -51,6 +51,9 @@ gco() {
 
 ls() {
     case "$OSTYPE" in
+        "linux"*)
+            /bin/ls "$@"
+            ;;
         "darwin"*)
             /bin/ls -G "$@"
             ;;
