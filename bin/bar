@@ -1,11 +1,20 @@
 #!/bin/sh
 
+dt() {
+    date +"%a, %d %b" | tr A-Z a-z
+}
+
+vol() {
+    v="$(sndioctl -n output.level)"
+    echo $(echo "$v"*100 / 1 | bc)%
+}
+
+pad="%{015}"
+
 while :; do
-    vol="$(sndioctl -n output.level)"
     bat="$(bat -q)"
     time="$(date +"%H:%M")"
-    date="$(date.sh)"
-#    printf '%s\t\t\t\t%s\t\t\t\t%s\t\t\t%s' "$bat" "vol $(echo $vol*100 / 1 | bc)" "$date" "$time"
-    echo "$(date)"
+    echo "$pad $(dt) $pad $time %{r}bat $bat %{O14}vol $(vol) $pad"
     sleep 0.5
-done | ~/code/barito/barito
+done | lemonbar-xft -n bar -f 'Input:style=Regular:size=12:antialias=true' -g x30 \
+    -F '#f4f4f4' -B '#222'

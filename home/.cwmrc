@@ -53,8 +53,8 @@ bind-mouse 4-2 window-lower
 # other
 borderwidth 1
 snapdist 10
-ignore barito
-gap 0 0 0 0
+ignore bar
+gap 30 0 0 0
 autogroup 0 barito
 
 # colors

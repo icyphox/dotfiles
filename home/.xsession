@@ -42,5 +42,7 @@ notifycpu() {
 
 notifycpu > "$XNOTIFY_FIFO" &
 
+~/bin/bar &
+
 # window manager
 ~/leet/cwm/cwm
