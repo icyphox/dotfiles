@@ -25,7 +25,6 @@ require('treesitter')
 require('fzy/fzy')
 
 -- lsp setup
--- require('lsp.yaml') shits too noisy
--- require('lsp.lua') it's horrible
+require('lsp.config')
 require('lsp.python')
 require('lsp.go')

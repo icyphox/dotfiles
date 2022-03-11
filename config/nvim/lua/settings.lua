@@ -28,6 +28,7 @@ o.showmode = true
 o.listchars='tab:│ ,nbsp:␣,trail:·,extends:>,precedes:<'
 o.hidden = true
 o.completeopt = { 'menuone', 'noselect', 'noinsert' }
+o.signcolumn = 'yes:2'
 o.wildignore = [[
 .git,.hg,.svn
 *.aux,*.out,*.toc
