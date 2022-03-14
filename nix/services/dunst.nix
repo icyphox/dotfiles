@@ -10,7 +10,7 @@ with theme;
     enable = true;
     settings = {
       global = {
-        font = "Input 10";
+        font = "Input 12";
         allow_markup = "no";
         format = ''%s\n%b'';
         sort = "yes";
@@ -44,20 +44,20 @@ with theme;
       };
 
       urgency_normal = {
-        background = base01;
-        foreground = base05;
+        background = base07;
+        foreground = base00;
         timeout = 10;
       };
 
       urgency_low = {
-        background = base01;
-        foreground = base05;
+        background = base07;
+        foreground = base00;
         timeout = 2;
       };
 
       urgency_critical = {
-        background = base01;
-        foreground = base05;
+        background = base07;
+        foreground = base00;
         timeout = 0;
       };
     };

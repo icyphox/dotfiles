@@ -5,6 +5,7 @@ Host *
     PubkeyAcceptedKeyTypes ssh-rsa,ssh-ed25519
 
 Host github.com
+    User git
     Hostname github.com
     TCPKeepAlive yes
     IdentityFile ~/.ssh/github-pantone
