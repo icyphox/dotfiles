@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-printf '\n'
-
-for (( i=0; i<7; i++ )); do
-    printf '\033[4%sm  \033[m ' "$i"
-done
-
-printf '\n'

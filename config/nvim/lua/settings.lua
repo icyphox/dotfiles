@@ -103,7 +103,6 @@ g.did_load_filetypes = 1
 -- disable built-in plugins
 local disabled_built_ins = {
   'gzip',
-  'man',
   'shada_plugin',
   'tarPlugin',
   'tar',
@@ -112,6 +111,6 @@ local disabled_built_ins = {
   'netrwPlugin',
 }
 
-for i = 1, 8 do
+for i = 1, 7 do
   g['loaded_' .. disabled_built_ins[i]] = 1
 end

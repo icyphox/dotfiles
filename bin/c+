@@ -1,7 +1,0 @@
-#!/bin/sh
-
-symbol="$1"
-
-[ ! "$symbol" ] && symbol='// '
-
-sed "s!^!$symbol!"

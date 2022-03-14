@@ -1,7 +1,0 @@
-#!/bin/sh
-# life log
-
-date="$(date "+%Y-%m-%d %H:%M:%S")"
-l="$(cat)"
-[ "$l" = "" ] && exit
-printf '%s\t%s\n' "$date" "$l" >> ~/log

@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-repo="$1"
-[[ "$1" == "" ]] && repo="$(basename "$PWD")"
-ssh git@jade git init --bare "$repo"
-read -p "descripton: " desc
-printf '%s' "$desc" > .git/description
-rsync .git/description git@jade:"$repo"

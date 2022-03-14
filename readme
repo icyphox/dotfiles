@@ -1,12 +1,10 @@
 dotfiles
 --------
 
-Screenshot: https://x.icyphox.sh/7UVnt.png
-
-· OS:     OpenBSD 7.0
+· OS:     NixOS
 · WM:     cwm
 · Shell:  bash
 · Editor: nvim, with init.lua
 · IRC:    weechat
-· Email:  s-nail
-· Prompt: runs in tmux; see prompt/prompt.go and home/.tmux.conf
+
+For my old, pre-NixOS configs, look at the 'old' branch.

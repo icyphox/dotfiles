@@ -52,9 +52,12 @@ keycode  59 =        comma          less     dead_cedilla        asciitilde
 keycode  60 =       period       greater     ellipsis            asciitilde            
 keycode  61 =        slash      question     questiondown        asciitilde            
                                                                                       
-keycode  66 =       Mode_switch
+keycode  66 =        Multi_key
+keycode  66 =        Mode_switch
+keycode  64 = 	     Alt_L
 keycode  94 =        minus    underscore           endash            emdash            
 keycode  65 =        space         space            space      nobreakspace            
+
 clear Lock
 
 !clear Shift
