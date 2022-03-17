@@ -12,6 +12,12 @@
 
   networking = {
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
+    networkmanager = {
+      enable = true;
+      insertNameservers = [ "1.1.1.1" "1.0.0.1" ];
+      wifi.backend = "iwd";
+    };
+    dhcpcd.enable = false;
     hostName = "lapis";
     useDHCP = false;
     interfaces.wlan0.useDHCP = true;

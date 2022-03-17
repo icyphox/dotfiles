@@ -20,6 +20,8 @@
       bind-key C-q send-prefix
       set -g update-environment "KEYBOARD_LAYOUT"
 
+      setw -g mode-keys vi
+
       bind r source-file ~/.config/tmux/tmux.conf
 
       set-option -g default-terminal xterm-256color-italic
@@ -51,9 +53,9 @@
       bind-key ( swap-window -t -1
 
       unbind -T copy-mode MouseDragEnd1Pane
-      bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard"
+      bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -sel c"
       bind-key -T copy-mode-vi v send-keys -X begin-selection
-      bind-key -T copy-mode-vi y send-keys -X copy-pipe "xclip -i -sel p -f | xclip -i -sel c "
+      bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -sel c"
       bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
       bind P paste-buffer
 
