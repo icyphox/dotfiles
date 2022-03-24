@@ -35,6 +35,9 @@ let
   # bar
   bar = import ./bar.nix { inherit pkgs theme; };
 
+  # xurls
+  xurls = import ./xurls.nix pkgs;
+
   # file uploader
   # uploader = import ./up.nix pkgs;
 
@@ -48,4 +51,5 @@ in
   record
   battery
   bar
+  xurls
 ]

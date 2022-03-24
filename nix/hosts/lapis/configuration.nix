@@ -21,7 +21,6 @@
     hostName = "lapis";
     useDHCP = false;
     interfaces.wlan0.useDHCP = true;
-    wireless.iwd.enable = true;
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -104,6 +103,7 @@
     doas.extraRules = [{
       users = [ "icy" ];
     }];
+    pki.certificateFiles = [ "/home/icy/.local/share/caddy/pki/authorities/local/root.crt" ];
   };
 
 

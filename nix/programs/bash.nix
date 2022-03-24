@@ -45,7 +45,7 @@
       BROWSER = "firefox";
       PW_DIR = "$HOME/.pw";
       PW_KEY = "x@icyphox.sh";
-      PATH = "$PATH:$HOME/bin";
+      PATH = "$PATH:$HOME/go/bin:$HOME/bin";
 
     };
 

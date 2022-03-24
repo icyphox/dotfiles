@@ -15,6 +15,7 @@
     ./readline.nix
     ./tmux.nix
     ./zathura.nix
+    ./firefox.nix
   ];
 
   programs = {
@@ -38,5 +39,9 @@
       enableBashIntegration = true;
     };
     gpg.enable = true;
+    htop = {
+      enable = true;
+      settings.color_scheme = 1;
+    };
   };
 }

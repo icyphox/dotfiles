@@ -195,13 +195,17 @@
         ]
       },
       "locked": {
-        "narHash": "sha256-smj6KAi1MdZxZ67Sxwc/uKop9bZmUaOhp8M6fafAg9Y=",
-        "path": "/home/icy/code/nerd-prompt",
-        "type": "path"
+        "lastModified": 1643513342,
+        "narHash": "sha256-t819RkW5NiURx4lJlGMfHW3IuAMJtK29jUpAqUixKeg=",
+        "ref": "master",
+        "rev": "8b1dd1f5609447f5d862e330a75a4b2a0dfc3929",
+        "revCount": 3,
+        "type": "git",
+        "url": "https://git.peppe.rs/cli/prompt"
       },
       "original": {
-        "path": "/home/icy/code/nerd-prompt",
-        "type": "path"
+        "type": "git",
+        "url": "https://git.peppe.rs/cli/prompt"
       }
     },
     "root": {

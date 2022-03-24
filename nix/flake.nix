@@ -14,10 +14,9 @@
     neovim.url = "github:nix-community/neovim-nightly-overlay";
 
     prompt = {
-      url = "path:/home/icy/code/nerd-prompt";
+      url = "git+https://git.peppe.rs/cli/prompt";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs =

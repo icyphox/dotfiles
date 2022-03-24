@@ -24,7 +24,6 @@
     curl
     tmux
     weechat
-    firefox
     xclip
     ripgrep
     arandr

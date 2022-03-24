@@ -27,6 +27,8 @@
       targets-vim
       vim-gitgutter
       vim-rsi
+      vim-go
+      vim-jsonnet
     ];
   };
 }
