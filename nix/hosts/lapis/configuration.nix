@@ -12,12 +12,20 @@
 
   networking = {
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
-    networkmanager = {
+    wireless = {
       enable = true;
-      insertNameservers = [ "1.1.1.1" "1.0.0.1" ];
-      wifi.backend = "iwd";
+      interfaces = [ "wlan0" ];
+      environmentFile = "/home/icy/secrets/wireless.env";
+      networks = {
+        Sanic.psk = "@PSK_SANI@";
+        Gopalan.psk = "@PSK_GOPA@";
+      };
+      extraConfig = ''
+        ctrl_interface=/run/wpa_supplicant
+        ctrl_interface_group=wheel
+      '';
     };
-    dhcpcd.enable = false;
+    # dhcpcd.enable = true;
     hostName = "lapis";
     useDHCP = false;
     interfaces.wlan0.useDHCP = true;

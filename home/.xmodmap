@@ -1,6 +1,3 @@
-! the iceman layout
-! workman, with the f and b swapped
-
 keycode  49 =        grave    asciitilde       dead_tilde        asciitilde            
 keycode  10 =            1        exclam       exclamdown       onesuperior            
 keycode  11 =            2            at        masculine       twosuperior            
@@ -54,7 +51,7 @@ keycode  61 =        slash      question     questiondown        asciitilde
                                                                                       
 keycode  66 =        Multi_key
 keycode  66 =        Mode_switch
-keycode  64 = 	     Alt_L
+keycode  64 =        Alt_L
 keycode  94 =        minus    underscore           endash            emdash            
 keycode  65 =        space         space            space      nobreakspace            
 

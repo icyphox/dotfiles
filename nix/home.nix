@@ -11,6 +11,7 @@
     ./programs
     ./services
     ./x
+    ./mail.nix
   ];
 
   home.stateVersion = "21.05";
@@ -37,6 +38,7 @@
     jq
     yq
     sxiv
+    feh
     st
     fzy
     xorg.xmodmap
@@ -45,6 +47,8 @@
     nixpkgs-fmt
     libnotify
     signal-desktop
+    aerc
+    calibre
 
   ] ++ (import ./bin { inherit pkgs theme; });
 

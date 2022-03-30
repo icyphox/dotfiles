@@ -6,6 +6,6 @@
 {
   services.mbsync = {
     enable = true;
-    frequency = "*:0/15";
+    frequency = "*:0/2";
   };
 }

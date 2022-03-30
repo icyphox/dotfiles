@@ -19,9 +19,8 @@
   ];
 
   programs = {
-    # msmtp.enable = true;
     home-manager.enable = true;
-    mbsync.enable = false;
+    mbsync.enable = true;
     direnv = {
       enable = true;
       enableBashIntegration = true;

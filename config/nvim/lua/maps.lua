@@ -74,6 +74,18 @@ function M.on_attach(client, bufnr)
 
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', options)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', options)
+  buf_set_keymap('n', 'ga', '<Cmd>lua vim.lsp.buf.code_action()<CR>', options)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', options)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', options)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', options)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', options)
+  buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', options)
+
+  if client.resolved_capabilities.document_formatting then
+    buf_set_keymap('n', 'ff', '<cmd>lua vim.lsp.buf.formatting()<CR>', options)
+  elseif client.resolved_capabilities.document_range_formatting then
+    buf_set_keymap('n', 'ff', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', options)
+  end
 end
 
 vim.api.nvim_exec([[

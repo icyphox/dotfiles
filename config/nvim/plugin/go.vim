@@ -1,1 +1,0 @@
-autocmd BufWritePre *.go Fmt
