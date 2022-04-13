@@ -1,31 +1,23 @@
--- only on macOS
-util = require('lspconfig.util')
-
-
-local root_path = '/Users/icy/Leet/lua-language-server'
-local bin_path = root_path .. '/bin/macOS/lua-language-server'
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
 
 require'lspconfig'.sumneko_lua.setup {
-  cmd = { bin_path, "-E", root_path .. '/main.lua' },
   settings = {
     Lua = {
       runtime = {
         version = 'LuaJIT',
-        path = vim.split(package.path, ';'),
+        path = runtime_path,
       },
       diagnostics = {
         globals = {'vim'},
       },
       workspace = {
-        library = {
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-        },
+        library = vim.api.nvim_get_runtime_file("", true),
       },
       telemetry = {
         enable = false,
-      }
+      },
     },
   },
-  on_attach = require('maps').on_attach,
 }

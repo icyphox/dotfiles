@@ -57,9 +57,6 @@ g.gitgutter_sign_removed                   = '-'
 g.gitgutter_sign_removed_first_line        = '^'
 g.gitgutter_sign_modified_removed          = '#'
 
--- use a python3 venv
-g.python3_host_prog = vim.env.HOME .. '/leet/vim-python3/bin/python3'
-
 -- window-local options
 o.number = false
 o.list = true

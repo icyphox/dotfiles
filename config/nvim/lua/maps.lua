@@ -1,5 +1,6 @@
 local cmd = vim.cmd
 local map = vim.api.nvim_set_keymap
+local u = require 'utils'
 local M = {}
 
 -- map the leader key
@@ -77,8 +78,8 @@ function M.on_attach(client, bufnr)
   buf_set_keymap('n', 'ga', '<Cmd>lua vim.lsp.buf.code_action()<CR>', options)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', options)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', options)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', options)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', options)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', options)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', options)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', options)
 
   if client.resolved_capabilities.document_formatting then
@@ -100,5 +101,14 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 ]], false)
+
+-- abbreviations
+local star = '★'
+local stars = {}
+for n = 1, 5
+do
+  table.insert(stars, star)
+  u.iabbrev(n .. '*', table.concat(stars))
+end
 
 return M

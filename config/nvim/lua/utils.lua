@@ -10,4 +10,9 @@ function M.create_augroup(autocmds, name)
     cmd('augroup END')
 end
 
+function M.iabbrev(a, b)
+  cmd(string.format('iabbrev %s %s', a, b))
+end
+
 return M
+
