@@ -29,6 +29,11 @@ let
     git remote set-url "$(git remote show)" --add --push "$old_push_remote"
   '';
 
+  # json pretty
+  jp = pkgs.writeScriptBin "jp" ''
+    ${pkgs.coreutils}/bin/cat | ${pkgs.jq}/bin/jq "$@"
+  '';
+
   # screen record with ffmpeg and slop
   record = import ./record.nix pkgs;
 
@@ -47,6 +52,7 @@ in
 [
   git-new-push-remote
   git-new-repo
+  jp
   webcam
   record
   battery
