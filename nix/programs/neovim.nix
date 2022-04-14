@@ -14,6 +14,8 @@
       gotools
       gopls
       go
+      nodePackages.vscode-langservers-extracted
+      sumneko-lua-language-server
     ];
     extraConfig = ''
       runtime _init.lua
@@ -27,7 +29,7 @@
       targets-vim
       vim-gitgutter
       vim-rsi
-      vim-jsonnet
+      # nvim-treesitter-textobjects
     ];
   };
 }

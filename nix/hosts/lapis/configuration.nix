@@ -19,6 +19,9 @@
       networks = {
         Sanic.psk = "@PSK_SANI@";
         Gopalan.psk = "@PSK_GOPA@";
+        "GoSpaze 2" = {
+          psk = "@PSK_GOSP@";
+        };
       };
       extraConfig = ''
         ctrl_interface=/run/wpa_supplicant
@@ -90,11 +93,22 @@
     xserver = {
       enable = true;
       layout = "us";
-      xkbVariant = "workman";
       displayManager.startx.enable = true;
       libinput.enable = true;
     };
     tailscale.enable = true;
+
+    # 1. chmod for rootless backligh1t
+    # 2. lotus58 bootloader mode for rootless qmk flashing
+    udev = {
+      extraRules = ''
+        ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
+        ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0036", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
+      '';
+      path = [
+        pkgs.coreutils
+      ];
+    };
   };
 
   virtualisation.docker = {
@@ -117,7 +131,7 @@
 
   users.users.icy = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "audio" "video" ];
+    extraGroups = [ "wheel" "docker" "audio" "video" "dialout" ];
   };
 
   nix = {

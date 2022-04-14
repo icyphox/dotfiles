@@ -49,6 +49,7 @@
     signal-desktop
     aerc
     calibre
+    pinentry
 
   ] ++ (import ./bin { inherit pkgs theme; });
 
@@ -67,8 +68,8 @@
     enable = true;
     windowManager.command = "cwm";
     initExtra = ''
-      xrdb -load $HOME/.Xresources
-      xmodmap $HOME/.xmodmap
+      ${pkgs.xorg.setxkbmap}/bin/setxkbmap us,ru -option grp:ctrls_toggle
+      ${pkgs.xorg.xrdb}/bin/xrdb -load $HOME/.Xresources
       bar &
     '';
   };
