@@ -11,7 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim.url = "github:nix-community/neovim-nightly-overlay";
+    neovim.url = "github:icyphox/neovim-nightly-overlay";
 
     prompt = {
       url = "git+https://git.peppe.rs/cli/prompt";

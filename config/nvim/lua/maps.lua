@@ -1,5 +1,5 @@
 local cmd = vim.cmd
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local u = require 'utils'
 local M = {}
 
@@ -8,7 +8,7 @@ map('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
 
-local options = { noremap = true, silent = true }
+local options = { silent = true }
 map('n', '<leader><esc>', ':nohlsearch<cr>', options)
 map('n', '<leader>n', ':bnext<cr>', options)
 map('n', '<leader>p', ':bprev<cr>', options)
@@ -89,18 +89,12 @@ function M.on_attach(client, bufnr)
   end
 end
 
-vim.api.nvim_exec([[
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
-
-]], false)
+-- vim.api.nvim_exec([[
+-- " Use <Tab> and <S-Tab> to navigate through popup menu
+-- inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+-- inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+-- 
+-- ]], false)
 
 -- abbreviations
 local star = '★'

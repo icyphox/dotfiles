@@ -1,6 +1,7 @@
 local u = require('utils')
 
 local o = vim.opt
+local autocmd = vim.api.nvim_create_autocmd
 local g = vim.g
 local cmd = vim.cmd
 
@@ -28,6 +29,7 @@ o.showmode = true
 o.listchars='tab:│ ,nbsp:␣,trail:·,extends:>,precedes:<'
 o.hidden = true
 o.completeopt = { 'menuone', 'noselect', 'noinsert' }
+o.formatoptions:append('c')
 o.signcolumn = 'yes:2'
 o.wildignore = [[
 .git,.hg,.svn
@@ -42,11 +44,15 @@ o.wildignore = [[
 *.swp,.lock,.DS_Store,._*
 ]]
 
-vim.cmd("syntax on")
--- i couldn't figure out how to set the colorscheme in lua
-vim.cmd('colorscheme plain')
+cmd('syntax on')
+cmd('colorscheme plain')
+autocmd('TextYankPost', {
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank{timeout=200}
+  end,
+})
 
-vim.cmd('au TextYankPost * lua vim.highlight.on_yank{timeout=200}')
 o.background = 'light'
 
 -- gitgutter options
@@ -69,17 +75,28 @@ o.expandtab = true
 stl = require('statusline.line')
 o.statusline = '%!luaeval("stl.statusline()")'
 
--- augroups don't have an interface yet
-u.create_augroup({
-    { 'BufRead,BufNewFile', '/tmp/nail-*', 'setlocal', 'ft=mail' },
-    { 'BufRead,BufNewFile', '*s-nail-*', 'setlocal', 'ft=mail' },
-}, 'ftmail')
+-- u.create_augroup({
+--     { 'BufRead,BufNewFile', '/tmp/nail-*', 'setlocal', 'ft=mail' },
+--     { 'BufRead,BufNewFile', '*s-nail-*', 'setlocal', 'ft=mail' },
+-- }, 'ftmail')
 
 -- restore cursor
-cmd([[ au BufReadPost * call setpos(".", getpos("'\"")) ]])
+autocmd('BufReadPost', {
+  pattern = '*',
+  callback = function()
+    vim.fn.setpos(".", vim.fn.getpos("'\""))
+  end,
+})
 
 -- unknown files are 'text'
-cmd('au BufNewFile,BufRead * if &ft == "" | set ft=text | endif')
+autocmd('BufNewFile,BufRead', {
+  pattern = '*',
+  callback = function()
+    if vim.bo.filetype == "" then
+      vim.bo.filetype = 'text'
+    end
+  end,
+})
 
 -- coq.nvim
 g.coq_settings = {
@@ -95,7 +112,8 @@ g.coq_settings = {
 }
 
 -- filetype.nvim
-g.did_load_filetypes = 1
+g.do_filetype_lua = 1
+g.did_load_filetypes = 0
 
 -- disable built-in plugins
 local disabled_built_ins = {
@@ -105,9 +123,8 @@ local disabled_built_ins = {
   'tar',
   'zipPlugin',
   'zip',
-  'netrwPlugin',
 }
 
-for i = 1, 7 do
+for i = 1, 6 do
   g['loaded_' .. disabled_built_ins[i]] = 1
 end
