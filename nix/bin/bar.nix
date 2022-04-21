@@ -4,6 +4,7 @@ let
   name = "bar";
   pamixer = "${pkgs.pamixer}/bin/pamixer";
   lemonbar = "${pkgs.lemonbar-xft}/bin/lemonbar";
+  btctl = "${pkgs.bluezFull}/bin/bluetoothctl";
 in
 pkgs.writeShellScriptBin name
   ''
@@ -15,11 +16,21 @@ pkgs.writeShellScriptBin name
         ${pamixer} --get-volume
     }
 
+    audio_dev() {
+      con="$(${btctl} info | grep Connected | awk '{ print $2 }')"
+
+      if [[ "$con" == "yes" ]]; then
+        printf 'bt'
+      else
+        printf 'spkr'
+      fi
+    }
+
     pad="%{015}"
 
     while :; do
         time="$(date +"%H:%M")"
-        echo "$pad $(dt) $pad $time %{r}bat $(bat) %{O14}vol $(vol)% $pad"
+        echo "$pad $(dt) $pad $time %{r}bat $(bat) %{O14}$(audio_dev) $(vol)% $pad"
         sleep 0.5
     done | ${lemonbar} -n bar -f 'Input:style=Regular:size=12:antialias=true' -g x30 \
         -F '${theme.base00}' -B '${theme.base07}'
