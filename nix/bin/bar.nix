@@ -1,10 +1,11 @@
-{ pkgs, theme, ... }:
+{ pkgs, theme, host, ... }:
 
 let
   name = "bar";
   pamixer = "${pkgs.pamixer}/bin/pamixer";
   lemonbar = "${pkgs.lemonbar-xft}/bin/lemonbar";
   btctl = "${pkgs.bluezFull}/bin/bluetoothctl";
+  barHeight = if host == "wyndle" then "50" else "30";
 in
 pkgs.writeShellScriptBin name
   ''
@@ -32,6 +33,6 @@ pkgs.writeShellScriptBin name
         time="$(date +"%H:%M")"
         echo "$pad $(dt) $pad $time %{r}bat $(bat) %{O14}$(audio_dev) $(vol)% $pad"
         sleep 0.5
-    done | ${lemonbar} -n bar -f 'Input:style=Regular:size=12:antialias=true' -g x30 \
+    done | ${lemonbar} -n bar -f 'Input:style=Regular:size=12:antialias=true' -g x${barHeight} \
         -F '${theme.base00}' -B '${theme.base07}'
   ''

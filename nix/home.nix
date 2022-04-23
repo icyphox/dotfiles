@@ -2,6 +2,7 @@
 , pkgs
 , theme
 , self
+, host
 , ...
 }:
 
@@ -51,7 +52,7 @@
     calibre
     pinentry
 
-  ] ++ (import ./bin { inherit pkgs theme; });
+  ] ++ (import ./bin { inherit pkgs theme host; });
 
   xdg = {
     userDirs = {
@@ -71,7 +72,8 @@
       ${pkgs.xorg.setxkbmap}/bin/setxkbmap us,ru -option grp:ctrls_toggle
       ${pkgs.xorg.xrdb}/bin/xrdb -load $HOME/.Xresources
       bar &
+      st &
     '';
   };
-
 }
+

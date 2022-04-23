@@ -1,4 +1,4 @@
-{ pkgs, theme, ... }:
+{ pkgs, theme, host, ... }:
 
 let
 
@@ -38,7 +38,7 @@ let
   record = import ./record.nix pkgs;
 
   # bar
-  bar = import ./bar.nix { inherit pkgs theme; };
+  bar = import ./bar.nix { inherit pkgs theme host; };
 
   # xurls
   xurls = import ./xurls.nix pkgs;

@@ -1,7 +1,7 @@
 -- loaded by home-manager; see: nix/programs/neovim.nix
 
 -- TODO: ref: https://github.com/neovim/neovim/pull/15436
-require 'impatient'
+-- require 'impatient'
 
 require 'settings'
 require 'maps'

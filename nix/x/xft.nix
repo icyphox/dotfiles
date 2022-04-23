@@ -11,6 +11,6 @@
     "Xft.hintstyle" = "hintslight";
     "Xft.hinting" = true;
     "Xft.rgba" = "rgb";
-    "Xft.dpi" = 100;
+    "Xft.dpi" = 192;
   };
 }
