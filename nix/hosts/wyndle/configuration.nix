@@ -1,15 +1,9 @@
-let
-  nixpkgs-tar = "https://github.com/NixOS/nixpkgs/archive/";
-  asusctl-tar = fetchTarball "${nixpkgs-tar}a4a81b6f6c27e5a964faea25b7b5cbe611f98691.tar.gz";
-in
 { self, config, pkgs, theme, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
-      "${asusctl-tar}/nixos/modules/services/misc/asusctl.nix"
-      "${asusctl-tar}/nixos/modules/services/misc/supergfxctl.nix"
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -59,10 +53,6 @@ in
   nixpkgs.overlays = with self.overlays; [
     nvim-nightly
     prompt
-    (self: super: {
-      asusctl = pkgs.callpackage "${asusctl-tar}/pkgs/tools/misc/asusctl/default.nix" { };
-      supergfxctl = pkgs.callpackage "${asusctl-tar}/pkgs/tools/misc/supergfxctl/default.nix" { };
-    })
   ];
 
   environment.systemPackages = with pkgs; [
@@ -71,7 +61,6 @@ in
     git
     man-pages-posix
     (lib.hiPrio pkgs.bashInteractive_5)
-    asusctl
   ];
 
   environment.variables = {
@@ -112,7 +101,6 @@ in
   };
 
   services = {
-    asusctl.enable = true;
     xserver = {
       enable = true;
       layout = "us";
@@ -133,6 +121,10 @@ in
     udev = {
       extraRules = ''
         ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0036", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
+      '';
+      extraHwdb = ''
+        evdev:input:b0003v0B05p19B6*
+          KEYBOARD_KEY_ff31007c=f20 # x11 mic-mute
       '';
       path = [
         pkgs.coreutils

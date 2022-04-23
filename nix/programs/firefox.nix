@@ -3,6 +3,8 @@
 , ...
 }:
 
+
+# XXX: Make sure to enable toolkit.legacyUserProfileCustomizations.stylesheets in about:config.
 {
   programs.firefox = {
     enable = true;
