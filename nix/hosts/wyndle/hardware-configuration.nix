@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
@@ -14,12 +15,14 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f66408c3-50c9-421a-80c1-8163761f3817";
+    {
+      device = "/dev/disk/by-uuid/f66408c3-50c9-421a-80c1-8163761f3817";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/E85D-EAD8";
+    {
+      device = "/dev/disk/by-uuid/E85D-EAD8";
       fsType = "vfat";
     };
 
@@ -27,7 +30,7 @@
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.opengl.enable = true;
-  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.modesetting.enable = false;
   # high-resolution display
   hardware.video.hidpi.enable = lib.mkDefault true;
 }

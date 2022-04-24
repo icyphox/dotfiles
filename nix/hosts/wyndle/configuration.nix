@@ -1,9 +1,14 @@
+let
+  asusctl-tar = fetchTarball "https://github.com/NixOS/nixpkgs/archive/a4a81b6f6c27e5a964faea25b7b5cbe611f98691.tar.gz";
+in
 { self, config, pkgs, theme, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
+      "${asusctl-tar}/nixos/modules/services/misc/asusctl.nix"
+      "${asusctl-tar}/nixos/modules/services/misc/supergfxctl.nix"
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -51,11 +56,17 @@
   };
 
   nixpkgs.overlays = with self.overlays; [
+    (self: super: {
+      asusctl = pkgs.callPackage "${asusctl-tar}/pkgs/tools/misc/asusctl/default.nix" { };
+      supergfxctl = pkgs.callPackage "${asusctl-tar}/pkgs/tools/misc/supergfxctl/default.nix" { };
+    })
     nvim-nightly
     prompt
   ];
 
   environment.systemPackages = with pkgs; [
+    asusctl
+    supergfxctl
     cwm
     man-pages
     git
@@ -101,6 +112,8 @@
   };
 
   services = {
+    asusctl.enable = true;
+    supergfxctl.enable = true;
     xserver = {
       enable = true;
       layout = "us";
@@ -149,6 +162,10 @@
     pki.certificateFiles = [ "/home/icy/.local/share/caddy/pki/authorities/local/root.crt" ];
   };
 
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
 
   users.users.icy = {
     isNormalUser = true;
