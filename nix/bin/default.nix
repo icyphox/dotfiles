@@ -48,6 +48,9 @@ let
 
   # battery script
   battery = import ./battery.nix pkgs;
+
+  # invert screen
+  invert = import ./invert.nix pkgs;
 in
 [
   git-new-push-remote
@@ -58,4 +61,5 @@ in
   battery
   bar
   xurls
+  invert
 ]
