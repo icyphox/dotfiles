@@ -64,20 +64,31 @@ in
     prompt
   ];
 
-  environment.systemPackages = with pkgs; [
-    asusctl
-    supergfxctl
-    cwm
-    man-pages
-    git
-    man-pages-posix
-    (lib.hiPrio pkgs.bashInteractive_5)
-  ];
-
-  environment.variables = {
-    MOZ_USE_XINPUT2 = "1";
-    GDK_SCALE = "2";
-    GDK_DPI_SCALE = "0.5";
+  environment = {
+    systemPackages = with pkgs; [
+      asusctl
+      supergfxctl
+      cwm
+      man-pages
+      git
+      man-pages-posix
+      (lib.hiPrio pkgs.bashInteractive_5)
+    ];
+    variables = {
+      MOZ_USE_XINPUT2 = "1";
+      GDK_SCALE = "2";
+      GDK_DPI_SCALE = "0.5";
+    };
+    etc = {
+      "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+        bluez_monitor.properties = {
+          ["bluez5.enable-sbc-xq"] = true,
+          ["bluez5.enable-msbc"] = true,
+          ["bluez5.enable-hw-volume"] = true,
+          ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+        }
+      '';
+    };
   };
 
   documentation = {
@@ -99,7 +110,6 @@ in
 
   sound.enable = true;
   hardware = {
-    pulseaudio.enable = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -114,6 +124,12 @@ in
   services = {
     asusctl.enable = true;
     supergfxctl.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
     xserver = {
       enable = true;
       layout = "us";
