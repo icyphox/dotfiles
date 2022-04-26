@@ -113,6 +113,7 @@ in
     bluetooth = {
       enable = true;
       powerOnBoot = true;
+      disabledPlugins = [ "sap" ];
     };
     nvidia.prime = {
       offload.enable = true;

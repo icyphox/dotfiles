@@ -101,6 +101,7 @@ autocmd('BufNewFile,BufRead', {
 -- coq.nvim
 g.coq_settings = {
   auto_start = 'shut-up',
+  xdg = true,
   display = {
     icons = {
       mode = 'none'

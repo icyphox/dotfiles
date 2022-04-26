@@ -21,15 +21,15 @@
       runtime _init.lua
     '';
     plugins = with pkgs.vimPlugins; [
+      coq_nvim
       nvim-lspconfig
       (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
-      coq_nvim
       playground
       vim-surround
       targets-vim
       vim-gitgutter
       vim-rsi
-      # nvim-treesitter-textobjects
+      nvim-treesitter-textobjects
     ];
   };
 }
