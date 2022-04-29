@@ -51,6 +51,12 @@ let
 
   # invert screen
   invert = import ./invert.nix pkgs;
+
+  # nvidia offload
+  nvidia-offload = import ./nvidia-offload.nix pkgs;
+
+  # power profiles script
+  cputil = import ./cputil.nix pkgs;
 in
 [
   git-new-push-remote
@@ -62,4 +68,6 @@ in
   bar
   xurls
   invert
+  nvidia-offload
+  cputil
 ]
