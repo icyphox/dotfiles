@@ -1,7 +1,7 @@
 let
   asusctl-tar = fetchTarball "https://github.com/NixOS/nixpkgs/archive/a4a81b6f6c27e5a964faea25b7b5cbe611f98691.tar.gz";
 in
-{ self, config, pkgs, theme, ... }:
+{ self, config, pkgs, theme, lib, ... }:
 
 {
   imports =
@@ -44,6 +44,11 @@ in
 
   nixpkgs.config = {
     allowUnfree = true;
+    allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "steam"
+      "steam-original"
+      "steam-runtime"
+    ];
     st = {
       conf = builtins.readFile ../../programs/st/config.h;
       extraLibs = with pkgs; [ harfbuzz ];
@@ -150,6 +155,7 @@ in
     # 2. lotus58 bootloader mode for rootless qmk flashing
     udev = {
       extraRules = ''
+        ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
         ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0036", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
       '';
       extraHwdb = ''
@@ -187,6 +193,10 @@ in
   users.users.icy = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "audio" "video" "dialout" ];
+  };
+
+  programs = {
+    steam.enable = true;
   };
 
   nix = {
