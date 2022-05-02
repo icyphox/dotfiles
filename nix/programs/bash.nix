@@ -20,7 +20,7 @@
       gd = "git diff --minimal";
       gl = "git log --oneline --decorate --graph";
       k = "kubectl";
-      n = "j";
+      n = "z";
     };
 
     shellOptions = [

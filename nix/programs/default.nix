@@ -29,7 +29,7 @@
         enableFlakes = true;
       };
     };
-    autojump = {
+    zoxide = {
       enable = true;
       enableBashIntegration = true;
     };
