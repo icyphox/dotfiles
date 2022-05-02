@@ -11,9 +11,20 @@ in
       "${asusctl-tar}/nixos/modules/services/misc/supergfxctl.nix"
     ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    kernel.sysctl."net.ipv4.ip_forward" = 1;
+    kernelParams = [ "mem_sleep_default=deep" ];
+    kernelPatches = [{
+      name = "three-hundred-hertz";
+      patch = null;
+      extraConfig = ''
+        HZ_300 y
+        HZ 300
+      '';
+    }];
+  };
 
   networking = {
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
@@ -150,7 +161,7 @@ in
       '';
     };
     tailscale.enable = true;
-    power-profiles-daemon.enable = true;
+    tlp.enable = true;
     # 1. chmod for rootless backligh1t
     # 2. lotus58 bootloader mode for rootless qmk flashing
     udev = {
