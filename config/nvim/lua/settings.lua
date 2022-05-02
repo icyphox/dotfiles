@@ -102,6 +102,9 @@ autocmd('BufNewFile,BufRead', {
 g.coq_settings = {
   auto_start = 'shut-up',
   xdg = true,
+  clients = {
+    snippets = { warn = {} }
+  },
   display = {
     icons = {
       mode = 'none'
