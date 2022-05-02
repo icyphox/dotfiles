@@ -1,20 +1,15 @@
-{ pkgs, theme, ... }:
+{ pkgs, ... }:
 
 let
   name = "pw";
-  pamixer = "${pkgs.pamixer}/bin/pamixer";
-  lemonbar = "${pkgs.lemonbar-xft}/bin/lemonbar";
+  gpg = "${pkgs.gnupg}/bin/gpg";
+  pwgen = "${pkgs.pwgen}/bin/pwgen";
+  git = "${pkgs.git}/bin/git";
+  xclip = "${pkgs.xclip}/bin/xclip";
 in
 pkgs.writeShellScriptBin name
   ''
-    #!/usr/bin/env bash
     # pw - a mnml password manager
-    command -v gpg >/dev/null 2>&1 && gpg=gpg
-    command -v gpg2 >/dev/null 2>&1 && gpg=gpg2
-    # check if xclip or pbcopy exist
-    # command -v xclip >/dev/null 2>&1 && copy="xclip -rmlastnl -selection clipboard"
-    # command -v pbcopy >/dev/null 2>&1 && copy="pbcopy | tr -d '\n'"
-    # export PW_DIR to your own path
     [[ -z "$PW_DIR" ]] && PW_DIR="$HOME/.pw"
     init() {
         if [[ ! -e "$PW_DIR" ]]; then
@@ -33,23 +28,23 @@ pkgs.writeShellScriptBin name
             pass="$2"
         else
             # uses default length of 25 chars, unless PW_LEN is set
-            pass="$(pwgen "${PW_LEN:-25}" 1 -s)"
+            pass="$(${pwgen} "''${PW_LEN:-25}" 1 -s)"
             printf "pw: generated password for %s\n" "$1"
         fi
         if [[ ! -f "$PW_DIR/$1.gpg" ]]; then
-            printf "%s" "$pass" | "$gpg" -aer "$PW_KEY" -o "$PW_DIR/$1.gpg"
+            printf "%s" "$pass" | ${gpg} -aer "$PW_KEY" -o "$PW_DIR/$1.gpg"
             printf "pw: %s/%s.gpg created\n" "$PW_DIR" "$1"
         else
             die "the file $PW_DIR/$1.gpg exists"
         fi
         (
             cd $PW_DIR
-            git add .
-            git commit -m "$(date)"
-            remote="$(git remote show)"
-            branch="$(git branch --show-current)"
-            git pull -r "$remote" "$branch"
-            git push "$remote" "$branch"
+            ${git} add .
+            ${git} commit -m "$(date)"
+            remote="$(${git} remote show)"
+            branch="$(${git} branch --show-current)"
+            ${git} pull -r "$remote" "$branch"
+            ${git} push "$remote" "$branch"
         )
     }
     list() {
@@ -66,7 +61,7 @@ pkgs.writeShellScriptBin name
     }
     show() {
         checkf "$PW_DIR/$1.gpg"
-        "$gpg" --decrypt --quiet --use-agent "$PW_DIR/$1.gpg"
+        ${gpg} --decrypt --quiet --use-agent "$PW_DIR/$1.gpg"
     }
     # TODO: rework having to checkf twice
     copy() {
@@ -74,7 +69,7 @@ pkgs.writeShellScriptBin name
         if [[ "$OSTYPE" =~ darwin* ]]; then
             show "$1" | head -1 | pbcopy | tr -d '\n'
         else
-            show "$1" | head -1 | xclip -rmlastnl -selection clipboard
+            show "$1" | head -1 | ${xclip} -rmlastnl -selection clipboard
         fi
         printf "pw: copied %s to clipboard\n" "$1"
     }

@@ -57,6 +57,9 @@ let
 
   # power profiles script
   cputil = import ./cputil.nix pkgs;
+
+  # password manager
+  pw = import ./pw.nix pkgs;
 in
 [
   git-new-push-remote
@@ -70,4 +73,5 @@ in
   invert
   nvidia-offload
   cputil
+  pw
 ]
