@@ -60,6 +60,12 @@ let
 
   # password manager
   pw = import ./pw.nix pkgs;
+
+  # screenshot tool
+  scr = import ./scr.nix pkgs;
+
+  # kubectx wrapper
+  kctx = import ./kctx.nix pkgs;
 in
 [
   git-new-push-remote
@@ -74,4 +80,6 @@ in
   nvidia-offload
   cputil
   pw
+  scr
+  kctx
 ]
