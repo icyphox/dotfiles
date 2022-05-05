@@ -24,6 +24,7 @@ in
         HZ 300
       '';
     }];
+    resumeDevice = "/dev/nvme0n1p2";
   };
 
   networking = {
@@ -177,6 +178,9 @@ in
         pkgs.coreutils
       ];
     };
+    logind.extraConfig = ''
+      HandlePowerKey=hibernate
+    '';
   };
 
   virtualisation.docker = {
