@@ -35,10 +35,8 @@ in
       environmentFile = "/home/icy/secrets/wireless.env";
       networks = {
         Sanic.psk = "@PSK_SANI@";
-        Gopalan.psk = "@PSK_GOPA@";
-        "GoSpaze 2" = {
-          psk = "@PSK_GOSP@";
-        };
+        Gopalan5G.psk = "@PSK_GOPA@";
+        denim.psk = "@PSK_DENI@";
       };
       extraConfig = ''
         ctrl_interface=/run/wpa_supplicant
@@ -162,7 +160,7 @@ in
       '';
     };
     tailscale.enable = true;
-    tlp.enable = true;
+    auto-cpufreq.enable = true;
     # 1. chmod for rootless backligh1t
     # 2. lotus58 bootloader mode for rootless qmk flashing
     udev = {

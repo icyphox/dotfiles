@@ -3,6 +3,7 @@ Host *
     ServerAliveCountMax 3
     HostKeyAlgorithms ssh-rsa,ssh-ed25519
     PubkeyAcceptedKeyTypes ssh-rsa,ssh-ed25519
+    StrictHostKeyChecking no
 
 Host github.com
     User git

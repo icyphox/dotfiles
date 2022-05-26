@@ -63,6 +63,7 @@
       bind -x '"\C-r": READLINE_LINE=$(__fzy_history); READLINE_POINT="''${#READLINE_LINE}"'
 
       complete -cf doas
+      complete -F __start_kubectl k
 
       for i in ~/.bashrc.d/[0-9]*; do
           . "$i"
