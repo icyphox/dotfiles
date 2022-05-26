@@ -95,6 +95,7 @@ call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
 call s:h("Function",      {"fg": s:norm, "cterm": "bold"})
 call s:h("FloatWin",      {"fg": s:norm, "bg": s:black})
 
+
 hi! link Constant         firstAccent
 hi! link Character        Constant
 hi! link Number           Constant
@@ -204,7 +205,7 @@ call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"bg": s:cursor_line})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
-call s:h("MatchParen",    {"bg": s:bg_very_subtle, "fg": s:norm})
+call s:h("MatchParen",    {"bg": s:pink, "fg": s:norm})
 hi link qfLineNr secondAccent
 hi link qfFileName firstAccent
 
@@ -367,3 +368,5 @@ hi link cssTagName Normal
 
 " floatwin
 hi link NormalFloat FloatWin
+hi link CmpItemKind firstAccent
+hi link CmpItemAbbrMatch secondAccent

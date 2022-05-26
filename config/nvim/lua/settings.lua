@@ -26,6 +26,7 @@ o.tabstop = 4
 o.shiftwidth = 4
 o.softtabstop = 4
 o.showmode = true
+o.cursorline = true
 o.listchars='tab:│ ,nbsp:␣,trail:·,extends:>,precedes:<'
 o.hidden = true
 o.completeopt = { 'menuone', 'noselect', 'noinsert' }
@@ -98,26 +99,31 @@ autocmd('BufNewFile,BufRead', {
   end,
 })
 
--- coq.nvim
-g.coq_settings = {
-  auto_start = 'shut-up',
-  xdg = true,
-  clients = {
-    snippets = { warn = {} }
-  },
-  display = {
-    icons = {
-      mode = 'none'
-    },
-    preview = {
-      border = 'rounded',
-    },
-  },
-}
-
 -- filetype.nvim
 g.do_filetype_lua = 1
 g.did_load_filetypes = 0
+
+-- tabout.nvim
+require('tabout').setup {
+  tabkey = '<Tab>',
+  backwards_tabkey = '<S-Tab>',
+  act_as_tab = true,
+  act_as_shift_tab = false,
+  default_tab = '<C-t>',
+  default_shift_tab = '<C-d>',
+  enable_backwards = true,
+  completion = true,
+  tabouts = {
+    {open = "'", close = "'"},
+    {open = '"', close = '"'},
+    {open = '`', close = '`'},
+    {open = '(', close = ')'},
+    {open = '[', close = ']'},
+    {open = '{', close = '}'}
+  },
+  ignore_beginning = true,
+  exclude = {}
+}
 
 -- disable built-in plugins
 local disabled_built_ins = {
@@ -129,6 +135,6 @@ local disabled_built_ins = {
   'zip',
 }
 
-for i = 1, 6 do
+for i, _ in ipairs(disabled_built_ins) do
   g['loaded_' .. disabled_built_ins[i]] = 1
 end

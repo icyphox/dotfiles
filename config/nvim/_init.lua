@@ -4,6 +4,7 @@
 -- require 'impatient'
 
 require 'settings'
+require 'completion'
 require 'maps'
 require 'statusline.line'
 require 'treesitter'
@@ -15,3 +16,4 @@ require 'lsp.python'
 require 'lsp.go'
 require 'lsp.lua'
 require 'lsp.json'
+
