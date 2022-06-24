@@ -1,5 +1,3 @@
-local u = require('utils')
-
 local o = vim.opt
 local autocmd = vim.api.nvim_create_autocmd
 local g = vim.g

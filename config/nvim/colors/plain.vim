@@ -205,7 +205,7 @@ call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"bg": s:cursor_line})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
-call s:h("MatchParen",    {"bg": s:pink, "fg": s:norm})
+call s:h("MatchParen",    {"bg": s:bg_very_subtle, "fg": s:norm, "cterm": "bold"})
 hi link qfLineNr secondAccent
 hi link qfFileName firstAccent
 
