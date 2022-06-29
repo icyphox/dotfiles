@@ -25,6 +25,7 @@ in
       '';
     }];
     resumeDevice = "/dev/nvme0n1p2";
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   networking = {
@@ -135,6 +136,10 @@ in
       amdgpuBusId = "PCI:8:0:0";
       nvidiaBusId = "PCI:1:0:0";
     };
+    logitech.wireless = {
+      enable = true;
+      enableGraphical = true;
+    };
   };
 
   services = {
@@ -150,7 +155,6 @@ in
       enable = true;
       layout = "us";
       displayManager.startx.enable = true;
-      libinput.enable = true;
       dpi = 192;
       videoDrivers = [ "nvidia" ];
       screenSection = ''
@@ -158,6 +162,13 @@ in
         Option         "AllowIndirectGLXProtocol" "off"
         Option         "TripleBuffer" "on"
       '';
+      libinput = {
+        enable = true;
+        mouse = {
+          scrollButton = 8;
+          scrollMethod = "button";
+        };
+      };
     };
     tailscale.enable = true;
     auto-cpufreq.enable = true;

@@ -15,7 +15,7 @@
     ./mail.nix
   ];
 
-  home.stateVersion = "21.05";
+  home.stateVersion = "22.05";
   home.username = "icy";
   home.homeDirectory = "/home/icy";
   home.extraOutputsToInstall = [ "man" ];
@@ -37,7 +37,7 @@
     w3m
     noto-fonts-emoji
     jq
-    yq
+    yq-go
     sxiv
     feh
     st
