@@ -64,16 +64,5 @@
       videos = "\$HOME/vids";
     };
   };
-
-  xsession = {
-    enable = true;
-    windowManager.command = "cwm";
-    initExtra = ''
-      ${pkgs.xorg.setxkbmap}/bin/setxkbmap us,ru -option grp:ctrls_toggle
-      ${pkgs.xorg.xrdb}/bin/xrdb -load $HOME/.Xresources
-      bar &
-      st &
-    '';
-  };
 }
 

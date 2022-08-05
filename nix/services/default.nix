@@ -9,7 +9,6 @@
   imports = [
     ./dunst.nix
     ./picom.nix
-    ./redshift.nix
     ./sxhkd.nix
     ./mbsync.nix
   ];

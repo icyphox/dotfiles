@@ -33,6 +33,8 @@ in
       runtime _init.lua
     '';
     plugins = with pkgs.vimPlugins; [
+      packer-nvim
+
       nvim-cmp
       cmp-buffer
       cmp_luasnip
@@ -53,6 +55,7 @@ in
       conflict-marker-vim
       tabout
       vim-jsonnet
+      vim-pencil
     ];
   };
 }

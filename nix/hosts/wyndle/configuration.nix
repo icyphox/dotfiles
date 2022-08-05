@@ -69,6 +69,9 @@ in
         ../../patches/st/ligatures.diff
       ];
     };
+    chromium = {
+      commandLineArgs = "--ozone-platform=wayland";
+    };
   };
 
   nixpkgs.overlays = with self.overlays; [
@@ -154,7 +157,11 @@ in
     xserver = {
       enable = true;
       layout = "us";
-      displayManager.startx.enable = true;
+      desktopManager.plasma5.enable = true;
+      displayManager.sddm = {
+        enable = true;
+        enableHidpi = true;
+      };
       dpi = 192;
       videoDrivers = [ "nvidia" ];
       screenSection = ''

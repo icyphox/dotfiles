@@ -23,3 +23,7 @@ gco() {
         git checkout -b "$1"
     fi
 }
+
+gaf() {
+    git status --short | grep "^ M\|^ D\|^\?\?" | fzy | awk '{ print $2 }' | xargs git add
+}

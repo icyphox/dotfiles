@@ -15,7 +15,6 @@ o.scrolloff = 12
 o.timeoutlen = 3000
 o.ttimeoutlen = 100
 o.undodir = '~/.cache/nvim/undodir'
-o.cursorline = false
 o.foldenable = false
 o.conceallevel = 2
 o.mouse = 'a'
@@ -24,7 +23,7 @@ o.tabstop = 4
 o.shiftwidth = 4
 o.softtabstop = 4
 o.showmode = true
-o.cursorline = true
+o.cursorline = false
 o.listchars='tab:│ ,nbsp:␣,trail:·,extends:>,precedes:<'
 o.hidden = true
 o.completeopt = { 'menuone', 'noselect', 'noinsert' }
@@ -97,31 +96,38 @@ autocmd('BufNewFile,BufRead', {
   end,
 })
 
+-- keymap files are dts
+autocmd('BufEnter,BufNewFile,BufRead', {
+  pattern = '*.keymap',
+  callback = function()
+    vim.bo.filetype = 'dts'
+  end
+})
+
+-- vim-textobj-quote only in ~/docs/writing
+autocmd('BufEnter,BufNewFile,BufRead', {
+  pattern = '*.md',
+  callback = function()
+    local cwd = vim.fn.expand('%:p')
+    if cwd:find('/home/icy/docs/writing', 1, true) == 1 then
+      vim.fn['textobj#quote#init']()
+      vim.fn['pencil#init']({wrap = 'soft'})
+      vim.keymap.set('i', '--', '—', {silent = true})
+    end
+  end
+})
+
+-- mdx files are markdown
+autocmd('BufEnter,BufNewFile,BufRead', {
+  pattern = '*.mdx',
+  callback = function()
+    vim.bo.filetype = 'markdown'
+  end
+})
+
 -- filetype.nvim
 g.do_filetype_lua = 1
 g.did_load_filetypes = 0
-
--- tabout.nvim
-require('tabout').setup {
-  tabkey = '<Tab>',
-  backwards_tabkey = '<S-Tab>',
-  act_as_tab = true,
-  act_as_shift_tab = false,
-  default_tab = '<C-t>',
-  default_shift_tab = '<C-d>',
-  enable_backwards = true,
-  completion = true,
-  tabouts = {
-    {open = "'", close = "'"},
-    {open = '"', close = '"'},
-    {open = '`', close = '`'},
-    {open = '(', close = ')'},
-    {open = '[', close = ']'},
-    {open = '{', close = '}'}
-  },
-  ignore_beginning = true,
-  exclude = {}
-}
 
 -- disable built-in plugins
 local disabled_built_ins = {

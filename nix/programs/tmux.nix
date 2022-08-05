@@ -53,9 +53,9 @@
       bind-key ( swap-window -t -1
 
       unbind -T copy-mode MouseDragEnd1Pane
-      bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -sel c"
+      bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "wl-copy"
       bind-key -T copy-mode-vi v send-keys -X begin-selection
-      bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -sel c"
+      bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "wl-copy"
       bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
       bind P paste-buffer
 

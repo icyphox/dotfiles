@@ -15,7 +15,7 @@
     ./readline.nix
     ./tmux.nix
     ./zathura.nix
-    ./firefox.nix
+    # ./firefox.nix
   ];
 
   programs = {

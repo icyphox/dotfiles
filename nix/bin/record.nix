@@ -23,11 +23,11 @@ pkgs.writeScriptBin name
       -vcodec libx264 \
       -threads 4 \
       -y \
-      /home/np/tmp/x.mkv
+      /home/icy/tmp/x.mkv
 
     ${ffmpeg} \
-      -i /home/np/tmp/x.mkv \
+      -i /home/icy/tmp/x.mkv \
       -pix_fmt yuv420p \
       -vf scale=-2:1080 \
-      "/home/np/vids/rec/$1"
+      "/home/icy/vids/rec/$1"
   ''

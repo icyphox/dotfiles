@@ -42,10 +42,11 @@
       TERM = "xterm-256color-italic";
       EDITOR = "nvim";
       MANPAGER = "nvim +Man!";
-      BROWSER = "firefox";
+      BROWSER = "chromium";
       PW_DIR = "$HOME/.pw";
       PW_KEY = "x@icyphox.sh";
       PATH = "$PATH:$HOME/go/bin:$HOME/bin";
+      NIX_OZONE_WL = "1";
 
     };
 

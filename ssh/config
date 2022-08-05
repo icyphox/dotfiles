@@ -12,12 +12,11 @@ Host github.com
     IdentityFile ~/.ssh/github-pantone
 
 Host fern
-    Hostname 152.67.182.105
+    Hostname fern
     User pi
-    Port 2222
 
 Host jade
-    Hostname 152.67.182.105
+    Hostname jade
     User ubuntu
     IdentityFile ~/.ssh/id_rsa
 
