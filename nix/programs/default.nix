@@ -14,7 +14,6 @@
     ./neovim.nix
     ./readline.nix
     ./tmux.nix
-    # ./zathura.nix
     ./firefox.nix
   ];
 

@@ -11,8 +11,6 @@
   imports = [
     ./programs
     ./services
-    ./x
-    ./mail.nix
   ];
 
   home.stateVersion = "22.05";
@@ -26,33 +24,25 @@
     curl
     tmux
     weechat
-    xclip
     ripgrep
-    arandr
     imagemagick
     ffmpeg
     wget
     tree
     mpv
-    w3m
     noto-fonts-emoji
     jq
     yq-go
-    sxiv
-    feh
-    st
     fzy
-    xorg.xmodmap
     kubectl
     slack
     nixpkgs-fmt
     libnotify
     signal-desktop
-    aerc
     calibre
     pinentry
     kontact
-    kmail
+    trojita
     korganizer
     libreoffice-qt
 

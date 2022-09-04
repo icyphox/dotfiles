@@ -37,20 +37,11 @@ let
   # screen record with ffmpeg and slop
   record = import ./record.nix pkgs;
 
-  # bar
-  bar = import ./bar.nix { inherit pkgs theme host; };
-
   # xurls
   xurls = import ./xurls.nix pkgs;
 
   # file uploader
   # uploader = import ./up.nix pkgs;
-
-  # battery script
-  battery = import ./battery.nix pkgs;
-
-  # invert screen
-  invert = import ./invert.nix pkgs;
 
   # nvidia offload
   nvidia-offload = import ./nvidia-offload.nix pkgs;
@@ -61,9 +52,6 @@ let
   # password manager
   pw = import ./pw.nix pkgs;
 
-  # screenshot tool
-  scr = import ./scr.nix pkgs;
-
   # kubectx wrapper
   kctx = import ./kctx.nix pkgs;
 in
@@ -72,14 +60,9 @@ in
   git-new-repo
   jp
   webcam
-  record
-  battery
-  bar
   xurls
-  invert
   nvidia-offload
   cputil
   pw
-  scr
   kctx
 ]
