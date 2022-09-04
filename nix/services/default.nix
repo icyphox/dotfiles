@@ -7,7 +7,7 @@
 {
 
   imports = [
-    ./dunst.nix
+    #    ./dunst.nix
     ./picom.nix
     ./sxhkd.nix
     ./mbsync.nix

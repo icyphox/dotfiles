@@ -48,6 +48,7 @@ in
     hostName = "wyndle";
     useDHCP = false;
     interfaces.wlp6s0.useDHCP = true;
+    firewall.checkReversePath = "loose";
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -72,6 +73,7 @@ in
     chromium = {
       commandLineArgs = "--ozone-platform=wayland";
     };
+    firefox.enablePlasmaBrowserIntegration = true;
   };
 
   nixpkgs.overlays = with self.overlays; [
@@ -228,6 +230,7 @@ in
 
   programs = {
     steam.enable = true;
+    gamemode.enable = true;
   };
 
   nix = {

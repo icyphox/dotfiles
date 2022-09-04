@@ -51,6 +51,10 @@
     aerc
     calibre
     pinentry
+    kontact
+    kmail
+    korganizer
+    libreoffice-qt
 
   ] ++ (import ./bin { inherit pkgs theme host; });
 

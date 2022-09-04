@@ -5,7 +5,7 @@ let
   gpg = "${pkgs.gnupg}/bin/gpg";
   pwgen = "${pkgs.pwgen}/bin/pwgen";
   git = "${pkgs.git}/bin/git";
-  xclip = "${pkgs.xclip}/bin/xclip";
+  copy = "${pkgs.wl-clipboard}/bin/wl-copy";
 in
 pkgs.writeShellScriptBin name
   ''
@@ -69,7 +69,7 @@ pkgs.writeShellScriptBin name
         if [[ "$OSTYPE" =~ darwin* ]]; then
             show "$1" | head -1 | pbcopy | tr -d '\n'
         else
-            show "$1" | head -1 | ${xclip} -rmlastnl -selection clipboard
+            show "$1" | head -1 | ${copy} -n
         fi
         printf "pw: copied %s to clipboard\n" "$1"
     }

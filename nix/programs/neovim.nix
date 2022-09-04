@@ -19,7 +19,7 @@ in
 {
   programs.neovim = {
     enable = true;
-    withNodeJs = false;
+    withNodeJs = true;
     vimAlias = true;
     withPython3 = true;
     extraPackages = with pkgs; [
@@ -27,6 +27,9 @@ in
       gopls
       go
       nodePackages.vscode-langservers-extracted
+      nodePackages.typescript-language-server
+      nodePackages.typescript
+      nodePackages.eslint
       sumneko-lua-language-server
     ];
     extraConfig = ''
