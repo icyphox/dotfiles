@@ -113,6 +113,9 @@ autocmd('BufEnter,BufNewFile,BufRead', {
       vim.fn['textobj#quote#init']()
       vim.fn['pencil#init']({wrap = 'soft'})
       vim.keymap.set('i', '--', '—', {silent = true})
+      vim.opt.breakindent = false
+      vim.opt.shiftwidth = 4
+      vim.opt.tabstop = 4
     end
   end
 })
@@ -142,3 +145,6 @@ local disabled_built_ins = {
 for i, _ in ipairs(disabled_built_ins) do
   g['loaded_' .. disabled_built_ins[i]] = 1
 end
+
+-- tmp
+vim.g.gui_font_face = 'Noto Serif'

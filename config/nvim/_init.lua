@@ -16,6 +16,7 @@ require 'lsp.python'
 require 'lsp.go'
 require 'lsp.lua'
 require 'lsp.json'
+require 'lsp.js'
 
 -- plugins not in nixpkgs
 

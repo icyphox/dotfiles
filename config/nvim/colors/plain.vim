@@ -273,7 +273,7 @@ hi link TSStringEscape secondAccent
 hi link TSTag Statement
 hi link TSTagDelimiter Noise
 hi link TSText Normal
-hi link TSEmphasis Statement
+hi link TSEmphasis Comment
 hi link TSUnderline Underlined
 hi link TSStrike Underlined
 hi link TSTitle Statement
