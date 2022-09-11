@@ -20,7 +20,6 @@
     fzy
     ripgrep
     pass
-    pinentry_mac
     fd
   ];
 }
