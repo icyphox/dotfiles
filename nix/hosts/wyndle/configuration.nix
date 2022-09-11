@@ -1,7 +1,7 @@
 let
   asusctl-tar = fetchTarball "https://github.com/NixOS/nixpkgs/archive/a4a81b6f6c27e5a964faea25b7b5cbe611f98691.tar.gz";
 in
-{ self, config, pkgs, theme, lib, ... }:
+{ self, config, pkgs, lib, ... }:
 
 {
   imports =

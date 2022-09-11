@@ -1,6 +1,5 @@
 { config
 , pkgs
-, theme
 , self
 , ...
 }:

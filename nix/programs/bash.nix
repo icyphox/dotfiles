@@ -42,11 +42,52 @@
       TERM = "xterm-256color-italic";
       EDITOR = "nvim";
       MANPAGER = "nvim +Man!";
-      PW_DIR = "$HOME/.pw";
-      PW_KEY = "x@icyphox.sh";
       PATH = "$PATH:$HOME/go/bin:$HOME/bin";
 
     };
+
+    # TODO: nixify this
+    bashrcExtra = ''
+      refresh_tmux() {
+        tmux refresh-client -S
+      }
+
+      PROMPT_COMMAND=refresh_tmux
+      PS1="\n\001\e[0;36m\002▲\001\e[0m\002 ";
+      PS2="> "
+
+      ggp() {
+          if [[ "$1" == "-f" ]]; then 
+              git push "$(git remote show)" -f "$(git branch --show-current)"
+          else
+              git push "$(git remote show)" "$(git branch --show-current)"
+          fi
+      }
+
+      gpl() {
+          if [[ "$1" != "" ]]; then
+              branch="$1"
+          else
+              branch="$(git branch --show-current)"
+          fi
+          git pull -r "$(git remote show)" "$branch"
+      }
+
+      gco() {
+          [[ "$1" == "" ]] && return 1
+
+          git rev-parse --verify "$1" &> /dev/null
+          if [ $? -eq 0 ]; then
+              git checkout "$1"
+          else
+              git checkout -b "$1"
+          fi
+      }
+
+      gaf() {
+          git status --short | grep "^ M\|^ D\|^\?\?" | fzy | awk '{ print $2 }' | xargs git add
+      }
+    '';
 
     initExtra = ''
       # Ctrl+W kills word
@@ -63,10 +104,6 @@
 
       complete -cf doas
       complete -F __start_kubectl k
-
-      for i in ~/.bashrc.d/[0-9]*; do
-          . "$i"
-      done
     '';
 
   };

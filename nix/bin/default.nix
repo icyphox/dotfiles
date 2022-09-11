@@ -1,4 +1,4 @@
-{ pkgs, theme, host, ... }:
+{ pkgs, host, ... }:
 
 let
 

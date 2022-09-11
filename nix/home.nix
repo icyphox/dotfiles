@@ -1,6 +1,5 @@
 { config
 , pkgs
-, theme
 , self
 , host
 , ...
@@ -46,7 +45,7 @@
     korganizer
     libreoffice-qt
 
-  ] ++ (import ./bin { inherit pkgs theme host; });
+  ] ++ (import ./bin { inherit pkgs host; });
 
   xdg = {
     userDirs = {

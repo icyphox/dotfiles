@@ -1,10 +1,8 @@
 { config
 , pkgs
-, theme
 , ...
 }:
 
-with theme;
 {
   programs.git = {
     enable = true;

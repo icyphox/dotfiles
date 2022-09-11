@@ -13,6 +13,11 @@
 
     neovim.url = "github:icyphox/neovim-nightly-overlay";
 
+    darwin = {
+      url = "github:lnl7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     prompt = {
       url = "git+https://git.peppe.rs/cli/prompt";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +31,7 @@
     , home-manager
     , neovim
     , prompt
+    , darwin
     , ...
     } @ inputs: {
 
@@ -33,6 +39,8 @@
         nvim-nightly = neovim.overlay;
         prompt = prompt.overlay;
       };
+
+      darwinConfigurations = { };
 
       nixosConfigurations = {
         wyndle = nixpkgs.lib.nixosSystem {
@@ -51,7 +59,6 @@
                 _module.args.self = self;
                 _module.args.host = "wyndle";
                 _module.args.inputs = inputs;
-                _module.args.theme = import ./theme.nix;
               };
             }
           ];
