@@ -40,7 +40,24 @@
         prompt = prompt.overlay;
       };
 
-      darwinConfigurations = { };
+      darwinConfigurations = {
+        syl = darwin.lib.darwinSystem {
+          system = "x86_64-darwin";
+          modules = [
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.user.icy = {
+                imports = [ ./darwin/home.nix ];
+                _module.args.self = self;
+                _module.args.host = "syl";
+                _module.args.inputs = inputs;
+              };
+            }
+          ];
+        };
+      };
 
       nixosConfigurations = {
         wyndle = nixpkgs.lib.nixosSystem {
