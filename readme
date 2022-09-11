@@ -1,9 +1,11 @@
 dotfiles
 --------
 
-    • OS:     NixOS
-    • WM:     cwm
-    • Shell:  bash
-    • Editor: nvim, with init.lua
+System configurations and dotfiles managed using Nix.
 
-For my old, pre-NixOS configs, look at the 'old' branch.
+Hosts:
+  • wyndle: Asus ROG Flow X13
+    NixOS, running KDE Plasma.
+
+  • syl: HP Envy 13
+    macOS 12.5.1 Monterey hackintosh, using nix-darwin.
