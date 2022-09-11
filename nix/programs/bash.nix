@@ -42,7 +42,8 @@
       TERM = "xterm-256color-italic";
       EDITOR = "nvim";
       MANPAGER = "nvim +Man!";
-      PATH = "$PATH:$HOME/go/bin:$HOME/bin";
+      PATH = "/etc/profiles/per-user/icy/bin:$PATH:$HOME/go/bin:$HOME/bin";
+      CLICOLOR = "1";
 
     };
 

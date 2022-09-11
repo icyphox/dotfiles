@@ -44,11 +44,15 @@
         syl = darwin.lib.darwinSystem {
           system = "x86_64-darwin";
           modules = [
+	    {
+	      imports = [ ./hosts/syl/configuration.nix ];
+	      _module.args.self = self;
+            }
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.user.icy = {
+              home-manager.users.icy = {
                 imports = [ ./darwin/home.nix ];
                 _module.args.self = self;
                 _module.args.host = "syl";

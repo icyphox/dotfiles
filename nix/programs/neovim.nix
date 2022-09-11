@@ -5,21 +5,10 @@
 , ...
 }:
 
-let
-  tabout = pkgs.vimUtils.buildVimPlugin {
-    name = "tabout.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "abecodes";
-      repo = "tabout.nvim";
-      rev = "be655cc7ce0f5d6d24eeaf8b36e82693fd2facca";
-      sha256 = "sha256-wB9HIS0HW1DExgQ/is8/ejpH9FVYfH4UpS9HA6pgYK4=";
-    };
-  };
-in
 {
   programs.neovim = {
     enable = true;
-    withNodeJs = true;
+    withNodeJs = false;
     vimAlias = true;
     withPython3 = true;
     extraPackages = with pkgs; [
@@ -56,7 +45,6 @@ in
       vim-rsi
       nvim-treesitter-textobjects
       conflict-marker-vim
-      tabout
       vim-jsonnet
       vim-pencil
     ];
