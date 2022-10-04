@@ -30,9 +30,9 @@ cmd(':command! W w')
 cmd(':command! Q q')
 
 local function fzy_ignore(patterns)
-  pattern_cmd = {}
+  local pattern_cmd = {}
   for _, p in ipairs(patterns) do
-    table.insert(pattern_cmd, string.format("! -path '%s'", p))
+    table.insert(pattern_cmd, string.format("-E '%s'", p))
   end
 
   return table.concat(pattern_cmd, ' ')
@@ -45,8 +45,15 @@ if vim.fn.executable('fzy') then
     '',
     '<leader>e',
     string.format(
-      ':call v:lua.fzy_edit("find -L . -type f %s | cut -c3-")<cr>',
-      fzy_ignore{'*.git/*', '*node_modules*', '*.pyc', '*migrations*', '*result*'}
+      ':call v:lua.fzy_edit("fd -t f -t l")<cr>',
+      fzy_ignore{
+        '*.git/*',
+        '*node_modules*',
+        '*.pyc',
+        '*migrations*',
+        '*result*',
+        '*.direnv/*',
+      }
     ),
     { noremap=true, silent=true }
   )
