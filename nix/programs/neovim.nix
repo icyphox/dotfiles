@@ -12,6 +12,7 @@
     vimAlias = true;
     withPython3 = true;
     extraPackages = with pkgs; [
+      nixpkgs-fmt
       gotools
       gopls
       go
@@ -19,7 +20,6 @@
       nodePackages.typescript-language-server
       nodePackages.typescript
       nodePackages.eslint
-      nodePackages.pyright
       sumneko-lua-language-server
     ];
     extraConfig = ''

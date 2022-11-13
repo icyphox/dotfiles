@@ -21,5 +21,5 @@
     ripgrep
     pass
     fd
-  ];
+  ]; #++ (import ../bin { inherit pkgs host; });
 }

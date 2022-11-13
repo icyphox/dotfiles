@@ -2111,6 +2111,8 @@
 	<integer>20</integer>
 	<key>TmuxUsesDedicatedProfile</key>
 	<false/>
+	<key>URLHandlersByGuid</key>
+	<dict/>
 	<key>UseBorder</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
