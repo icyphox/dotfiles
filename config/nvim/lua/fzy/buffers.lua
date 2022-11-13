@@ -8,7 +8,6 @@ function M.fzy_buffers()
   -- list of buffers
   local nbuf = fn.range(1, fn.bufnr('$'))
 
-  local winid = fn.win_getid()
   -- filter out buffers that don't have 'buflisted' set
   for _, n in ipairs(nbuf) do
     if fn.buflisted(n) then
@@ -17,14 +16,14 @@ function M.fzy_buffers()
   end
 
   -- write buffer names to file to feed to fzy
-  local buffile = fn.tempname() 
+  local buffile = fn.tempname()
   local f = io.open(buffile, "a")
   for b, _ in pairs(buffers) do
     f:write(b, '\n')
   end
   f:close()
 
-  fzy_cmd = {
+  local fzy_cmd = {
     'fzy -p "buf > " ',
     '< ' .. buffile,
   }

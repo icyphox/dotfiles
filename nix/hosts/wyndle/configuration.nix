@@ -131,6 +131,7 @@ in
 
   sound.enable = true;
   hardware = {
+    opengl.driSupport = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -234,7 +235,7 @@ in
   };
 
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
       experimental-features = nix-command flakes ca-derivations
       warn-dirty = false

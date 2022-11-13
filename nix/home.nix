@@ -12,6 +12,11 @@
     ./services
   ];
 
+  fonts.fontconfig.enable = true;
+
+  # XXX: remove this
+  manual.manpages.enable = false;
+
   home.stateVersion = "22.05";
   home.username = "icy";
   home.homeDirectory = "/home/icy";
@@ -29,6 +34,7 @@
     wget
     tree
     mpv
+    noto-fonts-cjk
     noto-fonts-emoji
     jq
     yq-go
@@ -41,9 +47,10 @@
     calibre
     pinentry
     kontact
-    trojita
     korganizer
+    kmail
     libreoffice-qt
+    akonadi
 
   ] ++ (import ./bin { inherit pkgs host; });
 

@@ -44,9 +44,9 @@
         syl = darwin.lib.darwinSystem {
           system = "x86_64-darwin";
           modules = [
-	    {
-	      imports = [ ./hosts/syl/configuration.nix ];
-	      _module.args.self = self;
+            {
+              imports = [ ./hosts/syl/configuration.nix ];
+              _module.args.self = self;
             }
             home-manager.darwinModules.home-manager
             {

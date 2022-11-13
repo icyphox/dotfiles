@@ -19,6 +19,7 @@
       nodePackages.typescript-language-server
       nodePackages.typescript
       nodePackages.eslint
+      nodePackages.pyright
       sumneko-lua-language-server
     ];
     extraConfig = ''
