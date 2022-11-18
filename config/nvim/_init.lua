@@ -19,27 +19,7 @@ require 'lsp.json'
 require 'lsp.js'
 
 -- plugins not in nixpkgs
-
 require 'packer'.startup(function(use)
-  use {
-    'Pocco81/true-zen.nvim',
-    ft = {'markdown'},
-    config = function()
-      require 'true-zen'.setup{
-        integrations = {
-          tmux = true,
-        },
-        modes = {
-          ataraxis = {
-            auto_padding = true,
-            custom_bg = {'darken', 0.54},
-            quit_untoggles = false
-          }
-        }
-      }
-    end
-  }
-
   use 'kana/vim-textobj-user'
   use 'preservim/vim-textobj-quote'
 end)
