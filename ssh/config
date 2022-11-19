@@ -9,7 +9,7 @@ Host github.com
     User git
     Hostname github.com
     TCPKeepAlive yes
-    IdentityFile ~/.ssh/github-pantone
+    IdentityFile ~/.ssh/github
 
 Host fern
     Hostname fern
