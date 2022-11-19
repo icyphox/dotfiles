@@ -12,7 +12,7 @@
 
   homebrew = {
     enable = true;
-    casks = [ "adur1990/tap/passformacos" ];
+    casks = [ "iterm2" "qtpass" ];
     masApps = {
       Tailscale = 1475387142;
     };

@@ -14,10 +14,7 @@
 
   fonts.fontconfig.enable = true;
 
-  # XXX: remove this
-  manual.manpages.enable = false;
-
-  home.stateVersion = "22.05";
+  home.stateVersion = "master";
   home.username = "icy";
   home.homeDirectory = "/home/icy";
   home.extraOutputsToInstall = [ "man" ];
