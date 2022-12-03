@@ -8,4 +8,4 @@ Hosts:
     NixOS, running KDE Plasma.
 
   • syl: HP Envy 13
-    macOS 12.5.1 Monterey hackintosh, using nix-darwin.
+    macOS 13.0.1 Ventura hackintosh, using nix-darwin.
