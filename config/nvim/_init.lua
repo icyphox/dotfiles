@@ -17,6 +17,7 @@ require 'lsp.go'
 require 'lsp.lua'
 require 'lsp.json'
 require 'lsp.js'
+require 'lsp.rust'
 
 -- plugins not in nixpkgs
 require 'packer'.startup(function(use)
