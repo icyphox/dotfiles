@@ -2,14 +2,14 @@ Host *
     ServerAliveInterval 180
     ServerAliveCountMax 3
     HostKeyAlgorithms ssh-rsa,ssh-ed25519
-    PubkeyAcceptedKeyTypes ssh-rsa,ssh-ed25519
+    PubkeyAcceptedKeyTypes ssh-ed25519,ssh-rsa
     StrictHostKeyChecking no
 
 Host github.com
     User git
     Hostname github.com
     TCPKeepAlive yes
-    IdentityFile ~/.ssh/github
+    IdentityFile ~/.ssh/id_ed25519
 
 Host fern
     Hostname fern
@@ -34,3 +34,14 @@ Host methi
     Hostname 152.70.78.124
     User icy
     IdentityFile ~/.ssh/id_ed25519
+
+Host crimson
+    Hostname 144.24.148.230
+    User icy
+    SetEnv TERM=xterm
+    IdentityFile ~/.ssh/id_ed25519
+
+host lvm
+    HostName 0.0.0.0
+    User root
+    port 10022
