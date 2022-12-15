@@ -9,7 +9,6 @@
   programs.firefox = {
     enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-      forceWayland = true;
       extraPolicies = {
         ExtensionSettings = { };
       };
@@ -22,6 +21,8 @@
           #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
             display: none;
           }
+
+          #sidebar-header{ display: none }
 
           #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
             opacity: 0;

@@ -1,35 +1,21 @@
-let
-  asusctl-tar = fetchTarball "https://github.com/NixOS/nixpkgs/archive/a4a81b6f6c27e5a964faea25b7b5cbe611f98691.tar.gz";
-in
 { self, config, pkgs, lib, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
-      "${asusctl-tar}/nixos/modules/services/misc/asusctl.nix"
-      "${asusctl-tar}/nixos/modules/services/misc/supergfxctl.nix"
     ];
 
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     kernel.sysctl."net.ipv4.ip_forward" = 1;
-    kernelParams = [ "mem_sleep_default=deep" ];
-    kernelPatches = [{
-      name = "three-hundred-hertz";
-      patch = null;
-      extraConfig = ''
-        HZ_300 y
-        HZ 300
-      '';
-    }];
     resumeDevice = "/dev/nvme0n1p2";
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
   networking = {
-    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+    nameservers = [ "8.8.8.8" "8.8.4.4" ];
     wireless = {
       enable = true;
       interfaces = [ "wlp6s0" ];
@@ -77,29 +63,25 @@ in
   };
 
   nixpkgs.overlays = with self.overlays; [
-    (self: super: {
-      asusctl = pkgs.callPackage "${asusctl-tar}/pkgs/tools/misc/asusctl/default.nix" { };
-      supergfxctl = pkgs.callPackage "${asusctl-tar}/pkgs/tools/misc/supergfxctl/default.nix" { };
-    })
     nvim-nightly
     prompt
   ];
 
   environment = {
-    systemPackages = with pkgs; [
-      asusctl
-      supergfxctl
-      cwm
-      man-pages
-      git
-      man-pages-posix
-      (lib.hiPrio pkgs.bashInteractive_5)
-    ];
+    sessionVariables = rec {
+      NIXOS_OZONE_WL = "1";
+    };
     variables = {
       MOZ_USE_XINPUT2 = "1";
       GDK_SCALE = "2";
       GDK_DPI_SCALE = "0.5";
     };
+    systemPackages = with pkgs; [
+      man-pages
+      git
+      man-pages-posix
+      (lib.hiPrio pkgs.bashInteractive_5)
+    ];
     etc = {
       "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
         bluez_monitor.properties = {
@@ -149,8 +131,6 @@ in
   };
 
   services = {
-    asusctl.enable = true;
-    supergfxctl.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

@@ -14,7 +14,7 @@
 
   fonts.fontconfig.enable = true;
 
-  home.stateVersion = "master";
+  home.stateVersion = "22.11";
   home.username = "icy";
   home.homeDirectory = "/home/icy";
   home.extraOutputsToInstall = [ "man" ];
@@ -24,7 +24,6 @@
     unzip
     curl
     tmux
-    weechat
     ripgrep
     imagemagick
     ffmpeg
@@ -36,7 +35,6 @@
     jq
     yq-go
     fzy
-    kubectl
     slack
     nixpkgs-fmt
     libnotify
@@ -45,11 +43,25 @@
     pinentry
     kontact
     korganizer
-    kmail
     libreoffice-qt
     akonadi
+    go
+    evolution
+    dconf
 
-  ] ++ (import ./bin { inherit pkgs host; });
+  ]; # ++ (import ./bin { inherit pkgs host; });
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = pkgs.breeze-icons;
+      name = "Breeze";
+    };
+    theme = {
+      package = pkgs.breeze-gtk;
+      name = "Breeze";
+    };
+  };
 
   xdg = {
     userDirs = {

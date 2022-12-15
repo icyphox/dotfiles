@@ -16,6 +16,9 @@
       gotools
       gopls
       go
+      cargo
+      rust-analyzer
+      rustc
       nodePackages.vscode-langservers-extracted
       nodePackages.typescript-language-server
       nodePackages.typescript

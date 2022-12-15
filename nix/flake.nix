@@ -7,11 +7,11 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.05";
+      url = "github:nix-community/home-manager/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim.url = "github:icyphox/neovim-nightly-overlay";
+    neovim.url = "github:nix-community/neovim-nightly-overlay";
 
     darwin = {
       url = "github:lnl7/nix-darwin/master";
