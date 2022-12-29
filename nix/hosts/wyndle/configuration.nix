@@ -11,7 +11,7 @@
     loader.efi.canTouchEfiVariables = true;
     kernel.sysctl."net.ipv4.ip_forward" = 1;
     resumeDevice = "/dev/nvme0n1p2";
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
   };
 
   networking = {
@@ -68,6 +68,19 @@
   ];
 
   environment = {
+    etc = {
+      "supergfxd.conf" = {
+        mode = "0644";
+        source = (pkgs.formats.json { }).generate "supergfxd.conf" {
+          mode = "hybrid";
+          vfio_enable = false;
+          vfio_save = false;
+          always_reboot = false;
+          no_logind = false;
+          logout_timeout_s = 180;
+        };
+      };
+    };
     sessionVariables = rec {
       NIXOS_OZONE_WL = "1";
     };
@@ -131,6 +144,13 @@
   };
 
   services = {
+    asusd = {
+      enable = true;
+      enableUserService = true;
+    };
+    supergfxd = {
+      enable = true;
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;

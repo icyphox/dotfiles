@@ -35,7 +35,6 @@
     jq
     yq-go
     fzy
-    slack
     nixpkgs-fmt
     libnotify
     signal-desktop
