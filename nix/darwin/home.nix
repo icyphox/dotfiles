@@ -7,12 +7,19 @@
 }:
 
 {
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
   home.username = "icy";
+
 
   imports = [
     ../programs/common.nix
   ];
+
+  programs.bash = {
+    shellAliases = {
+      ls = "ls --color=auto";
+    };
+  };
 
   home.packages = with pkgs; [
     tmux
@@ -21,5 +28,8 @@
     ripgrep
     pass
     fd
+    gnupg
+    docker
+    pinentry_mac
   ]; #++ (import ../bin { inherit pkgs host; });
 }

@@ -18,5 +18,11 @@
       init.defaultBranch = "master";
       pull.rebase = "true";
     };
+    includes = [
+      {
+        "path" = "~/code/upcloud/gitconfig";
+        "condition" = "gitdir:~/code/upcloud/";
+      }
+    ];
   };
 }

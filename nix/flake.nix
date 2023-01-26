@@ -61,6 +61,27 @@
             }
           ];
         };
+
+        kvothe = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [
+            {
+              imports = [ ./hosts/kvothe/configuration.nix ];
+              _module.args.self = self;
+            }
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.icy = {
+                imports = [ ./darwin/home.nix ];
+                _module.args.self = self;
+                _module.args.host = "kvothe";
+                _module.args.inputs = inputs;
+              };
+            }
+          ];
+        };
       };
 
       nixosConfigurations = {
