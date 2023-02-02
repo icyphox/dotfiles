@@ -24,6 +24,16 @@
       nodePackages.typescript
       nodePackages.eslint
       sumneko-lua-language-server
+
+      tree-sitter-grammars.tree-sitter-bash
+      tree-sitter-grammars.tree-sitter-yaml
+      tree-sitter-grammars.tree-sitter-go
+      tree-sitter-grammars.tree-sitter-make
+      tree-sitter-grammars.tree-sitter-markdown
+      tree-sitter-grammars.tree-sitter-lua
+      tree-sitter-grammars.tree-sitter-html
+      tree-sitter-grammars.tree-sitter-vim
+      tree-sitter-grammars.tree-sitter-nix
     ];
     extraConfig = ''
       runtime _init.lua
@@ -40,7 +50,6 @@
 
 
       nvim-lspconfig
-      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       luasnip
       playground
       vim-surround

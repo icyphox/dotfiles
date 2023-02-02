@@ -11,7 +11,6 @@
 
   services.nix-daemon.enable = true;
   nixpkgs.overlays = with self.overlays; [
-    nvim-nightly
     prompt
   ];
 
