@@ -10,6 +10,7 @@ Host github.com
     Hostname github.com
     TCPKeepAlive yes
     IdentityFile ~/.ssh/id_ed25519
+    IdentityFile ~/.ssh/upcloud
 
 Host fern
     Hostname fern
@@ -45,3 +46,7 @@ host lvm
     HostName 0.0.0.0
     User root
     port 10022
+
+Host upcloud
+    Hostname git.services.upcloud.com
+    IdentityFile ~/.ssh/upcloud

@@ -9,3 +9,6 @@ Hosts:
 
   • syl: HP Envy 13
     macOS 13.0.1 Ventura hackintosh, using nix-darwin.
+
+  • kvothe: MacBook Pro 14 (M1 Pro)
+    macOS 13.0.1 Ventura, using nix-darwin.
