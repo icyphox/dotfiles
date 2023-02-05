@@ -38,6 +38,13 @@
       overlays = {
         nvim-nightly = neovim.overlay;
         prompt = prompt.overlay;
+        plan9patched = (self: super: {
+          plan9patched = super.plan9port.overrideAttrs (old: {
+            patches = (old.patches or [ ]) ++ [
+              ./patches/acme.patch
+            ];
+          });
+        });
       };
 
       darwinConfigurations = {

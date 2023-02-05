@@ -47,8 +47,10 @@
     go
     evolution
     dconf
+    plan9patched
 
-  ]; # ++ (import ./bin { inherit pkgs host; });
+  ] ++ (import ./bin { inherit pkgs host; });
+
 
   gtk = {
     enable = true;

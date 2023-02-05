@@ -1,0 +1,89 @@
+diff --git a/src/cmd/acme/scrl.c b/src/cmd/acme/scrl.c
+index 6504699d..3aaeebef 100644
+--- a/src/cmd/acme/scrl.c
++++ b/src/cmd/acme/scrl.c
+@@ -71,11 +71,11 @@ textscrdraw(Text *t)
+ 	if(!eqrect(r2, t->lastsr)){
+ 		t->lastsr = r2;
+ 		draw(b, r1, t->fr.cols[BORD], nil, ZP);
+-		draw(b, r2, t->fr.cols[BACK], nil, ZP);
++		r2.max.x = r2.max.x+1;
++		draw(b, r2, t->fr.cols[TEXT], nil, ZP);
+ 		r2.min.x = r2.max.x-1;
+ 		draw(b, r2, t->fr.cols[BORD], nil, ZP);
+ 		draw(t->fr.b, r, b, nil, Pt(0, r1.min.y));
+-/*flushimage(display, 1); // BUG? */
+ 	}
+ }
+
+diff --git a/src/cmd/acme/acme.c b/src/cmd/acme/acme.c
+index 0e6bc0fd..c0a9e8ee 100644
+--- a/src/cmd/acme/acme.c
++++ b/src/cmd/acme/acme.c
+@@ -1039,22 +1039,22 @@ iconinit(void)
+ 	Image *tmp;
+ 
+ 	if(tagcols[BACK] == nil) {
+-		/* Blue */
+-		tagcols[BACK] = allocimagemix(display, DPalebluegreen, DWhite);
+-		tagcols[HIGH] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, DPalegreygreen);
+-		tagcols[BORD] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, DPurpleblue);
++		/* Tags */
++		tagcols[BACK] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, 0xCCCCCCFF);
++		tagcols[HIGH] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, 0x509C93FF);
++		tagcols[BORD] = display->black;
+ 		tagcols[TEXT] = display->black;
+-		tagcols[HTEXT] = display->black;
++		tagcols[HTEXT] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, 0xF4F4F4FF);
+ 
+-		/* Yellow */
+-		textcols[BACK] = allocimagemix(display, DPaleyellow, DWhite);
+-		textcols[HIGH] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, DDarkyellow);
+-		textcols[BORD] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, DYellowgreen);
++		/* Body */
++		textcols[BACK] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, 0xF4F4F4FF);
++		textcols[HIGH] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, 0xCCCCCCFF);
++		textcols[BORD] = allocimage(display, Rect(0,0,1,1), screen->chan, 1, 0x676767FF);
+ 		textcols[TEXT] = display->black;
+ 		textcols[HTEXT] = display->black;
+ 	}
+ 
+-	r = Rect(0, 0, Scrollwid, font->height+1);
++	r = Rect(0, 0, Scrollwid+ButtonBorder, font->height+1);
+ 	if(button && eqrect(r, button->r))
+ 		return;
+ 
+@@ -1066,24 +1066,27 @@ iconinit(void)
+ 
+ 	button = allocimage(display, r, screen->chan, 0, DNofill);
+ 	draw(button, r, tagcols[BACK], nil, r.min);
+-	border(button, r, ButtonBorder, tagcols[BORD], ZP);
++	r.max.x -= ButtonBorder;
++	border(button, r, ButtonBorder, allocimage(display, Rect(0,0,1,1), screen->chan, 1, 0x676767FF), ZP);
+ 
+ 	r = button->r;
+-	modbutton = allocimage(display, r, screen->chan, 0, DNofill);
++	modbutton = allocimage(display, r, screen ->chan, 0, DNofill);
+ 	draw(modbutton, r, tagcols[BACK], nil, r.min);
++	r.max.x -= ButtonBorder;
+ 	border(modbutton, r, ButtonBorder, tagcols[BORD], ZP);
+ 	r = insetrect(r, ButtonBorder);
+-	tmp = allocimage(display, Rect(0,0,1,1), screen->chan, 1, DMedblue);
++	tmp = allocimage(display, Rect(0,0,1,1), screen->chan, 1, 0x676767FF);
+ 	draw(modbutton, r, tmp, nil, ZP);
+ 	freeimage(tmp);
+ 
+ 	r = button->r;
+-	colbutton = allocimage(display, r, screen->chan, 0, DPurpleblue);
++	colbutton = allocimage(display, r, screen->chan, 0, 0x509C93FF);
+ 
+-	but2col = allocimage(display, r, screen->chan, 1, 0xAA0000FF);
+-	but3col = allocimage(display, r, screen->chan, 1, 0x006600FF);
++	but2col = allocimage(display, r, screen->chan, 1, 0xB870CEFF);
++	but3col = allocimage(display, r, screen->chan, 1, 0x7C9F4BFF);
+ }
+ 
++
+ /*
+  * /dev/snarf updates when the file is closed, so we must open our own
+  * fd here rather than use snarffd

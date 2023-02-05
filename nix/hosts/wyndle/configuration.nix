@@ -16,20 +16,21 @@
 
   networking = {
     nameservers = [ "8.8.8.8" "8.8.4.4" ];
-    wireless = {
-      enable = true;
-      interfaces = [ "wlp6s0" ];
-      environmentFile = "/home/icy/secrets/wireless.env";
-      networks = {
-        Sanic.psk = "@PSK_SANI@";
-        Gopalan5G.psk = "@PSK_GOPA@";
-        denim.psk = "@PSK_DENI@";
-      };
-      extraConfig = ''
-        ctrl_interface=/run/wpa_supplicant
-        ctrl_interface_group=wheel
-      '';
-    };
+    networkmanager.enable = true;
+    # wireless = {
+    #   enable = true;
+    #   interfaces = [ "wlp6s0" ];
+    #   environmentFile = "/home/icy/secrets/wireless.env";
+    #   networks = {
+    #     Sanic.psk = "@PSK_SANI@";
+    #     Gopalan5G.psk = "@PSK_GOPA@";
+    #     denim.psk = "@PSK_DENI@";
+    #   };
+    #   extraConfig = ''
+    #     ctrl_interface=/run/wpa_supplicant
+    #     ctrl_interface_group=wheel
+    #   '';
+    # };
     # dhcpcd.enable = true;
     hostName = "wyndle";
     useDHCP = false;
@@ -65,6 +66,7 @@
   nixpkgs.overlays = with self.overlays; [
     nvim-nightly
     prompt
+    plan9patched
   ];
 
   environment = {

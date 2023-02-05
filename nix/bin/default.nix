@@ -58,13 +58,11 @@ in
 [
   git-new-push-remote
   git-new-repo
-  pkgs.lib.optional pkgs.stdenv.isLinux [
-    jp
-    xurls
-    nvidia-offload
-    cputil
-    kctx
-    pw
-    webcam
-  ]
+  jp
+  xurls
+  nvidia-offload
+  cputil
+  kctx
+  pw
+  webcam
 ]

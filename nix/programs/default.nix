@@ -7,7 +7,6 @@
 {
 
   imports = [
-    ./chromium.nix
     ./firefox.nix
     ./common.nix
   ];
