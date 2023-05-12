@@ -31,5 +31,6 @@
     gnupg
     docker
     pinentry_mac
-  ]; #++ (import ../bin { inherit pkgs host; });
+    kubectl
+  ] ++ (import ../bin { inherit pkgs host; });
 }

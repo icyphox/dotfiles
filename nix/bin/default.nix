@@ -54,15 +54,15 @@ let
 
   # kubectx wrapper
   kctx = import ./kctx.nix pkgs;
+
+  # kubeconfig manager
+  kcfg = import ./kcfg.nix pkgs;
+
 in
 [
   git-new-push-remote
   git-new-repo
   jp
-  xurls
-  nvidia-offload
-  cputil
   kctx
-  pw
-  webcam
+  kcfg
 ]

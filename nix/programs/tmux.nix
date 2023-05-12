@@ -46,6 +46,7 @@
       # window binds
       bind -n C-M-y previous-window
       bind -n C-M-o next-window
+      bind-key \" split-window -v -c "#{pane_current_path}"
       bind-key c split-window -h -c "#{pane_current_path}"
       bind-key v new-window -c "#{pane_current_path}"
       bind-key s choose-session
@@ -85,10 +86,9 @@
       set -g window-status-format "#[fg=colour8]    #W"
 
       set -g status-left-length 100
-      if-shell '[[ $HOSTNAME != methi ]]' {
-          set -ag status-left "#[fg=colour8]cwd #[fg=colour15]#(${pkgs.prompt}/bin/prompt cwd #{pane_current_path})   "
-          set -ag status-left "#[fg=colour8]#(${pkgs.prompt}/bin/prompt vcs #{pane_current_path}) "
-      }
+      set -ag status-left "#[fg=colour8]cwd #[fg=colour15]#(${pkgs.prompt}/bin/prompt cwd #{pane_current_path})   "
+      set -ag status-left "#[fg=colour8]#(${pkgs.prompt}/bin/prompt vcs #{pane_current_path})   "
+      set -ag status-left "#[fg=color8]kube #[fg=color15]#(printf $KUBECONFIG)"
 
       # dim inactive pane
       set -g window-style 'fg=color8,bg=default'

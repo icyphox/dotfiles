@@ -34,6 +34,8 @@
       tree-sitter-grammars.tree-sitter-html
       tree-sitter-grammars.tree-sitter-vim
       tree-sitter-grammars.tree-sitter-nix
+
+      zf
     ];
     extraConfig = ''
       runtime _init.lua

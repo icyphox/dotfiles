@@ -1287,7 +1287,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 15</string>
+			<string>SFMono-Regular 15</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1359,7 +1359,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.1399999999999999</real>
+			<real>1.1699999999999999</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>

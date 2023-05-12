@@ -5,7 +5,7 @@ local M = {}
 function M.fzy_edit(ls_cmd)
   fzy_cmd = {
     ls_cmd,
-    ' | fzy -p "edit > "',
+    '| zf',
   }
 
   require('fzy/fzy').fzy_search(table.concat(fzy_cmd), function(stdout)

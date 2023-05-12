@@ -104,6 +104,8 @@
       bind -x '"\C-r": READLINE_LINE=$(__fzy_history); READLINE_POINT="''${#READLINE_LINE}"'
 
       complete -cf doas
+
+      source <(kubectl completion bash)
       complete -F __start_kubectl k
     '';
 
