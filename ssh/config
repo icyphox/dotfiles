@@ -1,9 +1,11 @@
 Host *
     ServerAliveInterval 180
     ServerAliveCountMax 3
-    HostKeyAlgorithms ssh-rsa,ssh-ed25519
-    PubkeyAcceptedKeyTypes ssh-ed25519,ssh-rsa
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedKeyTypes +ssh-rsa
     StrictHostKeyChecking no
+    Ciphers aes256-ctr,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-cbc
+    IPQoS ef af31
 
 Host github.com
     User git
@@ -50,3 +52,6 @@ host lvm
 Host upcloud
     Hostname git.services.upcloud.com
     IdentityFile ~/.ssh/upcloud
+
+# Host *
+#   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
