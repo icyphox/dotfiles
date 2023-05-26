@@ -39,7 +39,7 @@
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
-  time.timeZone = "Asia/Kolkata";
+  time.timeZone = "Europe/Helsinki";
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -250,6 +250,10 @@
       ];
     };
   };
+
+  # https://github.com/NixOS/nixpkgs/issues/180175
+  systemd.services.systemd-udevd.restartIfChanged = false;
+  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
 
 
   # This value determines the NixOS release from which the default
