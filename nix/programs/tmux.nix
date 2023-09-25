@@ -88,7 +88,6 @@
       set -g status-left-length 100
       set -ag status-left "#[fg=colour8]cwd #[fg=colour15]#(${pkgs.prompt}/bin/prompt cwd #{pane_current_path})   "
       set -ag status-left "#[fg=colour8]#(${pkgs.prompt}/bin/prompt vcs #{pane_current_path})   "
-      set -ag status-left "#[fg=color8]kube #[fg=color15]#(printf $KUBECONFIG)"
 
       # dim inactive pane
       set -g window-style 'fg=color8,bg=default'
