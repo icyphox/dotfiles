@@ -2,7 +2,7 @@
   description = "icy's nixos config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -38,13 +38,6 @@
       overlays = {
         nvim-nightly = neovim.overlay;
         prompt = prompt.overlay;
-        plan9patched = (self: super: {
-          plan9patched = super.plan9port.overrideAttrs (old: {
-            patches = (old.patches or [ ]) ++ [
-              ./patches/acme.patch
-            ];
-          });
-        });
       };
 
       darwinConfigurations = {

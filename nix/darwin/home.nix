@@ -7,8 +7,9 @@
 }:
 
 {
-  home.stateVersion = "23.11";
+  home.stateVersion = "23.05";
   home.username = "icy";
+  manual.manpages.enable = false;
 
 
   imports = [
@@ -29,8 +30,12 @@
     pass
     fd
     gnupg
-    docker
+    colima
     pinentry_mac
     kubectl
+
+    go
+    gopls
+    gotools
   ] ++ (import ../bin { inherit pkgs host; });
 }

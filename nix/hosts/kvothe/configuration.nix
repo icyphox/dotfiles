@@ -2,7 +2,10 @@
 
 {
   programs.bash.enable = true;
-  environment.shells = [ pkgs.bash ];
+  environment = {
+    shells = [ pkgs.bash ];
+  };
+
 
   users.users.icy = {
     name = "icy";
