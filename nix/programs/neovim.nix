@@ -16,13 +16,6 @@
       gotools
       gopls
       go
-      cargo
-      rust-analyzer
-      rustc
-      # nodePackages.vscode-langservers-extracted
-      nodePackages.typescript-language-server
-      nodePackages.typescript
-      nodePackages.eslint
       sumneko-lua-language-server
 
       tree-sitter-grammars.tree-sitter-bash
@@ -36,6 +29,7 @@
       tree-sitter-grammars.tree-sitter-nix
 
       zf
+      delve
     ];
     extraConfig = ''
       runtime _init.lua
@@ -50,7 +44,6 @@
       cmp-treesitter
       cmp-path
 
-
       nvim-lspconfig
       luasnip
       playground
@@ -62,6 +55,12 @@
       conflict-marker-vim
       vim-jsonnet
       vim-pencil
+
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-go
+      vim-textobj-user
+      dressing-nvim
     ];
   };
 }

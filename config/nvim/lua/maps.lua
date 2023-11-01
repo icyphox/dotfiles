@@ -1,5 +1,6 @@
 local cmd = vim.cmd
 local map = vim.keymap.set
+local dap = require 'dap'
 local u = require 'utils'
 local M = {}
 
@@ -78,22 +79,18 @@ end
 -- lspconfig
 function M.on_attach(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', options)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', options)
   buf_set_keymap('n', 'ga', '<Cmd>lua vim.lsp.buf.code_action()<CR>', options)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', options)
+  buf_set_keymap('n', 'L', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', options)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', options)
   buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', options)
   buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', options)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', options)
-
-  if client.server_capabilities.document_formatting then
-    buf_set_keymap('n', 'ff', '<cmd>lua vim.lsp.buf.format()<CR>', options)
-  elseif client.server_capabilities.document_range_formatting then
-    buf_set_keymap('n', 'ff', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', options)
-  end
+  map('n', 'ff', function()
+    vim.lsp.buf.format { async = true }
+  end)
 end
 
 -- vim.api.nvim_exec([[
@@ -111,5 +108,32 @@ do
   table.insert(stars, star)
   u.iabbrev(n .. '*', table.concat(stars))
 end
+
+
+-- dap
+-- Start debugging session
+map("n", "<leader>ds", function()
+  dap.continue()
+  require 'dapui'.toggle()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-w>=", false, true, true), "n", false) -- Spaces buffers evenly
+end)
+
+-- Set breakpoints, get variable values, step into/out of functions, etc.
+map("n", "<leader>dl", require("dap.ui.widgets").hover)
+map("n", "<leader>dc", dap.continue)
+map("n", "<leader>db", dap.toggle_breakpoint)
+map("n", "<leader>dn", dap.step_over)
+map("n", "<leader>di", dap.step_into)
+map("n", "<leader>do", dap.step_out)
+map("n", "<leader>dC", dap.clear_breakpoints)
+
+-- Close debugger and clear breakpoints
+map("n", "<leader>de", function()
+  dap.clear_breakpoints()
+  require 'dapui'.toggle()
+  dap.terminate()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-w>=", false, true, true), "n", false)
+end)
+
 
 return M

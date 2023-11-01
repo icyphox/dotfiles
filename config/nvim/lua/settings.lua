@@ -87,7 +87,7 @@ autocmd('BufReadPost', {
 })
 
 -- unknown files are 'text'
-autocmd('BufNewFile,BufRead', {
+autocmd({'BufNewFile', 'BufRead'}, {
   pattern = '*',
   callback = function()
     if vim.bo.filetype == "" then
@@ -97,7 +97,7 @@ autocmd('BufNewFile,BufRead', {
 })
 
 -- keymap files are dts
-autocmd('BufEnter,BufNewFile,BufRead', {
+autocmd({'BufEnter','BufNewFile','BufRead'}, {
   pattern = '*.keymap',
   callback = function()
     vim.bo.filetype = 'dts'
@@ -105,7 +105,7 @@ autocmd('BufEnter,BufNewFile,BufRead', {
 })
 
 -- vim-textobj-quote only in ~/docs/writing
-autocmd('BufEnter,BufNewFile,BufRead', {
+autocmd({'BufEnter','BufNewFile','BufRead'}, {
   pattern = '*.md',
   callback = function()
     local cwd = vim.fn.expand('%:p')
@@ -121,7 +121,7 @@ autocmd('BufEnter,BufNewFile,BufRead', {
 })
 
 -- mdx files are markdown
-autocmd('BufEnter,BufNewFile,BufRead', {
+autocmd({'BufEnter','BufNewFile','BufRead'}, {
   pattern = '*.mdx',
   callback = function()
     vim.bo.filetype = 'markdown'

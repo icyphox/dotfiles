@@ -34,7 +34,7 @@
       setw -g pane-base-index 1
 
       # pane binds
-      bind -n M-n select-pane -D 
+      bind -n M-n select-pane -D
       bind -n M-e select-pane -U
       bind -n M-y select-pane -L
       bind -n M-o  select-pane -R

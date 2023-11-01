@@ -21,6 +21,7 @@ require 'lsp.rust'
 
 -- plugins not in nixpkgs
 require 'packer'.startup(function(use)
-  use 'kana/vim-textobj-user'
   use 'preservim/vim-textobj-quote'
 end)
+
+require 'dapx'
