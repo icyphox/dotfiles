@@ -31,6 +31,4 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.opengl.enable = true;
   hardware.nvidia.modesetting.enable = false;
-  # high-resolution display
-  hardware.video.hidpi.enable = lib.mkDefault true;
 }

@@ -13,6 +13,7 @@
   ];
 
   fonts.fontconfig.enable = true;
+  manual.manpages.enable = false;
 
   home.stateVersion = "23.05";
   home.username = "icy";
@@ -47,7 +48,7 @@
     go
     evolution
     dconf
-    plan9patched
+    chromium
 
   ] ++ (import ./bin { inherit pkgs host; });
 

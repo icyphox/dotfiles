@@ -66,7 +66,6 @@
   nixpkgs.overlays = with self.overlays; [
     nvim-nightly
     prompt
-    plan9patched
   ];
 
   environment = {
