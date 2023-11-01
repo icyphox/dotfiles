@@ -11,7 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim.url = "github:nix-community/neovim-nightly-overlay";
 
     darwin = {
       url = "github:lnl7/nix-darwin/master";
@@ -29,14 +28,12 @@
     , nixpkgs
     , nixos-hardware
     , home-manager
-    , neovim
     , prompt
     , darwin
     , ...
     } @ inputs: {
 
       overlays = {
-        nvim-nightly = neovim.overlay;
         prompt = prompt.overlay;
       };
 

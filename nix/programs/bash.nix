@@ -91,22 +91,31 @@
     '';
 
     initExtra = ''
-      # Ctrl+W kills word
-      stty werase undef
+      __fzy_history__() {
+          script='function P(b) { ++n; sub(/^[ *]/, "", b); if (!seen[b]++) { printf "%d\t%s%c", '$((BASH_REMATCH + 1))' - n, b, 0 } }
+              NR==1 { b = substr($0, 2); next }
+              /^\t/ { P(b); b = substr($0, 2); next }
+              { b = b RS $0 }
+              END { if (NR) P(b) }'
 
-      # fzy reverse search
-      __fzy_history() {
-          ch="$(fc -rl 1 | awk -F'\t' '{print $2}' | sort -u | fzy)"
-          : "''${ch#"''${ch%%[![:space:]]*}"}"
-          printf "$_"
+
+          output=$(
+            set +o pipefail
+            builtin fc -lnr -2147483648 2> /dev/null |   # ( $'\t '<lines>$'\n' )* ; <lines> ::= [^\n]* ( $'\n'<lines> )*
+              command awk "$script"           |   # ( <counter>$'\t'<lines>$'\000' )*
+              fzy --query "$READLINE_LINE"
+          ) || return
+          READLINE_LINE=''${output#*$'\t'}
+          if [[ -z "$READLINE_POINT" ]]; then
+            echo "$READLINE_LINE"
+          else
+            READLINE_POINT=0x7fffffff
+          fi
       }
 
-      bind -x '"\C-r": READLINE_LINE=$(__fzy_history); READLINE_POINT="''${#READLINE_LINE}"'
+      bind -m emacs-standard -x '"\C-r": __fzy_history__'
 
       complete -cf doas
-
-      source <(kubectl completion bash)
-      complete -F __start_kubectl k
     '';
 
   };
