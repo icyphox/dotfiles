@@ -60,7 +60,6 @@
       nvim-dap-ui
       nvim-dap-go
       vim-textobj-user
-      dressing-nvim
     ];
   };
 }

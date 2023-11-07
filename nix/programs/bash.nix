@@ -2,11 +2,14 @@
 , pkgs
 , ...
 }:
-
+let
+  awk = "${pkgs.gawk}/bin/awk";
+  fzy = "${pkgs.fzy}/bin/fzy";
+in
 {
   programs.bash = {
     enable = true;
-    historyControl = [ "erasedups" ];
+    historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
     historyFile = "\$HOME/.bash_history";
     historyFileSize = 40000;
     historyIgnore = [ "ls" "exit" "kill" ];
@@ -91,26 +94,16 @@
     '';
 
     initExtra = ''
+      [[ $(HISTTIMEFORMAT="" builtin history 1) =~ [[:digit:]]+ ]]
       __fzy_history__() {
-          script='function P(b) { ++n; sub(/^[ *]/, "", b); if (!seen[b]++) { printf "%d\t%s%c", '$((BASH_REMATCH + 1))' - n, b, 0 } }
-              NR==1 { b = substr($0, 2); next }
-              /^\t/ { P(b); b = substr($0, 2); next }
-              { b = b RS $0 }
-              END { if (NR) P(b) }'
-
-
-          output=$(
-            set +o pipefail
-            builtin fc -lnr -2147483648 2> /dev/null |   # ( $'\t '<lines>$'\n' )* ; <lines> ::= [^\n]* ( $'\n'<lines> )*
-              command awk "$script"           |   # ( <counter>$'\t'<lines>$'\000' )*
-              fzy --query "$READLINE_LINE"
-          ) || return
-          READLINE_LINE=''${output#*$'\t'}
-          if [[ -z "$READLINE_POINT" ]]; then
-            echo "$READLINE_LINE"
-          else
-            READLINE_POINT=0x7fffffff
-          fi
+        ch="$(fc -rl 1 | ${awk} -F'\t' '{print $2}' | ${awk} '{!seen[$0]++};END{for(i in seen) if(seen[i]==1)print i}' | ${fzy})"
+        ch="$(echo "$ch" | ${awk} '{$1=$1;print}')"
+        READLINE_LINE=''${ch#*$'\t'}
+        if [[ -z "$READLINE_POINT" ]]; then
+          echo "$READLINE_LINE"
+        else
+          READLINE_POINT=0x7fffffff
+        fi
       }
 
       bind -m emacs-standard -x '"\C-r": __fzy_history__'
