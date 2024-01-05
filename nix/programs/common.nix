@@ -12,6 +12,7 @@
     ./readline.nix
     ./neovim.nix
     ./bash.nix
+    ./ssh.nix
   ];
 
   programs = {
