@@ -7,9 +7,6 @@ Hosts:
   • wyndle: Asus ROG Flow X13
     NixOS, running KDE Plasma.
 
-  • syl: HP Envy 13 (not in use)
-    macOS 13.0.1 Ventura hackintosh, using nix-darwin.
-
   • kvothe: MacBook Pro 14 (M1 Pro)
     macOS 14.0, Sonoma using nix-darwin.
 
