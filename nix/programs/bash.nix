@@ -47,6 +47,7 @@ in
       MANPAGER = "nvim +Man!";
       PATH = "/etc/profiles/per-user/icy/bin:$PATH:$HOME/go/bin:$HOME/bin";
       CLICOLOR = "1";
+      LANG = "en_US.UTF-8";
 
     };
 
@@ -109,6 +110,11 @@ in
       bind -m emacs-standard -x '"\C-r": __fzy_history__'
 
       complete -cf doas
+
+      if command -v kubectl &> /dev/null; then
+        source <(kubectl completion bash)
+        complete -F __start_kubectl k
+      fi
     '';
 
   };

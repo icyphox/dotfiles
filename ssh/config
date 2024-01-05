@@ -1,3 +1,5 @@
+Include /Users/icy/.colima/ssh_config
+
 Host *
     ServerAliveInterval 180
     ServerAliveCountMax 3
@@ -23,20 +25,10 @@ Host jade
     User ubuntu
     IdentityFile ~/.ssh/id_rsa
 
-Host pantwo
-    Hostname 100.64.1.3
-    User icy
-    IdentityFile ~/.ssh/id_rsa
-
 Host lapis2
     Hostname 150.230.131.193
     User icy
     IdentityFile ~/.ssh/id_rsa
-
-Host methi
-    Hostname 152.70.78.124
-    User icy
-    IdentityFile ~/.ssh/id_ed25519
 
 Host crimson
     Hostname 144.24.148.230
@@ -51,7 +43,9 @@ Host upcloud
 Host denna
     Hostname denna
     IdentityFile ~/.ssh/id_ed25519
+    IdentityFile ~/.ssh/upcloud
 
 Host egg
     Hostname egg
     IdentityFile ~/.ssh/id_ed25519
+    IdentityFile ~/.ssh/upcloud

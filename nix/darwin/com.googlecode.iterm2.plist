@@ -1328,6 +1328,8 @@
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
+			<key>Set Local Environment Vars</key>
+			<true/>
 			<key>Shortcut</key>
 			<string></string>
 			<key>Show Status Bar</key>
