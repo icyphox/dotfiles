@@ -1,4 +1,5 @@
 local dap = require 'dap'
+local dapui = require 'dapui'
 
 dap.set_log_level('INFO')
 
@@ -31,7 +32,7 @@ require 'dap-go'.setup {
   },
 }
 
-require 'dapui'.setup({
+dapui.setup {
   controls = {
     element = "repl",
     enabled = true,
@@ -47,6 +48,7 @@ require 'dapui'.setup({
       terminate = "✗"
     }
   },
+  expand_lines = false,
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
     open = "o",
@@ -59,17 +61,17 @@ require 'dapui'.setup({
     {
       elements = {
         "scopes",
+        "repl",
       },
-      size = 0.2,
-      position = "left"
+      size = 0.3,
+      position = "bottom"
     },
     {
       elements = {
-        "repl",
         "breakpoints"
       },
-      size = 0.3,
-      position = "bottom",
+      size = 0.1,
+      position = "left",
     },
   },
   floating = {
@@ -84,7 +86,20 @@ require 'dapui'.setup({
   render = {
     max_type_length = nil,
   },
-})
+}
+
+dap.listeners.before.attach.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.launch.dapui_config = function()
+  dapui.open()
+end
+--dap.listeners.before.event_terminated.dapui_config = function()
+--  dapui.close()
+--end
+dap.listeners.before.event_exited.dapui_config = function()
+  dapui.close()
+end
 
 vim.fn.sign_define('DapBreakpoint', {text = '•'})
 

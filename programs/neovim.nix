@@ -53,8 +53,8 @@
       vim-rsi
       nvim-treesitter-textobjects
       conflict-marker-vim
-      vim-jsonnet
       vim-pencil
+      nvim-tree-lua
 
       nvim-dap
       nvim-dap-ui

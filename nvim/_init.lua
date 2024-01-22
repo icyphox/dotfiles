@@ -8,6 +8,7 @@ require 'completion'
 require 'maps'
 require 'statusline.line'
 require 'treesitter'
+require 'tree'
 require 'fzy/fzy'
 
 -- lsp setup

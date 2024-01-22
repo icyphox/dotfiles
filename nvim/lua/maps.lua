@@ -1,6 +1,7 @@
 local cmd = vim.cmd
 local map = vim.keymap.set
 local dap = require 'dap'
+local treeapi = require 'nvim-tree.api'
 local u = require 'utils'
 local M = {}
 
@@ -114,7 +115,7 @@ end
 -- Start debugging session
 map("n", "<leader>ds", function()
   dap.continue()
-  require 'dapui'.toggle()
+  require 'dapui'.open()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-w>=", false, true, true), "n", false) -- Spaces buffers evenly
 end)
 
@@ -130,10 +131,18 @@ map("n", "<leader>dC", dap.clear_breakpoints)
 -- Close debugger and clear breakpoints
 map("n", "<leader>de", function()
   dap.clear_breakpoints()
-  require 'dapui'.toggle()
+  require 'dapui'.close()
   dap.terminate()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-w>=", false, true, true), "n", false)
 end)
 
+
+local function toggle_tree()
+  treeapi.tree.toggle({ find_file = true })
+end
+
+-- nvim-tree
+map('n', '<leader>tt', toggle_tree)
+map('n', '<leader>tf', treeapi.tree.focus)
 
 return M
