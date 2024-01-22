@@ -17,6 +17,8 @@
     prompt
   ];
 
+  security.pam.enableSudoTouchIdAuth = true;
+
   system.activationScripts.applications.text = pkgs.lib.mkForce (
     ''
       echo "setting up ~/Applications..." >&2

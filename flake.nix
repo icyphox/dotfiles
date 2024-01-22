@@ -2,7 +2,7 @@
   description = "icy's nixos config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
