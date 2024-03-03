@@ -11,10 +11,10 @@ let
   git-new-repo = pkgs.writeScriptBin "git-new-repo" ''
     repo="$1"
     [[ "$1" == "" ]] && repo="$(basename "$PWD")"
-    ssh git@jade git init --bare "$repo"
+    ssh git@denna git init --bare "$repo"
     read -p "descripton: " desc
     printf '%s' "$desc" > .git/description
-    rsync .git/description git@jade:"$repo"
+    rsync .git/description git@denna:"$repo"
   '';
 
   # adds a new push-only remote

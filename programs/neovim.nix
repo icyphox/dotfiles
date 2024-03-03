@@ -17,6 +17,7 @@
       gopls
       go
       sumneko-lua-language-server
+      pyright
 
       tree-sitter-grammars.tree-sitter-bash
       tree-sitter-grammars.tree-sitter-yaml
@@ -27,6 +28,7 @@
       tree-sitter-grammars.tree-sitter-html
       tree-sitter-grammars.tree-sitter-vim
       tree-sitter-grammars.tree-sitter-nix
+      tree-sitter-grammars.tree-sitter-python
 
       zf
       delve

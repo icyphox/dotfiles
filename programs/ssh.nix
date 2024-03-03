@@ -39,6 +39,11 @@
         hostname = "jade";
         identityFile = "~/.ssh/id_rsa";
       };
+      "lapis2" = {
+        user = "icy";
+        hostname = "150.230.131.193";
+        identityFile = "~/.ssh/id_rsa";
+      };
     };
   };
 }

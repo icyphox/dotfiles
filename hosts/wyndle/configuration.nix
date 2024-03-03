@@ -8,6 +8,7 @@
 
   boot = {
     loader.systemd-boot.enable = true;
+    loader.systemd-boot.consoleMode = "max";
     loader.efi.canTouchEfiVariables = true;
     kernel.sysctl."net.ipv4.ip_forward" = 1;
     resumeDevice = "/dev/nvme0n1p2";
@@ -17,21 +18,6 @@
   networking = {
     nameservers = [ "8.8.8.8" "8.8.4.4" ];
     networkmanager.enable = true;
-    # wireless = {
-    #   enable = true;
-    #   interfaces = [ "wlp6s0" ];
-    #   environmentFile = "/home/icy/secrets/wireless.env";
-    #   networks = {
-    #     Sanic.psk = "@PSK_SANI@";
-    #     Gopalan5G.psk = "@PSK_GOPA@";
-    #     denim.psk = "@PSK_DENI@";
-    #   };
-    #   extraConfig = ''
-    #     ctrl_interface=/run/wpa_supplicant
-    #     ctrl_interface_group=wheel
-    #   '';
-    # };
-    # dhcpcd.enable = true;
     hostName = "wyndle";
     useDHCP = false;
     interfaces.wlp6s0.useDHCP = true;
@@ -87,7 +73,7 @@
     variables = {
       MOZ_USE_XINPUT2 = "1";
       GDK_SCALE = "2";
-      GDK_DPI_SCALE = "0.5";
+      GDK_DPI_SCALE = "2";
     };
     systemPackages = with pkgs; [
       man-pages
@@ -95,16 +81,6 @@
       man-pages-posix
       (lib.hiPrio pkgs.bashInteractive_5)
     ];
-    etc = {
-      "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-        bluez_monitor.properties = {
-          ["bluez5.enable-sbc-xq"] = true,
-          ["bluez5.enable-msbc"] = true,
-          ["bluez5.enable-hw-volume"] = true,
-          ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-        }
-      '';
-    };
   };
 
   documentation = {
@@ -144,6 +120,7 @@
   };
 
   services = {
+    pipewire.wireplumber.enable = true;
     asusd = {
       enable = true;
       enableUserService = true;
@@ -160,7 +137,7 @@
     xserver = {
       enable = true;
       layout = "us";
-      desktopManager.plasma5.enable = true;
+      desktopManager.plasma6.enable = true;
       displayManager.sddm = {
         enable = true;
         enableHidpi = true;
@@ -216,7 +193,6 @@
     doas.extraRules = [{
       users = [ "icy" ];
     }];
-    pki.certificateFiles = [ "/home/icy/.local/share/caddy/pki/authorities/local/root.crt" ];
   };
 
   powerManagement = {
