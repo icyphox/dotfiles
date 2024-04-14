@@ -5,7 +5,7 @@ System configurations and dotfiles managed using Nix.
 
 Hosts:
   • wyndle: Asus ROG Flow X13
-    NixOS, running KDE Plasma.
+    NixOS, running GNOME.
 
   • kvothe: MacBook Pro 14 (M1 Pro)
     macOS 14.0, Sonoma using nix-darwin.
