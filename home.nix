@@ -2,9 +2,13 @@
 , pkgs
 , self
 , host
+, lib
 , ...
 }:
 
+let
+  mkTuple = lib.hm.gvariant.mkTuple;
+in
 {
 
   imports = [
@@ -41,27 +45,29 @@
     signal-desktop
     calibre
     pinentry
-    kontact
-    korganizer
-    libreoffice-qt
-    akonadi
+    libreoffice
     go
-    evolution
     dconf
     chromium
+    evolution
+
+    gnome3.gnome-tweaks
+    gnome3.gnome-shell-extensions
+    gnomeExtensions.appindicator
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.unite
+    gnomeExtensions.search-light
 
   ] ++ (import ./bin { inherit pkgs host; });
 
-
-  gtk = {
-    enable = true;
-    iconTheme = {
-      package = pkgs.breeze-icons;
-      name = "Breeze";
+  dconf.settings = {
+    "org/gnome/mutter" = {
+      experimental-features = [ "scale-monitor-framebuffer" ];
     };
-    theme = {
-      package = pkgs.breeze-gtk;
-      name = "Breeze";
+    "org/gnome/desktop/input-sources" = {
+      show-all-sources = true;
+      sources = [ (mkTuple [ "xkb" "us+workman" ]) (mkTuple [ "xkb" "us" ]) ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" ];
     };
   };
 

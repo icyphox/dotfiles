@@ -13,6 +13,7 @@
     kernel.sysctl."net.ipv4.ip_forward" = 1;
     resumeDevice = "/dev/nvme0n1p2";
     kernelPackages = pkgs.linuxPackages;
+    kernelModules = [ "i2c-dev" ];
   };
 
   networking = {
@@ -25,6 +26,9 @@
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod = {
+    enabled = "ibus";
+  };
   time.timeZone = "Europe/Helsinki";
 
   nixpkgs.config = {
@@ -73,7 +77,7 @@
     variables = {
       MOZ_USE_XINPUT2 = "1";
       GDK_SCALE = "2";
-      GDK_DPI_SCALE = "2";
+      GDK_DPI_SCALE = "1";
     };
     systemPackages = with pkgs; [
       man-pages
@@ -81,6 +85,15 @@
       man-pages-posix
       (lib.hiPrio pkgs.bashInteractive_5)
     ];
+    gnome.excludePackages = (with pkgs; [
+      gnome-photos
+      gnome-tour
+    ]) ++ (with pkgs.gnome; [
+      cheese
+      epiphany
+      geary
+      totem
+    ]);
   };
 
   documentation = {
@@ -136,12 +149,9 @@
     };
     xserver = {
       enable = true;
-      layout = "us";
-      desktopManager.plasma6.enable = true;
-      displayManager.sddm = {
-        enable = true;
-        enableHidpi = true;
-      };
+      xkb.layout = "us";
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
       dpi = 192;
       videoDrivers = [ "nvidia" ];
       screenSection = ''
@@ -165,6 +175,7 @@
       extraRules = ''
         ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
         ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0036", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
+        KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
       '';
       extraHwdb = ''
         evdev:input:b0003v0B05p19B6*
@@ -177,6 +188,19 @@
     logind.extraConfig = ''
       HandlePowerKey=hibernate
     '';
+
+    keyd = {
+      enable = true;
+      keyboards.default.settings = {
+        "meta" = {
+          h = "left";
+          j = "down";
+          k = "up";
+          l = "right";
+        };
+      };
+    };
+    pcscd.enable = true;
   };
 
   virtualisation.docker = {
@@ -202,7 +226,7 @@
 
   users.users.icy = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "audio" "video" "dialout" ];
+    extraGroups = [ "wheel" "docker" "audio" "video" "dialout" "i2c" ];
   };
 
   programs = {
@@ -227,7 +251,8 @@
 
   # https://github.com/NixOS/nixpkgs/issues/180175
   systemd.services.systemd-udevd.restartIfChanged = false;
-  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
+  systemd.services.NetworkManager-wait-online.enable = lib.mkForce
+    false;
 
 
   # This value determines the NixOS release from which the default

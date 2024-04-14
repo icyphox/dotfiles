@@ -9,10 +9,10 @@
   imports = [
     ./firefox.nix
     ./common.nix
+    ./alacritty.nix
   ];
 
   programs = {
-    mbsync.enable = true;
     gpg.enable = true;
   };
 }

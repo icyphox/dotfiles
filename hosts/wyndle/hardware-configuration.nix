@@ -31,4 +31,5 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.opengl.enable = true;
   hardware.nvidia.modesetting.enable = false;
+  hardware.pulseaudio.enable = false;
 }

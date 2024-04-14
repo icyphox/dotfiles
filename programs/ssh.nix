@@ -44,6 +44,11 @@
         hostname = "150.230.131.193";
         identityFile = "~/.ssh/id_rsa";
       };
+      "aniverse" = {
+        user = "icy";
+        hostname = "94.237.18.93";
+        identityFile = "~/.ssh/id_ed25519";
+      };
     };
   };
 }
