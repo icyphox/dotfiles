@@ -19,10 +19,18 @@ require 'lsp.lua'
 require 'lsp.json'
 require 'lsp.js'
 require 'lsp.rust'
+require 'lsp.copilot'
 
 -- plugins not in nixpkgs
 require 'packer'.startup(function(use)
   use 'preservim/vim-textobj-quote'
+  use {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    branch = 'canary',
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+  }
 end)
 
 require 'dapx'

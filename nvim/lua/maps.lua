@@ -63,7 +63,7 @@ if vim.fn.executable('fzy') then
   _G.fzy_buffers = require('fzy.buffers').fzy_buffers
   map('',
   '<leader>b',
-  ':call v:lua.fzy_buffers()<cr>',
+  ':call v:lua.fzy_buffers("NvimTree_1")<cr>',
   { noremap=true, silent=true }
   )
 

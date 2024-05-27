@@ -2,11 +2,7 @@ local fn = vim.fn
 local cmd = vim.cmd
 local M = {}
 
-local function normalize_path(path)
-  return vim.fn.fnamemodify(vim.fn.expand(path), ':p:~:.')
-end
-
-function M.fzy_buffers(exclude)
+function M.fzy_buffers()
   local buffers = {}
 
   -- list of buffers
@@ -23,10 +19,7 @@ function M.fzy_buffers(exclude)
   local buffile = fn.tempname()
   local f = io.open(buffile, "a")
   for b, _ in pairs(buffers) do
-    local path = normalize_path(b)
-    if not string.match(path, exclude) then
-      f:write(path, '\n')
-    end
+    f:write(b, '\n')
   end
   f:close()
 

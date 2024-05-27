@@ -1,5 +1,4 @@
 local git = require('statusline.git')
-local utils = require('utils')
 local M = {}
 
 -- set highlights for statusline sections
@@ -13,7 +12,12 @@ vim.api.nvim_exec(
 ]], false)
 
 function M.statusline()
-  local stl = {
+  local stl = {}
+  if vim.bo.filetype ~= 'NvimTree' then
+    stl = {''}
+  end
+
+  stl = {
     '%#PrimaryBlock#',
     '%f',
     '%#Blanks#',

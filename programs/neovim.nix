@@ -8,7 +8,7 @@
 {
   programs.neovim = {
     enable = true;
-    withNodeJs = false;
+    withNodeJs = true;
     vimAlias = true;
     withPython3 = true;
     extraPackages = with pkgs; [
@@ -62,6 +62,8 @@
       nvim-dap-ui
       nvim-dap-go
       vim-textobj-user
+
+      copilot-lua
     ];
   };
 }
