@@ -52,6 +52,7 @@ autocmd('TextYankPost', {
 })
 
 o.background = 'light'
+o.termguicolors = false
 
 -- gitgutter options
 g.gitgutter_override_sign_column_highlight = 0
