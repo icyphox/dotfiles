@@ -43,7 +43,7 @@ o.wildignore = [[
 ]]
 
 cmd('syntax on')
-cmd('colorscheme plain')
+cmd('colorscheme grey')
 autocmd('TextYankPost', {
   pattern = '*',
   callback = function()
