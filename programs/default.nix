@@ -9,7 +9,6 @@
   imports = [
     ./firefox.nix
     ./common.nix
-    ./alacritty.nix
   ];
 
   programs = {

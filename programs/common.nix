@@ -13,6 +13,7 @@
     ./neovim.nix
     ./bash.nix
     ./ssh.nix
+    ./alacritty.nix
   ];
 
   programs = {

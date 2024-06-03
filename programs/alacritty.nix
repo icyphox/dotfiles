@@ -1,8 +1,23 @@
 { config
 , pkgs
+, lib
 , ...
 }:
+let
+  isDarwin = lib.strings.hasSuffix "darwin" pkgs.stdenv.hostPlatform.system;
 
+  fontConfig =
+    if isDarwin then {
+      normal.family = "SF Mono";
+      bold = { family = "SF Mono"; style = "Semibold"; };
+      size = 15.0;
+      offset.y = 5;
+    }
+    else {
+      normal = "Input";
+      size = 12.0;
+    };
+in
 {
   programs.alacritty = {
     enable = true;
@@ -17,15 +32,14 @@
         dynamic_padding = true;
         decorations = "None";
         startup_mode = "Maximized";
+
+
+        option_as_alt = "OnlyLeft";
       };
 
-      font = {
-        size = 12.0;
-
-        normal.family = "Input";
-      };
-
+      font = fontConfig;
       cursor.style = "Beam";
+
 
       colors = {
         primary = {
