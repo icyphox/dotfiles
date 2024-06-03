@@ -26,7 +26,7 @@ local dark_yellow = '#d69822'
 local yellow = '#f3e430'
 local light_yellow = '#fadaa0'
 local orange = '#D75F5F'
-local purple = '#523C79'
+local purple = '#8e69d5'
 local white = '#FFFFFF'
 local cyan = '#509c93'
 
@@ -65,7 +65,7 @@ local highlights = {
   Boolean = { link = 'Keyword' },
   Character = { link = 'String' },
   ColorColumn = { bg = highlight },
-  Comment = { fg = grey },
+  Comment = { fg = grey, italic = true },
   Conceal = {},
   Constant = { fg = black },
   Cursor = { bg = black },
@@ -92,7 +92,7 @@ local highlights = {
   MoreMsg = { fg = black },
   ModeMsg = { fg = black, bold = true },
   MsgSeparator = { fg = border },
-  NonText = { fg = grey },
+  NonText = { fg = light_grey },
   Normal = { fg = black , bg = background },
   NormalFloat = { fg = black },
   FloatTitle = { fg = black, bold = true },

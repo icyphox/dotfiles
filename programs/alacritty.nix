@@ -8,8 +8,9 @@ let
 
   fontConfig =
     if isDarwin then {
-      normal.family = "SF Mono";
+      normal = { family = "SF Mono"; style = "Light"; };
       bold = { family = "SF Mono"; style = "Semibold"; };
+      italic = { family = "SF Mono"; style = "Light Italic"; };
       size = 15.0;
       offset.y = 5;
     }
