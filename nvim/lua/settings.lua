@@ -43,7 +43,7 @@ o.wildignore = [[
 ]]
 
 cmd('syntax on')
-cmd('colorscheme grey')
+cmd('colorscheme plain')
 autocmd('TextYankPost', {
   pattern = '*',
   callback = function()
@@ -52,7 +52,7 @@ autocmd('TextYankPost', {
 })
 
 o.background = 'light'
-o.termguicolors = false
+o.termguicolors = true
 
 -- gitgutter options
 g.gitgutter_override_sign_column_highlight = 0

@@ -42,7 +42,6 @@ in
 
     sessionVariables = {
 
-      TERM = "xterm-256color-italic";
       EDITOR = "nvim";
       MANPAGER = "nvim +Man!";
       PATH = "/etc/profiles/per-user/icy/bin:$PATH:$HOME/go/bin:$HOME/bin";

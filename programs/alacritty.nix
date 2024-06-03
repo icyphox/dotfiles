@@ -22,10 +22,6 @@ in
   programs.alacritty = {
     enable = true;
     settings = {
-      env = {
-        "TERM" = "xterm-256color-italic";
-      };
-
       window = {
         padding.x = 10;
         padding.y = 10;

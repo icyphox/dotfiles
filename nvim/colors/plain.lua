@@ -8,28 +8,27 @@ if g.syntax_on == 1 then
   vim.cmd('syntax reset')
 end
 
-o.background = 'light'
-g.colors_name = 'grey'
+g.colors_name = 'plain'
 
 local background = '#f4f4f4'
 local grey_bg_light = '#E5E5E5'
-local black = '#222222'
-local blue = '#008EC4'
-local green = '#10A778'
-local light_green = '#5FD7A7'
-local light_red = '#E32791'
-local red = '#C30771'
+local black = '#676767'
+local blue = '#6587bf'
+local green = '#7c9f4b'
+local light_green = '#6d8b42'
+local light_red = '#c66666'
+local red = '#db7070'
 local grey = '#767676'
-local light_grey = '#CCCCCC'
+local light_grey = '#dfdfdf'
 local border = '#999999'
 local highlight = '#424242'
-local dark_yellow = '#A89C14'
-local yellow = '#F3E430'
-local light_yellow = '#F1F1F1'
+local dark_yellow = '#d69822'
+local yellow = '#f3e430'
+local light_yellow = '#fadaa0'
 local orange = '#D75F5F'
 local purple = '#523C79'
 local white = '#FFFFFF'
-local cyan = '#20A5BA'
+local cyan = '#509c93'
 
 g.terminal_color_0 = black
 g.terminal_color_1 = red
@@ -94,7 +93,7 @@ local highlights = {
   ModeMsg = { fg = black, bold = true },
   MsgSeparator = { fg = border },
   NonText = { fg = grey },
-  Normal = { fg = black, bg = background },
+  Normal = { fg = black , bg = background },
   NormalFloat = { fg = black },
   FloatTitle = { fg = black, bold = true },
   FloatBorder = { fg = border },
@@ -125,7 +124,7 @@ local highlights = {
   WinBarNc = { fg = black, bold = true },
   WinBarFill = { fg = border },
   StorageClass = { link = 'Keyword' },
-  String = { fg = green },
+  String = { fg = cyan },
   SnippetTabstop = {},
   Symbol = { fg = orange },
   TabLine = { fg = black, bg = light_grey },
@@ -439,6 +438,9 @@ local highlights = {
   yardComment = { link = 'Comment' },
   yardType = { link = 'Todo' },
   yardTypeList = { link = 'Todo' },
+
+  -- custom highlight groups
+  ['@variable'] = { fg = black },
 }
 
 for group, opts in pairs(highlights) do
