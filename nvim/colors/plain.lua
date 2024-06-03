@@ -156,7 +156,7 @@ local highlights = {
   cssProp = { link = 'Identifier' },
   cssTagName = { link = 'Keyword' },
   -- Diffs
-  DiffAdd = { bg = light_green },
+  DiffAdd = { fg = green, bg = background },
   DiffChange = { bg = highlight },
   DiffDelete = { fg = red },
   DiffText = { bg = light_yellow },
