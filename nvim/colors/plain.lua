@@ -138,7 +138,7 @@ local highlights = {
   WinSeparator = { fg = border },
   Visual = { bg = light_grey },
   WarningMsg = { fg = dark_yellow, bold = true },
-  Whitespace = { fg = border },
+  Whitespace = { fg = light_grey },
   WildMenu = { link = 'PmenuSel' },
   -- ALE
   ALEError = { fg = red, bold = true },
@@ -252,10 +252,10 @@ local highlights = {
   DiagnosticFloatingHint = { fg = black, bold = true },
   DiagnosticFloatingInfo = { fg = blue, bold = true },
   DiagnosticFloatingWarn = { fg = dark_yellow, bold = true },
-  DiagnosticError = { fg = red, bold = true },
-  DiagnosticHint = { fg = grey, bold = true },
-  DiagnosticInfo = { fg = blue, bold = true },
-  DiagnosticWarn = { fg = dark_yellow, bold = true },
+  DiagnosticError = { fg = red },
+  DiagnosticHint = { fg = grey },
+  DiagnosticInfo = { fg = blue },
+  DiagnosticWarn = { fg = dark_yellow },
   -- Make
   makeTarget = { link = 'Function' },
   -- Markdown
@@ -441,6 +441,14 @@ local highlights = {
 
   -- custom highlight groups
   ['@variable'] = { fg = black },
+
+  -- statusline
+  LinePrimaryBlock = { fg = black, bg = background },
+  LineSecondaryBlock = { fg = blue, bg = background },
+  LineError = { link = 'DiagnosticError' },
+  LineHint = { link = 'DiagnosticHint' },
+  LineInfo = { link = 'DiagnosticInfo' },
+  LineWarning = { link = 'DiagnosticWarn' },
 }
 
 for group, opts in pairs(highlights) do
