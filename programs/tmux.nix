@@ -96,6 +96,9 @@
       set -g terminal-overrides ',xterm-256color:Tc'
       set -g default-terminal "tmux-256color"
       set -as terminal-overrides ',xterm*:sitm=\E[3m'
+
+      set -g default-shell "/etc/profiles/per-user/icy/bin/fish"
+      set -g default-command "/etc/profiles/per-user/icy/bin/fish"
     '';
   };
 }

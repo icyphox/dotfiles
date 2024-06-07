@@ -14,6 +14,7 @@
     ./bash.nix
     ./ssh.nix
     ./alacritty.nix
+    ./fish.nix
   ];
 
   programs = {
