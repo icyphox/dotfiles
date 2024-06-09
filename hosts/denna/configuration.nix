@@ -53,6 +53,23 @@
     tailscale.enable = true;
   };
 
+  services.radicale = {
+    enable = true;
+    settings = {
+      server = {
+        hosts = [ "127.0.0.1:5232" ];
+      };
+      auth = {
+        type = "htpasswd";
+        htpasswd = "/var/svc/radicale/users";
+        htpasswd_encryption = "bcrypt";
+      };
+      storage = {
+        filesystem_folder = "/var/svc/radicale/collections";
+      };
+    };
+  };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.05"; # Did you read the comment?
 
