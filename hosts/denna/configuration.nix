@@ -61,7 +61,7 @@
       };
       auth = {
         type = "htpasswd";
-        htpasswd = "/var/svc/radicale/users";
+        htpasswd_filename = "/var/svc/radicale/users";
         htpasswd_encryption = "bcrypt";
       };
       storage = {
