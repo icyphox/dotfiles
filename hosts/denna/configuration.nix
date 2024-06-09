@@ -61,11 +61,11 @@
       };
       auth = {
         type = "htpasswd";
-        htpasswd_filename = "/var/svc/radicale/users";
+        htpasswd_filename = "/var/lib/radicale/users";
         htpasswd_encryption = "bcrypt";
       };
       storage = {
-        filesystem_folder = "/var/svc/radicale/collections";
+        filesystem_folder = "/var/lib/radicale/collections";
       };
     };
   };
