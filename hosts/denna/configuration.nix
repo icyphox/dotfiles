@@ -80,6 +80,14 @@
     };
   };
 
+  services.pixelfed = {
+    enable = true;
+    domain = "ani.place";
+    nginx = {
+      serverName = ${config.services.pixelfed.domain};
+    };
+  };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.05";
 
