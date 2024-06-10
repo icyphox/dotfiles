@@ -43,6 +43,17 @@
     ];
   };
 
+  security = {
+    doas.enable = true;
+    sudo.enable = true;
+    doas.extraConfig = ''
+      permit nopass :wheel
+    '';
+    doas.extraRules = [{
+      users = [ "icy" ];
+    }];
+  };
+
   users.users.icy = {
     isNormalUser = true;
     description = "icy";
