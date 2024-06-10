@@ -80,14 +80,6 @@
     };
   };
 
-  services.pixelfed = {
-    enable = true;
-    domain = "ani.place";
-    nginx = {
-      serverName = ${config.services.pixelfed.domain};
-    };
-  };
-
   services.k3s = {
     enable = true;
   };
