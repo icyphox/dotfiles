@@ -62,16 +62,17 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
     vim
     wget
     git
+    nerdctl
   ];
 
   services = {
     openssh.enable = true;
     tailscale.enable = true;
+    nix-snapshotter.enable = true;
   };
 
   services.radicale = {
@@ -91,6 +92,13 @@
     };
   };
 
+
+  # nix-snapshotter and k3s
+  virtualisation.containerd = {
+    enable = true;
+    nixSnapshotterIntegration = true;
+    k3sIntegration = true;
+  };
   services.k3s = {
     enable = true;
   };

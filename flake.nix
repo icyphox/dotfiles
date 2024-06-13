@@ -21,12 +21,18 @@
       url = "git+https://git.peppe.rs/cli/prompt";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-snapshotter = {
+      url = "github:pdtpartners/nix-snapshotter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     { self
     , nixpkgs
     , nixos-hardware
+    , nix-snapshotter
     , home-manager
     , prompt
     , darwin
@@ -109,6 +115,10 @@
           system = "x86_64-linux";
           modules = [
             ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
+            ({ pkgs, ... }: {
+              imports = [ nix-snapshotter.nixosModules.default ];
+              nixpkgs.overlays = [ nix-snapshotter.overlays.default ];
+            })
             {
               imports = [ ./hosts/denna/configuration.nix ];
               _module.args.self = self;
