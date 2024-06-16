@@ -115,10 +115,10 @@
           system = "x86_64-linux";
           modules = [
             ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
-            ({ pkgs, ... }: {
-              imports = [ nix-snapshotter.nixosModules.default ];
-              nixpkgs.overlays = [ nix-snapshotter.overlays.default ];
-            })
+            # ({ pkgs, ... }: {
+            #   imports = [ nix-snapshotter.nixosModules.default ];
+            #   nixpkgs.overlays = [ nix-snapshotter.overlays.default ];
+            # })
             {
               imports = [ ./hosts/sini/configuration.nix ];
               _module.args.self = self;

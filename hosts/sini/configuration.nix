@@ -57,7 +57,7 @@
   users.users.icy = {
     isNormalUser = true;
     description = "icy";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [ ];
   };
 
@@ -66,13 +66,12 @@
     vim
     wget
     git
-    nerdctl
   ];
 
   services = {
     openssh.enable = true;
     tailscale.enable = true;
-    nix-snapshotter.enable = true;
+    # nix-snapshotter.enable = true;
   };
 
   services.radicale = {
@@ -92,19 +91,14 @@
     };
   };
 
+  # building only
+  virtualisation.docker.enable = true;
 
-  # nix-snapshotter and k3s
-  virtualisation.containerd = {
-    enable = true;
-    nixSnapshotterIntegration = true;
-  };
   services.k3s = {
     enable = true;
-    extraFlags = lib.mkDefault "--container-runtime-endpoint=unix:///run/containerd/containerd.sock";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.05";
-
 }
 
