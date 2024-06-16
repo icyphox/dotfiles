@@ -10,7 +10,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-0ae4be28-55a1-4a0c-8518-c6d53540cb26".device = "/dev/disk/by-uuid/0ae4be28-55a1-4a0c-8518-c6d53540cb26";
-  networking.hostName = "denna"; # Define your hostname.
+  networking.hostName = "sini"; # Define your hostname.
 
   networking.networkmanager.enable = true;
 

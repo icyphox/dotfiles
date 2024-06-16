@@ -111,7 +111,7 @@
       };
 
       nixosConfigurations = {
-        denna = nixpkgs.lib.nixosSystem {
+        sini = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
@@ -120,7 +120,7 @@
               nixpkgs.overlays = [ nix-snapshotter.overlays.default ];
             })
             {
-              imports = [ ./hosts/denna/configuration.nix ];
+              imports = [ ./hosts/sini/configuration.nix ];
               _module.args.self = self;
             }
           ];
