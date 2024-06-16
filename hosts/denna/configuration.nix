@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -97,10 +97,10 @@
   virtualisation.containerd = {
     enable = true;
     nixSnapshotterIntegration = true;
-    k3sIntegration = true;
   };
   services.k3s = {
     enable = true;
+    extraFlags = lib.mkDefault "--container-runtime-endpoint=unix:///run/containerd/containerd.sock";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
