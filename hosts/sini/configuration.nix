@@ -96,6 +96,7 @@
 
   services.k3s = {
     enable = true;
+    extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --flannel-backend=none --disable-network-policy";
   };
 
   services.dockerRegistry = {
