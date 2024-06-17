@@ -96,7 +96,7 @@
 
   services.k3s = {
     enable = true;
-    extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server";
+    extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --bind-address=100.85.88.64";
   };
 
   services.dockerRegistry = {
