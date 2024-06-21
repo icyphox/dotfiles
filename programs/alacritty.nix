@@ -15,7 +15,9 @@ let
       offset.y = 5;
     }
     else {
-      normal = "Input";
+      normal = { family = "Input"; style = "Regular"; };
+      bold = { family = "Input"; style = "Bold"; };
+      italic = { family = "Input"; style = "Italic"; };
       size = 12.0;
     };
 in

@@ -4,5 +4,3 @@ require 'copilot'.setup{
     auto_trigger = true,
   }
 }
-
-require 'CopilotChat'.setup {}

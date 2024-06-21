@@ -93,8 +93,8 @@
       set -g window-style 'fg=color8,bg=default'
       set -g window-active-style 'fg=color7,bg=default'
 
-      set -g terminal-overrides ',xterm-256color:Tc'
-      set -g default-terminal "tmux-256color"
+      set -g default-terminal "xterm-256color"
+      set -ga terminal-overrides ',xterm-256color:Tc'
       set -as terminal-overrides ',xterm*:sitm=\E[3m'
 
       set -g default-shell "/etc/profiles/per-user/icy/bin/fish"
