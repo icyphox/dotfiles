@@ -23,6 +23,7 @@ in
   home.username = "icy";
   home.homeDirectory = "/home/icy";
   home.extraOutputsToInstall = [ "man" ];
+
   home.packages = with pkgs; [
 
     git
@@ -50,6 +51,7 @@ in
     dconf
     chromium
     evolution
+    nix-your-shell
 
     gnome3.gnome-tweaks
     gnome3.gnome-shell-extensions
@@ -81,5 +83,6 @@ in
       videos = "\$HOME/vids";
     };
   };
+
 }
 

@@ -133,7 +133,6 @@
   };
 
   services = {
-    pipewire.wireplumber.enable = true;
     asusd = {
       enable = true;
       enableUserService = true;
@@ -143,6 +142,7 @@
     };
     pipewire = {
       enable = true;
+      wireplumber.enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
@@ -167,6 +167,7 @@
         };
       };
     };
+    ddccontrol.enable = true;
     tailscale.enable = true;
     auto-cpufreq.enable = true;
     # 1. chmod for rootless backligh1t
@@ -191,13 +192,25 @@
 
     keyd = {
       enable = true;
-      keyboards.default.settings = {
-        "meta" = {
-          h = "left";
-          j = "down";
-          k = "up";
-          l = "right";
-        };
+      keyboards.default = {
+        ids = [ "*" ];
+        extraConfig = ''
+          [main]
+          capslock = overload(capslock, esc)
+
+          [capslock:C]
+          h = left
+          j = down
+          k = up
+          l = right
+
+          # Activates when both capslock and shift is pressed
+          [capslock+shift]
+          h = C-left
+          j = C-down
+          k = C-up
+          l = C-right
+        '';
       };
     };
     pcscd.enable = true;
