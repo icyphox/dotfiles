@@ -26,6 +26,11 @@
       url = "github:pdtpartners/nix-snapshotter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-your-shell = {
+      url = "github:MercuryTechnologies/nix-your-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -33,6 +38,7 @@
     , nixpkgs
     , nixos-hardware
     , nix-snapshotter
+    , nix-your-shell
     , home-manager
     , prompt
     , darwin
@@ -94,6 +100,7 @@
             {
               imports = [ ./hosts/wyndle/configuration.nix ];
               _module.args.self = self;
+              nixpkgs.overlays = [ nix-your-shell.overlays.default ];
             }
             home-manager.nixosModules.home-manager
             {

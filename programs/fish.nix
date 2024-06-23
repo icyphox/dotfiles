@@ -7,6 +7,7 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      nix-your-shell fish | source
       set fish_greeting # Disable greeting
     '';
     functions = {
