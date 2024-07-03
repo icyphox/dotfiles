@@ -126,6 +126,7 @@
             ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
             ({ config, pkgs, ... }: {
               services.pixelfed.package = nixpkgs-master.legacyPackages."x86_64-linux".pixelfed;
+              services.pixelfed.phpPackage = nixpkgs-master.legacyPackages."x86_64-linux".php82;
             })
             # ({ pkgs, ... }: {
             #   imports = [ nix-snapshotter.nixosModules.default ];
