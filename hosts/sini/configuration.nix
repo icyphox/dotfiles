@@ -74,38 +74,32 @@
     # nix-snapshotter.enable = true;
   };
 
-  services.radicale = {
+  services.pixelfed = {
     enable = true;
-    settings = {
-      server = {
-        hosts = [ "0.0.0.0:5232" ];
-      };
-      auth = {
-        type = "htpasswd";
-        htpasswd_filename = "/var/lib/radicale/users";
-        htpasswd_encryption = "bcrypt";
-      };
-      storage = {
-        filesystem_folder = "/var/lib/radicale/collections";
-      };
-    };
-  };
+    domain = "ani.place";
+    secretFile = "/home/icy/svc/pixelfed/.env"
+      nginx.listen = [
+    { addr = "0.0.0.0";
+    port = "3535";
+  }
+    ];
+};
 
-  # building only
-  virtualisation.docker.enable = true;
+# building only
+virtualisation.docker.enable = true;
 
-  services.k3s = {
-    enable = true;
-    extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --bind-address=100.85.88.64";
-  };
+services.k3s = {
+enable = true;
+extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --bind-address=100.85.88.64";
+};
 
-  services.dockerRegistry = {
-    enable = true;
-    listenAddress = "0.0.0.0";
-    port = 5000;
-  };
+services.dockerRegistry = {
+enable = true;
+listenAddress = "0.0.0.0";
+port = 5000;
+};
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  system.stateVersion = "24.05";
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+system.stateVersion = "24.05";
 }
 
