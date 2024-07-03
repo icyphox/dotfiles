@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -36,6 +37,7 @@
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-master
     , nixos-hardware
     , nix-snapshotter
     , nix-your-shell
@@ -122,6 +124,9 @@
           system = "x86_64-linux";
           modules = [
             ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
+            ({ config, pkgs, ... }: {
+              services.pixelfed.package = nixpkgs-master.legacyPackages."x86_64-linux".pixelfed;
+            })
             # ({ pkgs, ... }: {
             #   imports = [ nix-snapshotter.nixosModules.default ];
             #   nixpkgs.overlays = [ nix-snapshotter.overlays.default ];
