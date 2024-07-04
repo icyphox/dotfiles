@@ -115,7 +115,6 @@
 
   sound.enable = true;
   hardware = {
-    opengl.driSupport = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -169,7 +168,6 @@
     };
     ddccontrol.enable = true;
     tailscale.enable = true;
-    auto-cpufreq.enable = true;
     # 1. chmod for rootless backligh1t
     # 2. lotus58 bootloader mode for rootless qmk flashing
     udev = {
@@ -219,6 +217,9 @@
   virtualisation.docker = {
     enable = true;
     logDriver = "json-file";
+    extraOptions = ''
+      --insecure-registry "http://sini:5000"
+    '';
   };
 
   security = {

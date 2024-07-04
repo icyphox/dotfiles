@@ -191,6 +191,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1720038964,
+        "narHash": "sha256-im/eyMVgBg5ZXT3QxyE9TM534OG0+D8CtiFbMrf0GpY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "26d9cafa3461c8ec55a6aa7e76ec0f8db0737ff9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "prompt": {
       "inputs": {
         "nixpkgs": [
@@ -219,6 +235,7 @@
         "nix-your-shell": "nix-your-shell",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-master": "nixpkgs-master",
         "prompt": "prompt"
       }
     },

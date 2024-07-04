@@ -61,6 +61,14 @@
     packages = with pkgs; [ ];
   };
 
+  users.users.git = {
+    isNormalUser = true;
+    description = "git";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [ ];
+  };
+
+
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim
