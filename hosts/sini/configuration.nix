@@ -106,6 +106,7 @@
     enable = true;
     listenAddress = "0.0.0.0";
     port = 5000;
+    enableGarbageCollect = true;
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
