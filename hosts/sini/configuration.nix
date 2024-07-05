@@ -12,6 +12,39 @@
   boot.initrd.luks.devices."luks-0ae4be28-55a1-4a0c-8518-c6d53540cb26".device = "/dev/disk/by-uuid/0ae4be28-55a1-4a0c-8518-c6d53540cb26";
   networking.hostName = "sini"; # Define your hostname.
 
+  boot.kernelParams = [ "ip=dhcp" ];
+  boot.initrd = let interface = "wlp3s0"; in
+    {
+      availableKernelModules = [ "ccm" "ctr" "iwlmvm" "iwlwifi" ];
+
+      systemd = {
+        enable = true;
+
+        packages = [ pkgs.wpa_supplicant ];
+        initrdBin = [ pkgs.wpa_supplicant ];
+        targets.initrd.wants = [ "wpa_supplicant@${interface}.service" ];
+
+        # prevent WPA supplicant from requiring `sysinit.target`.
+        services."wpa_supplicant@".unitConfig.DefaultDependencies = false;
+
+        users.root.shell = "/bin/systemd-tty-ask-password-agent";
+
+        network = {
+          enable = true;
+          ssh = {
+            enable = true;
+            port = 22;
+            authorizedKeys = [ "ssh-rsa AAAAyourpublic-key-here..." ];
+            hostKeys = [ "/etc/secrets/initrd/ssh_host_rsa_key" ];
+          };
+          networks = {
+            matchConfig.Name = interface;
+            networkConfig.DHCP = "yes";
+          };
+        };
+      };
+    };
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Helsinki";
