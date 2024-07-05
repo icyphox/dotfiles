@@ -28,7 +28,17 @@
         services."wpa_supplicant@".unitConfig.DefaultDependencies = false;
 
         users.root.shell = "/bin/systemd-tty-ask-password-agent";
+        network = {
+          enable = true;
+          networks."wifi" = {
+            enable = true;
+            DHCP = "yes";
+            name = interface;
+          };
+        };
+
       };
+
       network = {
         enable = true;
         ssh = {
@@ -36,10 +46,6 @@
           port = 22;
           authorizedKeys = [ "ssh-rsa AAAAyourpublic-key-here..." ];
           hostKeys = [ "/etc/secrets/initrd/ssh_host_rsa_key" ];
-        };
-        networks = {
-          matchConfig.Name = interface;
-          networkConfig.DHCP = "yes";
         };
       };
     };
