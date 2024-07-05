@@ -44,8 +44,11 @@
         ssh = {
           enable = true;
           port = 22;
-          authorizedKeys = [ "ssh-rsa AAAAyourpublic-key-here..." ];
-          hostKeys = [ "/etc/secrets/initrd/ssh_host_rsa_key" ];
+          authorizedKeys = [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICJPYX06+qKr9IHWfkgCtHbExoBOOwS/+iAWbog9bAdk icy@wyndle"
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIlcByNC93n6dH41uxdLvbtf8XfKF0hoN35548PRga3M icy@kvothe"
+          ];
+          hostKeys = [ "/etc/secrets/initrd/ssh_host_ed25519_key" ];
         };
       };
     };
