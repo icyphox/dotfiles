@@ -74,7 +74,6 @@
     vim
     wget
     git
-    openiscsi
   ];
 
   services = {
@@ -91,6 +90,11 @@
     tokenFile = "/var/lib/rancher/k3s/token";
   };
 
+  services.openiscsi = {
+    enable = true;
+    name = config.networking.hostName;
+  };
+
   environment.etc = {
     "rancher/k3s/registries.yaml" = {
       text = ''
@@ -101,6 +105,10 @@
       '';
     };
   };
+
+  systemd.tmpfiles.rules = [
+    "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.05";

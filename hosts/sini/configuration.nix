@@ -75,7 +75,6 @@
     vim
     wget
     git
-    openiscsi
   ];
 
   services = {
@@ -114,6 +113,15 @@
       '';
     };
   };
+
+  services.openiscsi = {
+    enable = true;
+    name = config.networking.hostName;
+  };
+
+  systemd.tmpfiles.rules = [
+    "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
+  ];
 
   services.dockerRegistry = {
     enable = true;
