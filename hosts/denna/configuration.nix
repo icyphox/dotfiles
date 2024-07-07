@@ -85,7 +85,7 @@
   services.k3s = let address = "100.77.4.74"; in {
     enable = true;
     role = "agent";
-    extraFlags = "--node-ip=${address} --node-external-ip=${address}";
+    extraFlags = "--node-ip=${address} --node-external-ip=${address} --flannel-external-ip";
     serverAddr = "https://sini:6443";
     tokenFile = "/var/lib/rancher/k3s/token";
   };
