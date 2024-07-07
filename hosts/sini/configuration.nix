@@ -102,6 +102,17 @@
     extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --bind-address=${address} --node-ip=${address} --node-external-ip=${address}";
   };
 
+  environment.etc = {
+    "rancher/k3s/registries.yaml" = {
+      text = ''
+        mirrors:
+          sini:5000:
+            endpoint:
+              - "http://sini:5000"
+      '';
+    };
+  };
+
   services.dockerRegistry = {
     enable = true;
     listenAddress = "0.0.0.0";
