@@ -11,48 +11,6 @@
 
   networking.hostName = "sini"; # Define your hostname.
 
-  boot.kernelParams = [ "ip=dhcp" ];
-  boot.initrd = let interface = "wlp3s0"; in
-    {
-      luks.devices."luks-0ae4be28-55a1-4a0c-8518-c6d53540cb26".device = "/dev/disk/by-uuid/0ae4be28-55a1-4a0c-8518-c6d53540cb26";
-      availableKernelModules = [ "ccm" "ctr" "iwlmvm" "iwlwifi" ];
-
-      systemd = {
-        enable = true;
-
-        packages = [ pkgs.wpa_supplicant ];
-        initrdBin = [ pkgs.wpa_supplicant ];
-        targets.initrd.wants = [ "wpa_supplicant@${interface}.service" ];
-
-        # prevent WPA supplicant from requiring `sysinit.target`.
-        services."wpa_supplicant@".unitConfig.DefaultDependencies = false;
-
-        users.root.shell = "/bin/systemd-tty-ask-password-agent";
-        network = {
-          enable = true;
-          networks."wifi" = {
-            enable = true;
-            DHCP = "yes";
-            name = interface;
-          };
-        };
-
-      };
-
-      network = {
-        enable = true;
-        ssh = {
-          enable = true;
-          port = 22;
-          authorizedKeys = [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICJPYX06+qKr9IHWfkgCtHbExoBOOwS/+iAWbog9bAdk icy@wyndle"
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIlcByNC93n6dH41uxdLvbtf8XfKF0hoN35548PRga3M icy@kvothe"
-          ];
-          hostKeys = [ "/etc/secrets/initrd/ssh_host_ed25519_key" ];
-        };
-      };
-    };
-
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Helsinki";
