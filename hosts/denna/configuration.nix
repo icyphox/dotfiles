@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../ssh.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -87,6 +88,17 @@
     extraFlags = "--node-ip=${address} --node-external-ip=${address}";
     serverAddr = "https://sini:6443";
     tokenFile = "/var/lib/rancher/k3s/token";
+  };
+
+  environment.etc = {
+    "rancher/k3s/registries.yaml" = {
+      text = ''
+        mirrors:
+          sini:5000:
+            endpoint:
+              - "http://sini:5000"
+      '';
+    };
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

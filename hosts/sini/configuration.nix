@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../ssh.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
