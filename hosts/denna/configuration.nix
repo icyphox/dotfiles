@@ -85,7 +85,7 @@
     enable = true;
     role = "agent";
     serverAddr = "https://sini:6443";
-    tokenFile = "/var/lib/rancher/k3s/agent/token";
+    tokenFile = "/var/lib/rancher/k3s/token";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
