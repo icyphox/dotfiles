@@ -83,7 +83,6 @@
 
   services.k3s = {
     enable = true;
-    extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --bind-address=100.85.88.64 --node-ip=100.85.88.64 --node-external-ip=100.85.88.64";
     role = "agent";
     serverAddr = "https://sini:6443";
     tokenFile = "/var/lib/rancher/k3s/agent/token";

@@ -97,9 +97,9 @@
   # building only
   virtualisation.docker.enable = true;
 
-  services.k3s = {
+  services.k3s = let address = "100.85.88.64"; in {
     enable = true;
-    extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --bind-address=100.85.88.64 --node-ip=100.85.88.64 --node-external-ip=100.85.88.64";
+    extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --bind-address=${address} --node-ip=${address} --node-external-ip=${address}";
   };
 
   services.dockerRegistry = {
