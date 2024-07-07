@@ -100,7 +100,7 @@
 
   services.k3s = let address = "100.85.88.64"; in {
     enable = true;
-    extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --bind-address=${address} --node-ip=${address} --node-external-ip=${address} --flannel-external-ip";
+    extraFlags = "--disable=traefik --disable=servicelb --disable=metrics-server --bind-address=${address} --node-ip=${address} --node-external-ip=${address} --flannel-external-ip=true --flannel-iface=tailscale0";
   };
 
   environment.etc = {
