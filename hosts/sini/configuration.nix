@@ -75,6 +75,7 @@
     vim
     wget
     git
+    openiscsi
   ];
 
   services = {
