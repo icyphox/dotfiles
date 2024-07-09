@@ -52,6 +52,7 @@ in
     chromium
     evolution
     nix-your-shell
+    pass
 
     gnome3.gnome-tweaks
     gnome3.gnome-shell-extensions

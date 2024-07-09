@@ -152,5 +152,18 @@
           ];
         };
       };
+
+      nixosConfigurations = {
+        iso = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
+            {
+              imports = [ ./hosts/iso/configuration.nix ];
+              _module.args.self = self;
+            }
+          ];
+        };
+      };
     };
 }
