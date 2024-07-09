@@ -82,13 +82,13 @@
     # nix-snapshotter.enable = true;
   };
 
-  # services.k3s = let address = "100.77.4.74"; in {
-  #   enable = true;
-  #   role = "agent";
-  #   extraFlags = "--node-ip=${address} --node-external-ip=${address} --flannel-iface=tailscale0";
-  #   serverAddr = "https://sini:6443";
-  #   tokenFile = "/var/lib/rancher/k3s/token";
-  # };
+  services.k3s = let address = "100.109.134.88"; in {
+    enable = true;
+    role = "agent";
+    extraFlags = "--node-ip=${address} --node-external-ip=${address} --flannel-iface=tailscale0";
+    serverAddr = "https://sini:6443";
+    tokenFile = "/var/lib/rancher/k3s/token";
+  };
 
   services.openiscsi = {
     enable = true;
