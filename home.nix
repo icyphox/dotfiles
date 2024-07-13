@@ -17,9 +17,9 @@ in
   ];
 
   fonts.fontconfig.enable = true;
-  manual.manpages.enable = false;
+  manual.manpages.enable = true;
 
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
   home.username = "icy";
   home.homeDirectory = "/home/icy";
   home.extraOutputsToInstall = [ "man" ];
@@ -31,6 +31,7 @@ in
     curl
     tmux
     ripgrep
+    fd
     imagemagick
     ffmpeg
     wget
@@ -43,7 +44,7 @@ in
     fzy
     nixpkgs-fmt
     libnotify
-    signal-desktop
+    signal-desktop-beta
     calibre
     pinentry
     libreoffice
@@ -53,6 +54,7 @@ in
     evolution
     nix-your-shell
     pass
+    zed-editor
 
     gnome3.gnome-tweaks
     gnome3.gnome-shell-extensions

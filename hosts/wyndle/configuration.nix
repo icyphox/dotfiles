@@ -12,7 +12,7 @@
     loader.efi.canTouchEfiVariables = true;
     kernel.sysctl."net.ipv4.ip_forward" = 1;
     resumeDevice = "/dev/nvme0n1p2";
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "i2c-dev" ];
   };
 
@@ -158,14 +158,16 @@
         Option         "AllowIndirectGLXProtocol" "off"
         Option         "TripleBuffer" "on"
       '';
-      libinput = {
-        enable = true;
-        mouse = {
-          scrollButton = 8;
-          scrollMethod = "button";
-        };
+    };
+
+    libinput = {
+      enable = true;
+      mouse = {
+        scrollButton = 8;
+        scrollMethod = "button";
       };
     };
+
     ddccontrol.enable = true;
     tailscale.enable = true;
     # 1. chmod for rootless backligh1t
