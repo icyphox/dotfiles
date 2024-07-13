@@ -95,6 +95,7 @@
 
       set -g default-terminal "xterm-256color"
       set -ga terminal-overrides ',xterm-256color:Tc'
+      set -sa terminal-features ",xterm-256color:RGB"
       set -as terminal-overrides ',xterm*:sitm=\E[3m'
 
       set -g default-shell "/etc/profiles/per-user/icy/bin/fish"

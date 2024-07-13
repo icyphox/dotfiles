@@ -12,19 +12,23 @@ let
       bold = { family = "SF Mono"; style = "Semibold"; };
       italic = { family = "SF Mono"; style = "Light Italic"; };
       size = 15.0;
-      offset.y = 5;
+      offset.y = 10;
     }
     else {
       normal = { family = "Input"; style = "Regular"; };
       bold = { family = "Input"; style = "Bold"; };
       italic = { family = "Input"; style = "Italic"; };
       size = 12.0;
+      offset.y = 10;
     };
 in
 {
   programs.alacritty = {
     enable = true;
     settings = {
+      env = {
+        TERM = "xterm-256color";
+      };
       window = {
         padding.x = 10;
         padding.y = 10;
