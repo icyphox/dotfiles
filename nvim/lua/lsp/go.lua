@@ -7,6 +7,7 @@ require('lspconfig').gopls.setup {
       shadow = true,
     },
     staticcheck = true,
+    buildFlags = {"-tags=cgo"},
   },
   on_attach = require('maps').on_attach,
 }
