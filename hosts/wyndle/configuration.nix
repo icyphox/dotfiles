@@ -196,9 +196,9 @@
         ids = [ "*" ];
         extraConfig = ''
           [main]
-          capslock = overload(capslock, esc)
+          capslock = overload(capslock, rightalt)
 
-          [capslock:C]
+          [capslock]
           h = left
           j = down
           k = up

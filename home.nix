@@ -74,7 +74,7 @@ in
     "org/gnome/desktop/input-sources" = {
       show-all-sources = true;
       sources = [ (mkTuple [ "xkb" "us+workman" ]) (mkTuple [ "xkb" "us" ]) ];
-      xkb-options = [ "terminate:ctrl_alt_bksp" ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" "compose:ralt" ];
     };
   };
 
