@@ -55,6 +55,8 @@ in
     nix-your-shell
     pass
     zed-editor
+    newsflash
+    wl-clipboard
 
     gnome3.gnome-tweaks
     gnome3.gnome-shell-extensions

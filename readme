@@ -3,12 +3,19 @@ dotfiles
 
 System configurations and dotfiles managed using Nix.
 
-Hosts:
+Primary hosts:
   • wyndle: Asus ROG Flow X13
     NixOS, running GNOME.
 
   • kvothe: MacBook Pro 14 (M1 Pro)
     macOS 14.0, Sonoma using nix-darwin.
+
+Homelab cluster:
+  • sini: Dell OptiPlex 3040
+  • iso: HP EliteDesk 800 G2
+  • denna: MeLE Quieter 4C
+
+    All running K3s on NixOS.
 
 
 Licensed under CC0 (Public Domain).
