@@ -54,9 +54,9 @@ in
     evolution
     nix-your-shell
     pass
-    zed-editor
     newsflash
     wl-clipboard
+    zed-editor
 
     gnome3.gnome-tweaks
     gnome3.gnome-shell-extensions
@@ -64,6 +64,7 @@ in
     gnomeExtensions.dash-to-dock
     gnomeExtensions.unite
     gnomeExtensions.search-light
+    gnomeExtensions.hide-top-bar
 
   ] ++ (import ./bin { inherit pkgs host; });
 

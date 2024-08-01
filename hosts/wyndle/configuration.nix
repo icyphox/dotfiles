@@ -55,6 +55,7 @@
 
   nixpkgs.overlays = with self.overlays; [
     prompt
+    customPkgs
   ];
 
   environment = {
@@ -113,7 +114,6 @@
     keyMap = "us";
   };
 
-  sound.enable = true;
   hardware = {
     bluetooth = {
       enable = true;

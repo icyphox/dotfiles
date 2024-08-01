@@ -49,6 +49,9 @@
 
       overlays = {
         prompt = prompt.overlay;
+        customPkgs = final: prev: {
+          zed-editor = inputs.nixpkgs-master.legacyPackages.${prev.system}.zed-editor;
+        };
       };
 
       darwinConfigurations = {
