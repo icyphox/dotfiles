@@ -9,6 +9,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  systemd.network.wait-online.enable = false;
 
   networking.hostName = "denna";
   networking.networkmanager.enable = true;
