@@ -74,6 +74,7 @@
     vim
     wget
     git
+    nfs-utils
   ];
 
   services = {
