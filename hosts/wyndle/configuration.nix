@@ -197,6 +197,10 @@
         extraConfig = ''
           [main]
           capslock = overload(capslock, rightalt)
+          leftmeta = layer(meta_mac)
+          rightmeta = layer(meta_mac)
+          leftalt = layer(option_mac)
+          rightalt = layer(option_mac)
 
           [capslock]
           h = left
@@ -210,6 +214,18 @@
           j = C-down
           k = C-up
           l = C-right
+
+          # macOS style bindings
+          [meta_mac:M]
+          l = C-l
+          a = C-a
+          t = C-t
+          w = C-w
+          f = C-f
+          backspace = C-backspace
+
+          [option_mac:A]
+          backspace = C-backspace
         '';
       };
     };
