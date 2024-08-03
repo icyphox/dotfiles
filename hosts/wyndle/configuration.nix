@@ -222,6 +222,8 @@
           t = C-t
           w = C-w
           f = C-f
+          c = C-c
+          v = C-v
           backspace = C-backspace
 
           [option_mac:A]
