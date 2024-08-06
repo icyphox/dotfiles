@@ -9,14 +9,12 @@
     ignores = [ ".envrc" ];
     userEmail = "x@icyphox.sh";
     userName = "Anirudh Oppiliappan";
-    signing = {
-      key = "8A93F96F78C5D4C4";
-      signByDefault = true;
-    };
     extraConfig = {
       commit.verbose = true;
       init.defaultBranch = "master";
       pull.rebase = "true";
+      gpg.format = "ssh";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
 
       url."ssh://git@github.com/".insteadOf = "https://github.com/";
       url."ssh://git@git.services.upcloud.com/".insteadOf = "https://git.services.upcloud.com/";

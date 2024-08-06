@@ -9,7 +9,7 @@
 {
   home.stateVersion = "24.05";
   home.username = "icy";
-  manual.manpages.enable = false;
+  manual.manpages.enable = true;
 
 
   imports = [
