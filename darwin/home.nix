@@ -7,7 +7,7 @@
 }:
 
 {
-  home.stateVersion = "23.05";
+  home.stateVersion = "24.05";
   home.username = "icy";
   manual.manpages.enable = false;
 
@@ -31,6 +31,8 @@
     fd
     gnupg
     colima
+    docker
+    docker-buildx
     pinentry_mac
     kubectl
 

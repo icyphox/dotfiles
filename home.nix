@@ -19,7 +19,7 @@ in
   fonts.fontconfig.enable = true;
   manual.manpages.enable = true;
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
   home.username = "icy";
   home.homeDirectory = "/home/icy";
   home.extraOutputsToInstall = [ "man" ];

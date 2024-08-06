@@ -12,7 +12,7 @@ let
       bold = { family = "SF Mono"; style = "Semibold"; };
       italic = { family = "SF Mono"; style = "Light Italic"; };
       size = 15.0;
-      offset.y = 10;
+      offset.y = 13;
     }
     else {
       normal = { family = "Input"; style = "Regular"; };
