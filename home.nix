@@ -55,14 +55,15 @@ in
     nix-your-shell
     pass
     newsflash
+    errands
     wl-clipboard
     zed-editor
+    nvtop
 
     gnome3.gnome-tweaks
     gnome3.gnome-shell-extensions
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
-    gnomeExtensions.unite
     gnomeExtensions.search-light
     gnomeExtensions.hide-top-bar
 
@@ -77,6 +78,16 @@ in
       sources = [ (mkTuple [ "xkb" "us+workman" ]) (mkTuple [ "xkb" "us" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" "compose:ralt" ];
     };
+    "org/gnome/mutter" = {
+      overlay-key = [ "" ];
+    };
+    "org/gnome/shell/extensions/search-light" = {
+      shortcut-search = [ "<Super>space" ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      screensaver = [ "<Control><Super>q" ];
+    };
+
   };
 
   xdg = {
@@ -91,4 +102,5 @@ in
   };
 
 }
+
 

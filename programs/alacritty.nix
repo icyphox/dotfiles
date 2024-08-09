@@ -33,7 +33,7 @@ in
         padding.x = 10;
         padding.y = 10;
         dynamic_padding = true;
-        decorations = "None";
+        decorations = "Full";
         startup_mode = "Maximized";
 
 

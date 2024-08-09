@@ -16,6 +16,12 @@
     kernelModules = [ "i2c-dev" ];
   };
 
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
+  boot.extraModprobeConfig = ''
+    blacklist nouveau
+    options nouveau modeset=0
+  '';
+
   networking = {
     nameservers = [ "8.8.8.8" "8.8.4.4" ];
     networkmanager.enable = true;
@@ -59,19 +65,6 @@
   ];
 
   environment = {
-    etc = {
-      "supergfxd.conf" = {
-        mode = "0644";
-        source = (pkgs.formats.json { }).generate "supergfxd.conf" {
-          mode = "hybrid";
-          vfio_enable = false;
-          vfio_save = false;
-          always_reboot = false;
-          no_logind = false;
-          logout_timeout_s = 180;
-        };
-      };
-    };
     sessionVariables = rec {
       NIXOS_OZONE_WL = "1";
     };
@@ -121,7 +114,7 @@
       disabledPlugins = [ "sap" ];
     };
     nvidia.prime = {
-      offload.enable = true;
+      offload.enable = false;
       amdgpuBusId = "PCI:8:0:0";
       nvidiaBusId = "PCI:1:0:0";
     };
@@ -138,6 +131,15 @@
     };
     supergfxd = {
       enable = true;
+      settings = {
+        mode = "integrated";
+        vfio_enable = false;
+        vfio_save = false;
+        always_reboot = true;
+        no_logind = false;
+        logout_timeout_s = 180;
+      };
+
     };
     pipewire = {
       enable = true;
@@ -152,7 +154,7 @@
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
       dpi = 192;
-      videoDrivers = [ "nvidia" ];
+      videoDrivers = [ "amdgpu" ];
       screenSection = ''
         Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
         Option         "AllowIndirectGLXProtocol" "off"
@@ -177,6 +179,15 @@
         ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
         ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0036", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
         KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+
+        # Remove NVIDIA USB xHCI Host Controller devices, if present
+        ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{power/control}="auto", ATTR{remove}="1"
+        # Remove NVIDIA USB Type-C UCSI devices, if present
+        ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{power/control}="auto", ATTR{remove}="1"
+        # Remove NVIDIA Audio devices, if present
+        ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{power/control}="auto", ATTR{remove}="1"
+        # Remove NVIDIA VGA/3D controller devices
+        ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]*", ATTR{power/control}="auto", ATTR{remove}="1"
       '';
       extraHwdb = ''
         evdev:input:b0003v0B05p19B6*
@@ -251,6 +262,7 @@
     doas.extraRules = [{
       users = [ "icy" ];
     }];
+    pki.certificateFiles = [ ./ca.crt ];
   };
 
   powerManagement = {

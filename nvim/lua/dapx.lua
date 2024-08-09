@@ -29,6 +29,14 @@ require 'dap-go'.setup {
       request = "launch",
       program = "${workspaceFolderBasename}/cmd/main.go",
     },
+    {
+      type = "go",
+      name = "Debug (Build Flags & Arguments)",
+      request = "launch",
+      program = "${file}",
+      args = require("dap-go").get_arguments,
+      buildFlags = require("dap-go").get_build_flags,
+    },
   },
 }
 
