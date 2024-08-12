@@ -82,6 +82,7 @@
             {
               imports = [ ./hosts/kvothe/configuration.nix ];
               _module.args.self = self;
+              nixpkgs.overlays = [ nix-your-shell.overlays.default ];
             }
             home-manager.darwinModules.home-manager
             {

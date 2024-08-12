@@ -39,5 +39,6 @@
     go
     gopls
     gotools
+    nix-your-shell
   ] ++ (import ../bin { inherit pkgs host; });
 }
