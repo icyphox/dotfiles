@@ -44,15 +44,6 @@
       "steam-original"
       "steam-runtime"
     ];
-    st = {
-      conf = builtins.readFile ../../programs/st/config.h;
-      extraLibs = with pkgs; [ harfbuzz ];
-      patches = [
-        ../../patches/st/xres.diff
-        ../../patches/st/bright.diff
-        ../../patches/st/ligatures.diff
-      ];
-    };
     chromium = {
       commandLineArgs = "--ozone-platform=wayland";
     };
