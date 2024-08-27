@@ -12,6 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     darwin = {
       url = "github:lnl7/nix-darwin/master";
@@ -41,17 +42,21 @@
     , nixos-hardware
     , nix-snapshotter
     , nix-your-shell
+    , chaotic
     , home-manager
     , prompt
     , darwin
     , ...
-    } @ inputs: {
+    } @ inputs:
+
+    let
+      supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
+      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+    in
+    {
 
       overlays = {
         prompt = prompt.overlay;
-        customPkgs = final: prev: {
-          zed-editor = inputs.nixpkgs-master.legacyPackages.${prev.system}.zed-editor;
-        };
       };
 
       darwinConfigurations = {
@@ -85,7 +90,7 @@
             {
               imports = [ ./hosts/wyndle/configuration.nix ];
               _module.args.self = self;
-              nixpkgs.overlays = [ nix-your-shell.overlays.default ];
+              nixpkgs.overlays = [ nix-your-shell.overlays.default chaotic.overlays.default ];
             }
             home-manager.nixosModules.home-manager
             {
@@ -148,5 +153,19 @@
           ];
         };
       };
+
+      devShells = forAllSystems (system:
+        let
+          nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
+          pkgs = nixpkgsFor.${system};
+        in
+        {
+          default = pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              nixd
+              nixfmt-rfc-style
+            ];
+          };
+        });
     };
 }

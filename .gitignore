@@ -2,3 +2,4 @@ prompt/prompt
 result
 config/nvim/init.vim
 .luarc.json
+.direnv

@@ -45,14 +45,13 @@
       "steam-runtime"
     ];
     chromium = {
-      commandLineArgs = "--ozone-platform=wayland";
+      commandLineArgs = "--ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation";
     };
     firefox.enablePlasmaBrowserIntegration = true;
   };
 
   nixpkgs.overlays = with self.overlays; [
     prompt
-    customPkgs
   ];
 
   environment = {
@@ -113,6 +112,7 @@
       enable = true;
       enableGraphical = true;
     };
+    graphics.extraPackages = [ pkgs.amdvlk ];
   };
 
   services = {

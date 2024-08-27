@@ -1,6 +1,7 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 let
+  isDarwin = lib.strings.hasSuffix "darwin" pkgs.stdenv.hostPlatform.system;
   zedSettings = {
     telemetry = {
       diagnostics = false;
@@ -9,9 +10,9 @@ let
     base_keymap = "VSCode";
     buffer_font_size = 15;
     theme = "Icy Light";
-    buffer_font_family = "SF Mono";
+    buffer_font_family = if isDarwin then "SF Mono" else "Input";
     buffer_font_weight = 500;
-    ui_font_family = "System Font";
+    ui_font_family = if isDarwin then "System Font" else "Inter";
     ui_font_size = 18;
     vim_mode = true;
     vim = {

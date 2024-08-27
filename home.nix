@@ -24,48 +24,48 @@ in
   home.homeDirectory = "/home/icy";
   home.extraOutputsToInstall = [ "man" ];
 
-  home.packages = with pkgs; [
+  home.packages = [
+    pkgs.git
+    pkgs.unzip
+    pkgs.curl
+    pkgs.tmux
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.imagemagick
+    pkgs.ffmpeg
+    pkgs.wget
+    pkgs.tree
+    pkgs.mpv
+    pkgs.noto-fonts-cjk
+    pkgs.noto-fonts-emoji
+    pkgs.jq
+    pkgs.yq-go
+    pkgs.fzy
+    pkgs.nixpkgs-fmt
+    pkgs.libnotify
+    pkgs.signal-desktop-beta
+    pkgs.calibre
+    pkgs.pinentry
+    pkgs.libreoffice
+    pkgs.go
+    pkgs.dconf
+    pkgs.chromium
+    pkgs.nix-your-shell
+    pkgs.geary
+    pkgs.pass
+    pkgs.newsflash
+    pkgs.errands
+    pkgs.wl-clipboard
+    pkgs.nvtop
 
-    git
-    unzip
-    curl
-    tmux
-    ripgrep
-    fd
-    imagemagick
-    ffmpeg
-    wget
-    tree
-    mpv
-    noto-fonts-cjk
-    noto-fonts-emoji
-    jq
-    yq-go
-    fzy
-    nixpkgs-fmt
-    libnotify
-    signal-desktop-beta
-    calibre
-    pinentry
-    libreoffice
-    go
-    dconf
-    chromium
-    evolution
-    nix-your-shell
-    pass
-    newsflash
-    errands
-    wl-clipboard
-    zed-editor
-    nvtop
+    pkgs.gnome3.gnome-tweaks
+    pkgs.gnome3.gnome-shell-extensions
+    pkgs.gnomeExtensions.appindicator
+    pkgs.gnomeExtensions.dash-to-dock
+    pkgs.gnomeExtensions.search-light
+    pkgs.gnomeExtensions.hide-top-bar
 
-    gnome3.gnome-tweaks
-    gnome3.gnome-shell-extensions
-    gnomeExtensions.appindicator
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.search-light
-    gnomeExtensions.hide-top-bar
+    pkgs.zed-editor_git
 
   ] ++ (import ./bin { inherit pkgs host; });
 
