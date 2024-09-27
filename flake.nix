@@ -12,8 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
     darwin = {
       url = "github:lnl7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +31,11 @@
       url = "github:MercuryTechnologies/nix-your-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zed = {
+      url = "github:zed-industries/zed";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -40,24 +43,24 @@
     , nixpkgs
     , nixpkgs-master
     , nixos-hardware
-    , nix-snapshotter
     , nix-your-shell
-    , chaotic
     , home-manager
     , prompt
-    , darwin
+    , # zed,
+      darwin
     , ...
-    } @ inputs:
+    }@inputs:
 
     let
-      supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
+      supportedSystems = [
+        "x86_64-linux"
+        "x86_64-darwin"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in
     {
-
-      overlays = {
-        prompt = prompt.overlay;
-      };
 
       darwinConfigurations = {
         kvothe = darwin.lib.darwinSystem {
@@ -66,7 +69,10 @@
             {
               imports = [ ./hosts/kvothe/configuration.nix ];
               _module.args.self = self;
-              nixpkgs.overlays = [ nix-your-shell.overlays.default ];
+              nixpkgs.overlays = [
+                nix-your-shell.overlays.default
+                prompt.overlay
+              ];
             }
             home-manager.darwinModules.home-manager
             {
@@ -90,7 +96,10 @@
             {
               imports = [ ./hosts/wyndle/configuration.nix ];
               _module.args.self = self;
-              nixpkgs.overlays = [ nix-your-shell.overlays.default chaotic.overlays.default ];
+              nixpkgs.overlays = [
+                nix-your-shell.overlays.default
+                prompt.overlay
+              ];
             }
             home-manager.nixosModules.home-manager
             {
@@ -111,11 +120,18 @@
         sini = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
-            ({ config, pkgs, ... }: {
-              services.pixelfed.package = nixpkgs-master.legacyPackages."x86_64-linux".pixelfed;
-              services.pixelfed.phpPackage = nixpkgs-master.legacyPackages."x86_64-linux".php82;
+            ({
+              config = {
+                nix.registry.nixpkgs.flake = nixpkgs;
+              };
             })
+            (
+              { config, pkgs, ... }:
+              {
+                services.pixelfed.package = nixpkgs-master.legacyPackages."x86_64-linux".pixelfed;
+                services.pixelfed.phpPackage = nixpkgs-master.legacyPackages."x86_64-linux".php82;
+              }
+            )
             # ({ pkgs, ... }: {
             #   imports = [ nix-snapshotter.nixosModules.default ];
             #   nixpkgs.overlays = [ nix-snapshotter.overlays.default ];
@@ -132,7 +148,11 @@
         denna = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
+            ({
+              config = {
+                nix.registry.nixpkgs.flake = nixpkgs;
+              };
+            })
             {
               imports = [ ./hosts/denna/configuration.nix ];
               _module.args.self = self;
@@ -145,7 +165,11 @@
         iso = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
+            ({
+              config = {
+                nix.registry.nixpkgs.flake = nixpkgs;
+              };
+            })
             {
               imports = [ ./hosts/iso/configuration.nix ];
               _module.args.self = self;
@@ -154,7 +178,8 @@
         };
       };
 
-      devShells = forAllSystems (system:
+      devShells = forAllSystems (
+        system:
         let
           nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
           pkgs = nixpkgsFor.${system};
@@ -166,6 +191,7 @@
               nixfmt-rfc-style
             ];
           };
-        });
+        }
+      );
     };
 }

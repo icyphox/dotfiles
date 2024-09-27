@@ -13,10 +13,6 @@
   };
 
   services.nix-daemon.enable = true;
-  nixpkgs.overlays = with self.overlays; [
-    prompt
-  ];
-
   security.pam.enableSudoTouchIdAuth = true;
 
   system.activationScripts.applications.text = pkgs.lib.mkForce (

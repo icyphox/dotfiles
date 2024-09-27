@@ -50,10 +50,6 @@
     firefox.enablePlasmaBrowserIntegration = true;
   };
 
-  nixpkgs.overlays = with self.overlays; [
-    prompt
-  ];
-
   environment = {
     sessionVariables = rec {
       NIXOS_OZONE_WL = "1";

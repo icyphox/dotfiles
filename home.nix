@@ -3,6 +3,7 @@
 , self
 , host
 , lib
+, inputs
 , ...
 }:
 
@@ -65,7 +66,9 @@ in
     pkgs.gnomeExtensions.search-light
     pkgs.gnomeExtensions.hide-top-bar
 
-    pkgs.zed-editor_git
+    pkgs.prompt
+    pkgs.zed-editor
+    # inputs.zed.packages.${pkgs.system}.zed-editor
 
   ] ++ (import ./bin { inherit pkgs host; });
 
@@ -75,8 +78,20 @@ in
     };
     "org/gnome/desktop/input-sources" = {
       show-all-sources = true;
-      sources = [ (mkTuple [ "xkb" "us+workman" ]) (mkTuple [ "xkb" "us" ]) ];
-      xkb-options = [ "terminate:ctrl_alt_bksp" "compose:ralt" ];
+      sources = [
+        (mkTuple [
+          "xkb"
+          "us+workman"
+        ])
+        (mkTuple [
+          "xkb"
+          "us"
+        ])
+      ];
+      xkb-options = [
+        "terminate:ctrl_alt_bksp"
+        "compose:ralt"
+      ];
     };
     "org/gnome/mutter" = {
       overlay-key = [ "" ];
@@ -102,5 +117,3 @@ in
   };
 
 }
-
-
