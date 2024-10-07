@@ -44,7 +44,7 @@ in
     pkgs.fzy
     pkgs.nixpkgs-fmt
     pkgs.libnotify
-    pkgs.signal-desktop-beta
+    pkgs.signal-desktop
     pkgs.calibre
     pkgs.pinentry
     pkgs.libreoffice
