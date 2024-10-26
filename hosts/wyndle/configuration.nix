@@ -64,7 +64,7 @@
       man-pages
       git
       man-pages-posix
-      (lib.hiPrio pkgs.bashInteractive_5)
+      (lib.hiPrio pkgs.bashInteractive)
     ];
     gnome.excludePackages = (with pkgs; [
       gnome-photos

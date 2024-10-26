@@ -25,7 +25,7 @@ let
       working_directory = "current_project_directory";
       option_as_meta = true;
       env = {
-        EDITOR = "zed --wait";
+        EDITOR = "zeditor --wait";
       };
       shell = {
         program = "fish";
@@ -52,7 +52,7 @@ let
       button = true;
     };
     scrollbar = {
-      show = "auto";
+      show = "never";
     };
     toolbar = {
       breadcrumbs = true;

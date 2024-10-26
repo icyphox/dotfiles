@@ -37,7 +37,7 @@ in
     pkgs.wget
     pkgs.tree
     pkgs.mpv
-    pkgs.noto-fonts-cjk
+    pkgs.noto-fonts-cjk-sans
     pkgs.noto-fonts-emoji
     pkgs.jq
     pkgs.yq-go
@@ -58,9 +58,10 @@ in
     pkgs.errands
     pkgs.wl-clipboard
     pkgs.nvtop
+    pkgs.vesktop
 
-    pkgs.gnome3.gnome-tweaks
-    pkgs.gnome3.gnome-shell-extensions
+    pkgs.gnome.gnome-tweaks
+    pkgs.gnome.gnome-shell-extensions
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.search-light
