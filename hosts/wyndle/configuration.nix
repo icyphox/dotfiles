@@ -13,14 +13,19 @@
     kernel.sysctl."net.ipv4.ip_forward" = 1;
     resumeDevice = "/dev/nvme0n1p2";
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = [ "i2c-dev" ];
+    kernelModules = [ "i2c-dev" "v4l2loopback" ];
   };
 
   boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
   boot.extraModprobeConfig = ''
     blacklist nouveau
     options nouveau modeset=0
+    options v4l2loopback video_nr=2,3 width=640,1920 max_width=1920 height=480,1080 max_height=1080 format=YU12,YU12 exclusive_caps=1,1 card_label=Phone,Laptop debug=1
   '';
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
 
   networking = {
     nameservers = [ "8.8.8.8" "8.8.4.4" ];
@@ -224,6 +229,7 @@
           c = C-c
           v = C-v
           backspace = C-backspace
+          leftshift = compose
 
           [option_mac:A]
           backspace = C-backspace

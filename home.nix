@@ -59,7 +59,9 @@ in
     pkgs.wl-clipboard
     pkgs.nvtop
     pkgs.vesktop
+    pkgs.smile
 
+    pkgs.gnome-pomodoro
     pkgs.gnome.gnome-tweaks
     pkgs.gnome.gnome-shell-extensions
     pkgs.gnomeExtensions.appindicator
@@ -104,6 +106,19 @@ in
       screensaver = [ "<Control><Super>q" ];
     };
 
+    "org/gnome/shell/keybindings" = {
+      show-screenshot-ui = [ "<Shift><Control>4" ];
+    };
+
+    "org/gnome/shell/keybindings/screenshot-window" = {
+      screenshot-window = [ "<Shift><Super>space" ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = [ "<Control>;" ];
+      command = "smile";
+      name = "emoji";
+    };
   };
 
   xdg = {
