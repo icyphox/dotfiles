@@ -45,7 +45,7 @@ let
     assistant = {
       default_model = {
         provider = "copilot_chat";
-        model = "gpt-4";
+        model = "claude-3-5-sonnet";
       };
       version = "2";
       enabled = true;

@@ -6,5 +6,6 @@ let
 in
 {
   home.file.".config/zed/themes/icy.json".source = ./themes/icy.json;
+  home.file.".config/zed/themes/icy-dusk.json".source = ./themes/icy-dusk.json;
   imports = [ settings keymap ];
 }
