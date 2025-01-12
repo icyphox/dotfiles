@@ -9,7 +9,11 @@ let
     };
     base_keymap = "VSCode";
     buffer_font_size = 15;
-    theme = "Icy Light";
+    theme = {
+      mode = "system";
+      light = "Warm Icy Light";
+      dark = "Warm Icy Dark";
+    };
     buffer_font_family = if isDarwin then "SF Mono" else "Input";
     buffer_font_weight = 500;
     ui_font_family = if isDarwin then "System Font" else "Inter";
