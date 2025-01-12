@@ -60,10 +60,11 @@ in
     pkgs.nvtop
     pkgs.vesktop
     pkgs.smile
+    pkgs.apostrophe
 
     pkgs.gnome-pomodoro
-    pkgs.gnome.gnome-tweaks
-    pkgs.gnome.gnome-shell-extensions
+    pkgs.gnome-tweaks
+    pkgs.gnome-shell-extensions
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.search-light
