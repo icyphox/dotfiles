@@ -16,6 +16,7 @@
     ./alacritty.nix
     ./fish.nix
     ./zed/default.nix
+    ./ghostty.nix
   ];
 
   programs = {
