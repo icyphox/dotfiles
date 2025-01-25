@@ -7,6 +7,10 @@ let
       diagnostics = false;
       metrics = false;
     };
+    active_pane_modifiers = {
+      inactive_opacity = 0.8;
+      magnification = 1.5;
+    };
     base_keymap = "VSCode";
     buffer_font_size = 15;
     theme = {
@@ -14,7 +18,7 @@ let
       light = "Warm Icy Light";
       dark = "Warm Icy Dark";
     };
-    buffer_font_family = if isDarwin then "SF Mono" else "Input";
+    buffer_font_family = "SF Mono";
     buffer_font_weight = 500;
     ui_font_family = if isDarwin then "System Font" else "Inter";
     ui_font_size = 18;
@@ -24,18 +28,25 @@ let
     };
     gutter = {
       line_numbers = false;
+      runnables = false;
+      folds = false;
     };
     terminal = {
+      button = false;
       working_directory = "current_project_directory";
       option_as_meta = true;
       env = {
-        EDITOR = "zeditor --wait";
+        EDITOR = if isDarwin then "zed --wait" else "zeditor --wait";
       };
       shell = {
         program = "fish";
       };
     };
+    outline_panel = {
+      button = false;
+    };
     project_panel = {
+      button = false;
       file_icons = false;
       folder_icons = false;
       indent_size = 10;
@@ -46,6 +57,9 @@ let
     collaboration_panel = {
       button = false;
     };
+    notification_panel = {
+      button = false;
+    };
     assistant = {
       default_model = {
         provider = "copilot_chat";
@@ -53,17 +67,21 @@ let
       };
       version = "2";
       enabled = true;
-      button = true;
+      button = false;
     };
     scrollbar = {
       show = "never";
     };
     toolbar = {
-      breadcrumbs = true;
-      quick_actions = true;
+      breadcrumbs = false;
+      quick_actions = false;
+      selections_menu = false;
     };
     tab_bar = {
       show = false;
+    };
+    preview_tabs = {
+      enable = false;
     };
   };
 

@@ -20,6 +20,8 @@ let
         "space p" = "pane::ActivatePrevItem";
         "space e" = "file_finder::Toggle";
         "space shift-e" = "workspace::NewSearch";
+        "space ?" = "workspace::ToggleRightDock";
+        "space shift-f" = "workspace::ToggleLeftDock";
       };
     }
     {
