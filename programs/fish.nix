@@ -11,9 +11,9 @@
       set fish_greeting # Disable greeting
     '';
     functions = {
-      fish_prompt = ''
-        printf '\n\001\002▲\001\002 '
-      '';
+      # fish_prompt = ''
+      #   printf '\n\001\002▲\001\002 '
+      # '';
       ggp = ''
         if test "$argv[1]" = "-f"
             git push (git remote show) -f (git branch --show-current)

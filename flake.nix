@@ -18,14 +18,10 @@
     };
 
     prompt = {
-      url = "git+https://git.peppe.rs/cli/prompt";
+      url = "git+https://git.peppe.rs/cli/prompt?ref=master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-snapshotter = {
-      url = "github:pdtpartners/nix-snapshotter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     nix-your-shell = {
       url = "github:MercuryTechnologies/nix-your-shell";

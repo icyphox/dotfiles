@@ -23,7 +23,7 @@
   };
 
   home.packages = with pkgs; [
-    prompt
+    # prompt
     tmux
     git
     fzy
