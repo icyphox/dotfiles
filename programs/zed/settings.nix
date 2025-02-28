@@ -62,8 +62,8 @@ let
     };
     assistant = {
       default_model = {
-        provider = "copilot_chat";
-        model = "claude-3-5-sonnet";
+        provider = "zed.dev";
+        model = "claude-3-7-sonnet";
       };
       version = "2";
       enabled = true;
