@@ -16,6 +16,9 @@
   };
 
   environment = {
+    variables = {
+      EDITOR = "nvim";
+    };
     shells = [ pkgs.bash ];
   };
 
@@ -39,22 +42,10 @@
     ];
   };
 
-  nix.enable = false;
-
-  security.pam.services.sudo_local.touchIdAuth = true;
+  #  security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
     activationScripts.applications.text = pkgs.lib.mkForce (
-      # ''
-      #   echo "setting up ~/Applications..." >&2
-      #   rm -rf ~/Applications/Nix\ Apps
-      #   mkdir -p ~/Applications/Nix\ Apps
-      #   for app in $(find ${config.system.build.applications}/Applications -maxdepth 1 -type l); do
-      #     src="$(/usr/bin/stat -f%Y "$app")"
-      #     cp -r "$src" ~/Applications/Nix\ Apps
-      #   done
-      # ''
-
       ''
                 echo "setting up /Applications..." >&2
                 rm -rf /Applications/Nix\ Apps
@@ -74,18 +65,11 @@
       ''
     );
 
-
-    keyboard = {
-      enableKeyMapping = true;
-      userKeyMapping = [
-        {
-          HIDKeyboardModifierMappingSrc = 30064771129;
-          HIDKeyboardModifierMappingDst = 30064771181;
-        }
-      ];
+    defaults = {
+      screencapture.location = "/Users/icy/Pictures/Screenshots";
     };
 
-    stateVersion = 6;
+    stateVersion = 5;
   };
 
   homebrew = {
@@ -95,6 +79,6 @@
       cleanup = "uninstall";
       upgrade = true;
     };
-    casks = [ "orion" ];
+    casks = [ "orion" "karabiner-elements" ];
   };
 }

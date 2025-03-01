@@ -22,11 +22,6 @@
     };
   };
 
-  home.file.".hammerspoon" = {
-    source = ./hammerspoon;
-    recursive = true;
-  };
-
   home.packages = with pkgs; [
     # prompt
     tmux

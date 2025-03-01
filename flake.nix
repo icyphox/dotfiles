@@ -3,7 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -13,8 +15,8 @@
     };
 
     darwin = {
-      url = "github:lnl7/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:lnl7/nix-darwin/nix-darwin-24.11";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     prompt = {
