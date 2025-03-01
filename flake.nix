@@ -67,7 +67,7 @@
               _module.args.self = self;
               nixpkgs.overlays = [
                 nix-your-shell.overlays.default
-                prompt.overlay
+                # prompt.overlay
               ];
             }
             home-manager.darwinModules.home-manager

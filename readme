@@ -8,7 +8,7 @@ Primary hosts:
     NixOS, running GNOME.
 
   • kvothe: MacBook Pro 14 (M1 Pro)
-    macOS 14.0, Sonoma using nix-darwin.
+    macOS 15.0 Sequoia, using nix-darwin.
 
 Homelab cluster:
   • sini: Dell OptiPlex 3040

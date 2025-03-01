@@ -22,6 +22,11 @@
     };
   };
 
+  home.file.".hammerspoon" = {
+    source = ./hammerspoon;
+    recursive = true;
+  };
+
   home.packages = with pkgs; [
     # prompt
     tmux
@@ -36,6 +41,9 @@
     docker-buildx
     pinentry_mac
     kubectl
+
+    signal-desktop
+    raycast
 
     go
     gopls

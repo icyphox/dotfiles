@@ -1,49 +1,100 @@
 { self, config, pkgs, lib, ... }:
 
 {
-  programs.bash.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+
+  programs = {
+    bash.enable = true;
+    fish.enable = true;
+  };
+
+  services = {
+    tailscale = {
+      enable = true;
+    };
+  };
+
   environment = {
     shells = [ pkgs.bash ];
   };
 
-
+  users.knownUsers = [ "icy" ];
   users.users.icy = {
     name = "icy";
     home = "/Users/icy";
+    uid = 501;
+    shell = pkgs.fish;
   };
 
-  services.nix-daemon.enable = true;
-  security.pam.enableSudoTouchIdAuth = true;
-  
-  system.stateVersion = 5;
+  networking = {
+    hostName = "kvothe";
+    localHostName = "kvothe";
+    dns = [
+      "100.100.100.100"
+    ];
+    knownNetworkServices = [
+      "Thunderbolt Bridge"
+      "Wi-Fi"
+    ];
+  };
 
-  system.activationScripts.applications.text = pkgs.lib.mkForce (
-    # ''
-    #   echo "setting up ~/Applications..." >&2
-    #   rm -rf ~/Applications/Nix\ Apps
-    #   mkdir -p ~/Applications/Nix\ Apps
-    #   for app in $(find ${config.system.build.applications}/Applications -maxdepth 1 -type l); do
-    #     src="$(/usr/bin/stat -f%Y "$app")"
-    #     cp -r "$src" ~/Applications/Nix\ Apps
-    #   done
-    # ''
+  nix.enable = false;
 
-    ''
-      echo "setting up /Applications..." >&2
-      rm -rf /Applications/Nix\ Apps
-      mkdir -p /Applications/Nix\ Apps
-      find ${
+  security.pam.services.sudo_local.touchIdAuth = true;
+
+  system = {
+    activationScripts.applications.text = pkgs.lib.mkForce (
+      # ''
+      #   echo "setting up ~/Applications..." >&2
+      #   rm -rf ~/Applications/Nix\ Apps
+      #   mkdir -p ~/Applications/Nix\ Apps
+      #   for app in $(find ${config.system.build.applications}/Applications -maxdepth 1 -type l); do
+      #     src="$(/usr/bin/stat -f%Y "$app")"
+      #     cp -r "$src" ~/Applications/Nix\ Apps
+      #   done
+      # ''
+
+      ''
+                echo "setting up /Applications..." >&2
+                rm -rf /Applications/Nix\ Apps
+                mkdir -p /Applications/Nix\ Apps
+                find ${
         pkgs.buildEnv {
-          name = "system-applications";
-          paths = config.environment.systemPackages;
-          pathsToLink = "/Applications";
+        name = "system-applications";
+        paths = config.environment.systemPackages;
+        pathsToLink = "/Applications";
         }
-      }/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-      while read -r src; do
-        app_name=$(basename "$src")
-        echo "copying $src" >&2
-        ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-      done
-    ''
-  );
+        }/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+                while read -r src; do
+                  app_name=$(basename "$src")
+                  echo "copying $src" >&2
+                  ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+                done
+      ''
+    );
+
+
+    keyboard = {
+      enableKeyMapping = true;
+      userKeyMapping = [
+        {
+          HIDKeyboardModifierMappingSrc = 30064771129;
+          HIDKeyboardModifierMappingDst = 30064771181;
+        }
+      ];
+    };
+
+    stateVersion = 6;
+  };
+
+  homebrew = {
+    enable = true;
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "uninstall";
+      upgrade = true;
+    };
+    casks = [ "orion" ];
+  };
 }

@@ -10,7 +10,7 @@
       "*" = {
         serverAliveInterval = 180;
         serverAliveCountMax = 3;
-        identityFile = [ "~/.ssh/id_ed25519" "~/.ssh/upcloud" ];
+        identityFile = [ "~/.ssh/id_ed25519" ];
       };
       "github.com" = {
         user = "git";
