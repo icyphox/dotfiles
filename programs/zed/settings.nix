@@ -7,6 +7,9 @@ let
       diagnostics = false;
       metrics = false;
     };
+    features = {
+      edit_prediction_provider = "zed";
+    };
     active_pane_modifiers = {
       inactive_opacity = 0.8;
       magnification = 1.5;
@@ -63,7 +66,7 @@ let
     assistant = {
       default_model = {
         provider = "zed.dev";
-        model = "claude-3-7-sonnet";
+        model = "claude-3-7-sonnet-latest";
       };
       version = "2";
       enabled = true;
@@ -73,7 +76,7 @@ let
       show = "never";
     };
     toolbar = {
-      breadcrumbs = false;
+      breadcrumbs = true;
       quick_actions = false;
       selections_menu = false;
     };

@@ -42,7 +42,9 @@
     ];
   };
 
-  #  security.pam.services.sudo_local.touchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
+  # security.pam.enableSudoTouchIdAuth = true;
+
 
   system = {
     activationScripts.applications.text = pkgs.lib.mkForce (
@@ -79,6 +81,11 @@
       cleanup = "uninstall";
       upgrade = true;
     };
-    casks = [ "orion" "karabiner-elements" ];
+    casks = [
+      "orion"
+      "karabiner-elements"
+      "halloy"
+      "zed"
+    ];
   };
 }
