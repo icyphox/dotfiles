@@ -76,12 +76,19 @@
     wget
     git
     nfs-utils
+    soju
   ];
 
   services = {
     openssh.enable = true;
     tailscale.enable = true;
     # nix-snapshotter.enable = true;
+  };
+
+  services.soju = {
+    enable = true;
+    hostName = "denna";
+    listen = [ "irc+insecure://0.0.0.0" ];
   };
 
   services.k3s = let address = "100.77.4.74"; in {
