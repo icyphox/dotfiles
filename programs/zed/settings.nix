@@ -10,6 +10,9 @@ let
     features = {
       edit_prediction_provider = "zed";
     };
+    edit_predictions = {
+      mode = "subtle";
+    };
     active_pane_modifiers = {
       inactive_opacity = 0.8;
       magnification = 1.5;
@@ -21,6 +24,7 @@ let
       light = "Warm Icy Light";
       dark = "Warm Icy Dark";
     };
+    show_completions_on_input = true;
     buffer_font_family = "SF Mono";
     buffer_font_weight = 500;
     ui_font_family = if isDarwin then "System Font" else "Inter";
