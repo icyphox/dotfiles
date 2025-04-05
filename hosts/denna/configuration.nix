@@ -30,7 +30,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.opengl = {
     enable = true;
