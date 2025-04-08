@@ -36,7 +36,6 @@
     docker-buildx
     pinentry_mac
     kubectl
-    jujutsu
 
     signal-desktop
     raycast

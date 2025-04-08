@@ -16,6 +16,7 @@
     ./alacritty.nix
     ./fish.nix
     ./zed/default.nix
+    ./jujutsu.nix
   ];
 
   programs = {
