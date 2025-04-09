@@ -86,6 +86,9 @@
       "karabiner-elements"
       "halloy"
       "zed"
+      "raycast"
+      "signal@beta"
+      "zen-browser"
     ];
   };
 }

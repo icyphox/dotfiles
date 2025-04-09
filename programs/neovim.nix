@@ -62,8 +62,6 @@
       nvim-dap-ui
       nvim-dap-go
       vim-textobj-user
-
-      copilot-lua
     ];
   };
 }

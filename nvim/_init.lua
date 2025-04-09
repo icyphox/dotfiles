@@ -19,7 +19,6 @@ require 'lsp.lua'
 require 'lsp.json'
 require 'lsp.js'
 require 'lsp.rust'
-require 'lsp.copilot'
 
 -- plugins not in nixpkgs
 require 'packer'.startup(function(use)

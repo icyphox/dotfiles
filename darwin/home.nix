@@ -37,8 +37,6 @@
     pinentry_mac
     kubectl
 
-    signal-desktop
-    raycast
     ice-bar
 
     go
