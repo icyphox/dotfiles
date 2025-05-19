@@ -47,6 +47,7 @@
 
 
   system = {
+    primaryUser = "icy";
     activationScripts.applications.text = pkgs.lib.mkForce (
       ''
                 echo "setting up /Applications..." >&2
@@ -88,7 +89,7 @@
       "zed"
       "raycast"
       "signal@beta"
-      "zen-browser"
+      "zen"
     ];
   };
 }
