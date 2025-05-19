@@ -21,8 +21,8 @@ let
     buffer_font_size = 15;
     theme = {
       mode = "system";
-      light = "Warm Icy Light";
-      dark = "Warm Icy Dark";
+      light = "Icy Light";
+      dark = "Icy Dark";
     };
     show_completions_on_input = true;
     buffer_font_family = "SF Mono";

@@ -1,10 +1,10 @@
 {
   "$schema": "https://zed.dev/schema/themes/v0.1.0.json",
-  "name": "Warm Icy Dark",
+  "name": "Icy Dark",
   "author": "Anirudh Oppiliappan (icyphox)",
   "themes": [
     {
-      "name": "Warm Icy Dark",
+      "name": "Icy Dark",
       "appearance": "dark",
       "style": {
         "border": "#4a443d",
@@ -95,47 +95,47 @@
         "terminal.ansi.dim_white": "#d3cec1",
         "link_text.hover": "#509c933d",
         "conflict": "#db7070",
-        "conflict.background": "#509c933d",
-        "conflict.border": "#509c93",
+        "conflict.background": "#db70703d",
+        "conflict.border": "#db7070",
         "created": "#7c9f4b",
-        "created.background": "#509c933d",
-        "created.border": "#509c93",
+        "created.background": "#7c9f4b3d",
+        "created.border": "#7c9f4b",
         "deleted": "#db7070",
-        "deleted.background": "#509c933d",
-        "deleted.border": "#509c93",
+        "deleted.background": "#db70703d",
+        "deleted.border": "#db7070",
         "error": "#db7070",
-        "error.background": "#509c933d",
-        "error.border": "#509c93",
+        "error.background": "#db70703d",
+        "error.border": "#db7070",
         "hidden": "#d3cec1",
         "hidden.background": "#100f0f",
         "hidden.border": "#6b635a",
         "hint": "#fff6e3",
-        "hint.background": "#509c933d",
-        "hint.border": "#509c93",
+        "hint.background": "#fff6e33d",
+        "hint.border": "#fff6e3",
         "ignored": "#fff6e3",
-        "ignored.background": "#509c933d",
-        "ignored.border": "#509c93",
+        "ignored.background": "#fff6e33d",
+        "ignored.border": "#fff6e3",
         "info": "#509c93",
         "info.background": "#509c933d",
         "info.border": "#509c93",
-        "modified": "#7c9f4b",
-        "modified.background": "#509c933d",
-        "modified.border": "#509c93",
+        "modified": "#d69822",
+        "modified.background": "#d698223d",
+        "modified.border": "#d69822",
         "predictive": "#6b635a",
-        "predictive.background": "#509c933d",
-        "predictive.border": "#509c93",
+        "predictive.background": "#6b635a3d",
+        "predictive.border": "#6b635a",
         "renamed": "#509c93",
         "renamed.background": "#509c933d",
         "renamed.border": "#509c93",
         "success": "#7c9f4b",
-        "success.background": "#509c933d",
-        "success.border": "#509c93",
+        "success.background": "#7c9f4b3d",
+        "success.border": "#7c9f4b",
         "unreachable": "#db7070",
-        "unreachable.background": "#509c933d",
-        "unreachable.border": "#509c93",
+        "unreachable.background": "#db70703d",
+        "unreachable.border": "#db7070",
         "warning": "#d69822",
-        "warning.background": "#509c933d",
-        "warning.border": "#509c93",
+        "warning.background": "#d698223d",
+        "warning.border": "#d69822",
         "players": [
           {
             "cursor": "#509c93",
@@ -180,12 +180,12 @@
         ],
         "syntax": {
           "attribute": {
-            "color": "#509c93",
+            "color": "#fff6e3",
             "font_style": "normal",
             "font_weight": 400
           },
           "boolean": {
-            "color": "#b870ce",
+            "color": "#fff6e3",
             "font_style": "normal",
             "font_weight": 600
           },
@@ -200,7 +200,7 @@
             "font_weight": 400
           },
           "constant": {
-            "color": "#b870ce",
+            "color": "#fff6e3",
             "font_style": "normal",
             "font_weight": 400
           },
@@ -215,12 +215,12 @@
             "font_weight": 600
           },
           "number": {
-            "color": "#b870ce",
+            "color": "#fff6e3",
             "font_style": "normal",
             "font_weight": 400
           },
           "string": {
-            "color": "#509c93",
+            "color": "#fff6e3",
             "font_style": "normal",
             "font_weight": 400
           },
@@ -240,7 +240,7 @@
             "font_weight": 400
           },
           "punctuation": {
-            "color": "#d3cec1",
+            "color": "#fff6e3",
             "font_style": "normal",
             "font_weight": 400
           },

@@ -1,10 +1,10 @@
 {
   "$schema": "https://zed.dev/schema/themes/v0.1.0.json",
-  "name": "Warm Icy",
+  "name": "Icy Light",
   "author": "Anirudh Oppiliappan (icyphox)",
   "themes": [
     {
-      "name": "Warm Icy Light",
+      "name": "Icy Light",
       "appearance": "light",
       "style": {
         "border": "#fceccc",
@@ -28,10 +28,10 @@
         "ghost_element.selected": "#fff9eb",
         "ghost_element.disabled": "#776e63",
         "text": "#4a443d",
-        "text.muted": "#2a261f",
-        "text.placeholder": "#776e63",
-        "text.disabled": "#776e63",
-        "text.accent": "#6587bf",
+        "text.muted": "#4a443d",
+        "text.placeholder": "#4a443d",
+        "text.disabled": "#4a443d",
+        "text.accent": "#4a443d",
         "icon": "#fffdf5",
         "icon.muted": "#2a261f",
         "icon.disabled": "#776e63",
@@ -67,32 +67,32 @@
         "editor.document_highlight.write_background": "#db707033",
         "terminal.background": "#fffdf5",
         "terminal.foreground": "#4a443d",
-        "terminal.bright_foreground": "#2a261f",
-        "terminal.dim_foreground": "#776e63",
+        "terminal.bright_foreground": "#4a443d",
+        "terminal.dim_foreground": "#4a443d",
         "terminal.ansi.black": "#4a443d",
-        "terminal.ansi.bright_black": "#776e63",
+        "terminal.ansi.bright_black": "#4a443d",
         "terminal.ansi.dim_black": "#4a443d",
-        "terminal.ansi.red": "#db7070",
-        "terminal.ansi.bright_red": "#c66666",
-        "terminal.ansi.dim_red": "#776e63",
-        "terminal.ansi.green": "#7c9f4b",
-        "terminal.ansi.bright_green": "#6d8b42",
-        "terminal.ansi.dim_green": "#2a261f",
-        "terminal.ansi.yellow": "#d69822",
-        "terminal.ansi.bright_yellow": "#d8cbbe",
-        "terminal.ansi.dim_yellow": "#776e63",
-        "terminal.ansi.blue": "#6587bf",
-        "terminal.ansi.bright_blue": "#776e63",
+        "terminal.ansi.red": "#4a443d",
+        "terminal.ansi.bright_red": "#4a443d",
+        "terminal.ansi.dim_red": "#4a443d",
+        "terminal.ansi.green": "#4a443d",
+        "terminal.ansi.bright_green": "#4a443d",
+        "terminal.ansi.dim_green": "#4a443d",
+        "terminal.ansi.yellow": "#4a443d",
+        "terminal.ansi.bright_yellow": "#4a443d",
+        "terminal.ansi.dim_yellow": "#4a443d",
+        "terminal.ansi.blue": "#4a443d",
+        "terminal.ansi.bright_blue": "#4a443d",
         "terminal.ansi.dim_blue": "#4a443d",
-        "terminal.ansi.magenta": "#b870ce",
-        "terminal.ansi.bright_magenta": "#a262b5",
-        "terminal.ansi.dim_magenta": "#2a261f",
-        "terminal.ansi.cyan": "#509c93",
-        "terminal.ansi.bright_cyan": "#43827b",
-        "terminal.ansi.dim_cyan": "#776e63",
+        "terminal.ansi.magenta": "#4a443d",
+        "terminal.ansi.bright_magenta": "#4a443d",
+        "terminal.ansi.dim_magenta": "#4a443d",
+        "terminal.ansi.cyan": "#4a443d",
+        "terminal.ansi.bright_cyan": "#4a443d",
+        "terminal.ansi.dim_cyan": "#4a443d",
         "terminal.ansi.white": "#4a443d",
-        "terminal.ansi.bright_white": "#2a261f",
-        "terminal.ansi.dim_white": "#776e63",
+        "terminal.ansi.bright_white": "#4a443d",
+        "terminal.ansi.dim_white": "#4a443d",
         "link_text.hover": "#509c933d",
         "conflict": "#db7070",
         "conflict.background": "#db707033",
@@ -180,14 +180,14 @@
         ],
         "syntax": {
           "attribute": {
-            "color": "#509c93",
+            "color": "#4a443d",
             "font_style": "normal",
             "font_weight": 400
           },
           "boolean": {
-            "color": "#b870ce",
+            "color": "#4a443d",
             "font_style": "normal",
-            "font_weight": 600
+            "font_weight": 400
           },
           "comment": {
             "color": "#776e63",
@@ -200,7 +200,7 @@
             "font_weight": 400
           },
           "constant": {
-            "color": "#b870ce",
+            "color": "#4a443d",
             "font_style": "normal",
             "font_weight": 400
           },
@@ -215,12 +215,12 @@
             "font_weight": 600
           },
           "number": {
-            "color": "#b870ce",
+            "color": "#4a443d",
             "font_style": "normal",
             "font_weight": 400
           },
           "string": {
-            "color": "#509c93",
+            "color": "#4a443d",
             "font_style": "normal",
             "font_weight": 400
           },
@@ -240,7 +240,7 @@
             "font_weight": 400
           },
           "punctuation": {
-            "color": "#2a261f",
+            "color": "#4a443d",
             "font_style": "normal",
             "font_weight": 400
           },
