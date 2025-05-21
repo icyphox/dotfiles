@@ -13,6 +13,11 @@ let
     edit_predictions = {
       mode = "subtle";
     };
+    languages = {
+      HTML = {
+        format_on_save = "off";
+      };
+    };
     active_pane_modifiers = {
       inactive_opacity = 0.8;
       magnification = 1.5;
