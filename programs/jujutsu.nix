@@ -20,6 +20,10 @@
       git.sign-on-push = true;
       git.write-change-id-header = true;
 
+      aliases = {
+        tug = [ "bookmark" "move" "--from" "heads(::@- & bookmarks())" "--to" "@-" ];
+      };
+
       ui.paginate = "never";
       ui.default-command = [ "log" "-n" "10" ];
       template-aliases = {
