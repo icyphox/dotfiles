@@ -36,6 +36,8 @@
     docker-buildx
     pinentry_mac
     kubectl
+    betterdisplay
+    monitorcontrol
 
     ice-bar
 
