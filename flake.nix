@@ -6,7 +6,6 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
-
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     home-manager = {
@@ -24,7 +23,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     nix-your-shell = {
       url = "github:MercuryTechnologies/nix-your-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,15 +30,16 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , nixpkgs-master
-    , nixos-hardware
-    , nix-your-shell
-    , home-manager
-    , prompt
-    , darwin
-    , ...
+    {
+      self,
+      nixpkgs,
+      nixpkgs-master,
+      nixos-hardware,
+      nix-your-shell,
+      home-manager,
+      prompt,
+      darwin,
+      ...
     }@inputs:
 
     let

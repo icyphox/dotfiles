@@ -1,13 +1,14 @@
-{ config
-, pkgs
-, self
-, ...
+{
+  config,
+  pkgs,
+  self,
+  ...
 }:
 
 {
 
   imports = [
-    ./firefox.nix
+    #./firefox.nix
     ./common.nix
   ];
 

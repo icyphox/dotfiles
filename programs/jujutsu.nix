@@ -14,7 +14,7 @@
         # paginate = "never";
         default-command = "log";
         pager = "${pkgs.delta}/bin/delta";
-        diff.format = "git";
+        diff-formatter = ":git";
         graph.style = "curved";
         should-sign-off = true;
       };

@@ -1,10 +1,15 @@
-{ self, config, pkgs, lib, ... }:
+{
+  self,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   boot = {
     loader.systemd-boot.enable = true;
@@ -13,10 +18,18 @@
     kernel.sysctl."net.ipv4.ip_forward" = 1;
     resumeDevice = "/dev/nvme0n1p2";
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = [ "i2c-dev" "v4l2loopback" ];
+    kernelModules = [
+      "i2c-dev"
+      "v4l2loopback"
+    ];
   };
 
-  boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
+  boot.blacklistedKernelModules = [
+    "nouveau"
+    "nvidia"
+    "nvidia_drm"
+    "nvidia_modeset"
+  ];
   boot.extraModprobeConfig = ''
     blacklist nouveau
     options nouveau modeset=0
@@ -28,7 +41,10 @@
   ];
 
   networking = {
-    nameservers = [ "8.8.8.8" "8.8.4.4" ];
+    nameservers = [
+      "8.8.8.8"
+      "8.8.4.4"
+    ];
     networkmanager.enable = true;
     hostName = "wyndle";
     useDHCP = false;
@@ -44,17 +60,18 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "steam"
-      "steam-original"
-      "steam-runtime"
-    ];
+    allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+        "steam"
+        "steam-original"
+        "steam-runtime"
+      ];
     chromium = {
       commandLineArgs = "--ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation";
     };
     firefox.enablePlasmaBrowserIntegration = true;
   };
-
 
   environment = {
     sessionVariables = rec {
@@ -71,15 +88,17 @@
       man-pages-posix
       (lib.hiPrio pkgs.bashInteractive)
     ];
-    gnome.excludePackages = (with pkgs; [
-      gnome-photos
-      gnome-tour
-    ]) ++ (with pkgs; [
-      cheese
-      epiphany
-      geary
-      totem
-    ]);
+    gnome.excludePackages =
+      (with pkgs; [
+        gnome-photos
+        gnome-tour
+      ])
+      ++ (with pkgs; [
+        cheese
+        epiphany
+        geary
+        totem
+      ]);
   };
 
   documentation = {
@@ -141,6 +160,7 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
     xserver = {
       enable = true;
       xkb.layout = "us";
@@ -253,9 +273,11 @@
     doas.extraConfig = ''
       permit nopass :wheel
     '';
-    doas.extraRules = [{
-      users = [ "icy" ];
-    }];
+    doas.extraRules = [
+      {
+        users = [ "icy" ];
+      }
+    ];
     pki.certificateFiles = [ ./ca.crt ];
   };
 
@@ -266,12 +288,14 @@
 
   users.users.icy = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "audio" "video" "dialout" "i2c" ];
-  };
-
-  programs = {
-    steam.enable = true;
-    gamemode.enable = true;
+    extraGroups = [
+      "wheel"
+      "docker"
+      "audio"
+      "video"
+      "dialout"
+      "i2c"
+    ];
   };
 
   nix = {
@@ -291,9 +315,7 @@
 
   # https://github.com/NixOS/nixpkgs/issues/180175
   systemd.services.systemd-udevd.restartIfChanged = false;
-  systemd.services.NetworkManager-wait-online.enable = lib.mkForce
-    false;
-
+  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -304,4 +326,3 @@
   system.stateVersion = "21.11"; # Did you read the comment?
 
 }
-

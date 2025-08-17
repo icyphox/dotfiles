@@ -30,10 +30,11 @@ let
       dark = "Icy Dark";
     };
     show_completions_on_input = true;
-    buffer_font_family = "SF Mono";
-    buffer_font_weight = 500;
+    buffer_font_family = if isDarwin then "SF Mono" else "Input";
+    buffer_font_weight = 400;
     ui_font_family = if isDarwin then "System Font" else "Inter";
     ui_font_size = 18;
+    ui_font_weight = 400;
     vim_mode = true;
     vim = {
       use_system_clipboard = "never";

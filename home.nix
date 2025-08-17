@@ -47,28 +47,22 @@ in
     pkgs.signal-desktop
     pkgs.calibre
     pkgs.pinentry
-    pkgs.libreoffice
     pkgs.go
     pkgs.dconf
     pkgs.chromium
     pkgs.nix-your-shell
     pkgs.geary
-    pkgs.pass
-    pkgs.newsflash
     pkgs.errands
     pkgs.wl-clipboard
-    pkgs.nvtop
     pkgs.vesktop
-    pkgs.smile
-    pkgs.apostrophe
 
-    pkgs.gnome-pomodoro
     pkgs.gnome-tweaks
     pkgs.gnome-shell-extensions
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.search-light
     pkgs.gnomeExtensions.hide-top-bar
+
 
     pkgs.prompt
     pkgs.zed-editor
