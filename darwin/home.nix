@@ -38,12 +38,12 @@
     kubectl
     betterdisplay
     monitorcontrol
+    # zed-editor
 
     ice-bar
 
     go
     gopls
-    gotools
     nix-your-shell
   ] ++ (import ../bin { inherit pkgs host; });
 }

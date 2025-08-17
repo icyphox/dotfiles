@@ -57,7 +57,7 @@
       bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "wl-copy"
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "wl-copy"
-      bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+      bind-key -T copy-mode-vi r send-keys -X rectangle-togglost
       bind P paste-buffer
 
       # pop-up pane to open urls
@@ -79,8 +79,8 @@
       set -g status-justify right
       set -g status-right ""
       set -g status-left ""
-      set -g status-style "bg=colour0"
-      set -ag status-style "fg=colour7"
+      set -g status-style "bg=color7"
+      set -ag status-style "fg=color0"
 
       set -g window-status-current-format "#[fg=colour15]    #W"
       set -g window-status-format "#[fg=colour8]    #W"
@@ -88,8 +88,8 @@
       set -g status-left-length 100
 
       # dim inactive pane
-      set -g window-style 'fg=color8,bg=default'
-      set -g window-active-style 'fg=color7,bg=default'
+      # set -g window-style 'fg=color8,bg=default'
+      # set -g window-active-style 'fg=color7,bg=default'
 
       set -g default-terminal "xterm-256color"
       set -ga terminal-overrides ',xterm-256color:Tc'

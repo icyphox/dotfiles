@@ -16,6 +16,9 @@
         user = "git";
         hostname = "github.com";
       };
+      "test.hel.tangled.network" = {
+        forwardAgent = true;
+      };
     };
   };
 }

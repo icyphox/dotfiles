@@ -9,12 +9,6 @@
     fish.enable = true;
   };
 
-  services = {
-    tailscale = {
-      enable = true;
-    };
-  };
-
   environment = {
     variables = {
       EDITOR = "nvim";
@@ -82,14 +76,18 @@
       cleanup = "uninstall";
       upgrade = true;
     };
+    masApps = {
+      "Tailscale" = 1475387142;
+    };
     casks = [
       "orion"
       "karabiner-elements"
       "halloy"
-      "zed"
       "raycast"
       "signal@beta"
       "zen"
+      "ghostty"
+      "zed"
     ];
   };
 }

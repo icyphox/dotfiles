@@ -72,13 +72,12 @@ let
     notification_panel = {
       button = false;
     };
-    assistant = {
+    agent = {
       default_model = {
-        provider = "zed.dev";
-        model = "claude-3-7-sonnet-latest";
+        provider = "anthropic";
+        model = "claude-4-sonnet";
       };
       version = "2";
-      enabled = true;
       button = false;
     };
     scrollbar = {

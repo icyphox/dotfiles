@@ -17,6 +17,7 @@
     ./fish.nix
     ./zed/default.nix
     ./jujutsu.nix
+    ./ghostty/default.nix
   ];
 
   programs = {
