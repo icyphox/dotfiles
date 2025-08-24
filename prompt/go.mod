@@ -1,16 +1,19 @@
 module git.icyphox.sh/dotfiles/prompt
 
-go 1.21
+go 1.22.0
 
 toolchain go1.23.4
 
-require github.com/go-git/go-git/v5 v5.13.2
+require (
+	github.com/go-git/go-git/v5 v5.13.2
+	github.com/libgit2/git2go/v33 v33.0.9
+)
 
 require (
 	dario.cat/mergo v1.0.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/ProtonMail/go-crypto v1.1.5 // indirect
-	github.com/cloudflare/circl v1.3.7 // indirect
+	github.com/cloudflare/circl v1.6.1 // indirect
 	github.com/cyphar/filepath-securejoin v0.3.6 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
